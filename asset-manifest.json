@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/DebateVis/static/css/main.8d759e1e.chunk.css",
-    "main.js": "/DebateVis/static/js/main.d0634d49.chunk.js",
-    "main.js.map": "/DebateVis/static/js/main.d0634d49.chunk.js.map",
-    "runtime-main.js": "/DebateVis/static/js/runtime-main.6eb3a097.js",
-    "runtime-main.js.map": "/DebateVis/static/js/runtime-main.6eb3a097.js.map",
-    "static/css/2.ac35b2ca.chunk.css": "/DebateVis/static/css/2.ac35b2ca.chunk.css",
-    "static/js/2.652ff5e8.chunk.js": "/DebateVis/static/js/2.652ff5e8.chunk.js",
-    "static/js/2.652ff5e8.chunk.js.map": "/DebateVis/static/js/2.652ff5e8.chunk.js.map",
-    "index.html": "/DebateVis/index.html",
-    "precache-manifest.49254fee9dbc2711d571ef335e3b8aad.js": "/DebateVis/precache-manifest.49254fee9dbc2711d571ef335e3b8aad.js",
-    "service-worker.js": "/DebateVis/service-worker.js",
-    "static/css/2.ac35b2ca.chunk.css.map": "/DebateVis/static/css/2.ac35b2ca.chunk.css.map",
-    "static/css/main.8d759e1e.chunk.css.map": "/DebateVis/static/css/main.8d759e1e.chunk.css.map",
-    "static/js/2.652ff5e8.chunk.js.LICENSE.txt": "/DebateVis/static/js/2.652ff5e8.chunk.js.LICENSE.txt"
+    "main.css": "/tvdebate-front/static/css/main.8d759e1e.chunk.css",
+    "main.js": "/tvdebate-front/static/js/main.52f9fd13.chunk.js",
+    "main.js.map": "/tvdebate-front/static/js/main.52f9fd13.chunk.js.map",
+    "runtime-main.js": "/tvdebate-front/static/js/runtime-main.610ea4bd.js",
+    "runtime-main.js.map": "/tvdebate-front/static/js/runtime-main.610ea4bd.js.map",
+    "static/css/2.ac35b2ca.chunk.css": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css",
+    "static/js/2.31c79562.chunk.js": "/tvdebate-front/static/js/2.31c79562.chunk.js",
+    "static/js/2.31c79562.chunk.js.map": "/tvdebate-front/static/js/2.31c79562.chunk.js.map",
+    "index.html": "/tvdebate-front/index.html",
+    "precache-manifest.d0ddbc1e5909aa9652ca74e4d398c46e.js": "/tvdebate-front/precache-manifest.d0ddbc1e5909aa9652ca74e4d398c46e.js",
+    "service-worker.js": "/tvdebate-front/service-worker.js",
+    "static/css/2.ac35b2ca.chunk.css.map": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css.map",
+    "static/css/main.8d759e1e.chunk.css.map": "/tvdebate-front/static/css/main.8d759e1e.chunk.css.map",
+    "static/js/2.31c79562.chunk.js.LICENSE.txt": "/tvdebate-front/static/js/2.31c79562.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6eb3a097.js",
+    "static/js/runtime-main.610ea4bd.js",
     "static/css/2.ac35b2ca.chunk.css",
-    "static/js/2.652ff5e8.chunk.js",
+    "static/js/2.31c79562.chunk.js",
     "static/css/main.8d759e1e.chunk.css",
-    "static/js/main.d0634d49.chunk.js"
+    "static/js/main.52f9fd13.chunk.js"
   ]
 }
