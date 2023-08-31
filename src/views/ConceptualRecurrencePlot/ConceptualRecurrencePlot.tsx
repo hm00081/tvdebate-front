@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./ConceptualRecurrencePlot.scss";
 import _ from "lodash";
 import { SimilarityBlock, UtteranceObjectForDrawing } from "./interfaces";
@@ -30,13 +30,16 @@ import SimilarityTooltip from "../../components/SimilarityTooltip/SimilarityTool
 import Header from "./../Header/Header";
 import HeaderTwo from "./../Header/HeaderTwo";
 import style from "./rootStyle.module.scss";
-import { Bubble } from "./Bubble";
+import Bubble from "./Bubble";
+import BubbleEng from "./BubbleEng";
+import * as d3 from "d3";
+import Outline from "./Outline";
+import SubChart from "./SubChart";
 
 function ConceptualRecurrencePlot() {
   const query = new URLSearchParams(useLocation().search);
   const debateNameOfQuery = query.get("debate_name") as DebateName;
   const termTypeOfQuery = query.get("term_type") as TermType;
-
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
     null
   );
@@ -48,14 +51,12 @@ function ConceptualRecurrencePlot() {
     evaluationDataSet,
     setEvaluationDataSet,
   ] = useState<EvaluationDataSet | null>(null);
-
   const [
     combinedEGsMaker,
     setCombinedEGsMaker,
   ] = useState<CombinedEGsMaker | null>(null);
   const [d3Drawer, setD3Drawer] = useState<D3Drawer | null>(null);
   const conceptualMapModalRef = React.useRef<ConceptualMapModalRef>(null);
-
   const standardSimilarityScore = useSelector<
     CombinedState<{
       standardSimilarityScoreReducer: StandardSimilarityScoreState;
@@ -63,7 +64,7 @@ function ConceptualRecurrencePlot() {
     number
   >((state) => state.standardSimilarityScoreReducer.standardSimilarityScore);
   const dispatch = useDispatch();
-
+  const d3Container = useRef<SVGSVGElement>(null);
   // variables for tooltip
   const [
     mouseoveredUtterance,
@@ -75,6 +76,29 @@ function ConceptualRecurrencePlot() {
   ] = useState<SimilarityBlock | null>(null);
   const [transform, setTransform] = useState<d3.ZoomTransform | null>(null);
   const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
+  const [sortOrder, setSortOrder] = React.useState("index");
+
+  const handleSortOrderChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const newSortOrder = event.target.value;
+    console.log("New sortOrder: ", newSortOrder); // 확인 로깅
+    setSortOrder(newSortOrder);
+  };
+
+  useEffect(() => {
+    console.log("D3Drawer: ", d3Drawer); // 확인 로깅
+    if (d3Drawer) {
+      if (sortOrder === "disagreeScale") {
+        d3Drawer.participantBlocksDrawer.sortByFindDis();
+      } else if (sortOrder === "index") {
+        d3Drawer.participantBlocksDrawer.sortByIndex();
+      }
+
+      d3Drawer.participantBlocksDrawer.update();
+      d3Drawer.similarityBlocksDrawer.update();
+    }
+  }, [sortOrder, d3Drawer]);
 
   // Import Debate Data
   useEffect(() => {
@@ -130,10 +154,6 @@ function ConceptualRecurrencePlot() {
     if (dataStructureManager && debateDataset) {
       const dataStructureSet = dataStructureManager.dataStructureSet;
       const datasetOfManualEGs = dataStructureManager.datasetOfManualEGs;
-      const conceptSimilarityBlocks =
-        dataStructureSet.similarityBlockManager.similarityBlocks;
-      const conceptSimilarityMatrix =
-        dataStructureSet.similarityBlockManager.similarityBlockGroup;
       const manualBigEGs = datasetOfManualEGs.manualBigEGs;
       const manualBigEGTitles = datasetOfManualEGs.manualBigEGTitles;
       const manualMiddleEGs = datasetOfManualEGs.manualMiddleEGs;
@@ -142,7 +162,7 @@ function ConceptualRecurrencePlot() {
       const manualSmallEGTitles = datasetOfManualEGs.manualSmallEGTitles;
       const maxSimilarityScore = dataStructureSet.maxSimilarityScore;
       const topicGroups = combinedEGsMaker!.makeByNumOfSegments(4);
-
+      const svg = d3.select(d3Container.current);
       // settings of d3Drawer
       const d3Drawer = new D3Drawer(
         debateDataset,
@@ -256,20 +276,20 @@ function ConceptualRecurrencePlot() {
       d3Drawer.manualSmallTGsDrawer.update();
       d3Drawer.manualMiddleTGsDrawer.update();
       d3Drawer.manualBigTGsDrawer.update();
-      // d3Drawer.manualPeopleTGsDrawer.update();
-      console.log("d3Drawer", d3Drawer);
+      d3Drawer.manualPeopleTGsDrawer.update();
+      //console.log("d3Drawer", d3Drawer);
 
       setD3Drawer(d3Drawer);
     }
-  }, [dataStructureManager, debateDataset]);
+  }, [dataStructureManager, debateDataset, d3Container.current]);
 
   return (
     <div className="root-div" style={{ overflow: "hidden" }}>
       <Header />
       <HeaderTwo />
       <div className="vis-area">
-        <div className="bubble">
-          <Bubble />
+        <div className="bubble" style={{ borderBottom: "1px solid black" }}>
+          <BubbleEng />
         </div>
         <div
           className="concept-recurrence-plot"
@@ -279,8 +299,6 @@ function ConceptualRecurrencePlot() {
             style={{
               position: "fixed",
               overflow: "hidden",
-              //float: "left",
-              //marginLeft: "-62vw",
               zIndex: "1000",
               fontWeight: "550",
               backgroundColor: "white",
@@ -293,10 +311,27 @@ function ConceptualRecurrencePlot() {
           >
             Co-Occurrenece Matrix for Exploration Argumentation
           </div>
-
-          <svg className="fullSvg" style={{ overflow: "visible" }}>
-            <g className="test">
-              <g className="svgG"></g>
+          <svg
+            className="fullSvg"
+            ref={d3Container}
+            style={{ overflow: "visible" }}
+          >
+            <g
+              className="zoomable"
+              transform={transform ? transform.toString() : undefined}
+            >
+              <g className="svgG">
+                <g
+                  transform={`translate(${-180}, ${100}) scale(1 -1) rotate(-45)`}
+                >
+                  <SubChart />
+                  <rect
+                    style={{
+                      fill: "#ffffff",
+                    }}
+                  />
+                </g>
+              </g>
             </g>
           </svg>
         </div>
@@ -370,23 +405,3 @@ function ConceptualRecurrencePlot() {
 }
 
 export default ConceptualRecurrencePlot;
-
-{
-  /* <ParticipantTooltip
-          utteranceObjectForDrawing={mouseoveredUtterance}
-          transform={transform}
-          open={tooltipVisible}
-          d3Drawer={d3Drawer}
-          debateDataset={debateDataset}
-        /> */
-}
-{
-  /* <SimilarityTooltip
-          utteranceObjectForDrawing={mouseoveredUtterance}
-          similarityBlock={mouseoveredSimilarity}
-          transform={transform}
-          open={tooltipVisible}
-          d3Drawer={d3Drawer}
-          debateDataset={debateDataset}
-        /> */
-}

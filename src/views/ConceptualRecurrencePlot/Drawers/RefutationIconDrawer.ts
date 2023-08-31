@@ -118,7 +118,7 @@ export class RefutationIconDrawer {
               (a, b) => b.count - a.count
             );
             // 상위 8가지 키워드 추출
-            const topFreqKeywords = sortedCompoundTermCounts.slice(0, 8);
+            const topFreqKeywords = sortedCompoundTermCounts.slice(0, 3);
             // 텍스트 요소에 키워드를 추가합니다.
             topFreqKeywords.forEach((keyword, index) => {
               this.insistenceIconGSlectionTwo

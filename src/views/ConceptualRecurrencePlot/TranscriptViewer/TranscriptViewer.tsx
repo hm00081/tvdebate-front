@@ -62,3 +62,8 @@ function getSentenceSpans(utteranceObject: UtteranceObjectForDrawing) {
 }
 
 export default TranscriptViewer;
+
+function convertTimeToSeconds(time: string): number {
+  const parts = time.split(":").map((part) => parseInt(part, 10));
+  return parts[0] * 3600 + parts[1] * 60 + (parts[2] || 0);
+}

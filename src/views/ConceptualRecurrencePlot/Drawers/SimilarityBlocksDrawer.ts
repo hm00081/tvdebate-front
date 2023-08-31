@@ -70,32 +70,12 @@ export class SimilarityBlocksDrawer {
   public update() {
     const similarityRectGSelectionDataBound = this.conceptSimilarityRectGSelection
       .selectAll<SVGRectElement, unknown>("rect")
-      .data(this.similarityBlocks)
-      .style("fill", (d) => {
-        return d.visible
-          ? fillColorOfSimilarityBlock(
-              d,
-              this.utteranceObjectsForDrawing,
-              this.similarityBlockGroup,
-              this.participantDict,
-              this._standardHighPointOfSimilarityScore,
-              this._coloringSelfSimilarities,
-              this._coloringRebuttal
-            )
-          : "none";
-      })
-      .style("stroke-width", 3)
-      .style("stroke", (d) =>
-        this._showEngagementPoint && d.engagementPoint
-          ? "rgb(97, 64, 65)"
-          : null
-      );
-    console.log(
-      similarityRectGSelectionDataBound.node()?.getBoundingClientRect()
-    );
+      .data(this.similarityBlocks);
+
+    const enter = similarityRectGSelectionDataBound.enter().append("rect");
+
     similarityRectGSelectionDataBound
-      .enter()
-      .append("rect")
+      .merge(enter) // Merge enter and update selections
       .attr("x", (d) => d.beginningPointOfX)
       .attr("y", (d) => d.beginningPointOfY)
       .attr("width", (d) => d.width)
@@ -103,7 +83,6 @@ export class SimilarityBlocksDrawer {
       .style("fill", (d) => {
         return d.visible
           ? fillColorOfSimilarityBlock(
-              // 유사도 블록 색칠해주는 구간.
               d,
               this.utteranceObjectsForDrawing,
               this.similarityBlockGroup,
@@ -164,7 +143,7 @@ export class SimilarityBlocksDrawer {
         }
       });
 
-    //similarityRectGSelectionDataBound.exit().remove();
+    similarityRectGSelectionDataBound.exit().remove();
 
     function fillColorOfSimilarityBlock(
       similarityBlock: SimilarityBlock,

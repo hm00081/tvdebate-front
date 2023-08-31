@@ -121,9 +121,10 @@ export function makeSimulation(nodes: NodeDatum[], links: LinkDatum[]) {
       "link",
       d3.forceLink<NodeDatum, LinkDatum>(links).id((d) => d.id)
     )
-    .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody().strength(-80))
     .force("x", d3.forceX())
     .force("y", d3.forceY());
+  // .force("collide", 20);;
 } //d3-force
 
 export function makeDrag() {

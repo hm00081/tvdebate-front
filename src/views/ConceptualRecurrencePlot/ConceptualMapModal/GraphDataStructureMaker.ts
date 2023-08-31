@@ -24,6 +24,7 @@ export interface NodeDatum extends SimulationNodeDatum {
   booleanCount: number;
   participantCounts: ParticipantCount[]; // multiple count per 1 utterance
   participantBooleanCounts: ParticipantCount[]; // 1 count per 1 utterance
+  time?: number;
 }
 
 export interface LinkDatum extends SimulationLinkDatum<NodeDatum> {
@@ -48,6 +49,12 @@ export class GraphDataStructureMaker {
     utteranceObjects: UtteranceObject[],
     termType: TermType
   ) {
+    if (!engagementGroup || engagementGroup.length === 0) {
+      console.warn("EngagementGroup is undefined or empty.");
+      this.nodes = [];
+      return;
+    }
+
     const startIndex = engagementGroup[0][0].columnUtteranceIndex;
     const endIndex = startIndex + engagementGroup.length;
     const utteranceObjectsOfEG = _.filter(
@@ -97,7 +104,8 @@ export class GraphDataStructureMaker {
       frequencyVectorOfEG,
       booleanFrequencyVectorOfEG,
       termCountDetailDictOfEG,
-      termBooleanCountDetailDictOfEG
+      termBooleanCountDetailDictOfEG,
+      utteranceObjectsOfEG
     );
   }
 
@@ -225,12 +233,35 @@ export class GraphDataStructureMaker {
     frequencyVectorOfEG: number[],
     booleanFrequencyVectorOfEG: number[],
     termCountDetailDictOfEG: TermCountDetailDict,
-    termBooleanCountDetailDictOfEG: TermCountDetailDict
+    termBooleanCountDetailDictOfEG: TermCountDetailDict,
+    utteranceObjectsOfEG: UtteranceObject[] // add this
   ): NodeDatum[] {
     const nodes = _.map<string, NodeDatum>(termListOfEG, (term, termIndex) => {
+      const utteranceObjectFound = utteranceObjectsOfEG.find(
+        (utteranceObject) =>
+          utteranceObject.sentenceObjects.some(
+            (sentenceObject) =>
+              sentenceObject.singleTermCountDict[term] != null ||
+              sentenceObject.compoundTermCountDict[term] != null
+          )
+      );
+
+      let termTime;
+      if (utteranceObjectFound) {
+        const sentenceObjectFound = utteranceObjectFound.sentenceObjects.find(
+          (sentenceObject) =>
+            sentenceObject.singleTermCountDict[term] != null ||
+            sentenceObject.compoundTermCountDict[term] != null
+        );
+        if (sentenceObjectFound && sentenceObjectFound.time) {
+          termTime = convertTimeToSeconds(sentenceObjectFound.time);
+        }
+      }
+
       return {
         id: term,
         group: "term",
+        time: termTime,
         count: frequencyVectorOfEG[termIndex],
         booleanCount: booleanFrequencyVectorOfEG[termIndex],
         participantCounts: _.values(termCountDetailDictOfEG[term]),
@@ -239,6 +270,7 @@ export class GraphDataStructureMaker {
         ),
       };
     });
+    //console.log(nodes);
     return nodes;
   }
 
@@ -346,4 +378,9 @@ export class GraphDataStructureMaker {
 
     return _.values(filteredLinkDict);
   }
+}
+
+function convertTimeToSeconds(time: string): number {
+  const parts = time.split(":").map((part) => parseInt(part, 10));
+  return parts[0] * 3600 + parts[1] * 60 + (parts[2] || 0);
 }

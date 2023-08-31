@@ -133,16 +133,20 @@ export function getMilitaryManualSmallEGTitles(): string[] {
     // "논쟁구간",
     // "논쟁구간",
     // "군대, 모병, 정부, 문제, 논의, 인구절벽, 문재인, 의원",
-    "토론 시작 및 모병제 도입", // 0-18
+    // "토론 시작 및 모병제 도입", // 0-18, 1
+    "Start the discussion and introduce all volunteer military system(AVMS)", // 1
     "쓰레기값",
     // "군대, 모병, 사람, 감군, 병력, 징병, 유지, 정예",
-    "모병제, 병력 충원에 문제 없나?", // 24-58
+    // "모병제, 병력 충원에 문제 없나?", // 24-58, 3
+    "All volunteer military system, a solution to recruitment?", // 3
     "쓰레기값",
     // "군대, 모병, 병사, 위협, 장교, 전문, 유지, 징병",
-    "모병제, 질적 향상 및 간부확보 문제는?", // 73-106
+    // "모병제, 질적 향상 및 간부확보 문제는?", // 73-106, 5
+    "AVMS, quality improvement, and cadre retention?", // 5
     "쓰레기값",
     // "모병, 국방예산, 국방, 군대, 유지, 여성, 예산, 병력",
-    "국방 예산 이슈 및 토론 마무리", // 146-183
+    // "국방 예산 이슈 및 토론 마무리", // 146-183, 7
+    "Defense budget issues and conclusion of debate", // 7
   ];
 }
 
@@ -158,11 +162,14 @@ export function getMilitaryManualMiddleEGTitles(): string[] {
     // "논쟁구간",
     // "논쟁구간",
     // "논쟁구간",
-    "인구절벽, 징병제에 미치는 영향", // 15-37
+    //"인구절벽, 징병제에 미치는 영향", // 15-37, 2
+    "The population cliff and its impact on AVMS", // 2
     "쓰레기값",
-    "모병제, 일자리 문제 해결책?", // 56-79
+    //"모병제, 일자리 문제 해결책?", // 56-79, 4
+    "AVMS, a solution to the jobs problem?", // 4
     "쓰레기값",
-    "여성 징집과 봉급체계", // 94-126
+    //"여성 징집과 봉급체계", // 94-126, 6
+    "Female conscription and pay system", // 6
     "쓰레기값",
     "쓰레기값",
   ];

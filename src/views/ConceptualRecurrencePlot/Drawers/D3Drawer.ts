@@ -68,7 +68,7 @@ export class D3Drawer {
     this.conceptRecurrencePlotDiv = d3.select(".concept-recurrence-plot");
 
     this.svgWidth = 1130;
-    this.svgHeight = 800;
+    this.svgHeight = 600;
     this.svgSelection = this.conceptRecurrencePlotDiv
       .select<SVGSVGElement>("svg")
       .attr("width", this.svgWidth)
@@ -297,6 +297,14 @@ export class D3Drawer {
   public centerConceptualRecurrentPlot() {
     const utteranceObjectsForDrawing = this.dataStructureSet
       .utteranceObjectsForDrawingManager.utteranceObjectsForDrawing;
+    const ar = [];
+    const arr = [];
+    for (let i = 0; i < utteranceObjectsForDrawing.length; i++) {
+      ar.push(utteranceObjectsForDrawing[i].width.toFixed(2));
+      arr.push(utteranceObjectsForDrawing[i].name);
+    }
+    console.log(ar);
+
     if (utteranceObjectsForDrawing.length !== 0) {
       const lastUtteranceObjectForDrawing =
         utteranceObjectsForDrawing[utteranceObjectsForDrawing.length - 1];

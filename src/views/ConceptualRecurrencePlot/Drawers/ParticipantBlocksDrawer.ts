@@ -5,6 +5,7 @@ import { Participant } from "../../../common_functions/makeParticipants";
 import _ from "lodash";
 import { KeytermObject } from "../../../interfaces/DebateDataInterface";
 import { findTopValueIndexes } from "../../../common_functions/findTopValueIndexes";
+import { string } from "mathjs";
 
 export class ParticipantBlocksDrawer {
   private readonly participantRectGSlection!: d3.Selection<
@@ -32,6 +33,22 @@ export class ParticipantBlocksDrawer {
       ) => void) = null;
   private _mouseoutListener: null | (() => void) = null;
 
+  public sortByFindDis() {
+    this.utteranceObjectsForDrawing.sort((a, b) => {
+      return a.findDisagreeScale - b.findDisagreeScale;
+    });
+    console.log("After sorting: ", this.utteranceObjectsForDrawing);
+    this.update();
+  }
+
+  public sortByIndex() {
+    this.utteranceObjectsForDrawing.sort((a, b) => {
+      return a.beginningPointOfXY - b.beginningPointOfXY;
+    });
+    console.log("After sorting: ", this.utteranceObjectsForDrawing);
+    this.update();
+  }
+
   public constructor(
     private readonly utteranceObjectsForDrawing: UtteranceObjectForDrawing[],
     private readonly participantDict: ParticipantDict,
@@ -44,89 +61,103 @@ export class ParticipantBlocksDrawer {
   }
 
   public update() {
+    //@ts-ignore
     const participantRectGSlectionDataBound = this.participantRectGSlection
       .selectAll<SVGRectElement, UtteranceObjectForDrawing>("rect")
-      .data(this.utteranceObjectsForDrawing)
-      .join("rect");
+      .data(this.utteranceObjectsForDrawing, (d) => d)
+      .join(
+        (enter) => {
+          const newEnter = enter.append("rect");
+          this.setAttributes(
+            newEnter,
+            this.participantDict,
+            this.conceptMatrixTransposed,
+            this.keytermObjects
+          );
+          return newEnter;
+        },
+        (update) => {
+          this.setAttributes(
+            update,
+            this.participantDict,
+            this.conceptMatrixTransposed,
+            this.keytermObjects
+          );
+          return update;
+        },
+        (exit) => exit.remove()
+      );
 
-    participantRectGSlectionDataBound.call(
-      setAttributes.bind(
-        this,
-        participantRectGSlectionDataBound,
-        this.participantDict,
-        this.conceptMatrixTransposed,
-        this.keytermObjects
-      )
+    this.setAttributes(
+      participantRectGSlectionDataBound,
+      this.participantDict,
+      this.conceptMatrixTransposed,
+      this.keytermObjects
     );
+  }
 
-    // participantRectGSlectionDataBound.on("click", (e, d) => {
-    //   const mouseEvent = (e as unknown) as MouseEvent;
-    //   console.log("participant block clicked"); // 나옴
-    //   mouseEvent.stopPropagation();
-    //   const utteranceObjectForDrawing = (d as unknown) as UtteranceObjectForDrawing;
+  private setAttributes(
+    this: ParticipantBlocksDrawer,
+    selection: d3.Selection<
+      SVGRectElement,
+      UtteranceObjectForDrawing,
+      SVGGElement,
+      unknown
+    >,
+    participantDict: { [participant: string]: Participant },
+    conceptMatrixTransposed: number[][],
+    keytermObjects: KeytermObject[]
+  ) {
+    selection // utterance_objects 데이터 적용
+      // .transition()
+      // .duration(750)
+      .attr("x", (d) => d.beginningPointOfXY)
+      .attr("y", (d) => d.beginningPointOfXY)
+      .attr("width", (d) => d.width) // 노드 두께
+      .attr("height", (d) => d.width) // 노드 높이
+      .style("fill", (d) => participantDict[d.name].color);
 
-    //   if (this._clickListener) {
-    //     this._clickListener(mouseEvent, utteranceObjectForDrawing);
-    //   }
-    // });
+    selection
+      .selectAll("title")
+      .data((d) => [d])
+      .join("title")
+      .text((d, i) => {
+        const conceptVectorOfUtterance = conceptMatrixTransposed[i];
+        // console.log(conceptVectorOfUtterance);
+        const topValueIndexes = findTopValueIndexes(
+          conceptVectorOfUtterance,
+          3 // 최대 보여줄 키워드 수.
+        );
+        const mainKeytermObjects = _.map(
+          topValueIndexes,
+          (topValueIndex) => keytermObjects[topValueIndex]
+        );
+        // console.log(topValueIndexes);
+        const mainKeytermsString = _.reduce(
+          mainKeytermObjects,
+          (result, keytermObject) => {
+            return `${result} ${keytermObject.name}`;
+          },
+          ""
+        );
+        return `keywords:${mainKeytermsString}\n ${d.name}: ${d.utterance}
+            `;
+      })
+      .on("mouseover", (e, u) => {
+        const mouseEvent = (e as unknown) as MouseEvent;
+        mouseEvent.stopPropagation();
+        const utteranceObjectForDrawing = (u as unknown) as UtteranceObjectForDrawing;
 
-    function setAttributes(
-      this: ParticipantBlocksDrawer,
-      selection: d3.Selection<
-        SVGRectElement,
-        UtteranceObjectForDrawing,
-        SVGGElement,
-        unknown
-      >,
-      participantDict: { [participant: string]: Participant },
-      conceptMatrixTransposed: number[][],
-      keytermObjects: KeytermObject[]
-    ) {
-      selection // utterance_objects 데이터 적용
-        .attr("x", (d) => d.beginningPointOfXY)
-        .attr("y", (d) => d.beginningPointOfXY)
-        .attr("width", (d) => d.width) // 노드 두께
-        .attr("height", (d) => d.width) // 노드 높이
-        .style("fill", (d) => participantDict[d.name].color)
-        //.append("title")
-        // .text((d, i) => {
-        //   const conceptVectorOfUtterance = conceptMatrixTransposed[i];
-        //   // console.log(conceptVectorOfUtterance);
-        //   const topValueIndexes = findTopValueIndexes(
-        //     conceptVectorOfUtterance,
-        //     8 // 최대 보여줄 키워드 수.
-        //   );
-        //   const mainKeytermObjects = _.map(
-        //     topValueIndexes,
-        //     (topValueIndex) => keytermObjects[topValueIndex]
-        //   );
-        //   // console.log(topValueIndexes);
-        //   const mainKeytermsString = _.reduce(
-        //     mainKeytermObjects,
-        //     (result, keytermObject) => {
-        //       return `${result} ${keytermObject.name}`;
-        //     },
-        //     ""
-        //   );
-        //   return `keywords:${mainKeytermsString}\n ${d.name}: ${d.utterance}
-        //   `;
-        // })
-        .on("mouseover", (e, u) => {
-          const mouseEvent = (e as unknown) as MouseEvent;
-          mouseEvent.stopPropagation();
-          const utteranceObjectForDrawing = (u as unknown) as UtteranceObjectForDrawing;
-
-          // TODO adjust transcript-view
-          if (this._mouseoverListener) {
-            this._mouseoverListener(mouseEvent, utteranceObjectForDrawing);
-          }
-        })
-        .on("mouseout", (e, u) => {
-          if (this._mouseoutListener) {
-            this._mouseoutListener();
-          }
-        });
-    }
+        // TODO adjust transcript-view
+        if (this._mouseoverListener) {
+          this._mouseoverListener(mouseEvent, utteranceObjectForDrawing);
+        }
+      })
+      .on("mouseout", (e, u) => {
+        if (this._mouseoutListener) {
+          this._mouseoutListener();
+        }
+      });
   }
 
   public click(

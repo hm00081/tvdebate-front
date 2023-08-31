@@ -129,13 +129,15 @@ function ConceptualMapModal(
 
       const nodeDictionary = createNodeDictionary(nodeLinkDict.nodes);
       const sortedNodeArray = sortedNodeDictionary(nodeDictionary);
-
+      for (let i = 0; i < sortedNodeArray.length; i++) {
+        console.log();
+      }
       const termFreqKeywrods = sortedNodeArray.slice(0, 15);
       const emptyArr: string[] = [];
       termFreqKeywrods.forEach((eg, i) => {
         emptyArr.push(termFreqKeywrods[i].term);
       });
-      console.log(emptyArr);
+      //console.log(emptyArr);
       // console.log("nodeLinkDict", nodeLinkDict.nodes);
 
       conceptualMapDrawer!.setGraphData(nodeLinkDict);

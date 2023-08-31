@@ -11,6 +11,7 @@ import {
   extractTermsFromEngagementGroup,
 } from "../DataStructureMaker/extractTermsFromEngagementGroup";
 import { KeytermObject } from "../../../interfaces/DebateDataInterface";
+import { constants } from "http2";
 
 export class TopicGroupsDrawer {
   private readonly topicGuideRectGSelection: d3.Selection<
@@ -71,6 +72,7 @@ export class TopicGroupsDrawer {
   public update() {
     const excludedIndex = [1, 3, 5];
     const excludedIndexTwo = [1, 3, 5];
+    const self = this;
     // 주제별로 보고 싶다면 this._guideColor로 필터링 적용해도 될듯함.
     // filter 후 데이터 제공.
     const filteredData = this._topicGroups.filter(
@@ -117,6 +119,26 @@ export class TopicGroupsDrawer {
       })
     );
 
+    function splitTextToLines(text: string | undefined | null): string[] {
+      if (!text) return [];
+      const maxLength = 30;
+      const words = text.split(" ");
+      const lines: string[] = [];
+      let line = "";
+
+      for (const word of words) {
+        if ((line + word).length > maxLength) {
+          lines.push(line.trim());
+          line = "";
+        }
+        line += `${word} `;
+      }
+
+      if (line.trim() !== "") lines.push(line.trim());
+
+      return lines;
+    }
+
     function setAttributesOfTopicGuides(
       this: TopicGroupsDrawer,
       selection: d3.Selection<
@@ -155,7 +177,7 @@ export class TopicGroupsDrawer {
           return height;
         })
         .style("fill", this._guideColor === "#ff0000" ? "none" : "none")
-        // .style("opacity", 0.05)
+        .style("clip-path", "polygon(0% 0%, 0% 0%, 100% 100%, 0% 100%)")
         .style("stroke-width", 1)
         .style("stroke", () => (showEngagementGroup ? guideColor : "none"));
       // .style("stroke", () => (showEngagementGroup ? "none" : "none"));
@@ -322,21 +344,37 @@ export class TopicGroupsDrawer {
           }
           // return yPoint;
         }) // draw topic text
+        // .text((eg, i) => {
+        //   //@ts-ignore
+        //   //const parent = d3.select(this);
+        //   //parent.selectAll("tspan").remove;
+
+        //   if (arg.showTopicGroupTitle) {
+        //     if (arg.topicGroupTitles) {
+        //       const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
+
+        //       return arg.topicGroupTitles[i];
+        //     } else {
+        //       const highFrequencyTerms = extractFrequencyTermsFromEG(
+        //         eg,
+        //         this.debateDataSet.utteranceObjects,
+        //         this.dataStructureSet.participantDict,
+        //         this.termType
+        //       );
+        //       return `${highFrequencyTerms}`;
+        //     }
+        //   } else {
+        //     return "";
+        //   }
+        // })
         .text((eg, i) => {
           if (arg.showTopicGroupTitle) {
             if (arg.topicGroupTitles) {
-              // console.log(arg.topicGroupTitles[0][0]);
-              //console.log(arg.topicGroupTitles);
-              return arg.topicGroupTitles[i];
-            } else {
-              // const extractedKeytermObjects = extractKeytermsFromEngagementGroup(
-              //   eg,
-              //   arg.conceptMatrixTransposed,
-              //   arg.keytermObjects,
-              //   7
-              // );
-              // return `${_.map(extractedKeytermObjects, (o) => o.name)}`;
+              const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
 
+              // 첫 번째 줄만 반환합니다.
+              return textLines[0] || "";
+            } else {
               const highFrequencyTerms = extractFrequencyTermsFromEG(
                 eg,
                 this.debateDataSet.utteranceObjects,
@@ -347,6 +385,21 @@ export class TopicGroupsDrawer {
             }
           } else {
             return "";
+          }
+        })
+        .each(function (eg, i) {
+          const textElem = d3.select(this);
+          textElem.selectAll("tspan").remove();
+
+          if (arg.showTopicGroupTitle && arg.topicGroupTitles) {
+            const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
+            for (let j = 1; j < textLines.length; j++) {
+              textElem
+                .append("tspan")
+                .attr("x", textElem.attr("x"))
+                .attr("dy", "1.2em")
+                .text(textLines[j]);
+            }
           }
         })
         .attr("text-anchor", "middle")

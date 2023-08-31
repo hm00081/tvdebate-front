@@ -1,972 +1,2318 @@
-import React, { useEffect, useRef } from "react";
-import style from "./Bubble.module.scss";
-import * as d3 from "d3";
-// eslint-disable-next-line no-unused-vars
-
-export const Bubble = () => {
-  const svgRef = useRef<SVGSVGElement | null>(null);
-
-  useEffect(() => {
-    if (svgRef.current) {
-      //@ts-ignore
-      const svg = d3.select(svgRef.current);
-
-      const zoomed = (event: any) => {
-        const { transform } = event;
-        svg.attr("transform", transform);
-      };
-
-      const zoom = d3.zoom().scaleExtent([1, 1]).on("zoom", zoomed);
-      //@ts-ignore
-      svg.call(zoom);
-    }
-  }, []);
-
-  return (
-    <div className={style.bubbleContainer}>
-      <div className={style.title}>
-        Bubble Chart for Comparing Argumentation
-      </div>
-      <svg
-        ref={svgRef}
-        className={style.bubbleArea}
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        version="1.1"
-        id="레이어_1"
-        x="0px"
-        y="0px"
-        viewBox="0 0 1503.7 270"
-        xmlSpace="preserve"
-      >
-        <style type="text/css"></style>
-
-        <g transform="translate(895.4209809026149,333.6451320096652)">
-          <path
-            className={style.st0}
-            d="M-800.7-282c51.5,0,93.2,41.7,93.2,93.2c0,29.8-14.3,57.9-38.4,75.4l-5-6.9c37.9-27.5,46.2-80.5,18.7-118.3   c-15.9-21.9-41.4-34.9-68.5-34.9V-282z"
-          />
-          <path
-            className={style.st1}
-            d="M-873.9-246.6c17.7-22.4,44.6-35.5,73.2-35.5v8.5c-25.9,0-50.5,11.9-66.5,32.3L-873.9-246.6z"
-          />
-          <path
-            className={style.st2}
-            d="M-871.5-128.3c-28.9-33.8-29.8-83.3-2.3-118.2l6.7,5.2c-25,31.7-24.1,76.7,2.1,107.5L-871.5-128.3z"
-          />
-          <path
-            className={style.st3}
-            d="M-745.9-113.5c-39.3,28.6-94.1,22.1-125.6-14.9l6.4-5.5c28.7,33.6,78.4,39.5,114.2,13.5L-745.9-113.5z"
-          />
-        </g>
-
-        <text
-          transform="matrix(1 0 0 1 47.4324 43.0281)"
-          className={style.title0}
-        >
-          토론 시작 및 모병제 도입
-        </text>
-        <g transform="translate(1350.9128576241155,539.4636084343023)">
-          <path
-            className={style.st3}
-            d="M-1029.3-309.4c-46,22.4-101.4,3.3-123.8-42.7c-2-4.1-3.7-8.4-5.1-12.8l8-2.5c14,44.4,61.2,69,105.6,55.1   c4-1.3,7.9-2.8,11.6-4.6L-1029.3-309.4z"
-          />
-          <path
-            className={style.st2}
-            d="M-1158.2-364.9c-14.6-46.4,9.2-96.2,54.4-114l3.1,7.8c-41.1,16.2-62.7,61.5-49.5,103.6L-1158.2-364.9z"
-          />
-          <path
-            className={style.st0}
-            d="M-1069.8-485.3c51.2,0,92.6,41.5,92.6,92.6c0,35.4-20.2,67.8-52.1,83.3l-3.7-7.6   c41.8-20.4,59.2-70.8,38.8-112.6c-14.1-29-43.5-47.3-75.7-47.3V-485.3z"
-          />
-          <path
-            className={style.st1}
-            d="M-1103.8-478.9c10.8-4.3,22.3-6.4,33.9-6.4v8.4c-10.6,0-21,2-30.9,5.9L-1103.8-478.9z"
-          />
-        </g>
-        <text transform="matrix(1 0 0 1 245.6339 37.918)" className={style.st7}>
-          <tspan x="0" y="0" className={style.title0}>
-            인구절벽, 징병제에{" "}
-          </tspan>
-          <tspan x="15" y="10.8" className={style.title0}>
-            {" "}
-            미치는 영향
-          </tspan>
-        </text>
-        <path
-          className={style.st8}
-          d="M473.5,47.3c54.5,0,98.8,44.2,98.8,98.8s-44.2,98.8-98.8,98.8c-8.2,0-16.3-1-24.2-3l2.2-8.7  c48.1,12.2,96.9-17,109.1-65s-17-96.9-65-109.1c-7.2-1.8-14.6-2.7-22-2.7V47.3z"
-        />
-        <path
-          className={style.st3}
-          d="M415.6,66.1c16.8-12.2,37.1-18.7,57.8-18.7v9c-18.9,0-37.3,6-52.6,17L415.6,66.1z"
-        />
-        <path
-          className={style.st0}
-          d="M374.9,140.3c1.7-29.6,16.7-56.9,40.8-74.3l5.3,7.3c-21.9,15.8-35.5,40.6-37,67.5L374.9,140.3z"
-        />
-        <path
-          className={style.st9}
-          d="M449.3,241.9c-45.9-11.6-77.2-54.2-74.4-101.5l9,0.5c-2.5,43,25.9,81.8,67.6,92.3L449.3,241.9z"
-        />
-        <text
-          transform="matrix(1 0 0 1 436.5184 32.5628)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.title0}>
-            모병제, 병력 충원에{" "}
-          </tspan>
-          <tspan x="16.5" y="10.8" className={style.title0}>
-            {" "}
-            문제 없나?
-          </tspan>
-        </text>
-        <path
-          className={style.st2}
-          d="M657.8,66.2c46.2,0,83.7,37.5,83.7,83.7c0,22.7-9.2,44.5-25.6,60.2l-5.3-5.5c30.2-29.2,31.1-77.3,1.9-107.6  c-14.3-14.9-34.1-23.3-54.8-23.3V66.2z"
-        />
-        <path
-          className={style.st10}
-          d="M715.9,210.2c-33.1,31.9-85.8,31.2-117.9-1.7l5.4-5.3c29.2,29.9,77.1,30.6,107.2,1.6L715.9,210.2z"
-        />
-        <path
-          className={style.st8}
-          d="M598,208.5c-31.5-32.2-31.9-83.6-0.8-116.2l5.5,5.2c-28.2,29.7-27.9,76.4,0.8,105.6L598,208.5z"
-        />
-        <path
-          className={style.st0}
-          d="M597.1,92.3c15.8-16.6,37.7-26,60.7-26v7.6c-20.8,0-40.8,8.6-55.2,23.7L597.1,92.3z"
-        />
-        <text
-          transform="matrix(1 0 0 1 614.9458 46.7298)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.title0}>
-            모병제, 일자리 문제{" "}
-          </tspan>
-          <tspan x="30" y="10.8" className={style.title0}>
-            {" "}
-            해결책?
-          </tspan>
-        </text>
-
-        <circle className={style.st9} cx="32.3" cy="161.3" r="16.2" />
-        <text transform="matrix(1 0 0 1 21.8709 159.8806)">
-          <tspan x="3" y="0" className={style.style0}>
-            {" "}
-            50만군
-          </tspan>
-          <tspan x="0" y="6" className={style.style0}>
-            {" "}
-            유지불가
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="32.1" cy="129.8" r="15.3" />
-        <text
-          transform="matrix(1 0 0 1 19.7684 131.1424)"
-          className={style.style1}
-        >
-          인구절벽위협
-        </text>
-        <circle className={style.st10} cx="122.4" cy="122" r="17.3" />
-        <text
-          transform="matrix(1 0 0 1 112.1123 121.3133)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style2}>
-            청년인구{" "}
-          </tspan>
-          <tspan x="5" y="6.5" className={style.style2}>
-            {" "}
-            감소
-          </tspan>
-        </text>
-        <circle className={style.st10} cx="114.4" cy="156.6" r="18.4" />
-        <circle className={style.st15} cx="154.1" cy="155.7" r="21.3" />
-        <text
-          transform="matrix(1 0 0 1 138.6409 152.9124)"
-          className={style.st7}
-        >
-          <tspan x="6" y="0" className={style.style3}>
-            {" "}
-            미비한
-          </tspan>
-          <tspan x="0" y="8.4" className={style.style3}>
-            군정책검토
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="153.4" cy="120.6" r="13.7" />
-        <text transform="matrix(1 0 0 1 144.2659 119.1668)">
-          <tspan x="0" y="0" className={style.style0}>
-            감군대비{" "}
-          </tspan>
-          <tspan x="0" y="6" className={style.style0}>
-            {" "}
-            무대책
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="64.5" cy="126.5" r="17.2" />
-        <circle className={style.st15} cx="66.6" cy="161.8" r="18.1" />
-        <text
-          transform="matrix(1 0 0 1 56.0789 163.4104)"
-          className={style.style2}
-        >
-          북 핵위협
-        </text>
-        <text
-          transform="matrix(1 0 0 1 123.575 95.3377)"
-          className={style.title1}
-        >
-          현 군상황
-        </text>
-        <circle className={style.st19} cx="51.3" cy="145.9" r="40.9" />
-        <circle className={style.st19} cx="135.8" cy="144" r="43.6" />
-        <text
-          transform="matrix(1 0 0 1 32.4627 97.9783)"
-          className={style.title1}
-        >
-          현 사회상황
-        </text>
-        <circle className={style.st15} cx="256.7" cy="132.9" r="16.8" />
-        <text transform="matrix(1 0 0 1 242.8604 130.387)">
-          <tspan x="4" y="0" className={style.style0}>
-            {" "}
-            대책없는{" "}
-          </tspan>
-          <tspan x="0" y="6" className={style.style0}>
-            총선용 모병제
-          </tspan>
-        </text>
-        <circle className={style.st10} cx="221.2" cy="134.6" r="18.8" />
-        <text
-          transform="matrix(1 0 0 1 210.2593 132.8872)"
-          className={style.style4}
-        >
-          <tspan x="0" y="0" className={style.style4}>
-            전쟁양상
-          </tspan>
-          <tspan x="3" y="7" className={style.style4}>
-            무인화
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="259.2" cy="164.2" r="14.6" />
-        <text
-          transform="matrix(1 0 0 1 250.6749 162.8675)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style0}>
-            자주국방{" "}
-          </tspan>
-          <tspan x="2" y="6" className={style.style0}>
-            {" "}
-            어려움
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="310.3" cy="173.7" r="15.6" />
-        <text transform="matrix(1 0 0 1 297.9021 173.534)">
-          <tspan x="0" y="0" className={style.style1}>
-            직업군인위주
-          </tspan>
-          <tspan x="3" y="5.5" className={style.style1}>
-            {" "}
-            편제개편
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="300.2" cy="142.5" r="17.4" />
-        <text transform="matrix(1 0 0 1 288.6936 141.0613)">
-          <tspan x="0" y="0" className={style.style1}>
-            감축을 통한
-          </tspan>
-          <tspan x="0.8" y="5.2" className={style.style1}>
-            {" "}
-            군 정예화
-          </tspan>
-        </text>
-        <circle className={style.st15} cx="341" cy="148.6" r="24" />
-        <text transform="matrix(1 0 0 1 329.5245 144.0694)">
-          <tspan x="0" y="0" className={style.style2}>
-            질적향상과
-          </tspan>
-          <tspan x="1.8" y="6.5" className={style.style2}>
-            현대화 후
-          </tspan>
-          <tspan x="-0.8" y="13.1" className={style.style2}>
-            모병제 도입
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="238.4" cy="148.6" r="41.5" />
-        <circle className={style.st19} cx="323.1" cy="151" r="42.2" />
-        <text
-          transform="matrix(1 0 0 1 210.2037 104.7032)"
-          className={style.title2}
-        >
-          인구절벽, 모병제가 답인가?
-        </text>
-        <text
-          transform="matrix(1 0 0 1 297.4009 104.8545)"
-          className={style.title2}
-        >
-          인력확충 문제, 해결법은?
-        </text>
-        <circle className={style.st10} cx="228.2" cy="170" r="17.2" />
-        <text
-          transform="matrix(1 0 0 1 217.7371 167.8357)"
-          className={style.st7}
-        >
-          <tspan x="3" y="0" className={style.style12}>
-            {" "}
-            50만군
-          </tspan>
-          <tspan x="0" y="6.7" className={style.style12}>
-            유지불가
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1 0 0 1 395.4852 169.0567)"
-          className={style.style6}
-        >
-          감축을 통한
-        </text>
-        <text
-          transform="matrix(1 0 0 1 396.8929 173.1856)"
-          className={style.style6}
-        >
-          군 정예화
-        </text>
-        <ellipse
-          className={style.st8}
-          cx="537.3"
-          cy="122.5"
-          rx="14"
-          ry="14.2"
-        />
-        <circle className={style.st8} cx="510.9" cy="149.7" r="23.8" />
-        <text
-          transform="matrix(-1 0 0 1 523.5291 167.9248)"
-          className={style.title3}
-        >
-          {" "}
-        </text>
-        <ellipse
-          className={style.st9}
-          cx="482.7"
-          cy="124.8"
-          rx="13.7"
-          ry="13.9"
-        />
-        <text
-          transform="matrix(0.9897 0 0 1 474.7341 123.618)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style8}>
-            정예화된{" "}
-          </tspan>
-          <tspan x="4" y="5.8" className={style.style8}>
-            {" "}
-            보병
-          </tspan>
-        </text>
-        <ellipse
-          className={style.st9}
-          cx="484"
-          cy="175.8"
-          rx="13.5"
-          ry="13.6"
-        />
-        <text
-          transform="matrix(1 0 0 1 487.6693 92.6934)"
-          className={style.title2}
-        >
-          모병제, 과연 현실적인가?
-        </text>
-        <circle className={style.st8} cx="539.2" cy="174.6" r="13.9" />
-        <circle className={style.st10} cx="473.4" cy="150.6" r="13.7" />
-        <circle className={style.st19} cx="511.3" cy="149.5" r="52" />
-        <path
-          className={style.st8}
-          d="M548.8,134.3c-7.8,0-14.1,6.3-14.1,14c0,7.7,6.3,14,14.1,14s13.9-6.3,13.9-14  C562.7,140.6,556.5,134.3,548.8,134.3z"
-        />
-        <circle className={style.st15} cx="719.4" cy="161.9" r="12" />
-        <text
-          transform="matrix(1 0 0 1 708.9817 160.9412)"
-          className={style.style5}
-        >
-          <tspan x="0" y="0">
-            군 사회인식
-          </tspan>
-          <tspan x="4" y="6">
-            개선필요
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1 0 0 1 596.8926 108.8831)"
-          className={style.title4}
-        >
-          일자리 제공 가능한가?
-        </text>
-        <ellipse
-          className={style.st8}
-          cx="642.5"
-          cy="143.8"
-          rx="16.9"
-          ry="16.7"
-        />
-        <text transform="matrix(1.0092 0 0 1 630.8313 141.5291)">
-          <tspan x="2" y="0" className={style.style7}>
-            {" "}
-            경제호황{" "}
-          </tspan>
-          <tspan x="0" y="6.2" className={style.style7}>
-            모병어려움
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="641" cy="171.9" r="11.4" />
-        <text transform="matrix(1 0 0 1 631.2188 171.7117)">
-          <tspan x="0" y="0" className={style.style5}>
-            일자리총량
-          </tspan>
-          <tspan x="5" y="5.3" className={style.style5}>
-            {" "}
-            일정
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="611.8" cy="170.7" r="17.9" />
-        <text transform="matrix(1 0 0 1 598.1343 171.0948)">
-          <tspan x="0" y="0" className={style.style0}>
-            21만 일자리
-          </tspan>
-          <tspan x="7.7" y="5.5" className={style.style0}>
-            제공
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="608.8" cy="135.1" r="17.9" />
-        <text
-          transform="matrix(1 0 0 1 593.9023 135.0977)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style7}>
-            징병 경력단절
-          </tspan>
-          <tspan x="10" y="6.2" className={style.style7}>
-            {" "}
-            문제
-          </tspan>
-        </text>
-        <circle className={style.st10} cx="686.2" cy="134" r="15.3" />
-        <text
-          transform="matrix(1 0 0 1 674.3689 135.49)"
-          className={style.style7}
-        >
-          악폐습 감소
-        </text>
-        <circle className={style.st10} cx="689.8" cy="167.4" r="18.2" />
-        <text
-          transform="matrix(1 0 0 1 673.6941 168.0135)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style2}>
-            자기계발혜택
-          </tspan>
-          <tspan x="9.8" y="6.6" className={style.style2}>
-            {" "}
-            제공
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="621.5" cy="152.1" r="39.8" />
-        <circle className={style.st15} cx="715.1" cy="136.8" r="13.6" />
-        <text transform="matrix(1 0 0 1 704.2349 134.7234)">
-          <tspan x="4" y="0" className={style.style8}>
-            {" "}
-            제한된
-          </tspan>
-          <tspan x="0" y="5.7" className={style.style8}>
-            사회적지위
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="697.9" cy="151.3" r="36.6" />
-        <text
-          transform="matrix(1 0 0 1 675.5991 110.0413)"
-          className={style.title4}
-        >
-          현 병사의 위치는?
-        </text>
-        <path
-          className={style.st3}
-          d="M860.7,30.9c64.3,0,116.5,52.2,116.5,116.5c0,40.9-21.4,78.7-56.4,99.8l-5.5-9.1  c50.1-30.2,66.3-95.2,36.1-145.3c-19.2-31.8-53.6-51.3-90.7-51.3V30.9z"
-        />
-        <path
-          className={style.st8}
-          d="M747.5,174.5c-11.2-46.9,7.6-95.8,47.3-123.1l6,8.7c-36.1,24.8-53.2,69.3-43,111.9L747.5,174.5z"
-        />
-        <path
-          className={style.st0}
-          d="M920.8,247.2c-55.1,33.2-126.7,15.4-159.9-39.8c-6.2-10.2-10.7-21.3-13.5-33l10.3-2.5  c13.6,56.9,70.7,92,127.6,78.4c10.6-2.5,20.7-6.7,30-12.3L920.8,247.2z"
-        />
-        <path
-          className={style.st2}
-          d="M794.8,51.4c19.4-13.3,42.4-20.5,65.9-20.5v10.6c-21.4,0-42.3,6.5-60,18.6L794.8,51.4z"
-        />
-        <text
-          transform="matrix(1 0 0 1 819.7805 11.8474)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.title0}>
-            모병제, 질적 향상 및{" "}
-          </tspan>
-          <tspan x="6" y="10.8" className={style.title0}>
-            {" "}
-            간부확보 문제는?
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="831.6" cy="131.5" r="20.1" />
-        <text
-          transform="matrix(1 0 0 1 817.0626 131.4895)"
-          className={style.style2}
-        >
-          <tspan x="0" y="0">
-            병사 장기복무
-          </tspan>
-          <tspan x="7" y="6">
-            어려움
-          </tspan>
-        </text>
-        <circle className={style.st8} cx="826.3" cy="171.1" r="19.6" />
-        <text
-          transform="matrix(1 0 0 1 811.1699 173.3914)"
-          className={style.style7}
-        >
-          취업시장 제한
-        </text>
-        <circle className={style.st10} cx="786.4" cy="171.7" r="20.4" />
-        <text transform="matrix(1 0 0 1 768.8435 170.5296)">
-          <tspan x="0" y="0" className={style.style4}>
-            직무혼합단계
-          </tspan>
-          <tspan x="5" y="7.2" className={style.style4}>
-            {" "}
-            모병전환
-          </tspan>
-        </text>
-        <circle className={style.st10} cx="787.9" cy="127.8" r="23.6" />
-        <text
-          transform="matrix(1 0 0 1 767.6169 126.4134)"
-          className={style.st7}
-        >
-          <tspan x="8" y="0" className={style.style3}>
-            {" "}
-            특수병과
-          </tspan>
-          <tspan x="0" y="8.3" className={style.style3}>
-            직업군인 전환
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="886.6" cy="167.1" r="23.2" />
-        <text
-          transform="matrix(1 0 0 1 866.781 163.9659)"
-          className={style.st7}
-        >
-          <tspan x="5" y="0" className={style.style3}>
-            {" "}
-            간부중심
-          </tspan>
-          <tspan x="0" y="8.4" className={style.style3}>
-            {" "}
-            군개편 가능
-          </tspan>
-        </text>
-        <ellipse
-          className={style.st15}
-          cx="932.6"
-          cy="125.2"
-          rx="22.7"
-          ry="21.8"
-        />
-        <text
-          transform="matrix(1.0417 0 0 1 919.7648 121.9073)"
-          className={style.st7}
-        >
-          <tspan x="4.5" y="0" className={style.style9}>
-            {" "}
-            예비역{" "}
-          </tspan>
-          <tspan x="0" y="8" className={style.style9}>
-            소멸문제
-          </tspan>
-        </text>
-        <circle className={style.st10} cx="889.7" cy="123.7" r="20.6" />
-        <text
-          transform="matrix(1 0 0 1 872.322 122.7803)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style4}>
-            직업예비군제
-          </tspan>
-          <tspan x="9" y="7.2" className={style.style4}>
-            {" "}
-            전환
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1 0 0 1 779.0559 93.5613)"
-          className={style.title4}
-        >
-          모병제, 질적 향상 가능성은?
-        </text>
-        <text
-          transform="matrix(1 0 0 1 877.3811 90.6756)"
-          className={style.title4}
-        >
-          모병제 전환 시 간부운용계획?
-        </text>
-        <circle className={style.st19} cx="805.8" cy="148.1" r="51.2" />
-        <circle className={style.st15} cx="933.5" cy="170.4" r="24.1" />
-        <text
-          transform="matrix(1 0 0 1 919.6046 166.2803)"
-          className={style.st7}
-        >
-          <tspan x="4.5" y="0" className={style.style3}>
-            {" "}
-            충분한{" "}
-          </tspan>
-          <tspan x="0" y="8.8" className={style.style3}>
-            부사관 수
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="911.8" cy="149.3" r="54.8" />
-        <path
-          className={style.st8}
-          d="M1074.6,55.1c51.9,0,93.9,42,93.9,93.9c0,12.2-2.4,24.2-7,35.5l-7.9-3.2c17.8-43.6-3.1-93.5-46.7-111.3  c-10.2-4.2-21.2-6.3-32.3-6.3V55.1z"
-        />
-        <path
-          className={style.st15}
-          d="M1004.7,86.2c0.1-0.1,0.2-0.3,0.4-0.4c17.8-19.6,42-30.8,68.5-30.8v8.5c-24,0-46,10.1-62.1,27.9  c-0.1,0.2-0.3,0.3-0.4,0.5L1004.7,86.2z"
-        />
-        <path
-          className={style.st2}
-          d="M1012.4,219.2c-12.8-11.3-21.7-25.4-26.8-40.5c-10.3-30.8-4.3-66,18.8-92.1c0.1-0.1,0.3-0.3,0.4-0.4l6.4,5.7  c-21.1,23.5-26.7,55.5-17.6,83.5c4.5,13.8,12.6,26.6,24.1,37c0.1,0.1,0.3,0.2,0.4,0.4L1012.4,219.2z"
-        />
-        <path
-          className={style.st10}
-          d="M1161.5,185.5c-19.6,48-74.4,70-122.4,50.4c-9.8-4-18.8-9.6-26.7-16.6l5.7-6.4c35.3,31.3,89.2,28,120.5-7.3  c6.4-7.2,11.5-14.4,15.1-23.3L1161.5,185.5z"
-        />
-        <text
-          transform="matrix(1 0 0 1 1033.3489 46.552)"
-          className={style.title0}
-        >
-          여성 징집과 봉급체계
-        </text>
-        <circle className={style.st8} cx="1037.2" cy="170.6" r="21.7" />
-        <text
-          transform="matrix(1 0 0 1 1019.4436 170.2088)"
-          className={style.style9}
-        >
-          남성 2년늦는
-        </text>
-        <text
-          transform="matrix(1 0 0 1 1024.8794 178.3582)"
-          className={style.style9}
-        >
-          {" "}
-          취업시기
-        </text>
-        <circle className={style.st10} cx="1101.2" cy="165.7" r="18.9" />
-        <text
-          transform="matrix(1 0 0 1 1086.3982 164.3179)"
-          className={style.style7}
-        >
-          여성사병징집
-        </text>
-        <text
-          transform="matrix(1 0 0 1 1094.0574 170.2886)"
-          className={style.style7}
-        >
-          불필요
-        </text>
-        <circle className={style.st8} cx="1053.1" cy="135.1" r="17.1" />
-        <text transform="matrix(1 0 0 1 1040.2117 130.6873)">
-          <tspan x="8" y="0" className={style.style10}>
-            {" "}
-            여성{" "}
-          </tspan>
-          <tspan x="-3" y="5.3" className={style.style10}>
-            사병단기복무시
-          </tspan>
-          <tspan x="4" y="10.6" className={style.style10}>
-            {" "}
-            혜택제공
-          </tspan>
-        </text>
-        <circle className={style.st15} cx="1138.2" cy="160.8" r="18.5" />
-        <text transform="matrix(1 0 0 1 1124.1902 159.5884)">
-          <tspan x="0" y="0" className={style.style11}>
-            여군 모병 후{" "}
-          </tspan>
-          <tspan x="5" y="6.4" className={style.style11}>
-            {" "}
-            후방투입
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1 0 0 1 1033.3777 99.7166)"
-          className={style.title5}
-        >
-          현 상황과 여성 모병방안은?
-        </text>
-        <circle className={style.st10} cx="1115.5" cy="130.3" r="19.2" />
-        <text
-          transform="matrix(1 0 0 1 1104.678 128.1453)"
-          className={style.style7}
-        >
-          <tspan x="6" y="0">
-            충분한
-          </tspan>
-          <tspan x="0" y="6">
-            여군간부 수
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="1016" cy="134.9" r="19.9" />
-        <text transform="matrix(1 0 0 1 998.5701 133.0716)">
-          <tspan x="6" y="0" className={style.style4}>
-            {" "}
-            복잡한{" "}
-          </tspan>
-          <tspan x="0" y="7.1" className={style.style4}>
-            봉급체계문제{" "}
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="1032.6" cy="150.1" r="43" />
-        <circle className={style.st19} cx="1117.8" cy="151.6" r="41.2" />
-        <text transform="matrix(1 0 0 1 54.5516 124.8972)">
-          <tspan x="0" y="0" className={style.style11}>
-            안보위협
-          </tspan>
-          <tspan x="0" y="6.5" className={style.style11}>
-            과소평가
-          </tspan>
-        </text>
-        <text transform="matrix(0.9857 0 0 1 526.1335 122.3416)">
-          <tspan x="0" y="0" className={style.style5}>
-            병력수요공급
-          </tspan>
-          <tspan x="0" y="5" className={style.style5}>
-            {" "}
-            예측불가
-          </tspan>
-        </text>
-        <text transform="matrix(1 0 0 1 495.1963 147.5769)">
-          <tspan x="2" y="0" className={style.style3}>
-            {" "}
-            경제호황{" "}
-          </tspan>
-          <tspan x="0" y="8.4" className={style.style3}>
-            모병어려움
-          </tspan>
-        </text>
-        <text transform="matrix(1 0 0 1 531.7732 173.8318)">
-          <tspan x="0" y="0" className={style.style5}>
-            미군 모병
-          </tspan>
-          <tspan x="0" y="4.9" className={style.style5}>
-            인원 미달
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1.0067 0 0 1 538.1724 148.0779)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style1}>
-            일자리총량
-          </tspan>
-          <tspan x="5" y="5.3" className={style.style1}>
-            {" "}
-            일정
-          </tspan>
-        </text>
-        <text transform="matrix(0.9931 0 0 1 472.0662 176.0222)">
-          <tspan x="0" y="0" className={style.style1}>
-            21만 일자리
-          </tspan>
-          <tspan x="7.7" y="5.5" className={style.style1}>
-            제공
-          </tspan>
-        </text>
-        <text transform="matrix(1 0 0 1 462.1345 150.0545)">
-          <tspan x="-0.5" y="0" className={style.style13}>
-            사회주류로의
-          </tspan>
-          <tspan x="3" y="5" className={style.style13}>
-            {" "}
-            발판제공
-          </tspan>
-        </text>
-        <text
-          transform="matrix(1 0 0 1 101.189 154.9178)"
-          className={style.st7}
-        >
-          <tspan x="0" y="0" className={style.style11}>
-            군 부적응자
-          </tspan>
-          <tspan x="0" y="6.5" className={style.style11}>
-            {" "}
-            매년증가
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="410" cy="170.4" r="13.7" />
-        <text transform="matrix(1 0 0 1 399.1274 170.2342)">
-          <tspan x="0" y="0" className={style.style5}>
-            직업군인위주
-          </tspan>
-          <tspan x="3" y="5.5" className={style.style5}>
-            {" "}
-            편제개편
-          </tspan>
-        </text>
-        <circle className={style.st9} cx="401.1" cy="142.9" r="15.3" />
-        <text transform="matrix(1 0 0 1 391.0349 141.6971)">
-          <tspan x="0" y="0" className={style.style6}>
-            감축을 통한
-          </tspan>
-          <tspan x="0.7" y="4.6" className={style.style6}>
-            {" "}
-            군 정예화
-          </tspan>
-        </text>
-        <circle className={style.st15} cx="437" cy="148.3" r="21.1" />
-        <text transform="matrix(1 0 0 1 426.9185 144.3396)">
-          <tspan x="0" y="0" className={style.style8}>
-            질적향상과
-          </tspan>
-          <tspan x="1.6" y="5.7" className={style.style8}>
-            현대화 후
-          </tspan>
-          <tspan x="-0.7" y="11.5" className={style.style8}>
-            모병제 도입
-          </tspan>
-        </text>
-        <circle className={style.st19} cx="421.3" cy="150.4" r="37.1" />
-        <text
-          transform="matrix(1 0 0 1 398.6868 109.8758)"
-          className={style.title2}
-        >
-          인력확충 문제, 해결법은?
-        </text>
-        <g style={{ marginLeft: "-100px" }}>
-          <text
-            transform="matrix(1 0 0 1 1345.7354 29.8116)"
-            className={style.title0}
-          >
-            국방 예산 이슈 및 토론 마무리{" "}
-          </text>
-          <path
-            className={style.st3}
-            d="M1402.1,39.8c56.1,0,101.6,45.5,101.6,101.6c0,23.1-7.9,45.5-22.3,63.5l-7.2-5.8  c31.9-39.8,25.4-97.9-14.4-129.8c-16.4-13.1-36.7-20.3-57.7-20.3V39.8z"
-          />
-          <path
-            className={style.st8}
-            d="M1342.4,223.5c-41.4-30-53.9-86.1-29.4-131l8.1,4.4c-22.3,40.8-10.9,91.7,26.7,119.1L1342.4,223.5z"
-          />
-          <path
-            className={style.st0}
-            d="M1481.4,204.8c-33.9,42.3-95.1,50.6-139,18.7l5.4-7.5c39.9,29,95.5,21.5,126.3-17L1481.4,204.8z"
-          />
-          <path
-            className={style.st9}
-            d="M1313.1,92.6c17.8-32.5,52-52.8,89.1-52.8V49c-33.7,0-64.8,18.4-81,48L1313.1,92.6z"
-          />
-          <circle className={style.st15} cx="1375.3" cy="123.9" r="19.2" />
-          <text
-            transform="matrix(1 0 0 1 1361.5872 125.824)"
-            className={style.style0}
-          >
-            국방예산초과
-          </text>
-          <circle className={style.st10} cx="1334.9" cy="138.4" r="23.8" />
-          <text
-            transform="matrix(1 0 0 1 1318.2891 136.595)"
-            className={style.style2}
-          >
-            부대 통폐합을
-          </text>
-          <text
-            transform="matrix(1 0 0 1 1318.2891 142.8665)"
-            className={style.style2}
-          >
-            통한 예산조정
-          </text>
-          <circle className={style.st8} cx="1370.2" cy="160.3" r="17.4" />
-          <text
-            transform="matrix(1 0 0 1 1360.6743 158.5574)"
-            className={style.style7}
-          >
-            국방예산
-          </text>
-          <text
-            transform="matrix(1 0 0 1 1360.6743 164.1931)"
-            className={style.style7}
-          >
-            조정불가
-          </text>
-          <ellipse
-            className={style.st8}
-            cx="1469.9"
-            cy="159.2"
-            rx="16.5"
-            ry="16.4"
-          />
-          <text
-            transform="matrix(1.0025 0 0 1 1460.3037 157.1502)"
-            className={style.st7}
-          >
-            <tspan x="0" y="0" className={style.style0}>
-              병사처우
-            </tspan>
-            <tspan x="0" y="6" className={style.style0}>
-              개선필요
-            </tspan>
-          </text>
-          <circle className={style.st9} cx="1432.6" cy="116.8" r="19.4" />
-          <text
-            transform="matrix(1 0 0 1 1427.1658 114.7464)"
-            className={style.style7}
-          >
-            징집
-          </text>
-          <text
-            transform="matrix(1 0 0 1 1417.3999 120.4075)"
-            className={style.style7}
-          >
-            편제유지 불가
-          </text>
-          <circle className={style.st10} cx="1431.4" cy="158.2" r="22.1" />
-          <text
-            transform="matrix(1 0 0 1 1413.791 159.4048)"
-            className={style.style4}
-          >
-            직업군인 전환
-          </text>
-          <circle className={style.st15} cx="1470.2" cy="124.1" r="18.8" />
-          <text
-            transform="matrix(1 0 0 1 1455.3311 125.7622)"
-            className={style.style0}
-          >
-            군 악폐습철폐
-          </text>
-          <text
-            transform="matrix(1 0 0 1 1435.7217 87.4795)"
-            className={style.title6}
-          >
-            마무리발언
-          </text>
-          <text
-            transform="matrix(1 0 0 1 1328.7319 90.3125)"
-            className={style.title6}
-          >
-            모병제를 위한 군예산조정
-          </text>
-          <circle className={style.st19} cx="1447.3" cy="139.4" r="47.1" />
-          <circle className={style.st19} cx="1355.1" cy="138.4" r="44.6" />
-        </g>
-      </svg>
-    </div>
-  );
-};
+import * as React from "react";
+import "./Bubble.scss";
+//@ts-ignore
+const Bubble = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    id="\uB808\uC774\uC5B4_1"
+    x="0px"
+    y="0px"
+    viewBox="0 0 1503.7 263.9"
+    style={{
+      enableBackground: "new 0 0 1503.7 263.9",
+    }}
+    xmlSpace="preserve"
+    {...props}
+  >
+    {/* <style type="text/css">
+      {
+        "\n\t.st0{fill:#B60C3D;}\n\t.st1{fill:#BF6020;}\n\t.st2{fill:#040000;}\n\t.st3{font-family:'NanumGothicExtraBold';}\n\t.st4{font-size:8.9691px;}\n\t.st5{fill:#1DA36B;}\n\t.st6{fill:#1E96D1;}\n\t.st7{fill:none;stroke:#7F8080;stroke-miterlimit:10;}\n\t.st8{font-size:6.5px;}\n\t.st9{font-size:4.4521px;}\n\t.st10{font-size:6.9529px;}\n\t.st11{font-size:5.981px;}\n\t.st12{font-size:6.1135px;}\n\t.st13{font-size:7.2097px;}\n\t.st14{fill:#AC1D3B;}\n\t.st15{fill:#0CAA6E;}\n\t.st16{fill:#808080;}\n\t.st17{fill:#0EA0E2;}\n\t.st18{fill:#C7621E;}\n\t.st19{fill:#FFFFFF;}\n\t.st20{font-size:3.5575px;}\n\t.st21{enable-background:new    ;}\n\t.st22{font-size:5px;}\n\t.st23{font-size:4.6148px;}\n\t.st24{font-size:4.5279px;}\n\t.st25{font-size:5.6104px;}\n\t.st26{font-size:4.8136px;}\n\t.st27{font-size:4px;}\n\t.st28{font-size:5.6636px;}\n\t.st29{font-size:4.5247px;}\n\t.st30{font-size:4.9119px;}\n\t.st31{font-size:4.3207px;}\n\t.st32{font-size:5.4513px;}\n\t.st33{font-size:4.1527px;}\n\t.st34{font-size:5.0652px;}\n\t.st35{font-size:4.5061px;}\n\t.st36{font-size:5.8229px;}\n\t.st37{font-size:5.521px;}\n\t.st38{font-size:6.3623px;}\n\t.st39{font-size:5.3px;}\n\t.st40{font-size:5.078px;}\n\t.st41{font-size:4.7027px;}\n\t.st42{font-size:5.9914px;}\n\t.st43{font-size:4.5408px;}\n\t.st44{font-size:5.5402px;}\n\t.st45{font-size:6.0313px;}\n\t.st46{font-size:5.5553px;}\n\t.st47{font-size:5.3604px;}\n\t.st48{font-size:7px;}\n\t.st49{font-size:6.6551px;}\n\t.st50{font-size:6.0425px;}\n\t.st51{font-size:7.1812px;}\n\t.st52{font-size:7.4487px;}\n\t.st53{font-size:4.1097px;}\n\t.st54{font-size:4.763px;}\n\t.st55{font-size:4.1821px;}\n\t.st56{font-size:4.0706px;}\n\t.st57{font-size:5.8975px;}\n\t.st58{font-size:5.8011px;}\n\t.st59{font-size:5.3147px;}\n\t.st60{font-size:4.0653px;}\n\t.st61{font-size:3.2126px;}\n\t.st62{font-size:5.3774px;}\n\t.st63{font-size:4.8738px;}\n\t.st64{font-size:3.0459px;}\n\t.st65{font-size:3.8246px;}\n\t.st66{font-size:3.6758px;}\n\t.st67{font-size:4.1877px;}\n\t.st68{font-size:3.81px;}\n\t.st69{font-size:3.8111px;}\n\t.st70{font-size:5.4087px;}\n\t.st71{font-size:6.2542px;}\n\t.st72{font-size:4.4403px;}\n\t.st73{font-size:4.8109px;}\n\t.st74{font-size:4.3567px;}\n\t.st75{font-size:3.6659px;}\n\t.st76{font-size:3.667px;}\n\t.st77{font-size:5.2041px;}\n\t.st78{font-size:5.1372px;}\n\t.st79{font-size:3.5662px;}\n\t.st80{font-size:4.8151px;}\n\t.st81{font-size:4.7435px;}\n\t.st82{font-size:3.4007px;}\n\t.st83{font-size:6.8949px;}\n\t.st84{font-size:4.1197px;}\n\t.st85{font-size:2.6154px;}\n\t.st86{font-size:4.5454px;}\n\t.st87{font-size:5.2729px;}\n\t.st88{font-size:3.8464px;}\n\t.st89{font-size:4.9166px;}\n\t.st90{font-size:6.4051px;}\n"
+      }
+    </style> */}
+    <path
+      className="st0"
+      d="M280.4,163.5l1.8-1.8c1.9-1.9,1.9-5.1,0-7l-4.1-4.1c-1.9-1.9-5.1-1.9-7,0l-1.8,1.8l-1.8-1.8  c-1.9-1.9-5.1-1.9-7,0l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7l4.1,4.1c1.9,1.9,5.1,1.9,7,0l1.8-1.8  l1.8,1.8c1.9,1.9,5.1,1.9,7,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7L280.4,163.5z"
+    />
+    <path
+      className="st0"
+      d="M362.5,169.2l1.8-1.8c2-2,2-5.3,0-7.3l-4.3-4.3c-2-2-5.3-2-7.3,0l-1.8,1.8l-1.8-1.8c-2-2-5.3-2-7.3,0l-4.3,4.3  c-2,2-2,5.3,0,7.3l1.8,1.8l-1.8,1.8c-2,2-2,5.3,0,7.3l4.3,4.3c2,2,5.3,2,7.3,0l1.8-1.8l1.8,1.8c2,2,5.3,2,7.3,0l4.3-4.3  c2-2,2-5.3,0-7.3L362.5,169.2z"
+    />
+    <path
+      className="st0"
+      d="M678.4,137.8l2.1-2.1c2.3-2.3,2.3-6,0-8.3l-4.9-4.9c-2.3-2.3-6-2.3-8.3,0l-2.1,2.1l-2.1-2.1  c-2.3-2.3-6-2.3-8.3,0l-4.9,4.9c-2.3,2.3-2.3,6,0,8.3l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6,0,8.3l4.9,4.9c2.3,2.3,6,2.3,8.3,0l2.1-2.1  l2.1,2.1c2.3,2.3,6,2.3,8.3,0l4.9-4.9c2.3-2.3,2.3-6,0-8.3L678.4,137.8z"
+    />
+    <path
+      className="st0"
+      d="M675.4,170.4l1.9-1.9c2.1-2.1,2.1-5.5,0-7.6l-4.5-4.5c-2.1-2.1-5.5-2.1-7.6,0l-1.9,1.9l-1.9-1.9  c-2.1-2.1-5.5-2.1-7.6,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.6l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.6l4.5,4.5c2.1,2.1,5.5,2.1,7.6,0  l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.6,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.6L675.4,170.4z"
+    />
+    <path
+      className="st1"
+      d="M754.9,138.5l1.8-1.8c1.9-1.9,1.9-5.1,0-7.1l-4.2-4.2c-1.9-1.9-5.1-1.9-7.1,0l-1.8,1.8l-1.8-1.8  c-1.9-1.9-5.1-1.9-7.1,0l-4.2,4.2c-1.9,1.9-1.9,5.1,0,7.1l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7.1l4.2,4.2c1.9,1.9,5.1,1.9,7.1,0  l1.8-1.8l1.8,1.8c1.9,1.9,5.1,1.9,7.1,0l4.2-4.2c1.9-1.9,1.9-5.1,0-7.1L754.9,138.5z"
+    />
+    <path
+      className="st1"
+      d="M756.1,164.5l1.5-1.5c1.7-1.7,1.7-4.3,0-6l-3.5-3.5c-1.7-1.7-4.3-1.7-6,0l-1.5,1.5l-1.5-1.5  c-1.7-1.7-4.3-1.7-6,0l-3.5,3.5c-1.7,1.7-1.7,4.3,0,6l1.5,1.5l-1.5,1.5c-1.7,1.7-1.7,4.3,0,6l3.5,3.5c1.7,1.7,4.3,1.7,6,0l1.5-1.5  l1.5,1.5c1.7,1.7,4.3,1.7,6,0l3.5-3.5c1.7-1.7,1.7-4.3,0-6L756.1,164.5z"
+    />
+    <path
+      className="st0"
+      d="M881,128.2l1.8-1.8c2-2,2-5.4,0-7.4l-4.4-4.4c-2-2-5.4-2-7.4,0l-1.8,1.8l-1.8-1.8c-2-2-5.4-2-7.4,0l-4.4,4.4  c-2,2-2,5.4,0,7.4l1.8,1.8l-1.8,1.8c-2,2-2,5.4,0,7.4l4.4,4.4c2,2,5.4,2,7.4,0l1.8-1.8l1.8,1.8c2,2,5.4,2,7.4,0l4.4-4.4  c2-2,2-5.4,0-7.4L881,128.2z"
+    />
+    <path
+      className="st0"
+      d="M884.6,160.5l2.1-2.1c2.3-2.3,2.3-6.1,0-8.5l-5-5c-2.3-2.3-6.1-2.3-8.5,0l-2.1,2.1l-2.1-2.1  c-2.3-2.3-6.1-2.3-8.5,0l-5,5c-2.3,2.3-2.3,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.5l5,5c2.3,2.3,6.1,2.3,8.5,0l2.1-2.1  l2.1,2.1c2.3,2.3,6.1,2.3,8.5,0l5-5c2.3-2.3,2.3-6.1,0-8.5L884.6,160.5z"
+    />
+    <path
+      className="st1"
+      d="M972.6,121.7l2.1-2.1c2.4-2.4,2.4-6.2,0-8.5l-5-5c-2.4-2.4-6.2-2.4-8.5,0l-2.1,2.1l-2.1-2.1  c-2.4-2.4-6.2-2.4-8.5,0l-5,5c-2.4,2.4-2.4,6.2,0,8.5l2.1,2.1l-2.1,2.1c-2.4,2.4-2.4,6.2,0,8.5l5,5c2.4,2.4,6.2,2.4,8.5,0l2.1-2.1  l2.1,2.1c2.4,2.4,6.2,2.4,8.5,0l5-5c2.4-2.4,2.4-6.2,0-8.5L972.6,121.7z"
+    />
+    <path
+      className="st1"
+      d="M951.5,179.7l2.1-2.1c2.3-2.3,2.3-6.1,0-8.5l-5-5c-2.3-2.3-6.1-2.3-8.5,0l-2.1,2.1l-2.1-2.1  c-2.3-2.3-6.1-2.3-8.5,0l-5,5c-2.3,2.3-2.3,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.5l5,5c2.3,2.3,6.1,2.3,8.5,0l2.1-2.1  l2.1,2.1c2.3,2.3,6.1,2.3,8.5,0l5-5c2.3-2.3,2.3-6.1,0-8.5L951.5,179.7z"
+    />
+    <path
+      className="st0"
+      d="M1090,165.4l2-2c2.3-2.3,2.3-5.9,0-8.2l-4.8-4.8c-2.3-2.3-5.9-2.3-8.2,0l-2,2l-2-2c-2.3-2.3-5.9-2.3-8.2,0  l-4.8,4.8c-2.3,2.3-2.3,5.9,0,8.2l2,2l-2,2c-2.3,2.3-2.3,5.9,0,8.2l4.8,4.8c2.3,2.3,5.9,2.3,8.2,0l2-2l2,2c2.3,2.3,5.9,2.3,8.2,0  l4.8-4.8c2.3-2.3,2.3-5.9,0-8.2L1090,165.4z"
+    />
+    <path
+      className="st0"
+      d="M1094.3,135l1.8-1.8c2-2,2-5.3,0-7.4l-4.3-4.3c-2-2-5.3-2-7.4,0l-1.8,1.8l-1.8-1.8c-2-2-5.3-2-7.4,0l-4.3,4.3  c-2,2-2,5.3,0,7.4l1.8,1.8l-1.8,1.8c-2,2-2,5.3,0,7.4l4.3,4.3c2,2,5.3,2,7.4,0l1.8-1.8l1.8,1.8c2,2,5.3,2,7.4,0l4.3-4.3  c2-2,2-5.3,0-7.4L1094.3,135z"
+    />
+    <path
+      className="st1"
+      d="M1174.4,160.8l2.1-2.1c2.4-2.4,2.4-6.2,0-8.5l-5-5c-2.4-2.4-6.2-2.4-8.5,0l-2.1,2.1l-2.1-2.1  c-2.4-2.4-6.2-2.4-8.5,0l-5,5c-2.4,2.4-2.4,6.2,0,8.5l2.1,2.1l-2.1,2.1c-2.4,2.4-2.4,6.2,0,8.5l5,5c2.4,2.4,6.2,2.4,8.5,0l2.1-2.1  l2.1,2.1c2.4,2.4,6.2,2.4,8.5,0l5-5c2.4-2.4,2.4-6.2,0-8.5L1174.4,160.8z"
+    />
+    <path
+      className="st0"
+      d="M1472.5,160l2.4-2.4c2.6-2.6,2.6-6.9,0-9.5l-5.6-5.6c-2.6-2.6-6.9-2.6-9.5,0l-2.4,2.4l-2.4-2.4  c-2.6-2.6-6.9-2.6-9.5,0l-5.6,5.6c-2.6,2.6-2.6,6.9,0,9.5l2.4,2.4l-2.4,2.4c-2.6,2.6-2.6,6.9,0,9.5l5.6,5.6c2.6,2.6,6.9,2.6,9.5,0  l2.4-2.4l2.4,2.4c2.6,2.6,6.9,2.6,9.5,0l5.6-5.6c2.6-2.6,2.6-6.9,0-9.5L1472.5,160z"
+    />
+    <path
+      className="st0"
+      d="M1373,152.2l1.8-1.8c2-2,2-5.3,0-7.4l-4.3-4.3c-2-2-5.3-2-7.4,0l-1.8,1.8l-1.8-1.8c-2-2-5.3-2-7.4,0l-4.3,4.3  c-2,2-2,5.3,0,7.4l1.8,1.8l-1.8,1.8c-2,2-2,5.3,0,7.4l4.3,4.3c2,2,5.3,2,7.4,0l1.8-1.8l1.8,1.8c2,2,5.3,2,7.4,0l4.3-4.3  c2-2,2-5.3,0-7.4L1373,152.2z"
+    />
+    <path
+      className="st1"
+      d="M1361.1,120.5l2-2c2.2-2.2,2.2-5.9,0-8.1l-4.8-4.8c-2.2-2.2-5.9-2.2-8.1,0l-2,2l-2-2c-2.2-2.2-5.9-2.2-8.1,0  l-4.8,4.8c-2.2,2.2-2.2,5.9,0,8.1l2,2l-2,2c-2.2,2.2-2.2,5.9,0,8.1l4.8,4.8c2.2,2.2,5.9,2.2,8.1,0l2-2l2,2c2.2,2.2,5.9,2.2,8.1,0  l4.8-4.8c2.2-2.2,2.2-5.9,0-8.1L1361.1,120.5z"
+    />
+    <path
+      className="st1"
+      d="M1467.8,123l2.2-2.2c2.4-2.4,2.4-6.4,0-8.8l-5.2-5.2c-2.4-2.4-6.4-2.4-8.8,0l-2.2,2.2l-2.2-2.2  c-2.4-2.4-6.4-2.4-8.8,0l-5.2,5.2c-2.4,2.4-2.4,6.4,0,8.8l2.2,2.2l-2.2,2.2c-2.4,2.4-2.4,6.4,0,8.8l5.2,5.2c2.4,2.4,6.4,2.4,8.8,0  l2.2-2.2l2.2,2.2c2.4,2.4,6.4,2.4,8.8,0l5.2-5.2c2.4-2.4,2.4-6.4,0-8.8L1467.8,123z"
+    />
+    <path
+      className="st0"
+      d="M580.6,150.5l1.8-1.8c2-2,2-5.3,0-7.4l-4.3-4.3c-2-2-5.3-2-7.4,0l-1.8,1.8l-1.8-1.8c-2-2-5.3-2-7.4,0l-4.3,4.3  c-2,2-2,5.3,0,7.4l1.8,1.8l-1.8,1.8c-2,2-2,5.3,0,7.4l4.3,4.3c2,2,5.3,2,7.4,0l1.8-1.8l1.8,1.8c2,2,5.3,2,7.4,0l4.3-4.3  c2-2,2-5.3,0-7.4L580.6,150.5z"
+    />
+    <path
+      className="st0"
+      d="M559.8,185.3l1.6-1.6c1.7-1.7,1.7-4.6,0-6.3l-3.7-3.7c-1.7-1.7-4.6-1.7-6.3,0l-1.6,1.6l-1.6-1.6  c-1.7-1.7-4.6-1.7-6.3,0l-3.7,3.7c-1.7,1.7-1.7,4.6,0,6.3l1.6,1.6l-1.6,1.6c-1.7,1.7-1.7,4.6,0,6.3l3.7,3.7c1.7,1.7,4.6,1.7,6.3,0  l1.6-1.6l1.6,1.6c1.7,1.7,4.6,1.7,6.3,0l3.7-3.7c1.7-1.7,1.7-4.6,0-6.3L559.8,185.3z"
+    />
+    <path
+      className="st0"
+      d="M569.2,121.4l1.7-1.7c1.9-1.9,1.9-4.9,0-6.7l-4-4c-1.9-1.9-4.9-1.9-6.7,0l-1.7,1.7l-1.7-1.7  c-1.9-1.9-4.9-1.9-6.7,0l-4,4c-1.9,1.9-1.9,4.9,0,6.7l1.7,1.7l-1.7,1.7c-1.9,1.9-1.9,4.9,0,6.7l4,4c1.9,1.9,4.9,1.9,6.7,0l1.7-1.7  l1.7,1.7c1.9,1.9,4.9,1.9,6.7,0l4-4c1.9-1.9,1.9-4.9,0-6.7L569.2,121.4z"
+    />
+    <g>
+      <path
+        className="st0"
+        d="M551.4,147.4l-24.2,24.2c-3.2,3.2-8.4,3.2-11.6,0l-6.8-6.8c-3.2-3.2-3.2-8.4,0-11.6L533,129   c3.2-3.2,8.4-3.2,11.6,0l6.8,6.8C554.6,139,554.6,144.2,551.4,147.4z"
+      />
+      <path
+        className="st0"
+        d="M533,171.6l-24.2-24.2c-3.2-3.2-3.2-8.4,0-11.6l6.8-6.8c3.2-3.2,8.4-3.2,11.6,0l24.2,24.2   c3.2,3.2,3.2,8.4,0,11.6l-6.8,6.8C541.4,174.8,536.2,174.8,533,171.6z"
+      />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <g>
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+      <g />
+    </g>
+    <text transform="matrix(1 0 0 1 253.1591 37.9179)" className="st2 st3 st4">
+      {"\uC778\uAD6C\uC808\uBCBD, \uC9D5\uBCD1\uC81C\uC5D0 "}
+    </text>
+    <text transform="matrix(1 0 0 1 267.1591 48.718)" className="st2 st3 st4">
+      {" \uBBF8\uCE58\uB294 \uC601\uD5A5"}
+    </text>
+    <text transform="matrix(1 0 0 1 445.1711 17.2477)" className="st2 st3 st4">
+      {"\uBAA8\uBCD1\uC81C, \uBCD1\uB825 \uCDA9\uC6D0\uC5D0 "}
+    </text>
+    <text transform="matrix(1 0 0 1 455.871 28.0476)" className="st2 st3 st4">
+      {"      \uBB38\uC81C \uC5C6\uB098?"}
+    </text>
+    <text transform="matrix(1 0 0 1 649.2142 46.7298)" className="st2 st3 st4">
+      {"\uBAA8\uBCD1\uC81C, \uC77C\uC790\uB9AC \uBB38\uC81C"}
+    </text>
+    <text transform="matrix(1 0 0 1 671.7142 57.5298)" className="st2 st3 st4">
+      {"\uD574\uACB0\uCC45?"}
+    </text>
+    <text transform="matrix(1 0 0 1 1325.4963 22.7466)" className="st2 st3 st4">
+      {
+        "\uAD6D\uBC29 \uC608\uC0B0 \uC774\uC288 \uBC0F \uD1A0\uB860 \uB9C8\uBB34\uB9AC "
+      }
+    </text>
+    <circle className="st5" cx={230.6} cy={124.9} r={11.5} />
+    <circle className="st6" cx={320.3} cy={173.7} r={15.6} />
+    <circle className="st6" cx={308.6} cy={136.9} r={13.4} />
+    <circle className="st7" cx={248.4} cy={148.6} r={41.5} />
+    <circle className="st7" cx={333.1} cy={151} r={42.2} />
+    <text transform="matrix(1 0 0 1 234.3835 94.9431)" className="st2 st3 st8">
+      {"\uC778\uAD6C\uC808\uBCBD, "}
+    </text>
+    <text transform="matrix(1 0 0 1 224.3835 102.7431)" className="st2 st3 st8">
+      {"\uBAA8\uBCD1\uC81C\uAC00 \uB2F5\uC778\uAC00?"}
+    </text>
+    <text transform="matrix(1 0 0 1 312.5615 96.0945)" className="st2 st3 st8">
+      {"\uC778\uB825\uD655\uCDA9 \uBB38\uC81C, "}
+    </text>
+    <text transform="matrix(1 0 0 1 319.6613 103.8945)" className="st2 st3 st8">
+      {"\uD574\uACB0\uBC95\uC740?"}
+    </text>
+    <circle className="st5" cx={238.2} cy={170} r={17.2} />
+    <text
+      transform="matrix(-1 0 0 1 543.8575 169.8155)"
+      className="st2 st3 st9"
+    />
+    <ellipse className="st6" cx={499.6} cy={123.7} rx={14.7} ry={14.9} />
+    <ellipse className="st6" cx={504.3} cy={180.8} rx={14.4} ry={14.5} />
+    <text transform="matrix(1 0 0 1 519.5108 81.4288)" className="st2 st3 st10">
+      {"\uBAA8\uBCD1\uC81C, "}
+    </text>
+    <text transform="matrix(1 0 0 1 505.605 89.7726)" className="st2 st3 st10">
+      {"\uACFC\uC5F0 \uD604\uC2E4\uC801\uC778\uAC00?"}
+    </text>
+    <circle className="st5" cx={489.6} cy={151.3} r={14.7} />
+    <circle className="st7" cx={530.2} cy={150.1} r={55.6} />
+    <text transform="matrix(1 0 0 1 636.0396 100.3418)" className="st2 st3 st8">
+      {"\uC77C\uC790\uB9AC \uC81C\uACF5 "}
+    </text>
+    <text transform="matrix(1 0 0 1 639.1396 108.1418)" className="st2 st3 st8">
+      {"\uAC00\uB2A5\uD55C\uAC00?"}
+    </text>
+    <circle className="st6" cx={631.3} cy={167.8} r={14.2} />
+    <circle className="st6" cx={632.5} cy={137.4} r={16.2} />
+    <circle className="st5" cx={716.2} cy={131.1} r={13.2} />
+    <circle className="st5" cx={705.7} cy={156.3} r={14.1} />
+    <circle className="st7" cx={650.5} cy={152.1} r={39.8} />
+    <circle className="st7" cx={726.9} cy={151.3} r={36.6} />
+    <text transform="matrix(1 0 0 1 714.6182 103.1734)" className="st2 st3 st8">
+      {"\uD604 \uBCD1\uC0AC\uC758 "}
+    </text>
+    <text transform="matrix(1 0 0 1 717.7182 110.9734)" className="st2 st3 st8">
+      {"\uC704\uCE58\uB294?"}
+    </text>
+    <text transform="matrix(1 0 0 1 855.6407 17.8474)" className="st2 st3 st4">
+      {"\uBAA8\uBCD1\uC81C, \uC9C8\uC801 \uD5A5\uC0C1 \uBC0F "}
+    </text>
+    <text transform="matrix(1 0 0 1 858.7408 28.6474)" className="st2 st3 st4">
+      {"   \uAC04\uBD80\uD655\uBCF4 \uBB38\uC81C\uB294?"}
+    </text>
+    <circle className="st5" cx={821.2} cy={164.3} r={15.4} />
+    <circle className="st5" cx={821.2} cy={132} r={17.1} />
+    <circle className="st6" cx={911.6} cy={157.2} r={16.1} />
+    <circle className="st5" cx={923.3} cy={124.9} r={18.7} />
+    <text transform="matrix(1 0 0 1 824.2263 89.711)" className="st2 st3 st11">
+      {"\uBAA8\uBCD1\uC81C, \uC9C8\uC801 \uD5A5\uC0C1 "}
+    </text>
+    <text transform="matrix(1 0 0 1 834.4396 96.8878)" className="st2 st3 st11">
+      {"\uAC00\uB2A5\uC131\uC740?"}
+    </text>
+    <text transform="matrix(1 0 0 1 924.5515 86.9601)" className="st2 st3 st11">
+      {"\uBAA8\uBCD1\uC81C \uC804\uD658 \uC2DC "}
+    </text>
+    <text transform="matrix(1 0 0 1 925.3796 94.1378)" className="st2 st3 st11">
+      {"\uAC04\uBD80\uC6B4\uC6A9\uACC4\uD68D?"}
+    </text>
+    <circle className="st7" cx={846.4} cy={147.5} r={47.1} />
+    <circle className="st7" cx={943.9} cy={148.6} r={50.4} />
+    <text transform="matrix(1 0 0 1 1062.1656 43.0281)" className="st2 st3 st4">
+      {"\uC5EC\uC131 \uC9D5\uC9D1\uACFC \uBD09\uAE09\uCCB4\uACC4"}
+    </text>
+    <circle className="st5" cx={1127.9} cy={165.4} r={16} />
+    <text
+      transform="matrix(1 0 0 1 1067.4326 100.7179)"
+      className="st2 st3 st12"
+    >
+      {"\uD604 \uC0C1\uD669\uACFC \uC5EC\uC131 \uBAA8\uBCD1\uBC29\uC548\uC740?"}
+    </text>
+    <circle className="st5" cx={1128} cy={135} r={14.5} />
+    <circle className="st6" cx={1049.4} cy={135.4} r={18.7} />
+    <circle className="st7" cx={1065} cy={149.7} r={40.4} />
+    <circle className="st7" cx={1145.2} cy={151.1} r={38.8} />
+    <circle className="st5" cx={1312} cy={120.4} r={19.9} />
+    <circle className="st6" cx={1414.7} cy={120.5} r={21.5} />
+    <circle className="st5" cx={1398.7} cy={156.6} r={17.7} />
+    <text
+      transform="matrix(1 0 0 1 1415.2114 86.2403)"
+      className="st2 st3 st13"
+    >
+      {"\uB9C8\uBB34\uB9AC\uBC1C\uC5B8"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1306.4434 82.2618)"
+      className="st2 st3 st13"
+    >
+      {"\uBAA8\uBCD1\uC81C\uB97C \uC704\uD55C "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1311.8789 90.9132)"
+      className="st2 st3 st13"
+    >
+      {"\uAD70\uC608\uC0B0\uC870\uC815"}
+    </text>
+    <circle className="st7" cx={1431} cy={145.6} r={52.2} />
+    <circle className="st7" cx={1328.8} cy={144.5} r={49.5} />
+    <text transform="matrix(1 0 0 1 56.8475 45.7488)" className="st2 st3 st4">
+      {"\uD1A0\uB860 \uC2DC\uC791 \uBC0F \uBAA8\uBCD1\uC81C \uB3C4\uC785"}
+    </text>
+    <circle className="st5" cx={135.9} cy={121.3} r={16.1} />
+    <circle className="st5" cx={115.4} cy={143.3} r={13.9} />
+    <text transform="matrix(1 0 0 1 132.579 98.3786)" className="st2 st3 st8">
+      {"\uD604 \uAD70\uC0C1\uD669"}
+    </text>
+    <circle className="st7" cx={60} cy={147.1} r={40.9} />
+    <circle className="st7" cx={144.8} cy={146.7} r={43.6} />
+    <text transform="matrix(1 0 0 1 42.1121 100.5594)" className="st2 st3 st8">
+      {"\uD604 \uC0AC\uD68C\uC0C1\uD669"}
+    </text>
+    <circle className="st6" cx={40} cy={163.5} r={14.3} />
+    <circle className="st6" cx={45.1} cy={122.1} r={11} />
+    <circle className="st7" cx={60} cy={147.1} r={40.9} />
+    <g>
+      <path
+        className="st1"
+        d="M103.5,61.7v-6.4c-22.3,0-41.8,7.1-58.9,21.4l4.1,4.9C64.6,68.3,82.8,61.7,103.5,61.7z"
+      />
+      <path
+        className="st14"
+        d="M35.4,95.6c4-5.3,8.2-9.7,13.3-14h0l-4.1-4.9c-5.5,4.6-10,9.4-14.3,15L35.4,95.6L35.4,95.6z"
+      />
+      <path
+        className="st14"
+        d="M22.9,119.2c3.1-9.1,6.7-15.9,12.5-23.5l-5.1-3.9c-6.2,8.2-10.1,15.6-13.5,25.3L22.9,119.2L22.9,119.2z"
+      />
+      <path
+        className="st15"
+        d="M22,171.8c-5.4-17.8-5.1-35.1,0.9-52.7l-6.1-2.1c-6.5,18.9-6.8,37.5-1,56.6L22,171.8L22,171.8z"
+      />
+      <path
+        className="st16"
+        d="M25.6,181.6c-1.6-3.5-2.5-6.1-3.6-9.7l-6.1,1.9c1.2,4,2.2,6.7,3.9,10.5L25.6,181.6L25.6,181.6z"
+      />
+      <path
+        className="st14"
+        d="M47.6,211.2c-9.6-8.3-16.8-18.1-21.9-29.7l-5.9,2.6c5.5,12.4,13.3,23,23.6,31.9L47.6,211.2L47.6,211.2z"
+      />
+      <path
+        className="st17"
+        d="M77.1,228c-11.4-3.7-20.5-8.9-29.6-16.7l-4.2,4.8c9.7,8.5,19.5,14,31.8,18L77.1,228L77.1,228z"
+      />
+      <path
+        className="st15"
+        d="M84.3,229.9c-2.8-0.6-4.4-1.1-7.2-2l-2,6.1c2.9,1,4.7,1.4,7.7,2.1L84.3,229.9L84.3,229.9z"
+      />
+      <path
+        className="st16"
+        d="M84.3,229.9l-1.4,6.3c10.7,2.5,20.8,3,31.8,1.7l-0.8-6.4C103.7,232.7,94.3,232.2,84.3,229.9z"
+      />
+      <path
+        className="st14"
+        d="M119.7,230.6c-2.2,0.4-3.7,0.7-5.9,0.9l0,0l0.8,6.4c2.4-0.3,4-0.5,6.3-1L119.7,230.6L119.7,230.6z"
+      />
+      <path
+        className="st16"
+        d="M119.7,230.6l1.2,6.3c3.8-0.7,7.1-1.6,10.8-2.8l-2-6.1C126.3,229.1,123.3,229.9,119.7,230.6z"
+      />
+      <path
+        className="st14"
+        d="M170.6,199.4c-10.8,13.9-24.1,23.1-40.8,28.6l0,0l2,6.1c18-5.8,32.2-15.8,43.9-30.7L170.6,199.4L170.6,199.4z   "
+      />
+      <path
+        className="st16"
+        d="M170.6,199.4l5.1,3.9c1.1-1.4,1.8-2.4,2.9-3.9l-5.3-3.7C172.3,197.2,171.6,198,170.6,199.4z"
+      />
+      <path
+        className="st17"
+        d="M188.3,154.3c-1.4,15.8-6,28.4-15.1,41.5l0,0l5.3,3.7c9.8-14,14.7-27.5,16.2-44.6L188.3,154.3L188.3,154.3z"
+      />
+      <path
+        className="st16"
+        d="M194.8,140.5l-6.4,0.4l0,0c0.3,4.3,0.3,9.1-0.1,13.4l6.4,0.6C195.1,150.3,195.1,145.1,194.8,140.5z"
+      />
+      <path
+        className="st1"
+        d="M188.4,141l6.4-0.4c-1.2-16.9-6-30.8-15.4-44.8l-5.3,3.6C182.9,112.3,187.3,125.2,188.4,141z"
+      />
+      <path
+        className="st16"
+        d="M174.1,99.2L174.1,99.2l5.3-3.6c-1.4-2.1-2.2-3.2-3.8-5.2l-5.1,3.9C172,96.3,172.8,97.3,174.1,99.2z"
+      />
+      <path
+        className="st15"
+        d="M170.6,94.4L170.6,94.4l5.1-3.9c-8.5-10.9-18.3-19-30.6-25.2l-2.9,5.7C153.6,76.8,162.7,84.3,170.6,94.4z"
+      />
+      <path
+        className="st16"
+        d="M142.1,71L142.1,71l2.9-5.7c-13.7-7-26.2-10-41.6-10v6.4C117.8,61.7,129.3,64.5,142.1,71z"
+      />
+    </g>
+    <g>
+      <path
+        className="st15"
+        d="M291.1,65.1C291.1,65.1,291.1,65.1,291.1,65.1l0-7c-19.1,0-36.4,5.4-52.1,16.4l3.9,5.6   C257.5,70.1,273.4,65.1,291.1,65.1z"
+      />
+      <path
+        className="st0"
+        d="M242.7,80.4c0.1-0.1,0.2-0.1,0.3-0.2l-3.9-5.6c-7.6,5.3-13.8,11.2-19.5,18.5l5.3,4.1   C230.1,90.5,235.8,85.2,242.7,80.4z"
+      />
+      <path
+        className="st1"
+        d="M224.6,97.5c0.1-0.1,0.2-0.3,0.3-0.4l-5.3-4.1c-10.3,13.2-16,26.7-18.4,43.2l6.4,0.9   C209.8,122,215.2,109.6,224.6,97.5z"
+      />
+      <path
+        className="st17"
+        d="M207.5,137.7c0-0.2,0.1-0.4,0.1-0.6l-6.4-0.9c-0.9,6.4-1.1,11-0.8,17.4l6.3-0.3   C206.5,147.7,206.7,143.4,207.5,137.7z"
+      />
+      <path
+        className="st0"
+        d="M206.8,153.9c0-0.2,0-0.4,0-0.6l-6.3,0.3c0.4,8.1,1.8,15.6,4.3,23.3l5.9-1.9   C208.4,168.1,207.2,161.2,206.8,153.9z"
+      />
+      <path
+        className="st16"
+        d="M210.8,175.6c-0.1-0.2-0.1-0.4-0.2-0.6l-5.9,1.9c1.1,3.2,2,5.8,3.4,8.9l5.6-2.5   C212.6,180.7,211.7,178.4,210.8,175.6z"
+      />
+      <path
+        className="st17"
+        d="M214,183.8c-0.1-0.2-0.1-0.3-0.2-0.5l-5.6,2.5c6.7,15.1,16.2,26.8,29.6,36.5l3.4-4.7   C228.9,208.6,220.2,197.7,214,183.8z"
+      />
+      <path
+        className="st16"
+        d="M241.5,217.8c-0.1-0.1-0.2-0.1-0.3-0.2l-3.4,4.7c2.1,1.5,3,2.2,5.3,3.5l3.1-4.9   C244.2,219.7,243.4,219.1,241.5,217.8z"
+      />
+      <path
+        className="st15"
+        d="M246.4,221.1c-0.1-0.1-0.2-0.1-0.3-0.2l-3.1,4.9c2.1,1.3,4.7,2.8,6.9,3.9l2.6-5.2   C250.5,223.5,248.3,222.3,246.4,221.1z"
+      />
+      <path
+        className="st0"
+        d="M297,233.7c-16.2,1.1-29.8-1.6-44.2-9c-0.1,0-0.2-0.1-0.2-0.1l-2.6,5.2c15.5,7.9,30.1,10.9,47.5,9.7L297,233.7   C297,233.7,297,233.7,297,233.7z"
+      />
+      <path
+        className="st16"
+        d="M311.5,231.4c-4.6,1.1-9.7,2-14.5,2.3l0.4,5.7c5.1-0.4,10.7-1.2,15.6-2.5l-1.4-5.6   C311.6,231.4,311.6,231.4,311.5,231.4z"
+      />
+      <path
+        className="st15"
+        d="M315.8,230.2c-1.9,0.6-2.3,0.7-4.1,1.1l1.4,5.6c2.1-0.5,2.5-0.6,4.6-1.3l-1.7-5.5   C315.9,230.2,315.8,230.2,315.8,230.2z"
+      />
+      <path
+        className="st16"
+        d="M325.4,226.6c-2.8,1.2-6.5,2.6-9.5,3.6l1.7,5.5c3.2-1,7.3-2.5,10.4-3.9l-2.4-5.3   C325.6,226.5,325.5,226.6,325.4,226.6z"
+      />
+      <path
+        className="st15"
+        d="M356.7,202.6c-8.9,11.1-18.1,18.1-31,23.9l2.4,5.3c14.1-6.3,23.9-13.8,33.6-25.8l-4.6-3.8   C356.9,202.4,356.8,202.5,356.7,202.6z"
+      />
+      <path
+        className="st16"
+        d="M360.2,197.9c-1,1.4-2.1,3-3.2,4.3l4.6,3.8c1.3-1.6,2.7-3.4,3.8-5.1l-4.9-3.4   C360.4,197.6,360.3,197.8,360.2,197.9z"
+      />
+      <path
+        className="st15"
+        d="M362.7,194.2c-0.9,1.4-1.3,2-2.1,3.3l4.9,3.4c1.1-1.6,1.6-2.3,2.6-4l-5.1-3.2   C362.9,193.9,362.8,194.1,362.7,194.2z"
+      />
+      <path
+        className="st16"
+        d="M371.8,174.2c-2.2,7.1-5,13.3-8.9,19.6l5.1,3.2c4.3-6.9,7.4-13.7,9.8-21.6l-5.9-1.8   C371.9,173.8,371.9,174,371.8,174.2z"
+      />
+      <path
+        className="st15"
+        d="M374.5,162.7c-0.6,3.7-1.4,7.3-2.5,10.9l5.9,1.8c1.2-4.1,2.2-8.1,2.8-12.3l-6.2-1   C374.5,162.3,374.5,162.5,374.5,162.7z"
+      />
+      <path
+        className="st16"
+        d="M375,158.3c-0.2,1.5-0.3,2.4-0.5,3.8l6.2,1c0.3-1.8,0.4-2.9,0.6-4.7l-6.3-0.7   C375.1,157.9,375.1,158.1,375,158.3z"
+      />
+      <path
+        className="st1"
+        d="M369.7,103.5l-5.8,3.3c0.1,0.2,0.2,0.3,0.3,0.5c9.2,15.9,12.7,32.2,10.9,50.4l6.3,0.7   C383.5,138.5,379.7,120.8,369.7,103.5z"
+      />
+      <path
+        className="st16"
+        d="M353.8,93c3.8,4.3,7.2,8.9,10.1,13.8l5.8-3.3c-3.2-5.5-6.9-10.6-11.2-15.4l-5,4.5   C353.6,92.8,353.7,92.9,353.8,93z"
+      />
+      <path
+        className="st0"
+        d="M335.8,77.9c7.2,4.5,12.1,8.6,17.7,14.8l5-4.5c-6.2-6.9-11.5-11.3-19.4-16.2l-3.7,5.8   C335.6,77.8,335.7,77.9,335.8,77.9z"
+      />
+      <path
+        className="st15"
+        d="M335.6,77.8l3.7-5.8c-15.2-9.5-30.2-13.8-48.1-13.8v7C307.7,65.1,321.5,69,335.6,77.8z"
+      />
+    </g>
+    <g>
+      <path
+        className="st17"
+        d="M463.4,57.1c8.9-2.5,17.2-3.7,26.5-3.7v-7.5c-10,0-19,1.2-28.6,4L463.4,57.1   C463.4,57.1,463.4,57.1,463.4,57.1z"
+      />
+      <path
+        className="st16"
+        d="M463.4,57.1l-2.1-7.2c-9.4,2.7-18.1,6.6-26.4,11.7l4,6.4C446.6,63.2,454.7,59.6,463.4,57.1z"
+      />
+      <path
+        className="st17"
+        d="M438.9,68C438.9,67.9,438.9,67.9,438.9,68l-4-6.4c-15.4,9.6-25.8,20.3-34.9,36l6.5,3.7   C415,86.8,424.6,76.8,438.9,68z"
+      />
+      <path
+        className="st16"
+        d="M406.4,101.4c0-0.1,0.1-0.1,0.1-0.2l-6.5-3.7c-1.2,2.1-2.3,4.2-3.4,6.4l6.7,3.3   C404.3,105.2,405.3,103.3,406.4,101.4z"
+      />
+      <path
+        className="st15"
+        d="M403.3,107.3c0-0.1,0.1-0.1,0.1-0.2l-6.7-3.3c-1.2,2.5-1.9,4-2.9,6.6l6.9,2.8   C401.5,111,402.2,109.5,403.3,107.3z"
+      />
+      <path
+        className="st16"
+        d="M400.5,113.4c0-0.1,0.1-0.1,0.1-0.2l-6.9-2.8c-0.6,1.5-1.4,3.5-1.9,5.1l7.1,2.4   C399.3,116.5,400,114.8,400.5,113.4z"
+      />
+      <path
+        className="st1"
+        d="M398.8,118.1c0-0.1,0.1-0.2,0.1-0.2l-7.1-2.4c-0.6,1.7-1.1,3.5-1.6,5.2l7.2,2   C397.7,121.2,398.2,119.6,398.8,118.1z"
+      />
+      <path
+        className="st15"
+        d="M397.2,122.9c0-0.1,0-0.2,0.1-0.2l-7.2-2c-0.6,2.1-0.9,3.1-1.4,5.2l7.3,1.7   C396.4,125.8,396.7,124.8,397.2,122.9z"
+      />
+      <path
+        className="st0"
+        d="M396,127.8c0-0.1,0-0.2,0.1-0.3l-7.3-1.7c-0.7,3.2-1.5,7.4-1.9,10.6l7.4,0.9   C394.6,134.4,395.3,130.7,396,127.8z"
+      />
+      <path
+        className="st16"
+        d="M394.2,137.7c0-0.1,0-0.2,0-0.3l-7.4-0.9c-0.4,3-0.6,6-0.7,9l7.4,0.3C393.7,143.1,393.9,140.4,394.2,137.7z"
+      />
+      <path
+        className="st15"
+        d="M393.5,146.1c0-0.1,0-0.2,0-0.3l-7.4-0.3c-0.1,1.7-0.1,2-0.1,3.6h7.4C393.5,147.9,393.5,147.5,393.5,146.1z"
+      />
+      <path
+        className="st16"
+        d="M393.5,149.4c0-0.1,0-0.2,0-0.3h-7.4c0,2.3,0.1,4.9,0.3,7.2l7.3-0.5C393.6,153.8,393.5,151.5,393.5,149.4z"
+      />
+      <path
+        className="st15"
+        d="M393.7,156.1c0-0.1,0-0.2,0-0.3l-7.3,0.5c0.1,1.3,0.2,2.3,0.3,3.6l7.3-0.8   C393.9,158.1,393.8,157.2,393.7,156.1z"
+      />
+      <path
+        className="st0"
+        d="M394,159.5c0-0.1,0-0.2,0-0.3l-7.3,0.8c0.4,3.5,0.7,5.5,1.3,8.9l7.2-1.4C394.6,164.5,394.3,162.6,394,159.5z"
+      />
+      <path
+        className="st16"
+        d="M395.3,167.8c0-0.1,0-0.2-0.1-0.3l-7.2,1.4c0.4,2.1,1.1,4.9,1.6,7l7.1-1.9   C396.2,172.1,395.6,169.6,395.3,167.8z"
+      />
+      <path
+        className="st0"
+        d="M396.8,174.3c0-0.1-0.1-0.2-0.1-0.3l-7.1,1.9c4.6,16.9,12.4,30.9,24.4,43.7l5.2-4.9   C408.2,202.9,401,189.9,396.8,174.3z"
+      />
+      <path
+        className="st16"
+        d="M419.4,214.9c-0.1-0.1-0.1-0.1-0.2-0.2l-5.2,4.9c2.2,2.3,4.1,4.2,6.5,6.3l4.8-5.3   C423.2,218.8,421.4,217,419.4,214.9z"
+      />
+      <path
+        className="st15"
+        d="M425.4,220.8c-0.1-0.1-0.1-0.1-0.2-0.2l-4.8,5.3c0.9,0.8,0.5,0.4,1.4,1.2l4.7-5.3   C426,221.3,426.2,221.5,425.4,220.8z"
+      />
+      <path
+        className="st1"
+        d="M426.7,221.9c-0.1-0.1-0.1-0.1-0.2-0.2l-4.7,5.3c2.6,2.2,5.7,4.7,8.6,6.7l4.1-5.8   C431.9,226.2,429.1,224,426.7,221.9z"
+      />
+      <path
+        className="st16"
+        d="M434.7,228.1c-0.1,0-0.1-0.1-0.2-0.1l-4.1,5.8c1.4,0.9,1.6,1.1,3,2l3.9-5.9   C436.2,229.1,435.9,229,434.7,228.1z"
+      />
+      <path
+        className="st1"
+        d="M437.5,230c-0.1-0.1-0.1-0.1-0.2-0.1l-3.9,5.9c7.1,4.6,14.7,8.3,22.8,11l2.3-6.6   C451,237.6,444,234.2,437.5,230z"
+      />
+      <path
+        className="st15"
+        d="M458.6,240.3c-0.1,0-0.1,0-0.2-0.1l-2.3,6.6c18,6.1,35,7.3,53.6,3.7l-1.3-6.8   C491.1,247.1,475.3,246,458.6,240.3z"
+      />
+      <path
+        className="st16"
+        d="M530.9,236.5c-7.7,3.6-14,5.6-22.4,7.2c0,0,0,0-0.1,0l1.3,6.8c9-1.7,15.8-3.9,24.1-7.8L530.9,236.5   C530.9,236.5,530.9,236.5,530.9,236.5z"
+      />
+      <path
+        className="st1"
+        d="M565.1,209.9c-9.7,11.9-20.3,20.1-34.2,26.6l2.9,6.3c15-6.9,26.4-15.8,36.8-28.6l-5.4-4.4   C565.2,209.8,565.2,209.8,565.1,209.9z"
+      />
+      <path
+        className="st17"
+        d="M574.5,196c-2.8,5.1-5.6,9.2-9.3,13.8l5.4,4.4c4-4.9,7-9.4,10.1-14.9l-6.2-3.4   C574.6,195.9,574.6,195.9,574.5,196z"
+      />
+      <path
+        className="st0"
+        d="M582.9,175.9c-2,7.1-4.7,13.5-8.3,19.9l6.2,3.4c3.9-7,6.8-13.9,9-21.6l-6.8-1.9   C583,175.7,582.9,175.8,582.9,175.9z"
+      />
+      <path
+        className="st16"
+        d="M584.9,167.8c-0.6,3-1.1,5-1.9,7.9l6.8,1.9c0.9-3.2,1.5-5.5,2.1-8.8l-7-1.3   C584.9,167.6,584.9,167.7,584.9,167.8z"
+      />
+      <path
+        className="st17"
+        d="M590.3,122.4l-7,1.9c0,0.1,0.1,0.2,0.1,0.3c3.9,14.5,4.4,28.2,1.6,42.9l7,1.3   C595,152.9,594.5,138.1,590.3,122.4z"
+      />
+      <path
+        className="st16"
+        d="M581.4,118.1c0.7,2.2,1.3,3.9,1.9,6.1l7-1.9c-0.7-2.5-1.3-4.5-2.1-6.9l-6.9,2.4   C581.3,118,581.4,118.1,581.4,118.1z"
+      />
+      <path
+        className="st15"
+        d="M579,111.9c0.9,2,1.6,3.9,2.3,6l6.9-2.4c-0.8-2.3-1.6-4.5-2.6-6.7l-6.7,2.8   C578.9,111.7,578.9,111.8,579,111.9z"
+      />
+      <path
+        className="st0"
+        d="M552.2,75.8c12.2,10.2,20.4,21.2,26.7,35.8l6.7-2.8C578.8,93,569.9,81,556.7,70l-4.8,5.7   C552,75.7,552.1,75.8,552.2,75.8z"
+      />
+      <path
+        className="st16"
+        d="M541.3,68c3.9,2.4,7.2,4.8,10.7,7.7l4.8-5.7c-3.9-3.2-7.4-5.8-11.7-8.5l-4,6.3   C541.1,67.9,541.2,67.9,541.3,68z"
+      />
+      <path
+        className="st15"
+        d="M536.9,65.4c1.6,0.9,2.6,1.5,4.1,2.4l4-6.3c-1.8-1.1-2.8-1.7-4.7-2.7l-3.6,6.5   C536.8,65.3,536.8,65.4,536.9,65.4z"
+      />
+      <path
+        className="st16"
+        d="M527.8,61c2.8,1.2,6.2,2.8,8.9,4.3l3.6-6.5c-2.9-1.6-6.7-3.4-9.8-4.7l-2.9,6.9C527.7,60.9,527.7,61,527.8,61z   "
+      />
+      <path
+        className="st15"
+        d="M490.1,53.4c14.1,0,24.6,2.1,37.5,7.6l2.9-6.9c-14-5.9-25.3-8.2-40.6-8.2v7.5C490,53.4,490,53.4,490.1,53.4z"
+      />
+    </g>
+    <g>
+      <path
+        className="st0"
+        d="M645.7,86.9c12.9-8.4,26.3-12.4,41.7-12.4v-5.7c-16.6,0-31,4.3-44.9,13.3L645.7,86.9   C645.7,87,645.7,86.9,645.7,86.9z"
+      />
+      <path
+        className="st16"
+        d="M620.5,114c6.2-11.2,14.5-20.1,25.2-27.1l-3.1-4.8c-11.5,7.5-20.5,17.1-27.2,29.2L620.5,114   C620.4,114.1,620.4,114.1,620.5,114z"
+      />
+      <path
+        className="st18"
+        d="M619.2,116.4c0.6-1.1,0.7-1.3,1.2-2.3l-5.1-2.8c-0.6,1.2-0.8,1.4-1.4,2.5L619.2,116.4   C619.2,116.4,619.2,116.4,619.2,116.4z"
+      />
+      <path
+        className="st15"
+        d="M613.1,169.7c-4.6-18.3-2.5-36.4,6.1-53.3l-5.2-2.6c-9.2,18.1-11.5,37.6-6.5,57.3L613.1,169.7   C613.1,169.7,613.1,169.7,613.1,169.7z"
+      />
+      <path
+        className="st16"
+        d="M615,176.1c-0.8-2.2-1.3-4.1-1.9-6.4l-5.6,1.4c0.6,2.5,1.2,4.5,2,6.9L615,176.1   C615,176.1,615,176.1,615,176.1z"
+      />
+      <path
+        className="st18"
+        d="M615,176.1l-5.5,1.9c6.5,18.8,17.4,32.5,34.2,43l3.1-4.9C631.2,206.4,621,193.6,615,176.1z"
+      />
+      <path
+        className="st17"
+        d="M646.9,216.2C646.9,216.2,646.8,216.2,646.9,216.2l-3.1,4.9c6.3,4,12.4,6.7,19.6,8.9l1.7-5.5   C658.4,222.4,652.7,219.8,646.9,216.2z"
+      />
+      <path
+        className="st18"
+        d="M665.1,224.5C665.1,224.5,665,224.5,665.1,224.5l-1.7,5.5c3.5,1.1,6.2,1.7,9.8,2.3l1-5.7   C670.8,226.1,668.3,225.4,665.1,224.5z"
+      />
+      <path
+        className="st17"
+        d="M674.2,226.6C674.1,226.6,674.1,226.6,674.2,226.6l-1,5.7c3.3,0.6,6.6,1,10,1.1l0.3-5.8   C680.3,227.5,677.2,227.2,674.2,226.6z"
+      />
+      <path
+        className="st18"
+        d="M683.5,227.7C683.4,227.7,683.4,227.7,683.5,227.7l-0.3,5.8c5.8,0.3,10.1,0.1,15.8-0.7l-0.8-5.7   C692.8,227.8,688.8,228,683.5,227.7z"
+      />
+      <path
+        className="st0"
+        d="M698.1,227.1C698.1,227.1,698.1,227.1,698.1,227.1l0.8,5.7c1.8-0.3,3.9-0.6,5.7-1l-1.2-5.7   C701.7,226.5,699.8,226.8,698.1,227.1z"
+      />
+      <path
+        className="st17"
+        d="M703.4,226.1C703.4,226.1,703.4,226.1,703.4,226.1l1.2,5.7c1.3-0.3,1.5-0.3,2.8-0.6l-1.4-5.6   C704.8,225.8,704.6,225.9,703.4,226.1z"
+      />
+      <path
+        className="st18"
+        d="M706,225.5C706,225.5,706,225.5,706,225.5l1.3,5.6c3.2-0.8,6.5-1.9,9.6-3l-2.1-5.4   C712,223.8,708.9,224.8,706,225.5z"
+      />
+      <path
+        className="st0"
+        d="M714.9,222.7C714.9,222.7,714.9,222.7,714.9,222.7l2,5.4c2-0.8,3.4-1.4,5.3-2.2l-2.4-5.2   C718.1,221.5,716.7,222,714.9,222.7z"
+      />
+      <path
+        className="st17"
+        d="M719.8,220.6C719.8,220.6,719.8,220.6,719.8,220.6l2.4,5.2c1.9-0.9,3.3-1.6,5.1-2.6l-2.8-5   C722.9,219.2,721.6,219.8,719.8,220.6z"
+      />
+      <path
+        className="st0"
+        d="M724.6,218.2C724.6,218.2,724.6,218.2,724.6,218.2l2.8,5.1c1.3-0.7,2.5-1.4,3.7-2.2l-3.1-4.9   C726.9,216.9,725.8,217.6,724.6,218.2z"
+      />
+      <path
+        className="st17"
+        d="M728.1,216.2C728,216.2,728,216.2,728.1,216.2l3,4.9c3.4-2.1,6.2-4.2,9.3-6.8l-3.7-4.4   C733.8,212.3,731.2,214.2,728.1,216.2z"
+      />
+      <path
+        className="st0"
+        d="M736.7,209.9C736.7,209.9,736.7,209.9,736.7,209.9l3.7,4.4c6.4-5.4,11.6-11.2,16.1-18.2l-4.8-3.1   C747.4,199.5,742.7,204.9,736.7,209.9z"
+      />
+      <path
+        className="st17"
+        d="M751.7,192.9C751.7,192.9,751.7,192.9,751.7,192.9l4.8,3.2c4.9-7.5,8.2-14.9,10.5-23.5l-5.5-1.5   C759.3,179.1,756.3,185.9,751.7,192.9z"
+      />
+      <path
+        className="st0"
+        d="M761.5,171C761.5,171,761.5,171,761.5,171l5.5,1.5c1.8-6.7,2.7-12.9,2.8-19.9l-5.7-0.1   C764,159,763.1,164.8,761.5,171z"
+      />
+      <path
+        className="st16"
+        d="M768.3,135.5l-5.6,1.1c1.1,5.6,1.5,10.3,1.4,15.9c0,0,0,0,0,0l5.7,0.1C769.9,146.6,769.5,141.5,768.3,135.5z"
+      />
+      <path
+        className="st17"
+        d="M752.4,110.6c5.2,8.4,8.3,16.3,10.2,26c0,0,0,0,0,0l5.6-1.1c-2-10.5-5.4-18.9-11-27.9L752.4,110.6   C752.4,110.6,752.4,110.6,752.4,110.6z"
+      />
+      <path
+        className="st16"
+        d="M734.6,90.8c7.6,5.9,12.7,11.6,17.8,19.8l4.8-3c-5.5-8.8-11-14.9-19.1-21.3L734.6,90.8   C734.6,90.8,734.6,90.8,734.6,90.8z"
+      />
+      <path
+        className="st17"
+        d="M687.5,74.6c17.9,0,33,5.2,47.2,16.2l3.5-4.5c-15.2-11.9-31.4-17.5-50.7-17.5L687.5,74.6   C687.4,74.6,687.4,74.6,687.5,74.6z"
+      />
+    </g>
+    <g>
+      <path
+        className="st18"
+        d="M866.5,53.3c9.7-3.1,19.9-4.8,30.1-4.8c0,0,0,0,0,0v-7.3c-10.9,0-22,1.7-32.4,5.1L866.5,53.3   C866.5,53.3,866.5,53.3,866.5,53.3z"
+      />
+      <path
+        className="st15"
+        d="M861.7,55c1.8-0.7,3-1.1,4.8-1.7l-2.2-6.9c-2,0.6-3.2,1.1-5.2,1.8L861.7,55C861.7,55,861.7,55,861.7,55z"
+      />
+      <path
+        className="st18"
+        d="M846.4,62.5c5.1-3.1,9.7-5.3,15.3-7.4l-2.6-6.8c-6,2.3-10.9,4.7-16.4,8L846.4,62.5   C846.4,62.5,846.4,62.5,846.4,62.5z"
+      />
+      <path
+        className="st16"
+        d="M839.3,67.2c2.5-1.8,4.4-3.1,7.1-4.7l-3.7-6.2c-2.9,1.7-4.9,3.1-7.6,5L839.3,67.2   C839.3,67.2,839.3,67.2,839.3,67.2z"
+      />
+      <path
+        className="st18"
+        d="M814.9,92.9c6.7-10.4,14.4-18.5,24.4-25.8l-4.3-5.9c-10.8,7.8-19,16.5-26.3,27.7L814.9,92.9   C814.9,93,814.9,92.9,814.9,92.9z"
+      />
+      <path
+        className="st15"
+        d="M812.2,97.3c0.8-1.4,1.8-3,2.6-4.3l-6.1-4c-0.9,1.5-2,3.2-2.9,4.7L812.2,97.3   C812.2,97.3,812.2,97.3,812.2,97.3z"
+      />
+      <path
+        className="st18"
+        d="M803.9,115.9c2.3-7,4.6-12.3,8.3-18.6l-6.3-3.6c-3.9,6.8-6.5,12.5-8.9,20L803.9,115.9   C803.9,115.9,803.9,115.9,803.9,115.9z"
+      />
+      <path
+        className="st15"
+        d="M802.9,119.2c0.3-1.1,0.6-2.1,1-3.2l-6.9-2.3c-0.4,1.2-0.7,2.3-1.1,3.5L802.9,119.2   C802.9,119.2,802.9,119.2,802.9,119.2z"
+      />
+      <path
+        className="st18"
+        d="M799.3,140.9c0.4-7.7,1.5-14.3,3.6-21.7l-7-2c-2.3,8-3.5,15.1-3.9,23.4L799.3,140.9   C799.3,141,799.3,140.9,799.3,140.9z"
+      />
+      <path
+        className="st16"
+        d="M799.3,151.1c-0.2-3.5-0.2-6.7,0-10.1l-7.3-0.4c-0.2,3.8-0.2,7.2,0,11L799.3,151.1   C799.3,151.2,799.3,151.2,799.3,151.1z"
+      />
+      <path
+        className="st0"
+        d="M799.7,156.2c-0.2-2.1-0.3-3-0.4-5l-7.3,0.4c0.1,2.3,0.2,3.2,0.4,5.5L799.7,156.2   C799.7,156.3,799.7,156.2,799.7,156.2z"
+      />
+      <path
+        className="st15"
+        d="M800.4,161.3c-0.3-1.6-0.5-3.4-0.7-5l-7.3,0.8c0.2,1.8,0.4,3.7,0.7,5.4L800.4,161.3   C800.4,161.3,800.4,161.3,800.4,161.3z"
+      />
+      <path
+        className="st17"
+        d="M809.8,190.3c-4.8-9.4-7.8-18.5-9.4-28.9l-7.2,1.1c1.8,11.3,5,21,10.1,31.2L809.8,190.3   C809.8,190.3,809.8,190.3,809.8,190.3z"
+      />
+      <path
+        className="st16"
+        d="M825.4,212.5c-6.7-7.2-11.1-13.5-15.5-22.2l-6.5,3.3c4.8,9.4,9.5,16.2,16.7,23.9L825.4,212.5   C825.4,212.5,825.4,212.5,825.4,212.5z"
+      />
+      <path
+        className="st15"
+        d="M830.2,217.3c-1.6-1.5-3.2-3.1-4.8-4.8l-5.4,5c1.7,1.8,3.4,3.5,5.2,5.2L830.2,217.3   C830.2,217.3,830.2,217.3,830.2,217.3z"
+      />
+      <path
+        className="st16"
+        d="M845,228.7c-5.6-3.5-9.9-6.8-14.8-11.3l-5,5.4c5.2,4.9,9.9,8.4,15.9,12.2L845,228.7   C845,228.7,845,228.7,845,228.7z"
+      />
+      <path
+        className="st0"
+        d="M850.9,232.1c-2.1-1.1-3.8-2.1-5.9-3.4l-3.9,6.3c2.2,1.4,4,2.4,6.3,3.7L850.9,232.1   C850.9,232.1,850.9,232.1,850.9,232.1z"
+      />
+      <path
+        className="st17"
+        d="M863.3,237.6c-4.1-1.5-8.5-3.5-12.4-5.5l-3.5,6.5c4.1,2.2,9,4.3,13.4,5.9L863.3,237.6   C863.3,237.6,863.3,237.6,863.3,237.6z"
+      />
+      <path
+        className="st0"
+        d="M868.1,239.3c-2-0.6-2.8-0.9-4.8-1.6l-2.5,6.9c2.2,0.8,3,1.1,5.2,1.7L868.1,239.3   C868.2,239.3,868.2,239.3,868.1,239.3z"
+      />
+      <path
+        className="st16"
+        d="M876.4,241.4c-2.8-0.6-5.5-1.3-8.2-2.1l-2.2,7.1c2.9,0.9,5.9,1.7,8.9,2.3L876.4,241.4   C876.4,241.4,876.4,241.4,876.4,241.4z"
+      />
+      <path
+        className="st15"
+        d="M886.5,243c-3.2-0.3-6.9-0.9-10.1-1.6l-1.5,7.2c3.3,0.7,7.4,1.4,10.8,1.7L886.5,243   C886.5,243,886.5,243,886.5,243z"
+      />
+      <path
+        className="st0"
+        d="M905.1,243.1c-6.5,0.6-12.1,0.5-18.7-0.2l-0.8,7.4c7,0.7,13.1,0.8,20.1,0.2L905.1,243.1   C905.2,243.1,905.1,243.1,905.1,243.1z"
+      />
+      <path
+        className="st15"
+        d="M905.2,243.1l0.6,7.4c10.3-0.9,18.8-2.8,28.4-6.6l-2.7-6.9C922.6,240.5,914.7,242.3,905.2,243.1z"
+      />
+      <path
+        className="st16"
+        d="M931.6,237C931.6,237,931.6,237,931.6,237l2.6,6.9c2.4-0.9,4.4-1.8,6.7-2.9l-3.1-6.7   C935.6,235.4,933.8,236.2,931.6,237z"
+      />
+      <path
+        className="st15"
+        d="M937.8,234.4C937.8,234.4,937.8,234.4,937.8,234.4l3.1,6.7c2.8-1.3,5.4-2.7,8.1-4.2l-3.7-6.4   C942.9,231.9,940.5,233.2,937.8,234.4z"
+      />
+      <path
+        className="st16"
+        d="M945.4,230.5C945.4,230.5,945.4,230.5,945.4,230.5l3.7,6.4c2.9-1.6,5-3,7.7-4.9l-4.2-6.1   C950,227.6,948,228.9,945.4,230.5z"
+      />
+      <path
+        className="st15"
+        d="M952.6,225.9C952.6,225.9,952.6,225.9,952.6,225.9l4.2,6.1c12.4-8.7,20.8-17.5,28.8-30.3l-6.3-3.9   C971.9,209.6,964.1,217.8,952.6,225.9z"
+      />
+      <path
+        className="st0"
+        d="M979.3,197.7C979.3,197.7,979.3,197.7,979.3,197.7l6.2,3.9c8.4-13.5,13.2-27,15.1-42.8l-7.3-0.9   C991.6,172.6,987.1,185.2,979.3,197.7z"
+      />
+      <path
+        className="st16"
+        d="M998.4,120.7l-7.1,1.8c3,11.9,3.6,23.2,2.2,35.4c0,0,0,0,0,0.1l7.3,0.9   C1002.3,145.8,1001.6,133.5,998.4,120.7z"
+      />
+      <path
+        className="st18"
+        d="M991.2,122.4C991.2,122.5,991.2,122.5,991.2,122.4l7.1-1.7c-0.3-1.2-0.6-2.3-0.9-3.5l-7.1,2   C990.7,120.3,991,121.3,991.2,122.4z"
+      />
+      <path
+        className="st15"
+        d="M990.4,119.2C990.4,119.2,990.4,119.2,990.4,119.2l7.1-2c-5.4-18.7-14-33-27.9-46.5l-5.1,5.3   C977.4,88.5,985.4,101.8,990.4,119.2z"
+      />
+      <path
+        className="st16"
+        d="M964.4,75.9C964.4,75.9,964.4,75.9,964.4,75.9l5.1-5.2c-1.7-1.7-3.6-3.3-5.4-4.9l-4.7,5.6   C961.1,72.8,962.8,74.3,964.4,75.9z"
+      />
+      <path
+        className="st18"
+        d="M959.3,71.4C959.3,71.4,959.3,71.4,959.3,71.4l4.7-5.6c-14.5-12.2-28.7-19-47.4-22.6l-1.4,7.2   C932.6,53.7,945.8,60,959.3,71.4z"
+      />
+      <path
+        className="st17"
+        d="M915.2,50.3C915.3,50.3,915.3,50.3,915.2,50.3l1.4-7.1c-7-1.4-12.8-1.9-20-1.9v7.3   C903.3,48.5,908.7,49.1,915.2,50.3z"
+      />
+    </g>
+    <g>
+      <path
+        className="st0"
+        d="M1080.6,73.8c7.3-2.2,15-3.4,22.7-3.5v-6.9c-8.5,0-17.1,1.3-25.2,3.8l2.1,6.8   C1080.3,73.9,1080.5,73.9,1080.6,73.8z"
+      />
+      <path
+        className="st16"
+        d="M1075.3,75.7c2-0.8,2.9-1.1,4.8-1.7l-2.1-6.8c-2.4,0.7-3.3,1.1-5.7,2l2.6,6.7   C1075.1,75.8,1075.2,75.7,1075.3,75.7z"
+      />
+      <path
+        className="st0"
+        d="M1068.9,78.5c2.1-1,3.9-1.8,6-2.6l-2.6-6.7c-2.4,0.9-4.6,1.9-6.9,3l3.1,6.4   C1068.7,78.6,1068.8,78.5,1068.9,78.5z"
+      />
+      <path
+        className="st15"
+        d="M1050.4,91c5.5-4.9,11.6-9.1,18.2-12.3l-3.1-6.4c-7.2,3.5-13.9,8-19.9,13.4L1050.4,91   C1050.4,91,1050.4,91,1050.4,91z"
+      />
+      <path
+        className="st16"
+        d="M1050.4,91l-4.8-5.4c-2,1.8-3.6,3.3-5.4,5.3l5.3,4.9C1047.1,94,1048.5,92.6,1050.4,91z"
+      />
+      <path
+        className="st15"
+        d="M1045.4,95.9C1045.4,95.8,1045.4,95.8,1045.4,95.9l-5.2-5c-5.7,6.1-9.2,11-13.1,18.4l6.3,3.4   C1036.9,106,1040.2,101.4,1045.4,95.9z"
+      />
+      <path
+        className="st0"
+        d="M1033.2,112.9c0.1-0.1,0.1-0.2,0.2-0.3l-6.3-3.4c-1,1.9-1.8,3.5-2.6,5.4l6.5,2.9   C1031.7,115.9,1032.3,114.6,1033.2,112.9z"
+      />
+      <path
+        className="st15"
+        d="M1030.8,118c0.1-0.1,0.1-0.3,0.2-0.4l-6.5-2.9c-1.7,3.8-3,7.3-4.1,11.3l6.8,1.9   C1028.1,124.5,1029.3,121.3,1030.8,118z"
+      />
+      <path
+        className="st16"
+        d="M1026.9,128.5c0.1-0.2,0.1-0.4,0.2-0.6l-6.8-1.9c-1.1,4-1.9,7.7-2.5,11.8l6.9,1   C1025.2,135.2,1025.9,132,1026.9,128.5z"
+      />
+      <path
+        className="st0"
+        d="M1024.6,139.5c0-0.2,0.1-0.5,0.1-0.7l-6.9-1c-0.4,2.5-0.6,5-0.7,7.5l6.9,0.4   C1024.1,143.6,1024.3,141.5,1024.6,139.5z"
+      />
+      <path
+        className="st17"
+        d="M1023.9,146.4c0-0.3,0-0.5,0.1-0.8l-6.9-0.4c-0.1,2.8-0.2,4.8-0.1,7.5l6.8-0.2   C1023.8,150.4,1023.8,148.7,1023.9,146.4z"
+      />
+      <path
+        className="st0"
+        d="M1023.9,153.4c0-0.3,0-0.6,0-0.9l-6.8,0.2c0.3,7.3,1.3,13.7,3.3,20.8l6.3-1.8   C1025,165.6,1024.1,159.9,1023.9,153.4z"
+      />
+      <path
+        className="st16"
+        d="M1026.9,172.8c-0.1-0.3-0.2-0.7-0.3-1l-6.3,1.8c0.8,2.9,1.8,5.8,2.9,8.5l6-2.4   C1028.4,177.4,1027.6,175.1,1026.9,172.8z"
+      />
+      <path
+        className="st17"
+        d="M1029.7,180.7c-0.1-0.3-0.3-0.7-0.4-1l-6,2.4c3.8,9.4,8.2,16.6,14.9,24.3l4.6-4   C1037,195.6,1033,189.1,1029.7,180.7z"
+      />
+      <path
+        className="st0"
+        d="M1043.5,203.3c-0.3-0.3-0.5-0.6-0.8-0.9l-4.6,4c1.9,2.2,3.1,3.5,5.2,5.5l4.2-4.3   C1046,206.2,1045,205,1043.5,203.3z"
+      />
+      <path
+        className="st17"
+        d="M1048.3,208.4c-0.3-0.3-0.6-0.6-0.8-0.8l-4.2,4.3c8,7.7,16.1,13,26.2,17.4l2.2-5.1   C1062.7,220.2,1055.5,215.3,1048.3,208.4z"
+      />
+      <path
+        className="st16"
+        d="M1072.7,224.6c-0.3-0.1-0.7-0.3-1-0.4l-2.2,5.1c1.6,0.7,4,1.6,5.6,2.2l1.8-5.2   C1075.6,225.7,1073.9,225.1,1072.7,224.6z"
+      />
+      <path
+        className="st0"
+        d="M1078,226.6c-0.3-0.1-0.6-0.2-1-0.3l-1.8,5.2c17.7,6.1,33.9,6.5,51.9,1.4l-1.4-4.8   C1109.2,232.6,1094.2,232.2,1078,226.6z"
+      />
+      <path
+        className="st16"
+        d="M1126.3,227.8c-0.2,0.1-0.3,0.1-0.5,0.1l1.4,4.8c10.6-3,19.3-7.4,28.2-14l-2.9-3.9   C1144.2,221,1136.1,225,1126.3,227.8z"
+      />
+      <path
+        className="st17"
+        d="M1152.4,214.8c0,0-0.1,0.1-0.1,0.1l2.9,3.9c1.4-1,2.2-1.7,3.5-2.8l-3.1-3.7   C1154.5,213.2,1153.7,213.8,1152.4,214.8z"
+      />
+      <path
+        className="st18"
+        d="M1174.4,189.6c-4.9,8.8-10.9,16.1-18.6,22.6c0,0,0,0-0.1,0l3.1,3.7c8.3-7,14.7-14.8,20-24.3l-4.3-2.4   C1174.5,189.4,1174.4,189.5,1174.4,189.6z"
+      />
+      <path
+        className="st15"
+        d="M1176.9,184.6c-0.8,1.6-1.5,3.1-2.4,4.7l4.3,2.4c1-1.8,1.9-3.5,2.7-5.4l-4.5-2.1   C1177,184.3,1177,184.4,1176.9,184.6z"
+      />
+      <path
+        className="st18"
+        d="M1182.4,168.7c-1.3,5.7-2.9,10.3-5.3,15.5l4.5,2.1c2.7-5.8,4.4-10.8,5.9-17.1l-4.9-1.1   C1182.5,168.3,1182.4,168.5,1182.4,168.7z"
+      />
+      <path
+        className="st16"
+        d="M1183.8,160.4c-0.4,2.9-0.7,4.9-1.3,7.7l4.9,1.1c0.8-3.3,1.2-5.6,1.6-8.9l-5.1-0.6   C1183.9,159.9,1183.9,160.2,1183.8,160.4z"
+      />
+      <path
+        className="st18"
+        d="M1185.4,123.1l-5.3,1.7c0.1,0.3,0.2,0.6,0.3,1c3.7,11.5,4.8,21.9,3.4,33.9l5.1,0.6   C1190.6,147.2,1189.5,135.7,1185.4,123.1z"
+      />
+      <path
+        className="st15"
+        d="M1179.1,121.9c0.4,1.1,0.7,2,1.1,3l5.3-1.7c-0.5-1.6-0.9-2.7-1.5-4.3l-5.2,2   C1178.8,121.2,1179,121.5,1179.1,121.9z"
+      />
+      <path
+        className="st18"
+        d="M1169.1,103.4c4.1,5.6,7.1,11.1,9.6,17.4l5.2-2c-2.8-7.3-6.2-13.5-10.8-19.8l-4.8,3.5   C1168.6,102.8,1168.9,103.1,1169.1,103.4z"
+      />
+      <path
+        className="st15"
+        d="M1166.5,100.1c0.5,0.7,1.2,1.6,1.9,2.4l4.8-3.5c-0.8-1-1.9-2.6-2.8-3.6l-4.6,3.7   C1166,99.5,1166.3,99.8,1166.5,100.1z"
+      />
+      <path
+        className="st18"
+        d="M1151.3,85.7c5.9,4.3,9.9,8.1,14.5,13.5l4.6-3.7c-5.2-6.4-9.7-10.7-16.4-15.5l-3.7,5.1   C1150.7,85.2,1151,85.4,1151.3,85.7z"
+      />
+      <path
+        className="st16"
+        d="M1143.1,80.4c2.7,1.5,4.9,2.9,7.3,4.6l3.7-5.1c-3-2.2-5.6-3.9-8.9-5.7l-3.1,5.6   C1142.4,80,1142.7,80.2,1143.1,80.4z"
+      />
+      <path
+        className="st0"
+        d="M1136.8,77.3c1.6,0.7,3.6,1.7,5.3,2.6l3.1-5.6c-2-1.1-4.7-2.4-6.7-3.4l-2.6,5.9   C1136.1,77,1136.4,77.1,1136.8,77.3z"
+      />
+      <path
+        className="st15"
+        d="M1132.9,75.7c1.2,0.5,1.9,0.8,2.9,1.2l2.6-5.9c-1.7-0.7-2.5-1.1-4.2-1.7l-2.3,6.1   C1132.2,75.4,1132.6,75.5,1132.9,75.7z"
+      />
+      <path
+        className="st17"
+        d="M1104.1,70.3c10.2,0,18.4,1.5,27.8,5l2.3-6.1c-10.6-4.1-19.6-5.7-30.9-5.7v6.9   C1103.6,70.3,1103.8,70.3,1104.1,70.3z"
+      />
+    </g>
+    <g>
+      <path
+        className="st16"
+        d="M1381,41.3v-8.5c-12.5,0-24.1,1.9-35.9,6l2.8,8C1358.8,43,1369.5,41.3,1381,41.3z"
+      />
+      <path
+        className="st15"
+        d="M1347.6,46.8c0.1,0,0.1,0,0.2-0.1l-2.8-8c-14.6,5-26.4,12-37.9,22.3l5.6,6.2   C1323.3,57.8,1334.2,51.5,1347.6,46.8z"
+      />
+      <path
+        className="st16"
+        d="M1312.4,67.6c0.1-0.1,0.3-0.2,0.4-0.3l-5.6-6.2c-1.6,1.5-2.6,2.4-4.2,4l5.9,5.9   C1310.1,69.7,1311,68.8,1312.4,67.6z"
+      />
+      <path
+        className="st18"
+        d="M1308.5,71.3c0.1-0.1,0.3-0.3,0.4-0.4l-5.9-5.9c-10,10-17,20.3-22.8,33.1l7.4,3.3   C1292.9,89.8,1299.4,80.4,1308.5,71.3z"
+      />
+      <path
+        className="st16"
+        d="M1287.3,102.1c0.1-0.2,0.2-0.4,0.3-0.6l-7.4-3.3c-0.6,1.4-0.9,2.1-1.5,3.5l7.4,3   C1286.6,103.8,1286.8,103.2,1287.3,102.1z"
+      />
+      <path
+        className="st17"
+        d="M1285.9,105.4c0.1-0.2,0.2-0.5,0.3-0.7l-7.4-3c-3.6,9-6,18.3-7.2,27.9l7.8,1   C1280.4,121.9,1282.6,113.5,1285.9,105.4z"
+      />
+      <path
+        className="st16"
+        d="M1279.2,131.3c0-0.3,0.1-0.5,0.1-0.8l-7.8-1c-0.3,2.3-0.4,3.4-0.6,5.7l7.8,0.5   C1278.9,134.3,1279,133.2,1279.2,131.3z"
+      />
+      <path
+        className="st0"
+        d="M1278.7,136.7c0-0.3,0-0.5,0.1-0.8l-7.8-0.5c-1,14.1,0.4,26.4,4.6,39.9l7.2-2.2   C1279,160.8,1277.8,149.5,1278.7,136.7z"
+      />
+      <path
+        className="st16"
+        d="M1282.9,173.8c-0.1-0.2-0.1-0.5-0.2-0.7l-7.2,2.2c3.3,11,7.6,19.9,14,29.4l6.1-4.1   C1289.9,192,1286,183.8,1282.9,173.8z"
+      />
+      <path
+        className="st18"
+        d="M1296,201.2c-0.1-0.2-0.2-0.4-0.4-0.5l-6.1,4.1c1.3,2,3.1,4.4,4.5,6.2l5.7-4.5   C1298.5,204.9,1297.1,202.9,1296,201.2z"
+      />
+      <path
+        className="st17"
+        d="M1300.2,207c-0.1-0.2-0.2-0.3-0.4-0.5l-5.7,4.5c3.6,4.6,6.1,7.4,10.3,11.4l5-5.2   C1305.7,213.7,1303.4,211.1,1300.2,207z"
+      />
+      <path
+        className="st18"
+        d="M1309.8,217.6c-0.1-0.1-0.3-0.3-0.4-0.4l-5,5.2c5.4,5.2,10.3,9.1,16.5,13.2l3.9-5.9   C1319.1,225.9,1314.7,222.4,1309.8,217.6z"
+      />
+      <path
+        className="st16"
+        d="M1325.2,229.9c-0.1-0.1-0.2-0.2-0.4-0.2l-3.9,5.9c1.2,0.8,3.7,2.3,4.9,3l3.5-6.1   C1328.2,231.8,1326.2,230.5,1325.2,229.9z"
+      />
+      <path
+        className="st17"
+        d="M1329.7,232.7c-0.1-0.1-0.2-0.1-0.3-0.2l-3.5,6.1c5.9,3.4,11.1,5.8,17.4,8.1l2.4-6.6   C1339.9,238,1335.1,235.8,1329.7,232.7z"
+      />
+      <path
+        className="st0"
+        d="M1345.9,240.2c-0.1,0-0.2-0.1-0.3-0.1l-2.4,6.6c1.9,0.7,3.5,1.2,5.5,1.8l2-6.7   C1349.1,241.3,1347.7,240.9,1345.9,240.2z"
+      />
+      <path
+        className="st16"
+        d="M1351,241.9c-0.1,0-0.1,0-0.2-0.1l-2,6.7c1.7,0.5,1.9,0.6,3.7,1.1l1.8-6.7   C1352.8,242.5,1352.6,242.4,1351,241.9z"
+      />
+      <path
+        className="st0"
+        d="M1354.5,242.9c-0.1,0-0.1,0-0.2-0.1l-1.8,6.7c2.2,0.6,5.2,1.3,7.5,1.7l1.3-6.8   C1359.2,244.1,1356.5,243.5,1354.5,242.9z"
+      />
+      <path
+        className="st17"
+        d="M1388.2,246.2c-9.7,0.7-17.2,0.2-26.7-1.6c-0.1,0-0.1,0-0.2,0l-1.3,6.8c10.3,2,18.3,2.5,28.7,1.8   L1388.2,246.2C1388.2,246.2,1388.2,246.2,1388.2,246.2z"
+      />
+      <path
+        className="st16"
+        d="M1395.3,245.4c-2,0.3-5,0.6-7.1,0.7l0.5,6.9c2.2-0.2,5.5-0.5,7.7-0.8L1395.3,245.4   C1395.4,245.4,1395.3,245.4,1395.3,245.4z"
+      />
+      <path
+        className="st15"
+        d="M1400.6,244.5c-2.2,0.4-3,0.6-5.2,0.9l1,6.9c2.4-0.3,3.3-0.5,5.7-1l-1.3-6.8   C1400.7,244.5,1400.6,244.5,1400.6,244.5z"
+      />
+      <path
+        className="st18"
+        d="M1435.4,230.8c-10.9,6.8-22.1,11.2-34.7,13.7l1.3,6.8c13.6-2.6,25.7-7.4,37.4-14.7l-3.7-6   C1435.6,230.7,1435.5,230.8,1435.4,230.8z"
+      />
+      <path
+        className="st16"
+        d="M1442.8,225.8c-2.3,1.8-4.6,3.3-7,4.9l3.7,6c2.8-1.7,5.3-3.5,7.9-5.5l-4.3-5.7   C1443,225.6,1442.9,225.7,1442.8,225.8z"
+      />
+      <path
+        className="st15"
+        d="M1461.9,207c-5.7,7.3-11.4,12.9-18.7,18.5l4.3,5.7c8.1-6.1,14.3-12.2,20.5-20.2l-5.7-4.5   C1462.1,206.7,1462,206.8,1461.9,207z"
+      />
+      <path
+        className="st0"
+        d="M1464,204.1c-0.8,1.1-1.1,1.5-1.8,2.4l5.7,4.5c1.1-1.3,1.3-1.7,2.3-3.1l-5.9-4.3   C1464.3,203.8,1464.1,204,1464,204.1z"
+      />
+      <path
+        className="st15"
+        d="M1469.9,195.1c-1.7,2.9-3.6,5.8-5.5,8.5l5.9,4.3c2.2-3.1,4.4-6.4,6.3-9.7l-6.3-3.7   C1470.1,194.7,1470,194.9,1469.9,195.1z"
+      />
+      <path
+        className="st16"
+        d="M1471.6,192c-0.6,1.1-0.9,1.7-1.4,2.6l6.3,3.7c0.8-1.4,1.1-2,1.9-3.4l-6.5-3.5   C1471.8,191.6,1471.7,191.8,1471.6,192z"
+      />
+      <path
+        className="st15"
+        d="M1474,187.2c-0.6,1.4-1.4,2.8-2.1,4.2l6.5,3.5c0.9-1.7,1.8-3.5,2.6-5.2l-6.7-3.1   C1474.2,186.8,1474.1,187,1474,187.2z"
+      />
+      <path
+        className="st0"
+        d="M1482.6,158.1c-1.4,10.3-4,19.1-8.3,28.5l6.7,3.1c4.8-10.3,7.7-20,9.3-31.3l-7.5-1.1   C1482.7,157.6,1482.7,157.8,1482.6,158.1z"
+      />
+      <path
+        className="st16"
+        d="M1483.1,154.6c-0.1,1.3-0.2,1.8-0.3,2.8l7.5,1.1c0.2-1.7,0.3-2.1,0.5-3.8l-7.6-0.8   C1483.1,154.1,1483.1,154.3,1483.1,154.6z"
+      />
+      <path
+        className="st0"
+        d="M1488,116.4l-7.7,1.9c0.1,0.2,0.1,0.4,0.2,0.7c2.8,11.4,3.7,23.1,2.6,34.8l7.6,0.8   C1492.1,141.8,1491.2,128.9,1488,116.4z"
+      />
+      <path
+        className="st15"
+        d="M1479.6,115.6c0.4,1.3,0.5,1.7,0.7,2.7l7.7-1.9c-0.4-1.7-0.5-2.1-1-3.7l-7.6,2.2   C1479.5,115.1,1479.6,115.3,1479.6,115.6z"
+      />
+      <path
+        className="st0"
+        d="M1476.1,105.4c1.3,3.3,2.3,6.1,3.3,9.4l7.6-2.2c-1.1-4-2.2-7.1-3.8-10.9l-7.4,3   C1476,105,1476.1,105.2,1476.1,105.4z"
+      />
+      <path
+        className="st15"
+        d="M1474,100.5c0.6,1.2,1.3,2.9,1.9,4.3l7.4-3c-0.6-1.6-1.6-3.8-2.3-5.3l-7.3,3.4   C1473.8,100.1,1473.9,100.3,1474,100.5z"
+      />
+      <path
+        className="st0"
+        d="M1464,83.5c3.8,5.2,6.9,10.5,9.7,16.3l7.3-3.4c-3-6.5-6.5-12.4-10.7-18.2l-6.6,4.8   C1463.8,83.2,1463.9,83.4,1464,83.5z"
+      />
+      <path
+        className="st16"
+        d="M1461.9,80.7c0.8,1.1,1.1,1.5,1.8,2.4l6.6-4.8c-1-1.4-1.3-1.7-2.3-3.1l-6.5,5   C1461.6,80.4,1461.7,80.5,1461.9,80.7z"
+      />
+      <path
+        className="st15"
+        d="M1430.8,54.1c12.3,6.8,22,15.1,30.7,26.1l6.5-5c-9.5-12.1-20-21.1-33.4-28.6l-4.1,7.3   C1430.5,54,1430.6,54.1,1430.8,54.1z"
+      />
+      <path
+        className="st16"
+        d="M1426,51.6c1.9,0.9,2.7,1.3,4.4,2.3l4.1-7.3c-2.1-1.2-2.9-1.6-5.1-2.7l-3.7,7.6   C1425.8,51.5,1425.9,51.6,1426,51.6z"
+      />
+      <path
+        className="st18"
+        d="M1381,41.3c16.3,0,30.1,3.2,44.7,10.2l3.7-7.6c-15.8-7.7-30.7-11.2-48.4-11.2L1381,41.3   C1381,41.3,1381,41.3,1381,41.3z"
+      />
+    </g>
+    <g>
+      <path
+        className="st0"
+        d="M88.9,130l-13.6,13.6c-3.2,3.2-8.4,3.2-11.6,0l-1.4-1.4c-3.2-3.2-3.2-8.4,0-11.6L75.9,117   c3.2-3.2,8.4-3.2,11.6,0l1.4,1.4C92.1,121.6,92.1,126.8,88.9,130z"
+      />
+      <path
+        className="st0"
+        d="M75.9,143.5L62.4,130c-3.2-3.2-3.2-8.4,0-11.6l1.4-1.4c3.2-3.2,8.4-3.2,11.6,0l13.6,13.6   c3.2,3.2,3.2,8.4,0,11.6l-1.4,1.4C84.3,146.7,79.1,146.7,75.9,143.5z"
+      />
+    </g>
+    <g>
+      <path
+        className="st1"
+        d="M88.5,162.2l-15.5,15.5c-3.2,3.2-8.4,3.2-11.6,0l-2.4-2.4c-3.2-3.2-3.2-8.4,0-11.6l15.5-15.5   c3.2-3.2,8.4-3.2,11.6,0l2.4,2.4C91.7,153.9,91.7,159,88.5,162.2z"
+      />
+      <path
+        className="st1"
+        d="M74.5,177.8L59,162.2c-3.2-3.2-3.2-8.4,0-11.6l2.4-2.4c3.2-3.2,8.4-3.2,11.6,0l15.5,15.5   c3.2,3.2,3.2,8.4,0,11.6l-2.4,2.4C82.9,181,77.7,181,74.5,177.8z"
+      />
+    </g>
+    <g>
+      <path
+        className="st0"
+        d="M177.7,130l-12.2,12.2c-3.1,3.1-8.3,3.1-11.4,0l-0.7-0.7c-3.1-3.1-3.1-8.3,0-11.4l12.2-12.2   c3.1-3.1,8.3-3.1,11.4,0l0.7,0.7C180.8,121.7,180.8,126.8,177.7,130z"
+      />
+      <path
+        className="st0"
+        d="M165.6,142.1L153.4,130c-3.1-3.1-3.1-8.3,0-11.4l0.7-0.7c3.1-3.1,8.3-3.1,11.4,0l12.2,12.2   c3.1,3.1,3.1,8.3,0,11.4l-0.7,0.7C173.8,145.3,168.7,145.3,165.6,142.1z"
+      />
+    </g>
+    <g>
+      <path
+        className="st1"
+        d="M178.6,160.1l-14.5,14.5c-3.2,3.2-8.4,3.2-11.6,0l-1.8-1.8c-3.2-3.2-3.2-8.4,0-11.6l14.5-14.5   c3.2-3.2,8.4-3.2,11.6,0l1.8,1.8C181.8,151.7,181.8,156.8,178.6,160.1z"
+      />
+      <path
+        className="st1"
+        d="M165.2,174.5l-14.5-14.5c-3.2-3.2-3.2-8.4,0-11.6l1.8-1.8c3.2-3.2,8.4-3.2,11.6,0l14.5,14.5   c3.2,3.2,3.2,8.4,0,11.6l-1.8,1.8C173.6,177.8,168.4,177.8,165.2,174.5z"
+      />
+    </g>
+    <g>
+      <path
+        className="st1"
+        d="M265.1,122.4l-10.5,10.5c-2.2,2.2-5.8,2.2-8,0l-1.5-1.5c-2.2-2.2-2.2-5.8,0-8l10.5-10.5c2.2-2.2,5.8-2.2,8,0   l1.5,1.5C267.3,116.6,267.3,120.2,265.1,122.4z"
+      />
+      <path
+        className="st1"
+        d="M255.6,132.9l-10.5-10.5c-2.2-2.2-2.2-5.8,0-8l1.5-1.5c2.2-2.2,5.8-2.2,8,0l10.5,10.5c2.2,2.2,2.2,5.8,0,8   l-1.5,1.5C261.4,135.1,257.8,135.1,255.6,132.9z"
+      />
+    </g>
+    <g>
+      <path
+        className="st1"
+        d="M365.2,135.6l-16.3,16.3c-3.2,3.2-8.4,3.2-11.6,0l-2.8-2.8c-3.2-3.2-3.2-8.4,0-11.6l16.3-16.3   c3.2-3.2,8.4-3.2,11.6,0l2.8,2.8C368.4,127.2,368.4,132.4,365.2,135.6z"
+      />
+      <path
+        className="st1"
+        d="M350.8,151.9l-16.3-16.3c-3.2-3.2-3.2-8.4,0-11.6l2.8-2.8c3.2-3.2,8.4-3.2,11.6,0l16.3,16.3   c3.2,3.2,3.2,8.4,0,11.6l-2.8,2.8C359.2,155.1,354,155.1,350.8,151.9z"
+      />
+    </g>
+    <text
+      transform="matrix(1 0 0 1 247.3518 121.8334)"
+      className="st19 st3 st20"
+    >
+      {" \uB300\uCC45\uC5C6\uB294 "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 244.008 126.1019)"
+      className="st19 st3 st20"
+    >
+      {"\uCD1D\uC120\uC6A9 \uBAA8\uBCD1\uC81C"}
+    </text>
+    <text transform="matrix(1 0 0 1 221.1962 123.3257)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"\uC804\uC7C1\uC591\uC0C1"}
+      </tspan>
+      <tspan x={2.4} y={6} className="st19 st3 st22">
+        {"\uBB34\uC778\uD654"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 260.0829 161.8116)"
+      className="st19 st3 st22"
+    >
+      {"\uC790\uC8FC\uAD6D\uBC29"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 262.4831 167.8116)"
+      className="st19 st3 st22"
+    >
+      {"\uC5B4\uB824\uC6C0"}
+    </text>
+    <text transform="matrix(1 0 0 1 306.5053 173.43)" className="st19 st3 st23">
+      {"\uC9C1\uC5C5\uAD70\uC778\uC704\uC8FC"}
+    </text>
+    <text transform="matrix(1 0 0 1 308.9052 178.93)" className="st19 st3 st23">
+      {"   \uD3B8\uC81C\uAC1C\uD3B8"}
+    </text>
+    <text transform="matrix(1 0 0 1 295.9275 135.9432)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"\uAC10\uCD95\uC744 \uD1B5\uD55C"}
+      </tspan>
+      <tspan x={2.3} y={6} className="st19 st3 st22">
+        {"\uAD70 \uC815\uC608\uD654"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 339.4352 131.3755)"
+      className="st19 st3 st24"
+    >
+      {"\uC9C8\uC801\uD5A5\uC0C1\uACFC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 340.9318 136.7798)"
+      className="st19 st3 st24"
+    >
+      {"\uD604\uB300\uD654 \uD6C4"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 338.7697 142.2681)"
+      className="st19 st3 st24"
+    >
+      {"\uBAA8\uBCD1\uC81C \uB3C4\uC785"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 230.0634 167.8357)"
+      className="st19 st3 st25"
+    >
+      {"50\uB9CC\uAD70"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 228.1633 174.5358)"
+      className="st19 st3 st25"
+    >
+      {"\uC720\uC9C0\uBD88\uAC00"}
+    </text>
+    <text
+      transform="matrix(0.9897 0 0 1 489.9776 122.0733)"
+      className="st19 st3 st26"
+    >
+      {"\uC815\uC608\uD654\uB41C "}
+    </text>
+    <text
+      transform="matrix(0.9897 0 0 1 495.1641 127.8487)"
+      className="st19 st3 st26"
+    >
+      {"\uBCF4\uBCD1"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 737.0323 163.5368)"
+      className="st19 st3 st27"
+    >
+      {"\uAD70 \uC0AC\uD68C\uC778\uC2DD"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 737.3145 169.491)"
+      className="st19 st3 st27"
+    >
+      {"  \uAC1C\uC120\uD544\uC694"}
+    </text>
+    <text
+      transform="matrix(1.0092 0 0 1 652.023 135.6622)"
+      className="st19 st3 st28"
+    >
+      {" \uACBD\uC81C\uD638\uD669 "}
+    </text>
+    <text
+      transform="matrix(1.0092 0 0 1 650.9942 142.4581)"
+      className="st19 st3 st28"
+    >
+      {"\uBAA8\uBCD1\uC5B4\uB824\uC6C0"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 651.9044 168.5948)"
+      className="st19 st3 st22"
+    >
+      {"\uC77C\uC790\uB9AC\uCD1D\uB7C9"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 657.5836 173.4483)"
+      className="st19 st3 st22"
+    >
+      {"\uC77C\uC815"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 619.0616 136.5577)"
+      className="st19 st3 st29"
+    >
+      {"\uC9D5\uBCD1 \uACBD\uB825\uB2E8\uC808"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 628.2017 141.9884)"
+      className="st19 st3 st29"
+    >
+      {"\uBB38\uC81C"}
+    </text>
+    <text transform="matrix(1 0 0 1 708.637 128.7269)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st30">
+        {"\uC545\uD3D0\uC2B5"}
+      </tspan>
+      <tspan x={2.3} y={5.9} className="st19 st3 st30">
+        {"\uAC10\uC18C"}
+      </tspan>
+    </text>
+    <text transform="matrix(1 0 0 1 696.7308 155.1715)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"\uC790\uAE30\uAC1C\uBC1C"}
+      </tspan>
+      <tspan x={0} y={6} className="st19 st3 st22">
+        {"\uD61C\uD0DD"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 706.1308 161.1715)"
+      className="st19 st3 st22"
+    >
+      {"\uC81C\uACF5"}
+    </text>
+    <text transform="matrix(1 0 0 1 736.6436 135.5991)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"\uC81C\uD55C\uB41C"}
+      </tspan>
+      <tspan x={-4.7} y={7} className="st19 st3 st22">
+        {"\uC0AC\uD68C\uC801\uC9C0\uC704"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 856.3586 126.1518)"
+      className="st19 st3 st31"
+    >
+      {"\uBCD1\uC0AC \uC7A5\uAE30\uBCF5\uBB34"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 863.0359 131.3373)"
+      className="st19 st3 st31"
+    >
+      {"\uC5B4\uB824\uC6C0"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 860.4031 158.3198)"
+      className="st19 st3 st32"
+    >
+      {"\uCDE8\uC5C5\uC2DC\uC7A5 "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 866.323 164.8735)"
+      className="st19 st3 st32"
+    >
+      {"\uC81C\uD55C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 808.4506 163.8574)"
+      className="st19 st3 st33"
+    >
+      {"\uC9C1\uBB34\uD63C\uD569\uB2E8\uACC4"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 810.6401 168.8398)"
+      className="st19 st3 st33"
+    >
+      {"   \uBAA8\uBCD1\uC804\uD658"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 810.5903 128.1275)"
+      className="st19 st3 st34"
+    >
+      {" \uD2B9\uC218\uBCD1\uACFC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 805.8145 134.2056)"
+      className="st19 st3 st34"
+    >
+      {"\uC9C1\uC5C5\uAD70\uC778 \uC804\uD658"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 903.1558 154.6327)"
+      className="st19 st3 st35"
+    >
+      {"\uAC04\uBD80\uC911\uC2EC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 900.3828 160.0399)"
+      className="st19 st3 st35"
+    >
+      {"\uAD70\uAC1C\uD3B8 \uAC00\uB2A5"}
+    </text>
+    <text
+      transform="matrix(1.0417 0 0 1 950.3914 119.7189)"
+      className="st19 st3 st36"
+    >
+      {"\uC608\uBE44\uC5ED"}
+    </text>
+    <text
+      transform="matrix(1.0417 0 0 1 947.5609 126.7326)"
+      className="st19 st3 st36"
+    >
+      {"\uC18C\uBA78\uBB38\uC81C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 908.0026 123.9503)"
+      className="st19 st3 st37"
+    >
+      {"\uC9C1\uC5C5\uC608\uBE44\uAD70\uC81C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 918.4006 130.5743)"
+      className="st19 st3 st37"
+    >
+      {"\uC804\uD658"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 928.6529 176.3801)"
+      className="st19 st3 st38"
+    >
+      {"\uCDA9\uBD84\uD55C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 924.7491 184.0148)"
+      className="st19 st3 st38"
+    >
+      {"\uBD80\uC0AC\uAD00 \uC218"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1062.1498 162.8702)"
+      className="st19 st3 st39"
+    >
+      {"\uB0A8\uC131 2\uB144\uB2A6\uB294"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1067.0829 169.3653)"
+      className="st19 st3 st39"
+    >
+      {"\uCDE8\uC5C5\uC2DC\uAE30"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1113.3817 164.8828)"
+      className="st19 st3 st40"
+    >
+      {"\uC5EC\uC131\uC0AC\uBCD1\uC9D5\uC9D1"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1120.5756 170.9776)"
+      className="st19 st3 st40"
+    >
+      {"\uBD88\uD544\uC694"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1072.7025 129.9147)"
+      className="st19 st3 st41"
+    >
+      {" \uC5EC\uC131\uC0AC\uBCD1"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1071.1976 135.5582)"
+      className="st19 st3 st41"
+    >
+      {"\uB2E8\uAE30\uBCF5\uBB34\uC2DC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1073.3612 141.2008)"
+      className="st19 st3 st41"
+    >
+      {"\uD61C\uD0DD\uC81C\uACF5"}
+    </text>
+    <text transform="matrix(1 0 0 1 1155.2603 154.9569)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st42">
+        {"\uC5EC\uAD70"}
+      </tspan>
+      <tspan x={-2.8} y={7.2} className="st19 st3 st42">
+        {"\uBAA8\uBCD1\uD6C4"}
+      </tspan>
+      <tspan x={-8.1} y={14.4} className="st19 st3 st42">
+        {"\uD6C4\uBC29\uD22C\uC785   "}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1121.0238 132.6415)"
+      className="st19 st3 st43"
+    >
+      {" \uCDA9\uBD84\uD55C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1116.7855 138.0907)"
+      className="st19 st3 st43"
+    >
+      {"\uC5EC\uAD70\uAC04\uBD80 \uC218"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1040.5039 132.2433)"
+      className="st19 st3 st44"
+    >
+      {"\uBCF5\uC7A1\uD55C "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1032.6973 138.921)"
+      className="st19 st3 st44"
+    >
+      {"\uBD09\uAE09\uCCB4\uACC4\uBB38\uC81C "}
+    </text>
+    <text transform="matrix(1 0 0 1 1336.8053 119.5911)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st45">
+        {"\uAD6D\uBC29\uC608\uC0B0"}
+      </tspan>
+      <tspan x={5.7} y={7.2} className="st19 st3 st45">
+        {"\uCD08\uACFC"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1295.8468 118.6904)"
+      className="st19 st3 st46"
+    >
+      {"\uBD80\uB300 \uD1B5\uD3D0\uD569\uC744"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1295.8468 125.3574)"
+      className="st19 st3 st46"
+    >
+      {"\uD1B5\uD55C \uC608\uC0B0\uC870\uC815"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1350.7646 150.3057)"
+      className="st19 st3 st47"
+    >
+      {"\uAD6D\uBC29\uC608\uC0B0"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1350.7646 156.7383)"
+      className="st19 st3 st47"
+    >
+      {"\uC870\uC815\uBD88\uAC00"}
+    </text>
+    <text
+      transform="matrix(1.0025 0 0 1 1444.1533 157.2187)"
+      className="st19 st3 st48"
+    >
+      {"\uBCD1\uC0AC\uCC98\uC6B0"}
+    </text>
+    <text
+      transform="matrix(1.0025 0 0 1 1444.1533 166.706)"
+      className="st19 st3 st48"
+    >
+      {"\uAC1C\uC120\uD544\uC694"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1400.5068 117.796)"
+      className="st19 st3 st49"
+    >
+      {"\uC9D5\uC9D1 \uD3B8\uC81C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1400.5068 125.7823)"
+      className="st19 st3 st49"
+    >
+      {"\uC720\uC9C0 \uBD88\uAC00"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1386.7942 155.3522)"
+      className="st19 st3 st50"
+    >
+      {"\uC9C1\uC5C5\uAD70\uC778 "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1393.3538 162.6022)"
+      className="st19 st3 st50"
+    >
+      {"\uC804\uD658"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1439.2754 121.1047)"
+      className="st19 st3 st51"
+    >
+      {"\uAD70 \uC545\uD3D0\uC2B5"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 1447.0547 129.7218)"
+      className="st19 st3 st51"
+    >
+      {"\uCCA0\uD3D0"}
+    </text>
+    <text
+      transform="matrix(0.9857 0 0 1 546.0718 119.5096)"
+      className="st19 st3 st9"
+    >
+      {"\uBCD1\uB825\uC218\uC694\uACF5\uAE09"}
+    </text>
+    <text
+      transform="matrix(0.9857 0 0 1 548.9185 124.8582)"
+      className="st19 st3 st9"
+    >
+      {"  \uC608\uCE21\uBD88\uAC00"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 514.0411 148.6983)"
+      className="st19 st3 st52"
+    >
+      {" \uACBD\uC81C\uD638\uD669 "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 512.6505 157.6837)"
+      className="st19 st3 st52"
+    >
+      {"\uBAA8\uBCD1\uC5B4\uB824\uC6C0"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 541.1564 184.0597)"
+      className="st19 st3 st53"
+    >
+      {"\uBBF8\uAD70 \uBAA8\uBCD1"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 541.1564 189.0041)"
+      className="st19 st3 st53"
+    >
+      {"\uC778\uC6D0 \uBBF8\uB2EC"}
+    </text>
+    <text
+      transform="matrix(1.0067 0 0 1 557.4014 149.2247)"
+      className="st19 st3 st54"
+    >
+      {"\uC77C\uC790\uB9AC\uCD1D\uB7C9"}
+    </text>
+    <text
+      transform="matrix(1.0067 0 0 1 563.5391 154.8946)"
+      className="st19 st3 st54"
+    >
+      {" \uC77C\uC815"}
+    </text>
+    <text transform="matrix(0.9931 0 0 1 490.7679 180.5836)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"21\uB9CC \uC77C\uC790\uB9AC"}
+      </tspan>
+      <tspan x={8.4} y={6} className="st19 st3 st22">
+        {"\uC81C\uACF5"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 477.5381 149.4913)"
+      className="st19 st3 st55"
+    >
+      {"\uC0AC\uD68C\uC8FC\uB958\uB85C\uC758"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 479.6778 154.5187)"
+      className="st19 st3 st55"
+    >
+      {"   \uBC1C\uD310\uC81C\uACF5"}
+    </text>
+    <text
+      transform="matrix(0.9931 0 0 1 620.7202 168.1509)"
+      className="st19 st3 st56"
+    >
+      {"21\uB9CC \uC77C\uC790\uB9AC"}
+    </text>
+    <text
+      transform="matrix(0.9931 0 0 1 627.5331 173.063)"
+      className="st19 st3 st56"
+    >
+      {"\uC81C\uACF5"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 124.2081 119.7677)"
+      className="st19 st3 st57"
+    >
+      {"\uCCAD\uB144\uC778\uAD6C "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 129.6944 125.8116)"
+      className="st19 st3 st57"
+    >
+      {"\uAC10\uC18C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 154.4429 158.1561)"
+      className="st19 st3 st58"
+    >
+      {"  \uBBF8\uBE44\uD55C"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 151.4595 165.118)"
+      className="st19 st3 st58"
+    >
+      {"\uAD70\uC815\uCC45\uAC80\uD1A0"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 154.9424 128.921)"
+      className="st19 st3 st59"
+    >
+      {"\uAC10\uAD70\uB300\uBE44 "}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 157.4937 135.2989)"
+      className="st19 st3 st59"
+    >
+      {" \uBB34\uB300\uCC45"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 105.1656 141.2602)"
+      className="st19 st3 st60"
+    >
+      {"\uAD70 \uBD80\uC801\uC751\uC790"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 107.6544 146.1635)"
+      className="st19 st3 st60"
+    >
+      {"\uB9E4\uB144\uC99D\uAC00"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 31.1618 161.3664)"
+      className="st19 st3 st22"
+    >
+      {" 50\uB9CC\uAD70"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 30.1618 167.3664)"
+      className="st19 st3 st22"
+    >
+      {"\uC720\uC9C0\uBD88\uAC00"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 35.9428 122.7906)"
+      className="st19 st3 st61"
+    >
+      {"\uC778\uAD6C\uC808\uBCBD\uC704\uD611"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 62.9166 163.6712)"
+      className="st19 st3 st62"
+    >
+      {"\uBD81 \uD575\uC704\uD611"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 66.1568 128.1728)"
+      className="st19 st3 st62"
+    >
+      {"\uC548\uBCF4\uC704\uD611"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 66.1568 134.6728)"
+      className="st19 st3 st62"
+    >
+      {"\uACFC\uC18C\uD3C9\uAC00"}
+    </text>
+    <circle className="st5" cx={127.8} cy={169.7} r={14.7} />
+    <text transform="matrix(1 0 0 1 118.6173 168.8309)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st63">
+        {"\uAD00\uC2EC\uBCD1\uC0AC"}
+      </tspan>
+      <tspan x={4.6} y={5.8} className="st19 st3 st63">
+        {"\uC99D\uAC00"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={32.2} cy={139.6} r={11} />
+    <text transform="matrix(1 0 0 1 24.9401 138.4744)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st61">
+        {"\uCCAD\uB144\uC2E4\uC5C5\uB960"}
+      </tspan>
+      <tspan x={4.5} y={3.9} className="st19 st3 st61">
+        {"\uC99D\uAC00"}
+      </tspan>
+    </text>
+    <g>
+      <path
+        className="st1"
+        d="M59.2,141.9l-8.2,8.2c-1.7,1.7-4.4,1.7-6,0l-1.3-1.3c-1.7-1.7-1.7-4.4,0-6l8.2-8.2c1.7-1.7,4.4-1.7,6,0   l1.3,1.3C60.9,137.5,60.9,140.2,59.2,141.9z"
+      />
+      <path
+        className="st1"
+        d="M51.9,150.1l-8.2-8.2c-1.7-1.7-1.7-4.4,0-6l1.3-1.3c1.7-1.7,4.4-1.7,6,0l8.2,8.2c1.7,1.7,1.7,4.4,0,6l-1.3,1.3   C56.3,151.8,53.6,151.8,51.9,150.1z"
+      />
+    </g>
+    <text
+      transform="matrix(1 0 0 1 46.0875 141.1583)"
+      className="st19 st3 st64"
+    >
+      {"\uC548\uBCF4\uC704\uD611"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 46.0875 144.8409)"
+      className="st19 st3 st64"
+    >
+      {"\uACFC\uC18C\uD3C9\uAC00"}
+    </text>
+    <circle className="st17" cx={138.9} cy={147.8} r={10.2} />
+    <text transform="matrix(1 0 0 1 129.9937 147.3927)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st65">
+        {"\uC2A4\uB9C8\uD2B8\uAD70\uB300"}
+      </tspan>
+      <tspan x={5.4} y={4.6} className="st19 st3 st65">
+        {"\uC804\uD658"}
+      </tspan>
+    </text>
+    <circle className="st5" cx={241.7} cy={142.1} r={8.9} />
+    <text transform="matrix(1 0 0 1 234.5582 143.42)" className="st19 st3 st66">
+      {"\uAC10\uAD70\uCCB4\uC81C"}
+    </text>
+    <circle className="st5" cx={221} cy={146.7} r={12.7} />
+    <text transform="matrix(1 0 0 1 211.0695 145.0053)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st22">
+        {"\uBBF8\uB798\uC804\uC7C1"}
+      </tspan>
+      <tspan x={0} y={6} className="st19 st3 st22">
+        {"\uC608\uCE21\uBD88\uAC00"}
+      </tspan>
+    </text>
+    <g>
+      <path
+        className="st1"
+        d="M284.6,138.7l-9.3,9.3c-2.2,2.2-5.8,2.2-8,0l-0.9-0.9c-2.2-2.2-2.2-5.8,0-8l9.3-9.3c2.2-2.2,5.8-2.2,8,0   l0.9,0.9C286.8,132.9,286.8,136.5,284.6,138.7z"
+      />
+      <path
+        className="st1"
+        d="M275.7,148l-9.3-9.3c-2.2-2.2-2.2-5.8,0-8l0.9-0.9c2.2-2.2,5.8-2.2,8,0l9.3,9.3c2.2,2.2,2.2,5.8,0,8l-0.9,0.9   C281.5,150.2,277.9,150.2,275.7,148z"
+      />
+    </g>
+    <text transform="matrix(1 0 0 1 269.5923 137.1329)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st67">
+        {"\uAD70\uC778\uC218"}
+      </tspan>
+      <tspan x={-2} y={5} className="st19 st3 st67">
+        {"\uC720\uC9C0\uD544\uC694"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={324.9} cy={119.8} r={9.7} />
+    <text transform="matrix(1 0 0 1 321.3956 117.796)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st68">
+        {"\uC18C\uC218"}
+      </tspan>
+      <tspan x={-3.6} y={4.6} className="st19 st3 st68">
+        {"\uC815\uC608\uD654\uAD70"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={300.5} cy={157.2} r={8.1} />
+    <text transform="matrix(1 0 0 1 296.8839 155.7204)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st69">
+        {"\uAD70\uB300"}
+      </tspan>
+      <tspan x={-1.8} y={4.6} className="st19 st3 st69">
+        {"\uAE30\uACC4\uD654"}
+      </tspan>
+    </text>
+    <text transform="matrix(1 0 0 1 338.2305 167.7735)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st70">
+        {"\uC2A4\uB9C8\uD2B8\uAD70\uB300"}
+      </tspan>
+      <tspan x={7.6} y={6.5} className="st19 st3 st70">
+        {"\uCCB4\uC81C"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M462,166.8l1.8-1.8c1.9-1.9,1.9-5.1,0-7l-4.1-4.1c-1.9-1.9-5.1-1.9-7,0l-1.8,1.8l-1.8-1.8c-1.9-1.9-5.1-1.9-7,0  l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7l4.1,4.1c1.9,1.9,5.1,1.9,7,0l1.8-1.8l1.8,1.8  c1.9,1.9,5.1,1.9,7,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7L462,166.8z"
+    />
+    <circle className="st6" cx={421.3} cy={171.1} r={15} />
+    <circle className="st6" cx={411.1} cy={135.7} r={12.9} />
+    <circle className="st7" cx={433.6} cy={149.3} r={40.6} />
+    <text transform="matrix(1 0 0 1 413.878 96.4513)" className="st2 st3 st71">
+      {"\uC778\uB825\uD655\uCDA9 \uBB38\uC81C, "}
+    </text>
+    <text transform="matrix(1 0 0 1 420.709 103.9571)" className="st2 st3 st71">
+      {"\uD574\uACB0\uBC95\uC740?"}
+    </text>
+    <g>
+      <path
+        className="st1"
+        d="M464.3,134.7L449,149.9c-3.2,3.2-8.4,3.2-11.6,0l-2.2-2.2c-3.2-3.2-3.2-8.4,0-11.6l15.3-15.3   c3.2-3.2,8.4-3.2,11.6,0l2.2,2.2C467.5,126.3,467.5,131.4,464.3,134.7z"
+      />
+      <path
+        className="st1"
+        d="M450.4,149.9l-15.3-15.3c-3.2-3.2-3.2-8.4,0-11.6l2.2-2.2c3.2-3.2,8.4-3.2,11.6,0l15.3,15.3   c3.2,3.2,3.2,8.4,0,11.6l-2.2,2.2C458.8,153.1,453.6,153.1,450.4,149.9z"
+      />
+    </g>
+    <text
+      transform="matrix(1 0 0 1 407.0303 169.8419)"
+      className="st19 st3 st72"
+    >
+      {"\uC9C1\uC5C5\uAD70\uC778\uC704\uC8FC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 409.3389 175.1339)"
+      className="st19 st3 st72"
+    >
+      {"   \uD3B8\uC81C\uAC1C\uD3B8"}
+    </text>
+    <text transform="matrix(1 0 0 1 398.8521 134.7735)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st73">
+        {"\uAC10\uCD95\uC744 \uD1B5\uD55C"}
+      </tspan>
+      <tspan x={2.3} y={5.8} className="st19 st3 st73">
+        {"\uAD70 \uC815\uC608\uD654"}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(1 0 0 1 439.7349 130.3976)"
+      className="st19 st3 st74"
+    >
+      {"\uC9C8\uC801\uD5A5\uC0C1\uACFC"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 441.1754 135.5987)"
+      className="st19 st3 st74"
+    >
+      {"\uD604\uB300\uD654 \uD6C4"}
+    </text>
+    <text
+      transform="matrix(1 0 0 1 439.0948 140.879)"
+      className="st19 st3 st74"
+    >
+      {"\uBAA8\uBCD1\uC81C \uB3C4\uC785"}
+    </text>
+    <circle className="st6" cx={425.8} cy={119.2} r={9.4} />
+    <text transform="matrix(1 0 0 1 421.357 116.3107)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st75">
+        {"\uC18C\uC218"}
+      </tspan>
+      <tspan x={-3.4} y={4.4} className="st19 st3 st75">
+        {"\uC815\uC608\uD654\uAD70"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={401.3} cy={154.2} r={7.8} />
+    <text transform="matrix(1 0 0 1 397.7725 152.8019)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st76">
+        {"\uAD70\uB300"}
+      </tspan>
+      <tspan x={-1.7} y={4.4} className="st19 st3 st76">
+        {"\uAE30\uACC4\uD654"}
+      </tspan>
+    </text>
+    <text transform="matrix(1 0 0 1 438.5753 165.42)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st77">
+        {"\uC2A4\uB9C8\uD2B8\uAD70\uB300"}
+      </tspan>
+      <tspan x={7.3} y={6.2} className="st19 st3 st77">
+        {"\uCCB4\uC81C"}
+      </tspan>
+    </text>
+    <ellipse className="st6" cx={528.4} cy={111.1} rx={15.6} ry={15.9} />
+    <text transform="matrix(0.9897 0 0 1 516.2606 109.5187)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st78">
+        {"\uACE0\uC704\uCE35\uC790\uB140"}
+      </tspan>
+      <tspan x={2.4} y={6.2} className="st19 st3 st78">
+        {"\uBCD1\uC5ED\uAE30\uD53C"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M732.5,175.1l1.4-1.4c1.5-1.5,1.5-3.9,0-5.4l-3.2-3.2c-1.5-1.5-3.9-1.5-5.4,0l-1.4,1.4l-1.4-1.4  c-1.5-1.5-3.9-1.5-5.4,0l-3.2,3.2c-1.5,1.5-1.5,3.9,0,5.4l1.4,1.4l-1.4,1.4c-1.5,1.5-1.5,3.9,0,5.4l3.2,3.2c1.5,1.5,3.9,1.5,5.4,0  l1.4-1.4l1.4,1.4c1.5,1.5,3.9,1.5,5.4,0l3.2-3.2c1.5-1.5,1.5-3.9,0-5.4L732.5,175.1z"
+    />
+    <text transform="matrix(1 0 0 1 720.7448 172.0117)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st79">
+        {"\uBCD1\uC0AC"}
+      </tspan>
+      <tspan x={-3.4} y={4.3} className="st19 st3 st79">
+        {"\uC7A5\uAE30\uBCF5\uBB34"}
+      </tspan>
+      <tspan x={-1.7} y={8.6} className="st19 st3 st79">
+        {"\uC5B4\uB824\uC6C0"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M856.2,181.1l1.5-1.5c1.7-1.7,1.7-4.3,0-6l-3.5-3.5c-1.7-1.7-4.3-1.7-6,0l-1.5,1.5l-1.5-1.5  c-1.7-1.7-4.3-1.7-6,0l-3.5,3.5c-1.7,1.7-1.7,4.3,0,6l1.5,1.5l-1.5,1.5c-1.7,1.7-1.7,4.3,0,6l3.5,3.5c1.7,1.7,4.3,1.7,6,0l1.5-1.5  l1.5,1.5c1.7,1.7,4.3,1.7,6,0l3.5-3.5c1.7-1.7,1.7-4.3,0-6L856.2,181.1z"
+    />
+    <text transform="matrix(1 0 0 1 839.6398 179.7394)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st80">
+        {"\uC0AC\uBA85\uAC10"}
+      </tspan>
+      <tspan x={2.3} y={5.8} className="st19 st3 st80">
+        {"\uBD80\uC7AC"}
+      </tspan>
+    </text>
+    <circle className="st5" cx={844.3} cy={113.7} r={12.3} />
+    <text transform="matrix(1 0 0 1 839.8841 109.5204)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st81">
+        {"\uBCD1\uC0AC"}
+      </tspan>
+      <tspan x={-2.2} y={5.7} className="st19 st3 st81">
+        {"\uC790\uC728\uC131"}
+      </tspan>
+      <tspan x={0} y={11.4} className="st19 st3 st81">
+        {"\uD655\uB300"}
+      </tspan>
+    </text>
+    <path
+      className="st1"
+      d="M851.3,149.7l1.2-1.2c1.4-1.4,1.4-3.6,0-5l-2.9-2.9c-1.4-1.4-3.6-1.4-5,0l-1.2,1.2l-1.2-1.2  c-1.4-1.4-3.6-1.4-5,0l-2.9,2.9c-1.4,1.4-1.4,3.6,0,5l1.2,1.2l-1.2,1.2c-1.4,1.4-1.4,3.6,0,5l2.9,2.9c1.4,1.4,3.6,1.4,5,0l1.2-1.2  l1.2,1.2c1.4,1.4,3.6,1.4,5,0l2.9-2.9c1.4-1.4,1.4-3.6,0-5L851.3,149.7z"
+    />
+    <text transform="matrix(1.0417 0 0 1 837.8297 148.4434)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st82">
+        {"\uBE44\uAD00\uC801"}
+      </tspan>
+      <tspan x={-1.6} y={4.1} className="st19 st3 st82">
+        {"\uAD70\uB300\uC778\uC2DD"}
+      </tspan>
+    </text>
+    <path
+      className="st1"
+      d="M986.2,157.8l2.3-2.3c2.5-2.5,2.5-6.7,0-9.2l-5.4-5.4c-2.5-2.5-6.7-2.5-9.2,0l-2.3,2.3l-2.3-2.3  c-2.5-2.5-6.7-2.5-9.2,0l-5.4,5.4c-2.5,2.5-2.5,6.7,0,9.2l2.3,2.3l-2.3,2.3c-2.5,2.5-2.5,6.7,0,9.2l5.4,5.4c2.5,2.5,6.7,2.5,9.2,0  l2.3-2.3l2.3,2.3c2.5,2.5,6.7,2.5,9.2,0l5.4-5.4c2.5-2.5,2.5-6.7,0-9.2L986.2,157.8z"
+    />
+    <text transform="matrix(1 0 0 1 959.1465 155.9503)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st83">
+        {"\uAC04\uBD80\uC6D4\uAE09"}
+      </tspan>
+      <tspan x={0} y={8.3} className="st19 st3 st83">
+        {"\uC778\uC0C1\uD544\uC694"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={1040.2} cy={163.4} r={10.4} />
+    <text transform="matrix(1 0 0 1 1032.1058 162.646)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st84">
+        {"\uAC04\uBD80\uCCB4\uC81C"}
+      </tspan>
+      <tspan x={3.9} y={4.9} className="st19 st3 st84">
+        {"\uAC1C\uD3B8"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M1058.9,177.7l1-1c1.1-1.1,1.1-2.8,0-3.9l-2.3-2.3c-1.1-1.1-2.8-1.1-3.9,0l-1,1l-1-1c-1.1-1.1-2.8-1.1-3.9,0  l-2.3,2.3c-1.1,1.1-1.1,2.8,0,3.9l1,1l-1,1c-1.1,1.1-1.1,2.8,0,3.9l2.3,2.3c1.1,1.1,2.8,1.1,3.9,0l1-1l1,1c1.1,1.1,2.8,1.1,3.9,0  l2.3-2.3c1.1-1.1,1.1-2.8,0-3.9L1058.9,177.7z"
+    />
+    <text transform="matrix(1 0 0 1 1047.4501 176.4488)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st85">
+        {"\uAD70\uAC00\uC0B0\uC810"}
+      </tspan>
+      <tspan x={0} y={3.1} className="st19 st3 st85">
+        {"\uC81C\uB3C4\uBD80\uD65C"}
+      </tspan>
+    </text>
+    <path
+      className="st1"
+      d="M1166.8,129.6l1.6-1.6c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.6,1.6l-1.6-1.6  c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.6,1.6l-1.6,1.6c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0  l1.6-1.6l1.6,1.6c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L1166.8,129.6z"
+    />
+    <text transform="matrix(1 0 0 1 1148.282 127.9957)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st86">
+        {"\uB0A8\uB140\uB3D9\uBC18"}
+      </tspan>
+      <tspan x={0} y={5.5} className="st19 st3 st86">
+        {"\uD22C\uC785\uBD88\uAC00"}
+      </tspan>
+    </text>
+    <circle className="st6" cx={1308.1} cy={172} r={13.2} />
+    <text transform="matrix(1 0 0 1 1297.7836 171.5993)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st87">
+        {"\uBD80\uB300\uD1A0\uC9C0"}
+      </tspan>
+      <tspan x={5} y={6.3} className="st19 st3 st87">
+        {"\uB9E4\uAC01"}
+      </tspan>
+    </text>
+    <path
+      className="st1"
+      d="M1341.6,182l1.3-1.3c1.4-1.4,1.4-3.8,0-5.2l-3.1-3.1c-1.4-1.4-3.8-1.4-5.2,0l-1.3,1.3l-1.3-1.3  c-1.4-1.4-3.8-1.4-5.2,0l-3.1,3.1c-1.4,1.4-1.4,3.8,0,5.2l1.3,1.3l-1.3,1.3c-1.4,1.4-1.4,3.8,0,5.2l3.1,3.1c1.4,1.4,3.8,1.4,5.2,0  l1.3-1.3l1.3,1.3c1.4,1.4,3.8,1.4,5.2,0l3.1-3.1c1.4-1.4,1.4-3.8,0-5.2L1341.6,182z"
+    />
+    <text transform="matrix(1 0 0 1 1326.1384 180.8968)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st88">
+        {"\uCD5C\uC18C\uBCD1\uB825"}
+      </tspan>
+      <tspan x={3.6} y={4.6} className="st19 st3 st88">
+        {"\uC720\uC9C0"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M1344.1,157.7l1.7-1.7c1.9-1.9,1.9-4.9,0-6.8l-4-4c-1.9-1.9-4.9-1.9-6.8,0l-1.7,1.7l-1.7-1.7  c-1.9-1.9-4.9-1.9-6.8,0l-4,4c-1.9,1.9-1.9,4.9,0,6.8l1.7,1.7l-1.7,1.7c-1.9,1.9-1.9,4.9,0,6.8l4,4c1.9,1.9,4.9,1.9,6.8,0l1.7-1.7  l1.7,1.7c1.9,1.9,4.9,1.9,6.8,0l4-4c1.9-1.9,1.9-4.9,0-6.8L1344.1,157.7z"
+    />
+    <text transform="matrix(1 0 0 1 1324.1256 156.5873)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st89">
+        {"\uBCD1\uB825\uC720\uC9C0"}
+      </tspan>
+      <tspan x={4.6} y={5.9} className="st19 st3 st89">
+        {"\uD544\uC694"}
+      </tspan>
+    </text>
+    <circle className="st5" cx={1294.1} cy={148.4} r={14.1} />
+    <text transform="matrix(1 0 0 1 1283.7657 146.6884)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st46">
+        {"\uD575\uC2EC\uAE30\uB3D9"}
+      </tspan>
+      <tspan x={0} y={6.7} className="st19 st3 st46">
+        {"\uC7A5\uBE44\uC720\uC9C0"}
+      </tspan>
+    </text>
+    <path
+      className="st0"
+      d="M1436.9,179.6l1.9-1.9c2.1-2.1,2.1-5.6,0-7.7l-4.5-4.5c-2.1-2.1-5.6-2.1-7.7,0l-1.9,1.9l-1.9-1.9  c-2.1-2.1-5.6-2.1-7.7,0l-4.5,4.5c-2.1,2.1-2.1,5.6,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.6,0,7.7l4.5,4.5c2.1,2.1,5.6,2.1,7.7,0  l1.9-1.9l1.9,1.9c2.1,2.1,5.6,2.1,7.7,0l4.5-4.5c2.1-2.1,2.1-5.6,0-7.7L1436.9,179.6z"
+    />
+    <text transform="matrix(1.0025 0 0 1 1412.5001 176.9272)" className="st21">
+      <tspan x={0} y={0} className="st19 st3 st90">
+        {"\uCD08\uC784\uC7A5\uAD50"}
+      </tspan>
+      <tspan x={0} y={7.7} className="st19 st3 st90">
+        {"\uC784\uAE08\uAC1C\uC120"}
+      </tspan>
+    </text>
+  </svg>
+);
+export default Bubble;

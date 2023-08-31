@@ -122,12 +122,50 @@ export class ConceptualMapDrawer {
     // drag event listener
     const drag = makeDrag();
 
+    function createParticipantData(nodes: NodeDatum[]) {
+      const participantData = {};
+
+      for (const node of nodes) {
+        for (const participant of node.participantCounts) {
+          const { name, count } = participant;
+          //@ts-ignore
+          if (!participantData[name]) {
+            //@ts-ignore
+            participantData[name] = [];
+          }
+          //@ts-ignore
+          participantData[name].push({
+            name: participant.name,
+            id: node.id,
+            count: count,
+            time: node.time,
+            sentiment: participant.sentiment,
+          });
+        }
+      }
+
+      // Sort each participant's data by count in descending order
+      for (const name in participantData) {
+        //@ts-ignore
+        participantData[name].sort((a, b) => a.time - b.time);
+      }
+
+      return participantData;
+    }
+
+    // 이 함수를 사용하려면 아래와 같이 호출합니다:
+    const sortedNodes = createParticipantData(nodes);
+    console.log(sortedNodes);
+
     // Draw elements
     // Update drawing links
     this.linksGSelection = this.linksGSelection
-      .data(links)
+      .data(links.filter((d, i) => d.source))
       .join("line")
-      .attr("stroke-width", (d) => Math.sqrt(d.count));
+      .attr("stroke-width", (d) => Math.sqrt(d.count))
+      .text(
+        (d) => `발화자: ${d.count}, 발화 횟수: ${d.id}, sentiment: ${d.source}`
+      );
 
     // Update drawing nodePies
     this.nodePiesGSelection = this.nodePiesGSelection.data(nodes).join("g");
@@ -136,7 +174,13 @@ export class ConceptualMapDrawer {
       const arcsSelection = d3
         .select(this)
         .selectAll<SVGPathElement, d3.PieArcDatum<ParticipantCount>>("path")
-        .data(makePieData(nodeDatum.participantCounts))
+        .data(
+          makePieData(
+            nodeDatum.participantCounts.filter(
+              (participantCount) => participantCount.name !== "진행자1"
+            )
+          )
+        )
         .join("path")
         .attr("fill", (d) => that._participantDict[d.data.name].color)
         .attr("d", (d) => makeArcDAttribute(d, nodeDatum, nodeSizeMultiplier));
@@ -202,16 +246,6 @@ export class ConceptualMapDrawer {
           }
 
           if (d.count > 0 && that._sentimentMarkerVisible) {
-            // let scaledSentiment: number;
-            // if (d.sentiment > 1) {
-            //   scaledSentiment = 1;
-            // } else if (d.sentiment < -1) {
-            //   scaledSentiment = -1;
-            // } else {
-            //   scaledSentiment = d.sentiment;
-            // }
-            // scaledSentiment = scaledSentiment / 2 + 0.5;
-            // return that.gradient.rgbAt(scaledSentiment).toHexString();
             // 감성분석 결과 색상 조절.
             if (d.sentiment > 0.25 * 2) {
               return "rgb(79, 198, 66)"; // green: 긍정
@@ -231,24 +265,15 @@ export class ConceptualMapDrawer {
       .data(nodes)
       .join("circle")
       .attr("r", (d) => Math.sqrt(d.count * nodeSizeMultiplier))
-      // .attr("fill", "rgb(100, 100, 100)")
       .attr("fill", "rgb(55, 55, 55)")
       .call(drag(simulation));
 
-    this.nodesGSelection.each(function (nodeDatum) {
-      d3.select(this)
-        .selectAll<HTMLTitleElement, NodeDatum>("title")
-        .data([nodeDatum])
-        .join("title")
-        .text((d) => `count: ${d.count}`);
-    });
-
-    // Update text of nodes
     this.nodeTextsGSelection = this.nodeTextsGSelection
       .data(nodes)
       .join("text")
-      .attr("font-size", (d) => 4 * Math.log(2 * nodeSizeMultiplier * d.count))
-      .text((d) => d.id);
+      .attr("cy", (d) => d.count)
+      .attr("font-size", "6px")
+      .text((d, i) => `${d.id},${d.time}`);
 
     // Animate the graph
     simulation.on("tick", () => {
