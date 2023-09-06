@@ -15,18 +15,18 @@ const SubChart = (props) => (
     xmlSpace="preserve"
     {...props}
   >
-    <text transform="matrix(1 0 0 1 13.5164 139.6523)">
+    <text transform="matrix(1 0 0 1 13.5164 139.6523)" xmlSpace="preserve">
       <tspan x={5} y={0} className="stt0 st11">
-        {"LJS   &      JKT"}
+        {"LJS   &   JKT"}
       </tspan>
       <tspan x={5} y={22} className="stt0 st11">
-        {"LJS   &      KJD"}
+        {"LJS   &   KJD"}
       </tspan>
       <tspan x={5} y={44} className="stt0 st11">
-        {"PHR   &      JKT"}
+        {"PHR &   JKT"}
       </tspan>
       <tspan x={5} y={66} className="stt0 st11">
-        {"PHR   &      KJD"}
+        {"PHR &   KJD"}
       </tspan>
     </text>
     <text transform="matrix(1 0 0 1 197.3914 139.4609)">
@@ -134,6 +134,7 @@ const SubChart = (props) => (
       <rect x={33.5} y={66.5} className="stt5" width={1542.1} height={5.2} />
       <rect x={33.5} y={89.7} className="stt6" width={1542.1} height={5.2} />
     </g>
+    {/* 차트 안 부분 */}
     <path
       className="stt7"
       d="M120.5,103.5H47.8c-5.3,0-9.6-4.3-9.6-9.6V21.2c0-5.3,4.3-9.6,9.6-9.6h72.7c5.3,0,9.6,4.3,9.6,9.6v72.7 C130,99.2,125.8,103.5,120.5,103.5z"
@@ -449,42 +450,46 @@ const SubChart = (props) => (
       <text
         transform="matrix(0.9762 0 0 1 8.4871 23.9088)"
         className="stt30 stt31 stt32"
+        xmlSpace="preserve"
       >
-        {"Lee Joon-seok"}
+        {"  LJS"}
       </text>
     </g>
     <g>
       <text
         transform="matrix(0.9762 0 0 1 8.7911 70.1899)"
         className="stt30 stt31 stt32"
+        xmlSpace="preserve"
       >
-        {"Park Hwi-rak"}
+        {" PHR"}
       </text>
     </g>
     <g>
       <text
         transform="matrix(0.9762 0 0 1 9.1106 93.0067)"
         className="stt30 stt31 stt32"
+        xmlSpace="preserve"
       >
-        {"Kim Jong-dae"}
+        {" KJD"}
       </text>
     </g>
     <g>
       <text
         transform="matrix(0.9822 0 0 1 8.7912 46.7106)"
-        className="stt30 stt31 stt33"
+        className="stt30 stt31 stt32"
+        xmlSpace="preserve"
       >
-        {"Jang Kyung-tae"}
+        {"  JKT"}
       </text>
     </g>
     <rect x={9.6} y={177.5} className="stt23" width={6.9} height={6.9} />
-    <rect x={43.7} y={177.5} className="stt34" width={6.9} height={6.9} />
+    <rect x={55} y={177.5} className="stt34" width={6.9} height={6.9} />
     <rect x={9.6} y={199.3} className="stt23" width={6.9} height={6.9} />
-    <rect x={43.5} y={199.5} className="stt35" width={6.9} height={6.9} />
+    <rect x={55} y={199.5} className="stt35" width={6.9} height={6.9} />
     <rect x={9.6} y={133.9} className="stt3" width={6.9} height={6.9} />
-    <rect x={43.7} y={133.9} className="stt34" width={6.9} height={6.9} />
+    <rect x={55} y={133.9} className="stt34" width={6.9} height={6.9} />
     <rect x={9.6} y={155.6} className="stt3" width={6.9} height={6.9} />
-    <rect x={43.5} y={155.8} className="stt35" width={6.9} height={6.9} />
+    <rect x={55} y={155.8} className="stt35" width={6.9} height={6.9} />
     <g>
       <text
         transform="matrix(0.9048 0 0 1 44.8876 93.2448)"

@@ -67,8 +67,11 @@ export class D3Drawer {
     // declare variables
     this.conceptRecurrencePlotDiv = d3.select(".concept-recurrence-plot");
 
-    this.svgWidth = 1130;
-    this.svgHeight = 600;
+    // this.svgWidth = 1130;
+    // this.svgHeight = 600;
+    this.svgWidth = window.innerWidth - 330;
+    this.svgHeight = window.innerHeight;
+
     this.svgSelection = this.conceptRecurrencePlotDiv
       .select<SVGSVGElement>("svg")
       .attr("width", this.svgWidth)

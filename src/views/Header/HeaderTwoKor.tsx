@@ -9,6 +9,14 @@ interface LegendProps {
   svgPath?: string[];
 }
 
+// const participantColors = [
+//   { color: "#B60E3C", label: "이준석" },
+//   { color: "#C7611E", label: "박휘락" },
+//   { color: "#00AB6E", label: "김종대" },
+//   { color: "#00a0e2", label: "장경태" },
+//   { color: "#808080", label: "진행자" },
+// ];
+
 const participantColors = [
   { color: "#B60E3C", label: "Lee Joonseok" },
   { color: "#C7611E", label: "Park Hwirak" },
@@ -17,13 +25,18 @@ const participantColors = [
   { color: "#808080", label: "Host" },
 ];
 
+// const topicColors = [
+//   { color: "#400000", label: "논쟁" },
+//   { color: "#ff0000", label: "논쟁구간" },
+// ];
+
 const topicColors = [
   { color: "#400000", label: "Argumentation" },
   { color: "#ff0000", label: "Argumentation area" },
 ];
 
 const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
-  const isOutlineOnly = label === "Argumentation area";
+  const isOutlineOnly = label === "논쟁구간";
 
   const transform = isOutlineOnly
     ? "translate(8, 11.5) rotate(45) translate(-8, -8)"
@@ -36,16 +49,15 @@ const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
     marginLeft: "8px",
   }; // default style
 
-  if (label === "Argumentation") {
+  if (label === "논쟁") {
     //@ts-ignore
     labelStyle = { ...labelStyle, marginRight: "11px" };
     svgStyle = {
       marginTop: "-22.5px",
       marginRight: "5px",
-      marginLeft: "-355px",
-      //marginLeft: "139px",
+      marginLeft: "139px",
     }; // changed style
-  } else if (label === "Argumentation area") {
+  } else if (label === "논쟁구간") {
     //@ts-ignore
     labelStyle = { ...labelStyle, marginLeft: "25px" };
   }
@@ -94,8 +106,7 @@ export default function Header() {
             display: "flex",
             alignItems: "center",
             marginBottom: "-55px",
-            marginLeft: "-53px",
-            //marginLeft: "-327px",
+            marginLeft: "-327px",
           }}
         >
           {topicColors.map((item, i) => (
@@ -109,10 +120,9 @@ export default function Header() {
             width="22"
             height="22"
             style={{
-              marginBottom: "20px",
-              marginLeft: "-444px",
-              //marginLeft: "-663px",
-              scale: "0.85",
+              marginBottom: "28px",
+              marginLeft: "-293px",
+              scale: "0.8",
             }}
           >
             <path
@@ -133,8 +143,8 @@ export default function Header() {
             height="22"
             style={{
               marginBottom: "21px",
-              marginLeft: "4px",
-              scale: "0.85",
+              marginLeft: "17px",
+              scale: "0.8",
             }}
           >
             <path
@@ -158,7 +168,7 @@ export default function Header() {
           <svg
             width="19"
             height="19"
-            style={{ marginLeft: "170px", marginTop: "-19px" }}
+            style={{ marginLeft: "108px", marginTop: "-19px" }}
           >
             <path
               d="M8,1.6C8,1.6,8,1.6,8,1.6L8,0C3.6,0,0,3.6,0,8h1.6C1.6,4.5,4.5,1.6,8,1.6z"
@@ -193,8 +203,8 @@ export default function Header() {
               }}
             ></path>
           </svg>
-          <div style={{ marginLeft: "-383px", marginTop: "28px" }}>
-            Circle Packing for Comparing Argumentation
+          <div style={{ marginLeft: "-333px", marginTop: "28px" }}>
+            Bubble Chart for Comparing Argumentation
           </div>
         </div>
       </div>
