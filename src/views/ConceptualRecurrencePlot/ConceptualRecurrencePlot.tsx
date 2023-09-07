@@ -30,7 +30,7 @@ import SimilarityTooltip from "../../components/SimilarityTooltip/SimilarityTool
 import Header from "./../Header/Header";
 import HeaderTwo from "./../Header/HeaderTwo";
 import style from "./rootStyle.module.scss";
-import Bubble from "./Bubble";
+//import Bubble from "./Bubble";
 import BubbleEng from "./BubbleEng";
 import * as d3 from "d3";
 import Outline from "./Outline";
