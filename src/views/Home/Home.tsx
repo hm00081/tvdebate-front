@@ -61,7 +61,7 @@ function Home(props: ComponentProps) {
           to={`/coocurence_matrix?debate_name=모병제&term_type=${termType}`}
           className={`${styles.button} ant-btn ant-btn-primary`}
         >
-          Recruitment System
+          Recruitment system(모병제)
         </Link>
       </div>
     </div>
