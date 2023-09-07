@@ -2,20 +2,13 @@ import style from "./HeaderTwo.module.scss";
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import PieSvg from "./PieSvg";
+import { useState } from "react";
 
 interface LegendProps {
   color: string | string[];
   label: string;
   svgPath?: string[];
 }
-
-// const participantColors = [
-//   { color: "#B60E3C", label: "이준석" },
-//   { color: "#C7611E", label: "박휘락" },
-//   { color: "#00AB6E", label: "김종대" },
-//   { color: "#00a0e2", label: "장경태" },
-//   { color: "#808080", label: "진행자" },
-// ];
 
 const participantColors = [
   { color: "#B60E3C", label: "Lee Joonseok" },
@@ -82,9 +75,13 @@ const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
 };
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <a className={style.mainLink}>
-      <div className={style.naviTwo}>
+      <div
+        className={style.naviTwo}
+        style={{ display: "flex", alignItems: "center" }}
+      >
         {/* <h3 style={{ marginLeft: "5px", marginTop: "-18px" }}>Data: 모병제</h3> */}
         <h3
           style={{ marginLeft: "5px", marginTop: "-18px", fontWeight: "550" }}
@@ -207,6 +204,12 @@ export default function Header() {
             Bubble Chart for Comparing Argumentation
           </div>
         </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{ marginLeft: "auto" }}
+        >
+          {isOpen ? "Hide Script" : "View Script"}
+        </button>
       </div>
     </a>
   );

@@ -40,6 +40,7 @@ function ConceptualRecurrencePlot() {
   const query = new URLSearchParams(useLocation().search);
   const debateNameOfQuery = query.get("debate_name") as DebateName;
   const termTypeOfQuery = query.get("term_type") as TermType;
+  const [isOpen, setIsOpen] = useState(true);
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
     null
   );
@@ -285,8 +286,8 @@ function ConceptualRecurrencePlot() {
 
   return (
     <div className="root-div" style={{ overflow: "hidden" }}>
-      <Header />
-      <HeaderTwo />
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="vis-area">
         <div className="bubble" style={{ borderBottom: "1px solid black" }}>
           <BubbleEng />
@@ -337,6 +338,7 @@ function ConceptualRecurrencePlot() {
         </div>
       </div>
       <TranscriptViewer
+        isOpen={isOpen}
         dataStructureMaker={dataStructureManager}
       ></TranscriptViewer>
       <ConceptualMapModal

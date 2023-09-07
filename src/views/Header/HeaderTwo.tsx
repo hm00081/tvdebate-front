@@ -1,12 +1,16 @@
 import style from "./HeaderTwo.module.scss";
 import React from "react";
 // eslint-disable-next-line no-unused-vars
-import PieSvg from "./PieSvg";
 
 interface LegendProps {
   color: string | string[];
   label: string;
   svgPath?: string[];
+}
+
+interface HeaderProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const participantColors = [
@@ -69,7 +73,8 @@ const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
   );
 };
 
-export default function Header() {
+export default function Header({ isOpen, setIsOpen }: HeaderProps) {
+  //const [isOpen, setIsOpen] = useState(true);
   return (
     <a className={style.mainLink}>
       <div className={style.naviTwo}>
@@ -80,7 +85,13 @@ export default function Header() {
           Legends:
         </h3>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
           {participantColors.map((item, i) => (
             <LegendItem
               key={i}
@@ -197,6 +208,19 @@ export default function Header() {
             Circle Packing for Comparing Argumentation
           </div>
         </div>
+        <button
+          onClick={() => setIsOpen((prev) => !prev)}
+          style={{
+            marginLeft: "70px",
+            marginBottom: "20px",
+            background: "#9c27b0",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+          }}
+        >
+          {isOpen ? "Hide Script" : "View Script"}
+        </button>
       </div>
     </a>
   );

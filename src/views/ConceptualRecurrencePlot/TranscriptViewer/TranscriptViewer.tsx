@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
 import _ from "lodash";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { DataStructureManager } from "../DataStructureMaker/DataStructureManager";
 import { UtteranceObjectForDrawing } from "../interfaces";
 import styles from "./TranscriptViewer.module.scss";
 import { getBackgroundColorOfSentenceSpan } from "./TranscriptViewerUtils";
 
 interface ComponentProps {
+  isOpen: boolean;
   dataStructureMaker: DataStructureManager | null;
 }
-
 function TranscriptViewer(props: ComponentProps) {
+  if (!props.isOpen) return null;
   return (
     <div className={styles.transcriptViewer}>
       {props.dataStructureMaker ? (
@@ -41,7 +42,6 @@ function TranscriptViewer(props: ComponentProps) {
     </div>
   );
 }
-
 // TODO we can use it to color text for sentiment
 function getSentenceSpans(utteranceObject: UtteranceObjectForDrawing) {
   return _.map(utteranceObject.sentenceObjects, (sentenceObject) => {
