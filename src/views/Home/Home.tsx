@@ -60,7 +60,7 @@ function Home(props: ComponentProps) {
           className={styles.button}
           href={`/coocurence_matrix?debate_name=모병제&term_type=${termType}`}
         >
-          모병제
+          Recruitment System
         </Button>
         {/* <Button
           className={styles.button}
