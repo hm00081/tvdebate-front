@@ -113,9 +113,9 @@ export class SimilarityBlocksDrawer {
         (d, i) =>
           `findArgument: ${
             d.refutation ? d.refutation : "none"
-          },\n선행발화자 Index: ${d.columnUtteranceIndex},\n후행발화자 Index: ${
-            d.rowUtteranceIndex
-          },\nargumentScore: ${
+          },\nLeading Speaker Index: ${
+            d.columnUtteranceIndex
+          },\nTrailing Speaker Index: ${d.rowUtteranceIndex},\nargumentScore: ${
             ((d.similarity * d.weight) /
               // Math.abs(d.columnUtteranceIndex - d.rowUtteranceIndex)) *
               Math.sqrt(

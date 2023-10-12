@@ -59,12 +59,6 @@
   stroke-width: 2;
   stroke-miterlimit: 10;
 }
-.stt15 {
-  fill: #ffffff;
-  stroke: #0ea0e2;
-  stroke-width: 3;
-  stroke-miterlimit: 10;
-}
 .stt16 {
   fill: #007400;
 }
@@ -85,9 +79,6 @@
 }
 .stt22 {
   font-size: 4.147px;
-}
-.stt23 {
-  fill: #c7611e;
 }
 .stt24 {
   font-size: 4.1848px;
@@ -119,12 +110,6 @@
 .stt33 {
   font-size: 3.3746px;
 }
-.stt34 {
-  fill: #00a0e2;
-}
-.stt35 {
-  fill: #00ab6e;
-}
 .stt36 {
   font-size: 4.0131px;
 }
@@ -136,4 +121,13 @@
 }
 .stt39 {
   fill: #578ae3;
+}
+
+.tooltip {
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
 }

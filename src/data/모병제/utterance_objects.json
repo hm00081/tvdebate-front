@@ -21,7 +21,7 @@
           "argument": 1
         },
         "sentiment": 0,
-        "time": "﻿00:00:00"
+        "time": "00:00:00"
       },
       {
         "sentence": "Introducing the panel to be with you.",
@@ -5719,7 +5719,7 @@
           "규모": 1
         },
         "compoundTermCountDict": {
-          "Korean large -scale reserve forces": 1
+          "Korean large scale reserve forces": 1
         },
         "sentiment": 0.699999988079071,
         "time": "00:35:54"

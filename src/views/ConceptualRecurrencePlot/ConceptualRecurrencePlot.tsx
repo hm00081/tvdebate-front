@@ -30,8 +30,10 @@ import SimilarityTooltip from "../../components/SimilarityTooltip/SimilarityTool
 import Header from "./../Header/Header";
 import HeaderTwo from "./../Header/HeaderTwo";
 import style from "./rootStyle.module.scss";
-//import Bubble from "./Bubble";
+import Bubble from "./Bubble";
+import BubbleKor from "./BubbleKor";
 import BubbleEng from "./BubbleEng";
+import BubbleEngg from "./BubbleEngg";
 import * as d3 from "d3";
 import Outline from "./Outline";
 import SubChart from "./SubChart";
@@ -40,6 +42,19 @@ function ConceptualRecurrencePlot() {
   const query = new URLSearchParams(useLocation().search);
   const debateNameOfQuery = query.get("debate_name") as DebateName;
   const termTypeOfQuery = query.get("term_type") as TermType;
+  const [subChartWidth, setSubChartWidth] = useState(0);
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const svgGRef = useRef<SVGGElement>(null);
+  useEffect(() => {
+    if (svgGRef.current) {
+      const bbox = svgGRef.current.getBBox();
+      setTranslate({
+        x: bbox.x,
+        y: bbox.y + bbox.height, // svgG의 바로 아래로 위치하도록 y 값 조절
+      });
+    }
+  }, [subChartWidth]);
+
   const [isOpen, setIsOpen] = useState(true);
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
     null
@@ -79,16 +94,8 @@ function ConceptualRecurrencePlot() {
   const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
   const [sortOrder, setSortOrder] = React.useState("index");
 
-  const handleSortOrderChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const newSortOrder = event.target.value;
-    console.log("New sortOrder: ", newSortOrder); // 확인 로깅
-    setSortOrder(newSortOrder);
-  };
-
   useEffect(() => {
-    console.log("D3Drawer: ", d3Drawer); // 확인 로깅
+    // console.log("D3Drawer: ", d3Drawer); // 확인 로깅
     if (d3Drawer) {
       if (sortOrder === "disagreeScale") {
         d3Drawer.participantBlocksDrawer.sortByFindDis();
@@ -127,8 +134,8 @@ function ConceptualRecurrencePlot() {
           dataImporter.debateDataSet!
         );
 
-        console.log("dataImporter", dataImporter);
-        console.log("dataStructureMaker", dataStructureMaker);
+        //console.log("dataImporter", dataImporter);
+        //console.log("dataStructureMaker", dataStructureMaker);
 
         const combinedEGsMaker = new CombinedEGsMaker(
           dataStructureMaker.dataStructureSet.similarityBlockManager.similarityBlockGroup,
@@ -290,7 +297,8 @@ function ConceptualRecurrencePlot() {
       <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="vis-area">
         <div className="bubble" style={{ borderBottom: "1px solid black" }}>
-          <BubbleEng />
+          {/* <BubbleEng /> */}
+          <BubbleEngg />
         </div>
         <div
           className="concept-recurrence-plot"
@@ -321,15 +329,20 @@ function ConceptualRecurrencePlot() {
               className="zoomable"
               transform={transform ? transform.toString() : undefined}
             >
-              <g className="svgG">
+              <g className="svgG" ref={svgGRef}>
                 <g
-                  transform={`translate(${-325}, ${290}) scale(1.32 -1.32) rotate(-45)`}
+                  transform={`translate(${-315}, ${270}) scale(1.32 -1.32) rotate(-45)`}
                 >
-                  <SubChart />
+                  {/* <g
+                  transform={`translate(${translate.x}, ${translate.y}) scale(1 -1) rotate(-45)`}
+                > */}
+                  <SubChart setWidth={setSubChartWidth} />
                   <rect
                     style={{
                       fill: "#ffffff",
+                      //width: subChartWidth, // SubChart의 가로 길이를 rect에도 적용
                     }}
+                    width={subChartWidth}
                   />
                 </g>
               </g>

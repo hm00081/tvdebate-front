@@ -135,12 +135,22 @@ export class ParticipantBlocksDrawer {
         // console.log(topValueIndexes);
         const mainKeytermsString = _.reduce(
           mainKeytermObjects,
-          (result, keytermObject) => {
+          (result, keytermObject, i) => {
             return `${result} ${keytermObject.name}`;
           },
           ""
         );
-        return `keywords:${mainKeytermsString}\n ${d.name}: ${d.utterance}
+        const compoundTermCountDict =
+          d.sentenceObjects[i].compoundTermCountDict;
+        compoundTermCountDict;
+        // compoundTermCountDict에서 가장 높은 값을 가진 항목들을 추출합니다.
+        const sortedTerms = Object.entries(compoundTermCountDict)
+          .sort((a, b) => b[1] - a[1]) // 내림차순 정렬
+          .slice(0, 3) // 상위 3개 항목만 추출
+          .map(([term, count]) => term)
+          .join(", ");
+        // console.log(compoundTermCountDict, sortedTerms);
+        return `mainTerms:${sortedTerms}\n ${d.name}: ${d.utterance}
             `;
       })
       .on("mouseover", (e, u) => {

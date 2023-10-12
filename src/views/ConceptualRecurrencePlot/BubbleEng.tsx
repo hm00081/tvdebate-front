@@ -1,2310 +1,1750 @@
 import * as React from "react";
-
+import Pie from "./Bubble/Pie";
 //@ts-ignore
-const BubbleEng = (props) => (
+const BubbleEngg = (props) => (
   <svg
     id="\uB808\uC774\uC5B4_1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
-    viewBox="0 0 1573 285"
+    viewBox="0 0 1753 318"
     style={{
-      enableBackground: "new 0 0 1573 285",
+      enableBackground: "new 0 0 1753 318",
     }}
     xmlSpace="preserve"
     {...props}
   >
     <style type="text/css">
       {
-        "\n\t.st0{fill:#B60C3D;}\n\t.st1{fill:#BF6020;}\n\t.st2{fill:#040000;}\n\t.st3{font-family:'NanumGothicExtraBold';}\n\t.st4{font-size:12.7809px;}\n\t.st5{fill:#1DA36B;}\n\t.st6{fill:#1E96D1;}\n\t.st7{font-size:6.3353px;}\n\t.st8{font-size:5.7046px;}\n\t.st9{font-size:4.6167px;}\n\t.st10{font-size:7.5982px;}\n\t.st11{enable-background:new    ;}\n\t.st12{font-size:6.7403px;}\n\t.st13{font-size:6.2021px;}\n\t.st14{font-size:5.8242px;}\n\t.st15{font-size:7.2994px;}\n\t.st16{font-size:7.4762px;}\n\t.st17{font-size:12.9225px;}\n\t.st18{font-size:7.3925px;}\n\t.st19{fill:none;stroke:#7F8080;stroke-miterlimit:10;}\n\t.st20{fill:#BF6020;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st21{fill:#808080;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st22{fill:#AC1D3B;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st23{fill:#0CAA6E;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st24{fill:#0EA0E2;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st25{fill:#B60C3D;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st26{fill:#C7621E;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st27{fill:#FFFFFF;}\n\t.st28{font-size:2.8811px;}\n\t.st29{font-size:4.0379px;}\n\t.st30{font-size:4.7138px;}\n\t.st31{font-size:3.662px;}\n\t.st32{font-size:3.9292px;}\n\t.st33{font-size:3.9226px;}\n\t.st34{font-size:6.7558px;}\n\t.st35{font-size:3.1824px;}\n\t.st36{font-size:4.0539px;}\n\t.st37{font-size:4.0056px;}\n\t.st38{font-size:3.1953px;}\n\t.st39{font-size:5.1848px;}\n\t.st40{font-size:4.4804px;}\n\t.st41{font-size:5.6528px;}\n\t.st42{font-size:3.6764px;}\n\t.st43{font-size:4.2737px;}\n\t.st44{font-size:3.7439px;}\n\t.st45{font-size:5.0237px;}\n\t.st46{font-size:4.9802px;}\n\t.st47{font-size:3.6532px;}\n\t.st48{font-size:4.0507px;}\n\t.st49{font-size:5.2657px;}\n\t.st50{font-size:3.8051px;}\n\t.st51{font-size:2.9523px;}\n\t.st52{font-size:3.61px;}\n\t.st53{font-size:5.0326px;}\n\t.st54{font-size:5.4363px;}\n\t.st55{font-size:5.4767px;}\n\t.st56{font-size:4.3419px;}\n\t.st57{font-size:4.571px;}\n\t.st58{font-size:6.9011px;}\n\t.st59{font-size:4.6906px;}\n\t.st60{font-size:5.2027px;}\n\t.st61{font-size:3.7526px;}\n\t.st62{font-size:6.6526px;}\n\t.st63{font-size:4.4122px;}\n\t.st64{font-size:2.387px;}\n\t.st65{font-size:4.5003px;}\n\t.st66{font-size:4.0673px;}\n\t.st67{font-size:3.5516px;}\n\t.st68{font-size:5.9796px;}\n\t.st69{font-size:4.3861px;}\n\t.st70{font-size:3.2841px;}\n\t.st71{font-size:5.3247px;}\n\t.st72{font-size:4.816px;}\n\t.st73{font-size:4.0142px;}\n\t.st74{font-size:5.9726px;}\n\t.st75{font-size:3.5419px;}\n\t.st76{font-size:2.8976px;}\n\t.st77{font-size:1.8507px;}\n\t.st78{font-size:3.5163px;}\n\t.st79{fill:#0EA0E2;}\n\t.st80{font-size:2.9755px;}\n\t.st81{font-size:3.926px;}\n\t.st82{font-size:3.6233px;}\n\t.st83{font-size:2.8035px;}\n\t.st84{font-size:3.2972px;}\n\t.st85{font-size:2.2108px;}\n\t.st86{font-size:5.6086px;}\n\t.st87{font-size:3.6784px;}\n\t.st88{font-size:3.698px;}\n\t.st89{font-size:4.7217px;}\n\t.st90{font-size:3.7104px;}\n\t.st91{font-size:3.0024px;}\n\t.st92{font-size:5.8523px;}\n\t.st93{font-size:3.3114px;}\n\t.st94{font-size:2.1937px;}\n\t.st95{font-size:4.7134px;}\n\t.st96{font-size:5.4678px;}\n\t.st97{font-size:3.1205px;}\n\t.st98{font-size:5.0984px;}\n\t.st99{font-size:4.4518px;}\n\t.st100{font-size:4.6867px;}\n\t.st101{font-size:3.9673px;}\n"
+        "\n\t.st0{fill:#040000;}\n\t.st1{font-family:'NanumGothicExtraBold';}\n\t.st2{font-size:14.1954px;}\n\t.st3{font-size:7.0364px;}\n\t.st4{font-size:6.336px;}\n\t.st5{font-size:5.1276px;}\n\t.st6{font-size:8.4392px;}\n\t.st7{enable-background:new    ;}\n\t.st8{font-size:7.4863px;}\n\t.st9{font-size:6.8885px;}\n\t.st10{font-size:6.4688px;}\n\t.st11{font-size:8.1073px;}\n\t.st12{font-size:8.3036px;}\n\t.st13{font-size:14.3527px;}\n\t.st14{font-size:8.2107px;}\n\t.st15{fill:none;stroke:#7F8080;stroke-miterlimit:10;}\n\t.st16{fill:#BF6020;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st17{fill:#808080;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st18{fill:#AC1D3B;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st19{fill:#0CAA6E;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st20{fill:#0EA0E2;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st21{fill:#B60C3D;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st22{fill:#C7621E;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st23{fill:#BF6020;}\n\t.st24{fill:#FFFFFF;}\n\t.st25{font-size:3.1999px;}\n\t.st26{fill:#1DA36B;}\n\t.st27{font-size:4.8348px;}\n\t.st28{fill:#B60C3D;}\n\t.st29{font-size:4.6437px;}\n\t.st30{fill:#1E96D1;}\n\t.st31{font-size:4.0673px;}\n\t.st32{font-size:4.364px;}\n\t.st33{font-size:4.3567px;}\n\t.st34{font-size:7.5035px;}\n\t.st35{font-size:3.1978px;}\n\t.st36{font-size:3.3785px;}\n\t.st37{font-size:4.0259px;}\n\t.st38{font-size:3.0489px;}\n\t.st39{font-size:6.8847px;}\n\t.st40{font-size:4.8705px;}\n\t.st41{font-size:7.0167px;}\n\t.st42{font-size:4.0832px;}\n\t.st43{font-size:4.7467px;}\n\t.st44{font-size:4.1583px;}\n\t.st45{font-size:5.5797px;}\n\t.st46{font-size:4.5574px;}\n\t.st47{font-size:3.9033px;}\n\t.st48{font-size:5.03px;}\n\t.st49{font-size:5.0613px;}\n\t.st50{font-size:3.2238px;}\n\t.st51{font-size:6.551px;}\n\t.st52{font-size:6.2746px;}\n\t.st53{font-size:4.8224px;}\n\t.st54{font-size:5.0769px;}\n\t.st55{font-size:7.6649px;}\n\t.st56{font-size:5.2097px;}\n\t.st57{font-size:5.7785px;}\n\t.st58{font-size:4.168px;}\n\t.st59{font-size:7.3889px;}\n\t.st60{font-size:4.7606px;}\n\t.st61{font-size:2.6512px;}\n\t.st62{font-size:4.9984px;}\n\t.st63{font-size:4.319px;}\n\t.st64{font-size:4.5174px;}\n\t.st65{font-size:6.7674px;}\n\t.st66{font-size:3.9446px;}\n\t.st67{font-size:6.3288px;}\n\t.st68{font-size:4.8715px;}\n\t.st69{font-size:3.6476px;}\n\t.st70{font-size:6.1604px;}\n\t.st71{font-size:5.3491px;}\n\t.st72{font-size:5.846px;}\n\t.st73{font-size:4.9087px;}\n\t.st74{font-size:7.0758px;}\n\t.st75{font-size:3.9339px;}\n\t.st76{font-size:2.7333px;}\n\t.st77{font-size:1.8411px;}\n\t.st78{font-size:4.5882px;}\n\t.st79{fill:#0EA0E2;}\n\t.st80{font-size:3.3048px;}\n\t.st81{font-size:4.0122px;}\n\t.st82{font-size:3.7104px;}\n\t.st83{font-size:3.237px;}\n\t.st84{font-size:3.6621px;}\n\t.st85{font-size:2.4555px;}\n\t.st86{font-size:6.122px;}\n\t.st87{font-size:4.0856px;}\n\t.st88{font-size:4.3994px;}\n\t.st89{font-size:4.5279px;}\n\t.st90{font-size:4.121px;}\n\t.st91{font-size:2.9352px;}\n\t.st92{font-size:7.7877px;}\n\t.st93{font-size:5.3551px;}\n\t.st94{font-size:6.073px;}\n\t.st95{font-size:3.4659px;}\n\t.st96{font-size:5.5366px;}\n\t.st97{font-size:4.9445px;}\n\t.st98{font-size:5.2054px;}\n\t.st99{font-size:4.701px;}\n\t.st100{font-size:2.7254px;}\n\t.st101{font-size:6.284px;}\n\t.st102{font-size:3.6779px;}\n\t.st103{font-size:2.4364px;}\n\t.st104{font-size:4.4063px;}\n\t.st105{fill:none;stroke:#C4C4C4;stroke-miterlimit:10;}\n\t.st106{font-size:3.8789px;}\n\t.st107{font-size:4.1619px;}\n\t.st108{font-size:4.1549px;}\n\t.st109{font-size:3.4925px;}\n\t.st110{font-size:2.3417px;}\n\t.st111{font-size:5.8384px;}\n"
       }
     </style>
-    <g>
-      <path
-        className="st0"
-        d="M197.6,143.8l-19.1,19.1c-3.9,3.9-10.3,3.9-14.2,0l-2.9-2.9c-3.9-3.9-3.9-10.3,0-14.2l19.1-19 c3.9-3.9,10.3-3.9,14.2,0l2.9,2.9C201.6,133.6,201.6,139.9,197.6,143.8z"
-      />
-      <path
-        className="st0"
-        d="M180.5,162.9l-19-19c-3.9-3.9-3.9-10.3,0-14.2l2.9-2.9c3.9-3.9,10.3-3.9,14.2,0l19,19c3.9,3.9,3.9,10.3,0,14.2 l-2.9,2.9C190.8,166.9,184.4,166.9,180.5,162.9z"
-      />
+    <Pie />
+    <g className="titleOne">
+      <text transform="matrix(1 0 0 1 23.0777 28.4324)">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Start the discussion and introduce "}
+        </tspan>
+        <tspan x={-3} y={17.2} className="st27 st3 st28">
+          {"all volunteer military system(AVMS)"}
+        </tspan>
+      </text>
     </g>
-    <g>
-      <path
-        className="st0"
-        d="M100.1,145.5l-13.8,13.8c-2.8,2.8-7.4,2.8-10.2,0l-2.1-2.1c-2.8-2.8-2.8-7.4,0-10.2l13.8-13.7 c2.8-2.8,7.4-2.8,10.2,0l2.1,2.1C102.9,138.2,102.9,142.7,100.1,145.5z"
-      />
-      <path
-        className="st0"
-        d="M87.8,159.3l-13.7-13.7c-2.8-2.8-2.8-7.4,0-10.2l2.1-2.1c2.8-2.8,7.4-2.8,10.2,0l13.7,13.7 c2.8,2.8,2.8,7.4,0,10.2l-2.1,2.1C95.2,162.1,90.6,162.1,87.8,159.3z"
-      />
-    </g>
-    <path
-      className="st0"
-      d="M323.8,183.3l1.9-1.9c2-2,2-5.3,0-7.3l-4.3-4.3c-2-2-5.3-2-7.3,0l-1.9,1.9l-1.9-1.9c-2-2-5.3-2-7.3,0l-4.3,4.3 c-2,2-2,5.3,0,7.3l1.9,1.9l-1.9,1.9c-2,2-2,5.3,0,7.3l4.3,4.3c2,2,5.3,2,7.3,0l1.9-1.9l1.9,1.9c2,2,5.3,2,7.3,0l4.3-4.3 c2-2,2-5.3,0-7.3L323.8,183.3z"
-    />
-    <path
-      className="st0"
-      d="M409,189.2l1.9-1.9c2.1-2.1,2.1-5.5,0-7.6l-4.5-4.5c-2.1-2.1-5.5-2.1-7.6,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.6,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.6l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.6l4.5,4.5c2.1,2.1,5.5,2.1,7.6,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.6,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.6L409,189.2z"
-    />
-    <path
-      className="st0"
-      d="M765.3,156.6l2.2-2.2c2.4-2.4,2.4-6.2,0-8.6l-5.1-5.1c-2.4-2.4-6.2-2.4-8.6,0l-2.2,2.2l-2.2-2.2 c-2.4-2.4-6.2-2.4-8.6,0l-5.1,5.1c-2.4,2.4-2.4,6.2,0,8.6l2.2,2.2l-2.2,2.2c-2.4,2.4-2.4,6.2,0,8.6l5.1,5.1c2.4,2.4,6.2,2.4,8.6,0 l2.2-2.2l2.2,2.2c2.4,2.4,6.2,2.4,8.6,0l5.1-5.1c2.4-2.4,2.4-6.2,0-8.6L765.3,156.6z"
-    />
-    <path
-      className="st0"
-      d="M762.2,190.4l2-2c2.2-2.2,2.2-5.7,0-7.9l-4.7-4.7c-2.2-2.2-5.7-2.2-7.9,0l-2,2l-2-2c-2.2-2.2-5.7-2.2-7.9,0 l-4.7,4.7c-2.2,2.2-2.2,5.7,0,7.9l2,2l-2,2c-2.2,2.2-2.2,5.7,0,7.9l4.7,4.7c2.2,2.2,5.7,2.2,7.9,0l2-2l2,2c2.2,2.2,5.7,2.2,7.9,0 l4.7-4.7c2.2-2.2,2.2-5.7,0-7.9L762.2,190.4z"
-    />
-    <path
-      className="st1"
-      d="M844.6,157.3l1.9-1.9c2-2,2-5.3,0-7.4l-4.4-4.4c-2-2-5.3-2-7.4,0l-1.9,1.9l-1.9-1.9c-2-2-5.3-2-7.4,0l-4.4,4.4 c-2,2-2,5.3,0,7.4l1.9,1.9l-1.9,1.9c-2,2-2,5.3,0,7.4l4.4,4.4c2,2,5.3,2,7.4,0l1.9-1.9l1.9,1.9c2,2,5.3,2,7.4,0l4.4-4.4 c2-2,2-5.3,0-7.4L844.6,157.3z"
-    />
-    <path
-      className="st1"
-      d="M845.8,184.3l1.6-1.6c1.8-1.8,1.8-4.5,0-6.2l-3.6-3.6c-1.8-1.8-4.5-1.8-6.2,0l-1.6,1.6l-1.6-1.6 c-1.8-1.8-4.5-1.8-6.2,0l-3.6,3.6c-1.8,1.8-1.8,4.5,0,6.2l1.6,1.6l-1.6,1.6c-1.8,1.8-1.8,4.5,0,6.2l3.6,3.6c1.8,1.8,4.5,1.8,6.2,0 l1.6-1.6l1.6,1.6c1.8,1.8,4.5,1.8,6.2,0l3.6-3.6c1.8-1.8,1.8-4.5,0-6.2L845.8,184.3z"
-    />
-    <path
-      className="st0"
-      d="M974.4,146.7l1.9-1.9c2.1-2.1,2.1-5.6,0-7.7l-4.6-4.6c-2.1-2.1-5.6-2.1-7.7,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.6-2.1-7.7,0l-4.6,4.6c-2.1,2.1-2.1,5.6,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.6,0,7.7l4.6,4.6c2.1,2.1,5.6,2.1,7.7,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.6,2.1,7.7,0l4.6-4.6c2.1-2.1,2.1-5.6,0-7.7L974.4,146.7z"
-    />
-    <path
-      className="st0"
-      d="M978.3,180.2l2.2-2.2c2.4-2.4,2.4-6.3,0-8.8l-5.2-5.2c-2.4-2.4-6.3-2.4-8.8,0l-2.2,2.2l-2.2-2.2 c-2.4-2.4-6.3-2.4-8.8,0l-5.2,5.2c-2.4,2.4-2.4,6.3,0,8.8l2.2,2.2l-2.2,2.2c-2.4,2.4-2.4,6.3,0,8.8l5.2,5.2c2.4,2.4,6.3,2.4,8.8,0 l2.2-2.2l2.2,2.2c2.4,2.4,6.3,2.4,8.8,0l5.2-5.2c2.4-2.4,2.4-6.3,0-8.8L978.3,180.2z"
-    />
-    <path
-      className="st1"
-      d="M1069.5,139.9l2.2-2.2c2.5-2.5,2.5-6.4,0-8.8l-5.2-5.2c-2.5-2.5-6.4-2.5-8.8,0l-2.2,2.2l-2.2-2.2 c-2.5-2.5-6.4-2.5-8.8,0l-5.2,5.2c-2.5,2.5-2.5,6.4,0,8.8l2.2,2.2l-2.2,2.2c-2.5,2.5-2.5,6.4,0,8.8l5.2,5.2c2.5,2.5,6.4,2.5,8.8,0 l2.2-2.2l2.2,2.2c2.5,2.5,6.4,2.5,8.8,0l5.2-5.2c2.5-2.5,2.5-6.4,0-8.8L1069.5,139.9z"
-    />
-    <path
-      className="st1"
-      d="M1047.6,200.1l2.2-2.2c2.4-2.4,2.4-6.3,0-8.8l-5.2-5.2c-2.4-2.4-6.3-2.4-8.8,0l-2.2,2.2l-2.2-2.2 c-2.4-2.4-6.3-2.4-8.8,0l-5.2,5.2c-2.4,2.4-2.4,6.3,0,8.8l2.2,2.2l-2.2,2.2c-2.4,2.4-2.4,6.3,0,8.8l5.2,5.2c2.4,2.4,6.3,2.4,8.8,0 l2.2-2.2l2.2,2.2c2.4,2.4,6.3,2.4,8.8,0l5.2-5.2c2.4-2.4,2.4-6.3,0-8.8L1047.6,200.1z"
-    />
-    <path
-      className="st0"
-      d="M1206.5,185.2l2.1-2.1c2.4-2.4,2.4-6.1,0-8.5l-5-5c-2.4-2.4-6.1-2.4-8.5,0l-2.1,2.1l-2.1-2.1 c-2.4-2.4-6.1-2.4-8.5,0l-5,5c-2.4,2.4-2.4,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.4,2.4-2.4,6.1,0,8.5l5,5c2.4,2.4,6.1,2.4,8.5,0l2.1-2.1 l2.1,2.1c2.4,2.4,6.1,2.4,8.5,0l5-5c2.4-2.4,2.4-6.1,0-8.5L1206.5,185.2z"
-    />
-    <path
-      className="st0"
-      d="M1211.1,153.7l1.9-1.9c2.1-2.1,2.1-5.5,0-7.7l-4.5-4.5c-2.1-2.1-5.5-2.1-7.7,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.7,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.7l4.5,4.5c2.1,2.1,5.5,2.1,7.7,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.7,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.7L1211.1,153.7z"
-    />
-    <path
-      className="st1"
-      d="M1294.1,180.5l2.2-2.2c2.5-2.5,2.5-6.4,0-8.8l-5.2-5.2c-2.5-2.5-6.4-2.5-8.8,0l-2.2,2.2l-2.2-2.2 c-2.5-2.5-6.4-2.5-8.8,0l-5.2,5.2c-2.5,2.5-2.5,6.4,0,8.8l2.2,2.2l-2.2,2.2c-2.5,2.5-2.5,6.4,0,8.8l5.2,5.2c2.5,2.5,6.4,2.5,8.8,0 l2.2-2.2l2.2,2.2c2.5,2.5,6.4,2.5,8.8,0l5.2-5.2c2.5-2.5,2.5-6.4,0-8.8L1294.1,180.5z"
-    />
-    <path
-      className="st0"
-      d="M1547.1,179.6l2.5-2.5c2.7-2.7,2.7-7.2,0-9.9l-5.8-5.8c-2.7-2.7-7.2-2.7-9.9,0l-2.5,2.5l-2.5-2.5 c-2.7-2.7-7.2-2.7-9.9,0l-5.8,5.8c-2.7,2.7-2.7,7.2,0,9.9l2.5,2.5l-2.5,2.5c-2.7,2.7-2.7,7.2,0,9.9l5.8,5.8c2.7,2.7,7.2,2.7,9.9,0 l2.5-2.5l2.5,2.5c2.7,2.7,7.2,2.7,9.9,0l5.8-5.8c2.7-2.7,2.7-7.2,0-9.9L1547.1,179.6z"
-    />
-    <path
-      className="st0"
-      d="M1444,171.6l1.9-1.9c2.1-2.1,2.1-5.5,0-7.7l-4.5-4.5c-2.1-2.1-5.5-2.1-7.7,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.7,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.7l4.5,4.5c2.1,2.1,5.5,2.1,7.7,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.7,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.7L1444,171.6z"
-    />
-    <path
-      className="st1"
-      d="M1431.6,138.7l2.1-2.1c2.3-2.3,2.3-6.1,0-8.4l-5-5c-2.3-2.3-6.1-2.3-8.4,0l-2.1,2.1l-2.1-2.1 c-2.3-2.3-6.1-2.3-8.4,0l-5,5c-2.3,2.3-2.3,6.1,0,8.4l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.4l5,5c2.3,2.3,6.1,2.3,8.4,0l2.1-2.1 l2.1,2.1c2.3,2.3,6.1,2.3,8.4,0l5-5c2.3-2.3,2.3-6.1,0-8.4L1431.6,138.7z"
-    />
-    <path
-      className="st1"
-      d="M1542.2,141.3l2.3-2.3c2.5-2.5,2.5-6.6,0-9.1l-5.4-5.4c-2.5-2.5-6.6-2.5-9.1,0l-2.3,2.3l-2.3-2.3 c-2.5-2.5-6.6-2.5-9.1,0l-5.4,5.4c-2.5,2.5-2.5,6.6,0,9.1l2.3,2.3l-2.3,2.3c-2.5,2.5-2.5,6.6,0,9.1l5.4,5.4c2.5,2.5,6.6,2.5,9.1,0 l2.3-2.3l2.3,2.3c2.5,2.5,6.6,2.5,9.1,0l5.4-5.4c2.5-2.5,2.5-6.6,0-9.1L1542.2,141.3z"
-    />
-    <path
-      className="st0"
-      d="M655.7,169.8l1.9-1.9c2.1-2.1,2.1-5.5,0-7.7l-4.5-4.5c-2.1-2.1-5.5-2.1-7.7,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.7,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.7l4.5,4.5c2.1,2.1,5.5,2.1,7.7,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.7,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.7L655.7,169.8z"
-    />
-    <path
-      className="st0"
-      d="M634.2,205.9l1.7-1.7c1.8-1.8,1.8-4.8,0-6.5l-3.8-3.8c-1.8-1.8-4.8-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.8-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.8,0,6.5l1.6,1.7l-1.7,1.7c-1.8,1.8-1.8,4.8,0,6.5l3.8,3.8c1.8,1.8,4.8,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.8,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.8,0-6.5L634.2,205.9z"
-    />
-    <path
-      className="st0"
-      d="M643.9,139.5l1.8-1.8c2-2,2-5.1,0-6.9l-4.1-4.1c-2-2-5.1-2-6.9,0l-1.8,1.8l-1.8-1.8c-2-2-5.1-2-6.9,0l-4.1,4.1 c-2,2-2,5.1,0,6.9l1.8,1.8l-1.8,1.8c-2,2-2,5.1,0,6.9l4.1,4.1c2,2,5.1,2,6.9,0l1.8-1.8l1.8,1.8c2,2,5.1,2,6.9,0l4.1-4.1 c2-2,2-5.1,0-6.9L643.9,139.5z"
-    />
-    <g>
-      <path
-        className="st0"
-        d="M625.4,166.6l-25.1,25.1c-3.3,3.3-8.7,3.3-12,0l-7.1-7.1c-3.3-3.3-3.3-8.7,0-12l25.1-25.1 c3.3-3.3,8.7-3.3,12,0l7.1,7.1C628.8,157.9,628.8,163.3,625.4,166.6z"
-      />
-      <path
-        className="st0"
-        d="M606.4,191.7l-25.1-25.1c-3.3-3.3-3.3-8.7,0-12l7.1-7.1c3.3-3.3,8.7-3.3,12,0l25.1,25.1c3.3,3.3,3.3,8.7,0,12 l-7.1,7.1C615.1,195,609.7,195,606.4,191.7z"
-      />
-    </g>
-    <g>
-      <text transform="matrix(1 0 0 1 262.8162 48.8466)">
-        <tspan x={0} y={0} className="st2 st3 st4">
+    <text transform="matrix(1 0 0 1 68.3081 106.138)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
+        {"Current "}
+      </tspan>
+      <tspan x={-13.4} y={9.9} className="st27 st3 st28">
+        {"Social Situation"}
+      </tspan>
+    </text>
+    <circle className="st15" cx={81.5} cy={172.2} r={51.7} />
+    <text transform="matrix(1 0 0 1 173.0244 102.9778)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
+        {"Current "}
+      </tspan>
+      <tspan x={-16.5} y={9.9} className="st27 st3 st28">
+        {"Military Situation"}
+      </tspan>
+    </text>
+    <g className="titleTwo">
+      <text transform="matrix(1 0 0 1 297.9351 41.7034)">
+        <tspan x={0} y={0} className="st27 st3 st28">
           {"The population cliff and "}
         </tspan>
-        <tspan x={13.8} y={15.3} className="st2 st3 st4">
+        <tspan x={15.3} y={17} className="st27 st3 st28">
           {"its impact on AVMS"}
         </tspan>
       </text>
     </g>
-    <g>
-      <text transform="matrix(1 0 0 1 479.1984 35.9424)">
-        <tspan x={0} y={0} className="st2 st3 st4">
+    <text transform="matrix(1 0 0 1 316.4375 105.6326)">
+      <tspan x={0} y={0} className="st27 st3 st28">
+        {"Population cliff, "}
+      </tspan>
+      <tspan x={12} y={8.4} className="st27 st3 st28">
+        {"is AVMS "}
+      </tspan>
+      <tspan x={5.6} y={16.9} className="st27 st3 st28">
+        {"the answer? "}
+      </tspan>
+    </text>
+    <text transform="matrix(1 0 0 1 389.0738 116.8055)">
+      <tspan x={0} y={0} className="st27 st3 st28">
+        {"Recruitment Problem, "}
+      </tspan>
+      <tspan x={1.1} y={7.6} className="st27 st3 st28">
+        {"What's the Solution? "}
+      </tspan>
+    </text>
+    <g className="titleThree">
+      <text transform="matrix(1 0 0 1 537.1553 27.3709)">
+        <tspan x={0} y={0} className="st27 st3 st28">
           {"All volunteer military system, "}
         </tspan>
-        <tspan x={7.8} y={15.3} className="st2 st3 st4">
+        <tspan x={8.7} y={17} className="st27 st3 st28">
           {"a solution to recruitment? "}
         </tspan>
       </text>
     </g>
-    <g>
-      <text transform="matrix(1 0 0 1 721.6332 62.1822)">
-        <tspan x={0} y={0} className="st2 st3 st4">
+    <text transform="matrix(1 0 0 1 538.8662 115.576)">
+      <tspan x={0} y={0} className="st27 st3 st28">
+        {"Recruitment Problem, "}
+      </tspan>
+      <tspan x={1.1} y={7.6} className="st27 st3 st28">
+        {"What's the Solution? "}
+      </tspan>
+    </text>
+    <text
+      transform="matrix(-1 0 0 1 690.8564 198.2732)"
+      className="st0 st1 st5"
+    />
+    <text
+      transform="matrix(1 0 0 1 641.1006 105.2332)"
+      className="st2 st3 st12"
+    >
+      {"Is AVMS realistic?"}
+    </text>
+    <g className="titleFour">
+      <text transform="matrix(1 0 0 1 806.4214 56.5149)">
+        <tspan x={0} y={0} className="st27 st3 st28">
           {"AVMS, a solution "}
         </tspan>
-        <tspan x={-8.7} y={15.3} className="st2 st3 st4">
+        <tspan x={-9.7} y={17} className="st27 st3 st28">
           {"to the jobs problem?"}
         </tspan>
       </text>
     </g>
-    <g>
-      <text transform="matrix(1 0 0 1 1372.6604 21.0157)">
-        <tspan x={0} y={0} className="st2 st3 st4">
-          {"Defense budget issues and "}
-        </tspan>
-        <tspan x={19.1} y={15.3} className="st2 st3 st4">
-          {"conclusion of debate"}
-        </tspan>
-      </text>
-    </g>
-    <circle className="st5" cx={272.3} cy={143.2} r={11.9} />
-    <circle className="st6" cx={365.3} cy={193.8} r={16.2} />
-    <circle className="st6" cx={353.1} cy={155.7} r={13.9} />
-    <g>
-      <text transform="matrix(1 0 0 1 280.4749 106.406)">
-        <tspan x={0} y={0} className="st2 st3 st7">
-          {"Population cliff, "}
-        </tspan>
-        <tspan x={10.8} y={7.6} className="st2 st3 st7">
-          {"is AVMS "}
-        </tspan>
-        <tspan x={5.1} y={15.2} className="st2 st3 st7">
-          {"the answer? "}
-        </tspan>
-      </text>
-    </g>
-    <g>
-      <text transform="matrix(1 0 0 1 345.8731 116.4646)">
-        <tspan x={0} y={0} className="st2 st3 st8">
-          {"Recruitment Problem, "}
-        </tspan>
-        <tspan x={1} y={6.8} className="st2 st3 st8">
-          {"What's the Solution? "}
-        </tspan>
-      </text>
-    </g>
-    <g>
-      <text transform="matrix(1 0 0 1 480.7392 115.3582)">
-        <tspan x={0} y={0} className="st2 st3 st8">
-          {"Recruitment Problem, "}
-        </tspan>
-        <tspan x={1} y={6.8} className="st2 st3 st8">
-          {"What's the Solution? "}
-        </tspan>
-      </text>
-    </g>
-    <ellipse
-      transform="matrix(0.1602 -0.9871 0.9871 0.1602 47.7094 436.096)"
-      className="st5"
-      cx={280.1}
-      cy={190}
-      rx={17.8}
-      ry={17.8}
-    />
-    <text
-      transform="matrix(-1 0 0 1 617.5837 189.815)"
-      className="st2 st3 st9"
-    />
-    <ellipse className="st6" cx={571.6} cy={142} rx={15.2} ry={15.5} />
-    <ellipse className="st6" cx={576.5} cy={201.2} rx={14.9} ry={15} />
-    <text
-      transform="matrix(1 0 0 1 572.7857 106.0461)"
-      className="st2 st3 st10"
-    >
-      {"Is AVMS realistic?"}
-    </text>
-    <circle className="st5" cx={561.4} cy={170.6} r={15.2} />
-    <text transform="matrix(1 0 0 1 726.8564 117.8112)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st12">
+    <text transform="matrix(1 0 0 1 812.2222 118.3016)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"Can it "}
       </tspan>
-      <tspan x={-11.7} y={8.1} className="st2 st3 st12">
+      <tspan x={-13} y={9} className="st27 st3 st28">
         {"provide jobs? "}
       </tspan>
     </text>
-    <circle className="st6" cx={716.4} cy={187.7} r={14.7} />
-    <circle className="st6" cx={717.6} cy={156.2} r={16.8} />
-    <circle className="st5" cx={804.5} cy={149.7} r={13.7} />
-    <circle className="st5" cx={793.6} cy={175.8} r={14.6} />
-    <text transform="matrix(1 0 0 1 773.56 121.8814)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st12">
+    <text transform="matrix(1 0 0 1 864.0957 122.8211)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"What is the current "}
       </tspan>
-      <tspan x={6.3} y={8.1} className="st2 st3 st12">
+      <tspan x={7} y={9} className="st27 st3 st28">
         {"soldier's status?"}
       </tspan>
     </text>
-    <g>
-      <text transform="matrix(1 0 0 1 903.8365 32.2301)">
-        <tspan x={0} y={0} className="st2 st3 st4">
+    <g className="titleFive">
+      <text transform="matrix(1 0 0 1 1008.79 23.2483)">
+        <tspan x={0} y={0} className="st27 st3 st28">
           {"AVMS, quality improvement, "}
         </tspan>
-        <tspan x={23.4} y={15.3} className="st2 st3 st4">
+        <tspan x={26} y={17} className="st27 st3 st28">
           {"and cadre retention? "}
         </tspan>
       </text>
     </g>
-    <circle className="st5" cx={912.5} cy={184.1} r={16} />
-    <circle className="st5" cx={912.5} cy={150.6} r={17.7} />
-    <circle className="st6" cx={1006.3} cy={176.7} r={16.7} />
-    <circle className="st5" cx={1018.4} cy={143.2} r={19.4} />
-    <text transform="matrix(1 0 0 1 914.2245 107.2779)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st13">
+    <text transform="matrix(1 0 0 1 1020.3276 106.6019)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"AVMS, the potential for "}
       </tspan>
-      <tspan x={2.9} y={7.4} className="st2 st3 st13">
+      <tspan x={3.2} y={8.3} className="st27 st3 st28">
         {"quality improvement? "}
       </tspan>
     </text>
-    <text transform="matrix(1 0 0 1 1001.3743 98.6051)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st14">
+    <text transform="matrix(1 0 0 1 1117.1221 96.9686)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"How do you plan to "}
       </tspan>
-      <tspan x={-14.4} y={7} className="st2 st3 st14">
+      <tspan x={-16} y={7.8} className="st27 st3 st28">
         {"manage the cadre in the event "}
       </tspan>
-      <tspan x={-6.6} y={14} className="st2 st3 st14">
+      <tspan x={-7.3} y={15.5} className="st27 st3 st28">
         {"of a transition to AVMS? "}
       </tspan>
     </text>
-    <g>
-      <text transform="matrix(1 0 0 1 1159.8271 55.6258)">
-        <tspan x={0} y={0} className="st2 st3 st4">
+    <g className="titleSix">
+      <text transform="matrix(1 0 0 1 1293.1123 49.2322)">
+        <tspan x={0} y={0} className="st27 st3 st28">
           {"Female conscription "}
         </tspan>
-        <tspan x={15.5} y={15.3} className="st2 st3 st4">
+        <tspan x={17.2} y={17} className="st27 st3 st28">
           {"and pay system"}
         </tspan>
       </text>
     </g>
-    <circle className="st5" cx={1245.9} cy={185.2} r={16.6} />
-    <text transform="matrix(1 0 0 1 1175.6882 113.6726)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st15">
+    <text transform="matrix(1 0 0 1 1310.7285 113.7039)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"What is the current situation "}
       </tspan>
-      <tspan x={0} y={8.8} className="st2 st3 st15">
+      <tspan x={0} y={9.7} className="st27 st3 st28">
         {"and how to recruit women?"}
       </tspan>
     </text>
-    <circle className="st5" cx={1246} cy={153.7} r={15} />
-    <circle className="st6" cx={1164.5} cy={154.1} r={19.4} />
-    <circle className="st5" cx={1380.8} cy={138.6} r={20.6} />
-    <circle className="st6" cx={1487.3} cy={138.7} r={22.3} />
-    <circle className="st5" cx={1470.7} cy={176.1} r={18.4} />
-    <text
-      transform="matrix(1 0 0 1 1464.5109 103.1519)"
-      className="st2 st3 st16"
-    >
-      {"Concluding remarks"}
-    </text>
-    <text transform="matrix(1 0 0 1 1372.9427 98.6051)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st16">
+    <g className="titleSeven">
+      <text transform="matrix(1 0 0 1 1529.502 10.7928)">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Defense budget issues and "}
+        </tspan>
+        <tspan x={21.2} y={17} className="st27 st3 st28">
+          {"conclusion of debate"}
+        </tspan>
+      </text>
+    </g>
+    <text transform="matrix(1 0 0 1 1529.8154 96.9686)" className="st7">
+      <tspan x={0} y={0} className="st27 st3 st28">
         {"Adjusting the military "}
       </tspan>
-      <tspan x={6.6} y={9} className="st2 st3 st16">
+      <tspan x={7.3} y={10} className="st27 st3 st28">
         {"budget for AVMS "}
       </tspan>
     </text>
-    <text transform="matrix(1 0 0 1 15.3472 36.8976)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st17">
-        {"Start the discussion and introduce "}
-      </tspan>
-      <tspan x={-2.7} y={15.5} className="st2 st3 st17">
-        {"all volunteer military system(AVMS)"}
-      </tspan>
+    <text
+      transform="matrix(1 0 0 1 1631.5186 102.0184)"
+      className="st2 st3 st12"
+    >
+      {"Concluding remarks"}
     </text>
-    <circle className="st5" cx={140.1} cy={149.4} r={18.3} />
-    <circle className="st5" cx={136.8} cy={183.4} r={15.8} />
-    <text transform="matrix(1 0 0 1 57.0709 106.8606)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st18">
-        {"Current "}
-      </tspan>
-      <tspan x={-12.1} y={8.9} className="st2 st3 st18">
-        {"Social Situation"}
-      </tspan>
-    </text>
-    <circle className="st19" cx={68.9} cy={166.3} r={46.5} />
-    <text transform="matrix(1 0 0 1 151.3516 104.0154)" className="st11">
-      <tspan x={0} y={0} className="st2 st3 st18">
-        {"Current "}
-      </tspan>
-      <tspan x={-14.9} y={8.9} className="st2 st3 st18">
-        {"Military Situation"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={49.2} cy={186.3} r={15.5} />
-    <circle className="st6" cx={55.7} cy={138.2} r={12} />
     <g>
       <path
-        className="st20"
-        d="M118.3,69.2v-7.3c-25.4,0-47.5,8.1-67,24.3l4.7,5.6C74.1,76.7,94.8,69.2,118.3,69.2z"
-      />
-      <path
-        className="st21"
-        d="M41,107.8c4.5-6,9.3-11,15.1-15.9l0,0l-4.7-5.6c-6.3,5.2-11.4,10.7-16.3,17.1L41,107.8L41,107.8z"
-      />
-      <path
-        className="st22"
-        d="M26.8,134.6c3.5-10.3,7.6-18.1,14.2-26.7l-5.8-4.4c-7.1,9.3-11.5,17.7-15.4,28.8L26.8,134.6L26.8,134.6z"
-      />
-      <path
         className="st23"
-        d="M25.7,194.4c-6.1-20.2-5.8-39.9,1-59.9l-6.9-2.4c-7.4,21.5-7.7,42.6-1.1,64.4L25.7,194.4L25.7,194.4z"
+        d="M346.1,142.7l1.8-1.8c1.9-1.9,1.9-5.1,0-7l-4.1-4.1c-1.9-1.9-5.1-1.9-7,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.1-1.9-7,0l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7l4.1,4.1c1.9,1.9,5.1,1.9,7,0l1.8-1.8 l1.8,1.8c1.9,1.9,5.1,1.9,7,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7L346.1,142.7z"
       />
+      <text transform="matrix(1 0 0 1 325.1153 136.3636)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Conscription "}
+        </tspan>
+        <tspan x={0.9} y={3.8} className="st27 st3 st28">
+          {"for General "}
+        </tspan>
+        <tspan x={2.8} y={7.7} className="st27 st3 st28">
+          {"Elections "}
+        </tspan>
+        <tspan x={3.5} y={11.5} className="st27 st3 st28">
+          {"without "}
+        </tspan>
+        <tspan x={2.2} y={15.4} className="st27 st3 st28">
+          {"Measures "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.3688 -0.9295 0.9295 0.3688 55.2782 378.4305)"
+        className="st26"
+        cx="306.3"
+        cy="148.5"
+        r="14.3"
+      />
+      <text transform="matrix(1 0 0 1 293.6226 147.5977)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unmanned "}
+        </tspan>
+        <tspan x={4.5} y={5.8} className="st27 st3 st28">
+          {"warfare"}
+        </tspan>
+      </text>
+    </g>
+    <g>
       <path
-        className="st21"
-        d="M29.8,205.6c-1.8-4-2.8-6.9-4.1-11l-6.9,2.2c1.4,4.5,2.5,7.6,4.4,11.9L29.8,205.6L29.8,205.6z"
+        className="st28"
+        d="M366,190.1l1.8-1.8c1.9-1.9,1.9-5.2,0-7.2l-4.2-4.2c-1.9-1.9-5.2-1.9-7.2,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.2-1.9-7.2,0l-4.2,4.2c-1.9,1.9-1.9,5.2,0,7.2l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.2,0,7.2l4.2,4.2c1.9,1.9,5.2,1.9,7.2,0 l1.8-1.8l1.8,1.8c1.9,1.9,5.2,1.9,7.2,0l4.2-4.2c1.9-1.9,1.9-5.2,0-7.2L366,190.1z"
       />
-      <path
-        className="st22"
-        d="M54.7,239.2c-10.8-9.4-19.1-20.6-24.9-33.7l-6.7,3c6.3,14.1,15.1,26.2,26.8,36.3L54.7,239.2L54.7,239.2z"
-      />
-      <path
-        className="st24"
-        d="M88.4,258.3c-13-4.3-23.3-10.1-33.7-19.1l-4.8,5.5c11,9.7,22.2,15.9,36.2,20.5L88.4,258.3L88.4,258.3z"
-      />
-      <path
-        className="st23"
-        d="M96.5,260.5c-3.2-0.7-5-1.3-8.2-2.3l-2.3,6.9c3.3,1.1,5.3,1.6,8.8,2.4L96.5,260.5L96.5,260.5z"
-      />
-      <path
-        className="st21"
-        d="M96.5,260.5l-1.6,7.2c12.2,2.8,23.7,3.4,36.2,1.9l-0.9-7.3C118.5,263.7,107.8,263.1,96.5,260.5z"
-      />
-      <path
-        className="st22"
-        d="M136.8,261.3c-2.5,0.5-4.2,0.8-6.7,1l0,0l0.9,7.3c2.7-0.3,4.5-0.6,7.2-1.1L136.8,261.3L136.8,261.3z"
-      />
-      <path
-        className="st21"
-        d="M136.8,261.3l1.4,7.2c4.3-0.8,8.1-1.8,12.3-3.2l-2.3-6.9C144.3,259.6,140.8,260.5,136.8,261.3z"
-      />
-      <path
-        className="st22"
-        d="M194.6,225.8c-12.3,15.7-27.3,26.3-46.4,32.5l0,0l2.3,6.9c20.5-6.6,36.6-18,49.9-34.9L194.6,225.8 L194.6,225.8z"
-      />
-      <path
-        className="st21"
-        d="M194.6,225.8l5.8,4.4c1.3-1.6,2-2.7,3.3-4.4l-6-4.2C196.6,223.3,195.9,224.2,194.6,225.8z"
-      />
-      <path
-        className="st24"
-        d="M214.9,174.5c-1.6,18-6.8,32.3-17.2,47.2l0,0l6,4.2c11.1-15.9,16.7-31.3,18.4-50.7L214.9,174.5L214.9,174.5z"
-      />
-      <path
-        className="st21"
-        d="M222.3,158.8l-7.3,0.5l0,0c0.3,4.9,0.3,10.3-0.1,15.2l7.3,0.7C222.6,170,222.6,164.1,222.3,158.8z"
-      />
-      <path
-        className="st20"
-        d="M215,159.4l7.3-0.5c-1.4-19.2-6.8-35-17.5-51l-6,4.1C208.6,126.8,213.7,141.4,215,159.4z"
-      />
-      <path
-        className="st21"
-        d="M198.6,111.9L198.6,111.9l6-4.1c-1.6-2.4-2.5-3.6-4.3-5.9l-5.8,4.4C196.2,108.6,197.1,109.7,198.6,111.9z"
-      />
-      <path
-        className="st23"
-        d="M194.6,106.4L194.6,106.4l5.8-4.4c-9.7-12.4-20.8-21.6-34.8-28.7l-3.3,6.5C175.3,86.4,185.6,94.9,194.6,106.4 z"
-      />
-      <path
-        className="st21"
-        d="M162.3,79.8L162.3,79.8l3.3-6.5c-15.6-8-29.8-11.4-47.3-11.4v7.3C134.7,69.2,147.8,72.4,162.3,79.8z"
-      />
+      <text transform="matrix(1 0 0 1 343.2012 186.208)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Difficulties "}
+        </tspan>
+        <tspan x={9.3} y={5.6} className="st27 st3 st28">
+          {"in "}
+        </tspan>
+        <tspan x={-1} y={11.1} className="st27 st3 st28">
+          {"self-defense"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={410.6} cy={202.8} r={18} />
+      <text transform="matrix(1 0 0 1 396.5518 195.9227)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Reorganization "}
+        </tspan>
+        <tspan x={1.2} y={4.9} className="st27 st3 st28">
+          {"of the military "}
+        </tspan>
+        <tspan x={3.6} y={9.8} className="st27 st3 st28">
+          {"to focus on "}
+        </tspan>
+        <tspan x={2.9} y={14.6} className="st27 st3 st28">
+          {"professional "}
+        </tspan>
+        <tspan x={7.7} y={19.5} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={397.1} cy={160.4} r={15.4} />
+      <text transform="matrix(1 0 0 1 384.6314 157.6614)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Military elite "}
+        </tspan>
+        <tspan x={4.7} y={5.2} className="st27 st3 st28">
+          {"through"}
+        </tspan>
+        <tspan x={3.3} y={10.5} className="st27 st3 st28">
+          {"reduction"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
         className="st23"
-        d="M335,81.2L335,81.2V74c-19.8,0-37.7,5.6-54,17l4,5.8C300.2,86.4,316.6,81.2,335,81.2z"
+        d="M461.1,160l2.5-2.5c2.8-2.8,2.8-7.5,0-10.3l-6.1-6.1c-2.8-2.8-7.5-2.8-10.3,0l-2.5,2.5l-2.5-2.5 c-2.8-2.8-7.5-2.8-10.3,0l-6.1,6.1c-2.8,2.8-2.8,7.5,0,10.3l2.5,2.5l-2.5,2.5c-2.8,2.8-2.8,7.5,0,10.3l6.1,6.1 c2.8,2.8,7.5,2.8,10.3,0l2.5-2.5l2.5,2.5c2.8,2.8,7.5,2.8,10.3,0l6.1-6.1c2.8-2.8,2.8-7.5,0-10.3L461.1,160z"
       />
-      <path
-        className="st25"
-        d="M284.7,97.1c0.1-0.1,0.2-0.1,0.3-0.2l-4-5.8c-7.9,5.5-14.3,11.6-20.2,19.2l5.5,4.3 C271.7,107.6,277.5,102.1,284.7,97.1z"
-      />
-      <path
-        className="st20"
-        d="M265.9,114.8c0.1-0.1,0.2-0.3,0.3-0.4l-5.5-4.3c-10.7,13.7-16.6,27.7-19.1,44.8l6.6,0.9 C250.7,140.2,256.2,127.4,265.9,114.8z"
-      />
-      <path
-        className="st24"
-        d="M248.3,156.5c0-0.2,0.1-0.4,0.1-0.6l-6.6-0.9c-0.9,6.6-1.1,11.4-0.8,18l6.5-0.3 C247.3,166.9,247.5,162.4,248.3,156.5z"
-      />
-      <path
-        className="st25"
-        d="M247.6,173.3c0-0.2,0-0.4,0-0.6L241,173c0.4,8.4,1.9,16.2,4.5,24.2l6.1-2C249.2,188,248,180.9,247.6,173.3z"
-      />
-      <path
-        className="st21"
-        d="M251.7,195.8c-0.1-0.2-0.1-0.4-0.2-0.6l-6.1,2c1.1,3.3,2.1,6,3.5,9.2l5.8-2.6 C253.6,201.1,252.7,198.7,251.7,195.8z"
-      />
-      <path
-        className="st24"
-        d="M254.9,204.3c-0.1-0.2-0.1-0.3-0.2-0.5l-5.8,2.6c6.9,15.7,16.8,27.8,30.7,37.8l3.5-4.9 C270.5,230,261.4,218.7,254.9,204.3z"
-      />
-      <path
-        className="st21"
-        d="M283.5,239.6c-0.1-0.1-0.2-0.1-0.3-0.2l-3.5,4.9c2.2,1.6,3.1,2.3,5.5,3.6l3.2-5.1 C286.4,241.5,285.4,240.9,283.5,239.6z"
-      />
-      <path
-        className="st23"
-        d="M288.5,243c-0.1-0.1-0.2-0.1-0.3-0.2l-3.2,5.1c2.2,1.3,4.9,2.9,7.2,4l2.7-5.4 C292.9,245.5,290.5,244.2,288.5,243z"
-      />
-      <path
-        className="st25"
-        d="M341,256.1c-16.8,1.1-30.9-1.7-45.8-9.3c-0.1,0-0.2-0.1-0.2-0.1l-2.7,5.4c16.1,8.2,31.2,11.3,49.3,10.1 L341,256.1C341.1,256.1,341.1,256.1,341,256.1z"
-      />
-      <path
-        className="st21"
-        d="M356.1,253.7c-4.8,1.1-10.1,2.1-15,2.4l0.4,5.9c5.3-0.4,11.1-1.2,16.2-2.6l-1.5-5.8 C356.3,253.7,356.1,253.7,356.1,253.7z"
-      />
-      <path
-        className="st23"
-        d="M360.5,252.4c-2,0.6-2.4,0.7-4.3,1.1l1.5,5.8c2.2-0.5,2.6-0.6,4.8-1.3l-1.8-5.7 C360.7,252.4,360.6,252.4,360.5,252.4z"
-      />
-      <path
-        className="st21"
-        d="M370.6,248.7c-2.9,1.2-6.7,2.7-9.9,3.7l1.8,5.7c3.3-1,7.6-2.6,10.8-4l-2.5-5.5 C370.7,248.6,370.7,248.7,370.6,248.7z"
-      />
-      <path
-        className="st23"
-        d="M403,223.8c-9.2,11.5-18.8,18.8-32.1,24.8l2.5,5.5c14.6-6.5,24.8-14.3,34.8-26.8l-4.8-3.9 C403.2,223.6,403.1,223.7,403,223.8z"
-      />
-      <path
-        className="st21"
-        d="M406.6,218.9c-1,1.5-2.2,3.1-3.3,4.5l4.8,3.9c1.3-1.7,2.8-3.5,3.9-5.3l-5.1-3.5 C406.9,218.6,406.8,218.8,406.6,218.9z"
-      />
-      <path
-        className="st23"
-        d="M409.1,215.1c-0.9,1.5-1.3,2.1-2.2,3.4l5.1,3.5c1.1-1.7,1.7-2.4,2.7-4.1l-5.3-3.3 C409.3,214.8,409.2,215,409.1,215.1z"
-      />
-      <path
-        className="st21"
-        d="M418.7,194.4c-2.3,7.4-5.2,13.8-9.2,20.3l5.3,3.3c4.5-7.2,7.7-14.2,10.2-22.4l-6.1-1.9 C418.8,194,418.7,194.2,418.7,194.4z"
-      />
-      <path
-        className="st23"
-        d="M421.4,182.4c-0.6,3.8-1.5,7.6-2.6,11.3l6.1,1.9c1.2-4.3,2.3-8.4,2.9-12.8l-6.4-1 C421.5,182,421.5,182.2,421.4,182.4z"
-      />
-      <path
-        className="st21"
-        d="M422,177.9c-0.2,1.6-0.3,2.5-0.5,3.9l6.4,1c0.3-1.9,0.4-3,0.6-4.9l-6.5-0.7C422,177.5,422,177.7,422,177.9z"
-      />
-      <path
-        className="st20"
-        d="M416.5,121.1l-6,3.4c0.1,0.2,0.2,0.3,0.3,0.5c9.5,16.5,13.2,33.4,11.3,52.3l6.5,0.7 C430.7,157.3,426.9,139,416.5,121.1z"
-      />
-      <path
-        className="st21"
-        d="M400,110.2c3.9,4.5,7.5,9.2,10.5,14.3l6-3.4c-3.3-5.7-7.2-11-11.6-16l-5.2,4.7 C399.8,110,399.9,110.1,400,110.2z"
-      />
-      <path
-        className="st25"
-        d="M381.3,94.5c7.5,4.7,12.5,8.9,18.4,15.3l5.2-4.7c-6.4-7.2-11.9-11.7-20.1-16.8l-3.8,6 C381.1,94.4,381.2,94.5,381.3,94.5z"
-      />
-      <path
-        className="st23"
-        d="M381,94.4l3.8-6c-15.8-9.9-31.3-14.3-49.9-14.3v7.3C352.1,81.2,366.5,85.3,381,94.4z"
-      />
+      <text transform="matrix(1 0 0 1 435.5918 149.952)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Introduce"}
+        </tspan>
+        <tspan x={2.7} y={5.2} className="st27 st3 st28">
+          {"AVMS "}
+        </tspan>
+        <tspan x={-3} y={10.5} className="st27 st3 st28">
+          {"after quality "}
+        </tspan>
+        <tspan x={-4.4} y={15.7} className="st27 st3 st28">
+          {"improvement "}
+        </tspan>
+        <tspan x={-9.4} y={20.9} className="st27 st3 st28">
+          {"and modernization"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse className="st30" cx={639.8} cy={145.2} rx={16.9} ry={17.2} />
+      <text transform="matrix(0.9897 0 0 1 633.1079 142.5726)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Elite"}
+        </tspan>
+        <tspan x={-7} y={9} className="st27 st3 st28">
+          {"infantry "}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st24"
-        d="M534.2,72.9c9.2-2.6,17.8-3.8,27.5-3.8v-7.8c-10.4,0-19.7,1.2-29.7,4.1L534.2,72.9L534.2,72.9z"
-      />
-      <path
-        className="st21"
-        d="M534.2,72.9l-2.2-7.5c-9.7,2.8-18.8,6.8-27.4,12.1l4.1,6.6C516.8,79.3,525.2,75.5,534.2,72.9z"
-      />
-      <path
-        className="st24"
-        d="M508.7,84.2C508.8,84.1,508.8,84.1,508.7,84.2l-4.1-6.6c-16,10-26.8,21.1-36.2,37.3l6.7,3.8 C483.9,103.6,494,93.4,508.7,84.2z"
-      />
-      <path
-        className="st21"
-        d="M475.1,118.9c0-0.1,0.1-0.1,0.1-0.2l-6.7-3.8c-1.2,2.2-2.4,4.4-3.5,6.6l6.9,3.4 C472.9,122.8,473.9,120.8,475.1,118.9z"
-      />
-      <path
         className="st23"
-        d="M471.8,125c0-0.1,0.1-0.1,0.1-0.2l-6.9-3.4c-1.2,2.6-2,4.1-3,6.8l7.2,2.9C470,128.8,470.6,127.3,471.8,125z"
+        d="M942.7,194.5l1.6-1.6c1.8-1.8,1.8-4.5,0-6.3l-3.6-3.6c-1.8-1.8-4.5-1.8-6.3,0l-1.6,1.6l-1.6-1.6 c-1.8-1.8-4.5-1.8-6.3,0l-3.6,3.6c-1.8,1.8-1.8,4.5,0,6.3l1.6,1.6l-1.6,1.6c-1.8,1.8-1.8,4.5,0,6.3l3.6,3.6c1.8,1.8,4.5,1.8,6.3,0 l1.6-1.6l1.6,1.6c1.8,1.8,4.5,1.8,6.3,0l3.6-3.6c1.8-1.8,1.8-4.5,0-6.3L942.7,194.5z"
       />
-      <path
-        className="st21"
-        d="M469,131.3c0-0.1,0.1-0.1,0.1-0.2l-7.2-2.9c-0.6,1.6-1.5,3.6-2,5.3l7.4,2.5 C467.7,134.5,468.3,132.8,469,131.3z"
-      />
-      <path
-        className="st20"
-        d="M467.1,136.2c0-0.1,0.1-0.2,0.1-0.2l-7.4-2.5c-0.6,1.8-1.1,3.6-1.7,5.4l7.5,2.1 C466.1,139.4,466.6,137.7,467.1,136.2z"
-      />
-      <path
-        className="st23"
-        d="M465.5,141.2c0-0.1,0-0.2,0.1-0.2l-7.5-2.1c-0.6,2.2-0.9,3.2-1.5,5.4l7.6,1.8 C464.7,144.2,465,143.1,465.5,141.2z"
-      />
-      <path
-        className="st25"
-        d="M464.2,146.3c0-0.1,0-0.2,0.1-0.3l-7.6-1.8c-0.7,3.3-1.6,7.7-2,11l7.7,0.9 C462.9,153.1,463.5,149.3,464.2,146.3z"
-      />
-      <path
-        className="st21"
-        d="M462.4,156.5c0-0.1,0-0.2,0-0.3l-7.7-0.9c-0.4,3.1-0.6,6.2-0.7,9.3l7.7,0.3 C461.8,162.1,462,159.3,462.4,156.5z"
-      />
-      <path
-        className="st23"
-        d="M461.7,165.2c0-0.1,0-0.2,0-0.3l-7.7-0.3c-0.1,1.8-0.1,2.1-0.1,3.7h7.7C461.6,167.1,461.7,166.7,461.7,165.2z "
-      />
-      <path
-        className="st21"
-        d="M461.6,168.6c0-0.1,0-0.2,0-0.3h-7.7c0,2.4,0.1,5.1,0.3,7.5l7.6-0.5C461.7,173.2,461.6,170.8,461.6,168.6z"
-      />
-      <path
-        className="st23"
-        d="M461.9,175.6c0-0.1,0-0.2,0-0.3l-7.6,0.5c0.1,1.3,0.2,2.4,0.3,3.7l7.6-0.8C462,177.7,462,176.7,461.9,175.6z"
-      />
-      <path
-        className="st25"
-        d="M462.2,179.1c0-0.1,0-0.2,0-0.3l-7.6,0.8c0.4,3.6,0.7,5.7,1.3,9.2l7.5-1.5 C462.9,184.3,462.5,182.3,462.2,179.1z"
-      />
-      <path
-        className="st21"
-        d="M463.5,187.7c0-0.1,0-0.2-0.1-0.3l-7.5,1.5c0.4,2.2,1.1,5.1,1.7,7.3l7.4-2 C464.5,192.2,463.9,189.6,463.5,187.7z"
-      />
-      <path
-        className="st25"
-        d="M465,194.5c0-0.1-0.1-0.2-0.1-0.3l-7.4,2c4.8,17.5,12.9,32,25.3,45.3l5.4-5.1 C476.9,224.1,469.5,210.6,465,194.5z"
-      />
-      <path
-        className="st21"
-        d="M488.6,236.6c-0.1-0.1-0.1-0.1-0.2-0.2l-5.4,5.1c2.3,2.4,4.3,4.4,6.7,6.5l5-5.5 C492.4,240.6,490.5,238.7,488.6,236.6z"
-      />
-      <path
-        className="st23"
-        d="M494.8,242.7c-0.1-0.1-0.1-0.1-0.2-0.2l-5,5.5c0.9,0.8,0.5,0.4,1.5,1.2l4.9-5.5 C495.3,243.2,495.5,243.4,494.8,242.7z"
-      />
-      <path
-        className="st20"
-        d="M496.1,243.8c-0.1-0.1-0.1-0.1-0.2-0.2l-4.9,5.5c2.7,2.3,5.9,4.9,8.9,6.9l4.3-6 C501.5,248.3,498.5,246,496.1,243.8z"
-      />
-      <path
-        className="st21"
-        d="M504.3,250.3c-0.1,0-0.1-0.1-0.2-0.1l-4.3,6c1.5,0.9,1.7,1.1,3.1,2.1l4-6.1 C505.9,251.3,505.6,251.1,504.3,250.3z"
-      />
-      <path
-        className="st20"
-        d="M507.2,252.2c-0.1-0.1-0.1-0.1-0.2-0.1l-4,6.1c7.4,4.8,15.2,8.6,23.6,11.4l2.4-6.8 C521.3,260.1,514.1,256.6,507.2,252.2z"
-      />
-      <path
-        className="st23"
-        d="M529.2,262.9c-0.1,0-0.1,0-0.2-0.1l-2.4,6.8c18.7,6.3,36.3,7.6,55.6,3.8l-1.3-7.1 C562.9,270,546.5,268.8,529.2,262.9z"
-      />
-      <path
-        className="st21"
-        d="M604.1,259c-8,3.7-14.5,5.8-23.2,7.5c0,0,0,0-0.1,0l1.3,7.1c9.3-1.8,16.4-4,25-8.1L604.1,259 C604.2,259,604.2,259,604.1,259z"
-      />
-      <path
-        className="st20"
-        d="M639.7,231.4c-10.1,12.3-21.1,20.8-35.5,27.6l3,6.5c15.6-7.2,27.4-16.4,38.2-29.7l-5.6-4.6 C639.8,231.3,639.7,231.3,639.7,231.4z"
-      />
-      <path
-        className="st24"
-        d="M649.4,217c-2.9,5.3-5.8,9.5-9.6,14.3l5.6,4.6c4.1-5.1,7.3-9.7,10.5-15.5l-6.4-3.5 C649.5,216.9,649.4,216.9,649.4,217z"
-      />
-      <path
-        className="st25"
-        d="M658.1,196.1c-2.1,7.4-4.9,14-8.6,20.6l6.4,3.5c4-7.3,7.1-14.4,9.3-22.4l-7.1-2 C658.1,195.9,658.1,196,658.1,196.1z"
-      />
-      <path
-        className="st21"
-        d="M660.1,187.7c-0.6,3.1-1.1,5.2-2,8.2l7.1,2c0.9-3.3,1.6-5.7,2.2-9.1l-7.3-1.3 C660.2,187.5,660.2,187.6,660.1,187.7z"
-      />
-      <path
-        className="st24"
-        d="M665.7,140.7l-7.3,2c0,0.1,0.1,0.2,0.1,0.3c4,15,4.6,29.2,1.7,44.5l7.3,1.3 C670.7,172.3,670,156.8,665.7,140.7z"
-      />
-      <path
-        className="st21"
-        d="M656.5,136.2c0.7,2.3,1.3,4,2,6.3l7.3-2c-0.7-2.6-1.3-4.7-2.2-7.2l-7.2,2.5 C656.5,136.1,656.5,136.1,656.5,136.2z"
-      />
-      <path
-        className="st23"
-        d="M654,129.8c0.9,2.1,1.7,4,2.4,6.2l7.2-2.5c-0.8-2.4-1.7-4.7-2.7-6.9l-6.9,2.9 C653.9,129.6,654,129.7,654,129.8z"
-      />
-      <path
-        className="st25"
-        d="M626.2,92.3c12.7,10.6,21.2,22,27.7,37.1l6.9-2.9c-6.9-16.4-16.2-28.7-29.9-40.2l-5,5.9 C626.1,92.2,626.1,92.3,626.2,92.3z"
-      />
-      <path
-        className="st21"
-        d="M614.9,84.2c4,2.5,7.5,5,11.1,8l5-5.9c-4-3.3-7.7-6-12.1-8.8l-4.1,6.5C614.8,84.1,614.8,84.1,614.9,84.2z"
-      />
-      <path
-        className="st23"
-        d="M610.4,81.5c1.7,0.9,2.7,1.6,4.3,2.5l4.1-6.5c-1.9-1.1-2.9-1.8-4.9-2.8l-3.7,6.7 C610.2,81.4,610.3,81.5,610.4,81.5z"
-      />
-      <path
-        className="st21"
-        d="M601,77c2.9,1.2,6.4,2.9,9.2,4.5l3.7-6.7c-3-1.7-6.9-3.5-10.2-4.9l-3,7.2C600.8,76.9,600.9,77,601,77z"
-      />
-      <path
-        className="st23"
-        d="M561.8,69.1c14.6,0,25.5,2.2,38.9,7.9l3-7.2c-14.5-6.1-26.2-8.5-42.1-8.5v7.8 C561.8,69.1,561.8,69.1,561.8,69.1z"
-      />
+      <text transform="matrix(1 0 0 1 926.7686 189.4512)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Need to "}
+        </tspan>
+        <tspan x={-0.1} y={3.8} className="st27 st3 st28">
+          {"improve "}
+        </tspan>
+        <tspan x={-4} y={7.7} className="st27 st3 st28">
+          {"military social "}
+        </tspan>
+        <tspan x={-1.4} y={11.5} className="st27 st3 st28">
+          {"awareness"}
+        </tspan>
+      </text>
     </g>
     <g>
-      <path
-        className="st25"
-        d="M731.4,103.8c13.4-8.7,27.3-12.9,43.2-12.9v-5.9c-17.2,0-32.1,4.5-46.6,13.8L731.4,103.8 C731.4,103.9,731.4,103.8,731.4,103.8z"
+      <circle
+        transform="matrix(0.3805 -0.9248 0.9248 0.3805 358.0857 838.6187)"
+        className="st30"
+        cx="805"
+        cy="152"
+        r="14.0"
       />
-      <path
-        className="st21"
-        d="M705.1,131.9c6.4-11.6,15-20.8,26.1-28.1l-3.2-5c-11.9,7.8-21.3,17.7-28.2,30.3L705.1,131.9 C705.1,132,705.1,132,705.1,131.9z"
-      />
-      <path
-        className="st26"
-        d="M703.9,134.4c0.6-1.1,0.7-1.3,1.2-2.4l-5.3-2.9c-0.6,1.2-0.8,1.5-1.5,2.6L703.9,134.4 C703.8,134.4,703.9,134.4,703.9,134.4z"
-      />
-      <path
-        className="st23"
-        d="M697.6,189.7c-4.8-19-2.6-37.7,6.3-55.3l-5.4-2.7c-9.5,18.8-11.9,39-6.7,59.4L697.6,189.7L697.6,189.7z"
-      />
-      <path
-        className="st21"
-        d="M699.5,196.3c-0.8-2.3-1.3-4.3-2-6.6l-5.8,1.5c0.6,2.6,1.2,4.7,2.1,7.2L699.5,196.3L699.5,196.3z"
-      />
-      <path
-        className="st26"
-        d="M699.5,196.3l-5.7,2c6.7,19.5,18,33.7,35.5,44.6l3.2-5.1C716.3,227.8,705.8,214.5,699.5,196.3z"
-      />
-      <path
-        className="st24"
-        d="M732.5,237.9L732.5,237.9l-3.2,5.1c6.5,4.1,12.9,6.9,20.3,9.2l1.8-5.7C744.5,244.3,738.6,241.7,732.5,237.9z"
-      />
-      <path
-        className="st26"
-        d="M751.4,246.5L751.4,246.5l-1.8,5.7c3.6,1.1,6.4,1.8,10.2,2.4l1-5.9C757.4,248.1,754.7,247.5,751.4,246.5z"
-      />
-      <path
-        className="st24"
-        d="M760.8,248.7L760.8,248.7l-1,5.9c3.4,0.6,6.8,1,10.4,1.1l0.3-6C767.2,249.6,764,249.3,760.8,248.7z"
-      />
-      <path
-        className="st26"
-        d="M770.5,249.8L770.5,249.8l-0.3,6c6,0.3,10.5,0.1,16.4-0.7l-0.8-5.9C780.1,249.9,776.1,250.2,770.5,249.8z"
-      />
-      <path
-        className="st25"
-        d="M785.7,249.2L785.7,249.2l0.8,5.9c1.9-0.3,4-0.6,5.9-1l-1.2-5.9C789.4,248.6,787.4,248.9,785.7,249.2z"
-      />
-      <path
-        className="st24"
-        d="M791.2,248.2C791.1,248.2,791.1,248.2,791.2,248.2l1.2,5.9c1.3-0.3,1.6-0.3,2.9-0.6l-1.5-5.8 C792.7,247.9,792.3,248,791.2,248.2z"
-      />
-      <path
-        className="st26"
-        d="M793.9,247.6C793.8,247.6,793.8,247.6,793.9,247.6l1.3,5.8c3.3-0.8,6.7-2,10-3.1l-2.2-5.6 C800.1,245.8,796.9,246.8,793.9,247.6z"
-      />
-      <path
-        className="st25"
-        d="M803.1,244.7C803.1,244.7,803,244.7,803.1,244.7l2.1,5.6c2.1-0.8,3.5-1.5,5.5-2.3l-2.5-5.4 C806.3,243.4,805,243.9,803.1,244.7z"
-      />
-      <path
-        className="st24"
-        d="M808.2,242.5L808.2,242.5l2.5,5.4c2-0.9,3.4-1.7,5.3-2.7l-2.9-5.2C811.3,241,810,241.7,808.2,242.5z"
-      />
-      <path
-        className="st25"
-        d="M813.2,240C813.2,240,813.1,240,813.2,240l2.9,5.3c1.3-0.7,2.6-1.5,3.8-2.3l-3.2-5.1 C815.5,238.6,814.3,239.4,813.2,240z"
-      />
-      <path
-        className="st24"
-        d="M816.7,237.9L816.7,237.9l3.1,5.1c3.5-2.2,6.4-4.4,9.6-7.1l-3.8-4.6C822.7,233.9,820,235.8,816.7,237.9z"
-      />
-      <path
-        className="st25"
-        d="M825.7,231.4C825.7,231.4,825.6,231.4,825.7,231.4l3.8,4.6c6.6-5.6,12-11.6,16.7-18.9l-5-3.2 C836.8,220.6,832,226.2,825.7,231.4z"
-      />
-      <path
-        className="st24"
-        d="M841.3,213.8L841.3,213.8l5,3.3c5.1-7.8,8.5-15.5,10.9-24.4l-5.7-1.6C849.2,199.4,846,206.5,841.3,213.8z"
-      />
-      <path
-        className="st25"
-        d="M851.3,191L851.3,191l5.7,1.6c1.9-6.9,2.8-13.4,2.9-20.6l-5.9-0.1C853.9,178.6,853.1,184.6,851.3,191z"
-      />
-      <path
-        className="st21"
-        d="M858.4,154.2l-5.8,1.1c1.1,5.8,1.6,10.7,1.5,16.5l0,0l5.9,0.1C860.2,165.7,859.6,160.5,858.4,154.2z"
-      />
-      <path
-        className="st24"
-        d="M842,128.4c5.4,8.7,8.6,16.9,10.6,27l0,0l5.8-1.1c-2.1-10.9-5.6-19.6-11.4-28.9L842,128.4L842,128.4z"
-      />
-      <path
-        className="st21"
-        d="M823.6,107.9c7.9,6.1,13.2,12,18.5,20.5l5-3.1c-5.7-9.1-11.4-15.5-19.8-22.1L823.6,107.9L823.6,107.9z"
-      />
-      <path
-        className="st24"
-        d="M774.6,91.1c18.6,0,34.2,5.4,48.9,16.8l3.6-4.7c-15.8-12.3-32.6-18.1-52.6-18.1V91.1L774.6,91.1z"
-      />
+      <text transform="matrix(1 0 0 1 794.6953 150.9248)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Conscription "}
+        </tspan>
+        <tspan x={0} y={4.1} className="st27 st3 st28">
+          {"career breaks"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
         className="st26"
-        d="M959.5,69c10.1-3.2,20.6-5,31.2-5l0,0v-7.6c-11.3,0-22.8,1.8-33.6,5.3L959.5,69L959.5,69z"
+        d="M890,144.5c7.6,0,13.8,6.2,13.8,13.8c0,7.6-6.2,13.8-13.8,13.8c-7.6,0-13.8-6.2-13.8-13.8 C876.2,150.6,882.4,144.5,890,144.5z"
       />
-      <path
-        className="st23"
-        d="M954.5,70.8c1.9-0.7,3.1-1.1,5-1.8l-2.3-7.2c-2.1,0.6-3.3,1.1-5.4,1.9L954.5,70.8L954.5,70.8z"
-      />
-      <path
+      <text transform="matrix(1 0 0 1 880.7319 156.6108)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Reducing "}
+        </tspan>
+        <tspan x={-0.5} y={4.8} className="st27 st3 st28">
+          {"bad habits"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.9239 -0.3827 0.3827 0.9239 -3.5022 352.3929)"
         className="st26"
-        d="M938.7,78.5c5.3-3.2,10.1-5.5,15.9-7.7l-2.7-7.1c-6.2,2.4-11.3,4.9-17,8.3L938.7,78.5L938.7,78.5z"
+        cx="884"
+        cy="185"
+        r="14.0"
       />
-      <path
-        className="st21"
-        d="M931.3,83.4c2.6-1.9,4.6-3.2,7.4-4.9l-3.8-6.4c-3,1.8-5.1,3.2-7.9,5.2L931.3,83.4L931.3,83.4z"
-      />
-      <path
-        className="st26"
-        d="M906,110.1c6.9-10.8,14.9-19.2,25.3-26.8l-4.5-6.1c-11.2,8.1-19.7,17.1-27.3,28.7L906,110.1 C905.9,110.2,905.9,110.1,906,110.1z"
-      />
-      <path
-        className="st23"
-        d="M903.2,114.6c0.8-1.5,1.9-3.1,2.7-4.5l-6.3-4.1c-0.9,1.6-2.1,3.3-3,4.9L903.2,114.6L903.2,114.6z"
-      />
-      <path
-        className="st26"
-        d="M894.6,133.9c2.4-7.3,4.8-12.8,8.6-19.3l-6.5-3.7c-4,7.1-6.7,13-9.2,20.7L894.6,133.9L894.6,133.9z"
-      />
-      <path
-        className="st23"
-        d="M893.6,137.3c0.3-1.1,0.6-2.2,1-3.3l-7.2-2.4c-0.4,1.2-0.7,2.4-1.1,3.6L893.6,137.3L893.6,137.3z"
-      />
-      <path
-        className="st26"
-        d="M889.8,159.8c0.4-8,1.6-14.8,3.7-22.5l-7.3-2.1c-2.4,8.3-3.6,15.7-4,24.3L889.8,159.8 C889.8,159.9,889.8,159.8,889.8,159.8z"
-      />
-      <path
-        className="st21"
-        d="M889.8,170.4c-0.2-3.6-0.2-6.9,0-10.5l-7.6-0.4c-0.2,3.9-0.2,7.5,0,11.4L889.8,170.4 C889.8,170.5,889.8,170.5,889.8,170.4z"
-      />
-      <path
-        className="st25"
-        d="M890.2,175.7c-0.2-2.2-0.3-3.1-0.4-5.2l-7.6,0.4c0.1,2.4,0.2,3.3,0.4,5.7L890.2,175.7 C890.2,175.8,890.2,175.7,890.2,175.7z"
-      />
-      <path
-        className="st23"
-        d="M890.9,181c-0.3-1.7-0.5-3.5-0.7-5.2l-7.6,0.8c0.2,1.9,0.4,3.8,0.7,5.6L890.9,181L890.9,181z"
-      />
-      <path
-        className="st24"
-        d="M900.6,211.1c-5-9.7-8.1-19.2-9.7-30l-7.5,1.1c1.9,11.7,5.2,21.8,10.5,32.4L900.6,211.1 C900.7,211.1,900.7,211.1,900.6,211.1z"
-      />
-      <path
-        className="st21"
-        d="M916.8,234.1c-6.9-7.5-11.5-14-16.1-23l-6.7,3.4c5,9.7,9.9,16.8,17.3,24.8L916.8,234.1L916.8,234.1z"
-      />
-      <path
-        className="st23"
-        d="M921.8,239.1c-1.7-1.6-3.3-3.2-5-5l-5.6,5.2c1.8,1.9,3.5,3.6,5.4,5.4L921.8,239.1L921.8,239.1z"
-      />
-      <path
-        className="st21"
-        d="M937.1,250.9c-5.8-3.6-10.3-7.1-15.3-11.7l-5.2,5.6c5.4,5.1,10.3,8.7,16.5,12.7L937.1,250.9 C937.2,250.9,937.2,250.9,937.1,250.9z"
-      />
-      <path
-        className="st25"
-        d="M943.2,254.4c-2.2-1.1-3.9-2.2-6.1-3.5l-4,6.5c2.3,1.5,4.1,2.5,6.5,3.8L943.2,254.4 C943.3,254.4,943.3,254.4,943.2,254.4z"
-      />
-      <path
-        className="st24"
-        d="M956.2,260.1c-4.3-1.6-8.8-3.6-12.9-5.7l-3.6,6.7c4.3,2.3,9.3,4.5,13.9,6.1L956.2,260.1L956.2,260.1z"
-      />
-      <path
-        className="st25"
-        d="M961.2,261.9c-2.1-0.6-2.9-0.9-5-1.7l-2.6,7.2c2.3,0.8,3.1,1.1,5.4,1.8L961.2,261.9L961.2,261.9z"
-      />
-      <path
-        className="st21"
-        d="M969.7,264c-2.9-0.6-5.7-1.3-8.5-2.2l-2.3,7.4c3,0.9,6.1,1.8,9.2,2.4L969.7,264 C969.8,264,969.7,264,969.7,264z"
-      />
-      <path
-        className="st23"
-        d="M980.1,265.7c-3.3-0.3-7.2-0.9-10.5-1.7l-1.6,7.5c3.4,0.7,7.7,1.5,11.2,1.8L980.1,265.7L980.1,265.7z"
-      />
-      <path
-        className="st25"
-        d="M999.5,265.8c-6.7,0.6-12.5,0.5-19.4-0.2l-0.7,7.7c7.3,0.7,13.6,0.8,20.8,0.2L999.5,265.8L999.5,265.8z"
-      />
-      <path
-        className="st23"
-        d="M999.5,265.8l0.6,7.7c10.7-0.9,19.5-2.9,29.4-6.8l-2.8-7.2C1017.6,263.1,1009.5,265,999.5,265.8z"
-      />
-      <path
-        className="st21"
-        d="M1026.9,259.5L1026.9,259.5l2.7,7.2c2.5-0.9,4.6-1.9,6.9-3l-3.2-6.9C1031.2,257.8,1029.3,258.7,1026.9,259.5z "
-      />
-      <path
-        className="st23"
-        d="M1033.4,256.8L1033.4,256.8l3.2,6.9c2.9-1.3,5.6-2.8,8.4-4.4l-3.8-6.6 C1038.6,254.2,1036.1,255.5,1033.4,256.8z"
-      />
-      <path
-        className="st21"
-        d="M1041.2,252.7L1041.2,252.7l3.8,6.6c3-1.7,5.2-3.1,8-5.1l-4.4-6.3C1046.1,249.7,1044,251.1,1041.2,252.7z"
-      />
-      <path
-        className="st23"
-        d="M1048.7,248L1048.7,248l4.4,6.3c12.9-9,21.6-18.1,29.9-31.4l-6.5-4C1068.7,231.1,1060.6,239.6,1048.7,248z"
-      />
-      <path
-        className="st25"
-        d="M1076.5,218.7L1076.5,218.7l6.4,4c8.7-14,13.7-28,15.7-44.4l-7.6-0.9C1089.2,192.7,1084.6,205.8,1076.5,218.7 z"
-      />
-      <path
-        className="st21"
-        d="M1096.2,138.9l-7.4,1.9c3.1,12.3,3.7,24.1,2.3,36.7c0,0,0,0,0,0.1l7.6,0.9 C1100.3,164.9,1099.5,152.2,1096.2,138.9z"
-      />
-      <path
-        className="st26"
-        d="M1088.8,140.7C1088.8,140.8,1088.8,140.8,1088.8,140.7l7.4-1.8c-0.3-1.2-0.6-2.4-0.9-3.6l-7.4,2.1 C1088.2,138.5,1088.5,139.5,1088.8,140.7z"
-      />
-      <path
-        className="st23"
-        d="M1087.9,137.3L1087.9,137.3l7.4-2.1c-5.6-19.4-14.5-34.2-28.9-48.2l-5.3,5.5 C1074.5,105.5,1082.7,119.3,1087.9,137.3z"
-      />
-      <path
-        className="st21"
-        d="M1060.9,92.4L1060.9,92.4l5.3-5.4c-1.8-1.8-3.7-3.4-5.6-5.1l-4.9,5.8C1057.5,89.2,1059.3,90.8,1060.9,92.4z"
-      />
-      <path
-        className="st26"
-        d="M1055.7,87.8L1055.7,87.8l4.9-5.8c-15-12.7-29.8-19.7-49.2-23.4L1010,66C1028.1,69.4,1041.6,75.9,1055.7,87.8 z"
-      />
-      <path
-        className="st24"
-        d="M1010,65.9L1010,65.9l1.5-7.4c-7.3-1.5-13.3-2-20.7-2v7.6C997.7,64,1003.3,64.6,1010,65.9z"
-      />
+      <text transform="matrix(1 0 0 1 871.2529 184.6523)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Self-development "}
+        </tspan>
+        <tspan x={7.2} y={3.7} className="st27 st3 st28">
+          {"benefits"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st25"
-        d="M1196.9,90.3c7.6-2.3,15.6-3.5,23.5-3.6v-7.2c-8.8,0-17.7,1.3-26.1,3.9l2.2,7.1 C1196.6,90.4,1196.7,90.4,1196.9,90.3z"
-      />
-      <path
-        className="st21"
-        d="M1191.4,92.2c2.1-0.8,3-1.1,5-1.8l-2.2-7.1c-2.5,0.7-3.4,1.1-5.9,2.1l2.7,6.9 C1191.1,92.3,1191.2,92.2,1191.4,92.2z"
-      />
-      <path
-        className="st25"
-        d="M1184.7,95c2.2-1,4-1.9,6.2-2.7l-2.7-6.9c-2.5,0.9-4.8,2-7.2,3.1l3.2,6.6C1184.5,95.2,1184.6,95.1,1184.7,95z "
-      />
-      <path
         className="st23"
-        d="M1165.4,108c5.7-5.1,12-9.4,18.9-12.8l-3.2-6.6c-7.5,3.6-14.4,8.3-20.6,13.9L1165.4,108 C1165.4,108.1,1165.4,108.1,1165.4,108z"
+        d="M939.6,162l2.5-2.5c2.6-2.6,2.6-7,0-9.8l-5.8-5.8c-2.6-2.6-7-2.6-9.8,0l-2.5,2.5l-2.5-2.5 c-2.6-2.6-7-2.6-9.8,0l-5.8,5.8c-2.6,2.6-2.6,7,0,9.8l2.5,2.5l-2.5,2.5c-2.6,2.6-2.6,7,0,9.8l5.8,5.8c2.6,2.6,7,2.6,9.8,0l2.5-2.5 l2.5,2.5c2.6,2.6,7,2.6,9.8,0l5.8-5.8c2.6-2.6,2.6-7,0-9.8L939.6,162z"
       />
-      <path
-        className="st21"
-        d="M1165.4,108.1l-5-5.6c-2.1,1.9-3.7,3.4-5.6,5.5l5.5,5.1C1162.1,111.2,1163.6,109.7,1165.4,108.1z"
-      />
-      <path
-        className="st23"
-        d="M1160.3,113.2C1160.4,113.1,1160.4,113.1,1160.3,113.2l-5.4-5.2c-5.9,6.3-9.5,11.4-13.6,19.1l6.5,3.5 C1151.6,123.6,1155,118.9,1160.3,113.2z"
-      />
-      <path
-        className="st25"
-        d="M1147.7,130.8c0.1-0.1,0.1-0.2,0.2-0.3l-6.5-3.5c-1,2-1.9,3.6-2.7,5.6l6.7,3 C1146.1,133.9,1146.8,132.6,1147.7,130.8z"
-      />
-      <path
-        className="st23"
-        d="M1145.1,136.1c0.1-0.1,0.1-0.3,0.2-0.4l-6.7-3c-1.8,3.9-3.1,7.6-4.3,11.7l7.1,2 C1142.4,142.8,1143.6,139.5,1145.1,136.1z"
-      />
-      <path
-        className="st21"
-        d="M1141.2,147c0.1-0.2,0.1-0.4,0.2-0.6l-7.1-2c-1.1,4.1-2,8-2.6,12.2l7.2,1 C1139.4,153.9,1140.1,150.6,1141.2,147z"
-      />
-      <path
-        className="st25"
-        d="M1138.7,158.4c0-0.2,0.1-0.5,0.1-0.7l-7.2-1c-0.4,2.6-0.6,5.2-0.7,7.8l7.2,0.4 C1138.3,162.6,1138.5,160.5,1138.7,158.4z"
-      />
-      <path
-        className="st24"
-        d="M1138.1,165.5c0-0.3,0-0.5,0.1-0.8l-7.2-0.4c-0.1,2.9-0.2,5-0.1,7.8l7.1-0.2 C1137.9,169.7,1138,167.9,1138.1,165.5z"
-      />
-      <path
-        className="st25"
-        d="M1138,172.8c0-0.3,0-0.6,0-0.9l-7.1,0.2c0.3,7.6,1.3,14.2,3.4,21.6l6.5-1.9 C1139.1,185.4,1138.2,179.5,1138,172.8z"
-      />
-      <path
-        className="st21"
-        d="M1141.2,192.9c-0.1-0.3-0.2-0.7-0.3-1l-6.5,1.9c0.8,3,1.9,6,3,8.8l6.2-2.5 C1142.6,197.7,1141.8,195.3,1141.2,192.9z"
-      />
-      <path
-        className="st24"
-        d="M1144,201.1c-0.1-0.3-0.3-0.7-0.4-1l-6.2,2.5c3.9,9.7,8.5,17.2,15.5,25.2l4.8-4.1 C1151.6,216.6,1147.5,209.8,1144,201.1z"
-      />
-      <path
-        className="st25"
-        d="M1158.4,224.5c-0.3-0.3-0.5-0.6-0.8-0.9l-4.8,4.1c2,2.3,3.2,3.6,5.4,5.7l4.4-4.5 C1161,227.5,1159.8,226.3,1158.4,224.5z"
-      />
-      <path
-        className="st24"
-        d="M1163.4,229.8c-0.3-0.3-0.6-0.6-0.8-0.8l-4.4,4.5c8.3,8,16.7,13.5,27.2,18l2.3-5.3 C1178.3,242.1,1170.7,237,1163.4,229.8z"
-      />
-      <path
-        className="st21"
-        d="M1188.7,246.6c-0.3-0.1-0.7-0.3-1-0.4l-2.3,5.3c1.7,0.7,4.1,1.7,5.8,2.3l1.9-5.4 C1191.7,247.8,1189.9,247.1,1188.7,246.6z"
-      />
-      <path
-        className="st25"
-        d="M1194.1,248.7c-0.3-0.1-0.6-0.2-1-0.3l-1.9,5.4c18.4,6.3,35.2,6.7,53.8,1.5l-1.5-5 C1226.5,254.9,1211,254.5,1194.1,248.7z"
-      />
-      <path
-        className="st21"
-        d="M1244.2,249.9c-0.2,0.1-0.3,0.1-0.5,0.1l1.5,5c11-3.1,20-7.7,29.2-14.5l-3-4 C1262.7,242.9,1254.4,247,1244.2,249.9z"
-      />
-      <path
-        className="st24"
-        d="M1271.3,236.5l-0.1,0.1l3,4c1.5-1,2.3-1.8,3.6-2.9l-3.2-3.8C1273.4,234.8,1272.7,235.4,1271.3,236.5z"
-      />
-      <path
-        className="st26"
-        d="M1294,210.3c-5.1,9.1-11.3,16.7-19.3,23.4c0,0,0,0-0.1,0l3.2,3.8c8.6-7.3,15.2-15.3,20.7-25.2l-4.5-2.5 C1294.1,210.1,1294.1,210.2,1294,210.3z"
-      />
-      <path
-        className="st23"
-        d="M1296.7,205.1c-0.8,1.7-1.6,3.2-2.5,4.9l4.5,2.5c1-1.9,2-3.6,2.8-5.6l-4.7-2.2 C1296.8,204.8,1296.7,204.9,1296.7,205.1z"
-      />
-      <path
-        className="st26"
-        d="M1302.3,188.7c-1.3,5.9-3,10.7-5.5,16.1l4.7,2.2c2.8-6,4.6-11.2,6.1-17.7l-5.1-1.1 C1302.4,188.2,1302.4,188.5,1302.3,188.7z"
-      />
-      <path
-        className="st21"
-        d="M1303.9,180.1c-0.4,3-0.7,5.1-1.3,8l5.1,1.1c0.8-3.4,1.2-5.8,1.7-9.2l-5.3-0.6 C1303.9,179.5,1303.9,179.8,1303.9,180.1z"
-      />
-      <path
-        className="st26"
-        d="M1305.5,141.4l-5.5,1.8c0.1,0.3,0.2,0.6,0.3,1c3.8,11.9,5,22.7,3.5,35.2l5.3,0.6 C1310.9,166.3,1309.8,154.4,1305.5,141.4z"
-      />
-      <path
-        className="st23"
-        d="M1298.9,140c0.4,1.1,0.7,2.1,1.1,3.1l5.5-1.8c-0.5-1.7-0.9-2.8-1.6-4.5l-5.4,2.1 C1298.7,139.4,1298.8,139.7,1298.9,140z"
-      />
-      <path
-        className="st26"
-        d="M1288.5,120.9c4.3,5.8,7.4,11.5,10,18l5.4-2.1c-2.9-7.6-6.4-14-11.2-20.5l-5,3.6 C1288.1,120.3,1288.3,120.6,1288.5,120.9z"
-      />
-      <path
-        className="st23"
-        d="M1285.9,117.5c0.5,0.7,1.2,1.7,2,2.5l5-3.6c-0.8-1-2-2.7-2.9-3.7l-4.8,3.8 C1285.4,116.9,1285.6,117.2,1285.9,117.5z"
-      />
-      <path
-        className="st26"
-        d="M1270.2,102.6c6.1,4.5,10.3,8.4,15,14l4.8-3.8c-5.4-6.6-10.1-11.1-17-16.1l-3.8,5.3 C1269.6,102.1,1269.9,102.3,1270.2,102.6z"
-      />
-      <path
-        className="st21"
-        d="M1261.6,97.1c2.8,1.6,5.1,3,7.6,4.8l3.8-5.3c-3.1-2.3-5.8-4-9.2-5.9l-3.2,5.8 C1261,96.7,1261.3,96.9,1261.6,97.1z"
-      />
-      <path
-        className="st25"
-        d="M1255,93.9c1.7,0.7,3.7,1.8,5.5,2.7l3.2-5.8c-2.1-1.1-4.9-2.5-6.9-3.5l-2.7,6.1 C1254.3,93.6,1254.7,93.7,1255,93.9z"
-      />
-      <path
-        className="st23"
-        d="M1251.1,92.2c1.2,0.5,2,0.8,3,1.2l2.7-6.1c-1.8-0.7-2.6-1.1-4.4-1.8l-2.4,6.3 C1250.4,91.9,1250.7,92,1251.1,92.2z"
-      />
-      <path
-        className="st24"
-        d="M1221.2,86.6c10.6,0,19.1,1.6,28.8,5.2l2.4-6.3c-11-4.3-20.3-5.9-32-5.9v7.2 C1220.6,86.6,1220.9,86.6,1221.2,86.6z"
-      />
+      <text transform="matrix(1 0 0 1 912.1846 156.5615)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Limited "}
+        </tspan>
+        <tspan x={2.9} y={8.3} className="st27 st3 st28">
+          {"social "}
+        </tspan>
+        <tspan x={3.3} y={16.5} className="st27 st3 st28">
+          {"status"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st21"
-        d="M1452.3,56.6v-8.8c-13,0-25,2-37.2,6.2l2.9,8.3C1429.2,58.3,1440.3,56.6,1452.3,56.6z"
+        className="st28"
+        d="M1088,151l2-2c2.3-2.3,2.3-6.1,0-8.3l-5-5c-2.3-2.3-6.1-2.3-8.3,0l-2,2l-2-2c-2.3-2.3-6.1-2.3-8.3,0l-5,5 c-2.3,2.3-2.3,6.1,0,8.3l2,2l-2,2c-2.3,2.3-2.3,6.1,0,8.3l5,5c2.3,2.3,6.1,2.3,8.3,0l2-2l2,2c2.3,2.3,6.1,2.3,8.3,0l5-5 c2.3-2.3,2.3-6.1,0-8.3L1088,151z"
       />
-      <path
-        className="st23"
-        d="M1417.7,62.3c0.1,0,0.1,0,0.2-0.1l-2.9-8.3c-15.1,5.2-27.4,12.4-39.3,23.1l5.8,6.4 C1392.5,73.7,1403.7,67.1,1417.7,62.3z"
-      />
-      <path
-        className="st21"
-        d="M1381.1,83.8c0.1-0.1,0.3-0.2,0.4-0.3l-5.8-6.4c-1.7,1.6-2.7,2.5-4.4,4.1l6.1,6.1 C1378.8,86,1379.7,85.1,1381.1,83.8z"
-      />
-      <path
-        className="st26"
-        d="M1377,87.7c0.1-0.1,0.3-0.3,0.4-0.4l-6.1-6.1c-10.4,10.4-17.6,21.1-23.6,34.3l7.7,3.4 C1360.9,106.8,1367.7,97.1,1377,87.7z"
-      />
-      <path
-        className="st21"
-        d="M1355.2,119.6c0.1-0.2,0.2-0.4,0.3-0.6l-7.7-3.4c-0.6,1.5-0.9,2.2-1.6,3.6l7.7,3.1 C1354.3,121.4,1354.6,120.7,1355.2,119.6z"
-      />
-      <path
-        className="st24"
-        d="M1353.7,123c0.1-0.2,0.2-0.5,0.3-0.7l-7.7-3.1c-3.7,9.3-6.2,19-7.5,28.9l8.1,1 C1348,140.1,1350.3,131.4,1353.7,123z"
-      />
-      <path
-        className="st21"
-        d="M1346.8,149.9c0-0.3,0.1-0.5,0.1-0.8l-8.1-1c-0.3,2.4-0.4,3.5-0.6,5.9l8.1,0.5 C1346.3,153,1346.5,151.8,1346.8,149.9z"
-      />
-      <path
-        className="st25"
-        d="M1346.1,155.5c0-0.3,0-0.5,0.1-0.8l-8.1-0.5c-1,14.6,0.4,27.4,4.8,41.4l7.5-2.3 C1346.6,180.5,1345.3,168.8,1346.1,155.5z"
-      />
-      <path
-        className="st21"
-        d="M1350.6,194c-0.1-0.2-0.1-0.5-0.2-0.7l-7.5,2.3c3.4,11.4,7.9,20.6,14.5,30.5l6.3-4.3 C1357.8,212.8,1353.7,204.3,1350.6,194z"
-      />
-      <path
-        className="st26"
-        d="M1364.1,222.4c-0.1-0.2-0.2-0.4-0.4-0.5l-6.3,4.3c1.3,2.1,3.2,4.6,4.7,6.4l5.9-4.7 C1366.8,226.2,1365.3,224.1,1364.1,222.4z"
-      />
-      <path
-        className="st24"
-        d="M1368.4,228.4c-0.1-0.2-0.2-0.3-0.4-0.5l-5.9,4.7c3.7,4.8,6.3,7.7,10.7,11.8l5.2-5.4 C1374.2,235.3,1371.9,232.6,1368.4,228.4z"
-      />
-      <path
-        className="st26"
-        d="M1378.4,239.4c-0.1-0.1-0.3-0.3-0.4-0.4l-5.2,5.4c5.6,5.4,10.7,9.4,17.1,13.7l4-6.1 C1388.1,248,1383.5,244.3,1378.4,239.4z"
-      />
-      <path
-        className="st21"
-        d="M1394.4,252.1c-0.1-0.1-0.2-0.2-0.4-0.2l-4,6.1c1.2,0.8,3.8,2.4,5.1,3.1l3.6-6.3 C1397.5,254.1,1395.4,252.7,1394.4,252.1z"
-      />
-      <path
-        className="st24"
-        d="M1399.1,255c-0.1-0.1-0.2-0.1-0.3-0.2l-3.6,6.3c6.1,3.5,11.5,6,18,8.4l2.5-6.8 C1409.7,260.5,1404.7,258.2,1399.1,255z"
-      />
-      <path
-        className="st25"
-        d="M1415.9,262.8c-0.1,0-0.2-0.1-0.3-0.1l-2.5,6.8c2,0.7,3.6,1.2,5.7,1.9l2.1-6.9 C1419.1,263.9,1417.7,263.5,1415.9,262.8z"
-      />
-      <path
-        className="st21"
-        d="M1421.2,264.6c-0.1,0-0.1,0-0.2-0.1l-2.1,6.9c1.8,0.5,2,0.6,3.8,1.1l1.9-6.9 C1423.1,265.2,1422.8,265.1,1421.2,264.6z"
-      />
-      <path
-        className="st25"
-        d="M1424.7,265.6c-0.1,0-0.1,0-0.2-0.1l-1.9,6.9c2.3,0.6,5.4,1.3,7.8,1.8l1.3-7.1 C1429.7,266.8,1426.9,266.2,1424.7,265.6z"
-      />
-      <path
-        className="st24"
-        d="M1459.7,269c-10.1,0.7-17.8,0.2-27.7-1.7c-0.1,0-0.1,0-0.2,0l-1.3,7.1c10.7,2.1,19,2.6,29.8,1.9L1459.7,269 C1459.8,269,1459.8,269,1459.7,269z"
-      />
-      <path
-        className="st21"
-        d="M1467.2,268.2c-2.1,0.3-5.2,0.6-7.4,0.7l0.5,7.2c2.3-0.2,5.7-0.5,8-0.8L1467.2,268.2L1467.2,268.2z"
-      />
-      <path
-        className="st23"
-        d="M1472.6,267.3c-2.3,0.4-3.1,0.6-5.4,0.9l1,7.2c2.5-0.3,3.4-0.5,5.9-1l-1.3-7.1 C1472.6,267.3,1472.6,267.3,1472.6,267.3z"
-      />
-      <path
-        className="st26"
-        d="M1508.6,253.1c-11.3,7.1-22.9,11.6-36,14.2l1.3,7.1c14.1-2.7,26.7-7.7,38.8-15.2l-3.8-6.2 C1508.9,253,1508.8,253.1,1508.6,253.1z"
-      />
-      <path
-        className="st21"
-        d="M1516.3,247.9c-2.4,1.9-4.8,3.4-7.3,5.1l3.8,6.2c2.9-1.8,5.5-3.6,8.2-5.7l-4.5-5.9 C1516.6,247.7,1516.4,247.8,1516.3,247.9z"
-      />
-      <path
-        className="st23"
-        d="M1536.1,228.4c-5.9,7.6-11.8,13.4-19.4,19.2l4.5,5.9c8.4-6.3,14.8-12.7,21.3-20.9l-5.9-4.7 C1536.4,228.1,1536.3,228.2,1536.1,228.4z"
-      />
-      <path
-        className="st25"
-        d="M1538.4,225.4c-0.8,1.1-1.1,1.6-1.9,2.5l5.9,4.7c1.1-1.3,1.3-1.8,2.4-3.2l-6.1-4.5 C1538.6,225.1,1538.5,225.3,1538.4,225.4z"
-      />
-      <path
-        className="st23"
-        d="M1544.4,216c-1.8,3-3.7,6-5.7,8.8l6.1,4.5c2.3-3.2,4.6-6.6,6.5-10.1l-6.5-3.8 C1544.7,215.6,1544.5,215.8,1544.4,216z"
-      />
-      <path
-        className="st21"
-        d="M1546.3,212.8c-0.6,1.1-0.9,1.8-1.5,2.7l6.5,3.8c0.8-1.5,1.1-2.1,2-3.5l-6.7-3.6 C1546.5,212.4,1546.4,212.6,1546.3,212.8z"
-      />
-      <path
-        className="st23"
-        d="M1548.8,207.8c-0.6,1.5-1.5,2.9-2.2,4.4l6.7,3.6c0.9-1.8,1.9-3.6,2.7-5.4l-6.9-3.2 C1549,207.4,1548.9,207.6,1548.8,207.8z"
-      />
-      <path
-        className="st25"
-        d="M1557.7,177.7c-1.5,10.7-4.1,19.8-8.6,29.6l6.9,3.2c5-10.7,8-20.7,9.6-32.5l-7.8-1.1 C1557.7,177.2,1557.7,177.4,1557.7,177.7z"
-      />
-      <path
-        className="st21"
-        d="M1558.1,174c-0.1,1.3-0.2,1.9-0.3,2.9l7.8,1.1c0.2-1.8,0.3-2.2,0.5-3.9l-7.9-0.8 C1558.2,173.5,1558.1,173.7,1558.1,174z"
-      />
-      <path
-        className="st25"
-        d="M1563.3,134.4l-8,2c0.1,0.2,0.1,0.4,0.2,0.7c2.9,11.8,3.8,24,2.7,36.1l7.9,0.8 C1567.4,160.8,1566.5,147.4,1563.3,134.4z"
-      />
-      <path
-        className="st23"
-        d="M1554.6,133.6c0.4,1.3,0.5,1.8,0.7,2.8l8-2c-0.4-1.8-0.5-2.2-1-3.8l-7.9,2.3 C1554.5,133.1,1554.5,133.3,1554.6,133.6z"
-      />
-      <path
-        className="st25"
-        d="M1550.9,123c1.3,3.4,2.4,6.3,3.4,9.7l7.9-2.3c-1.1-4.1-2.3-7.4-3.9-11.3l-7.7,3.1 C1550.7,122.6,1550.8,122.8,1550.9,123z"
-      />
-      <path
-        className="st23"
-        d="M1548.8,117.9c0.6,1.2,1.3,3,2,4.5l7.7-3.1c-0.6-1.7-1.7-3.9-2.4-5.5l-7.6,3.5 C1548.6,117.5,1548.7,117.7,1548.8,117.9z"
-      />
-      <path
-        className="st25"
-        d="M1538.4,100.3c3.9,5.4,7.2,10.9,10.1,16.9l7.6-3.5c-3.1-6.7-6.7-12.9-11.1-18.9l-6.8,5 C1538.1,100,1538.2,100.2,1538.4,100.3z"
-      />
-      <path
-        className="st21"
-        d="M1536.1,97.4c0.8,1.1,1.1,1.6,1.9,2.5l6.8-5c-1-1.5-1.3-1.8-2.4-3.2l-6.7,5.2 C1535.9,97.1,1536,97.2,1536.1,97.4z"
-      />
-      <path
-        className="st23"
-        d="M1503.9,69.8c12.8,7.1,22.8,15.7,31.8,27.1l6.7-5.2c-9.9-12.5-20.7-21.9-34.6-29.7l-4.3,7.6 C1503.7,69.7,1503.8,69.7,1503.9,69.8z"
-      />
-      <path
-        className="st21"
-        d="M1499,67.2c2,0.9,2.8,1.3,4.6,2.4l4.3-7.6c-2.2-1.2-3-1.7-5.3-2.8l-3.8,7.9 C1498.7,67.1,1498.9,67.2,1499,67.2z"
-      />
-      <path
-        className="st26"
-        d="M1452.3,56.6c16.9,0,31.2,3.3,46.4,10.6l3.8-7.9c-16.4-8-31.8-11.6-50.2-11.6L1452.3,56.6L1452.3,56.6z"
-      />
+      <text transform="matrix(1 0 0 1 1061.6865 146.5156)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Difficulty in "}
+        </tspan>
+        <tspan x={2.7} y={5.8} className="st27 st3 st28">
+          {"retaining "}
+        </tspan>
+        <tspan x={5} y={11.7} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st1"
-        d="M100.8,184.3l-16.9,16.9c-3.5,3.5-9.1,3.5-12.5,0l-2.6-2.6c-3.5-3.5-3.5-9.1,0-12.5l16.9-16.7 c3.5-3.5,9.1-3.5,12.5,0l2.6,2.6C104.3,175.3,104.3,180.8,100.8,184.3z"
+        className="st28"
+        d="M1088.1,190.5l2.7-2.7c3-3,3-7.9,0-10.9l-6.4-6.4c-3-3-7.9-3-10.9,0l-2.7,2.7l-2.7-2.7c-3-3-7.9-3-10.9,0 l-6.4,6.4c-3,3-3,7.9,0,10.9l2.7,2.7l-2.7,2.7c-3,3-3,7.9,0,10.9l6.4,6.4c3,3,7.9,3,10.9,0l2.7-2.7l2.7,2.7c3,3,7.9,3,10.9,0 l6.4-6.4c3-3,3-7.9,0-10.9L1088.1,190.5z"
       />
-      <path
-        className="st1"
-        d="M85.7,201.1l-16.7-16.7c-3.5-3.5-3.5-9.1,0-12.5l2.6-2.6c3.5-3.5,9.1-3.5,12.5,0l16.7,16.7 c3.5,3.5,3.5,9.1,0,12.5l-2.6,2.6C94.8,204.6,89.1,204.6,85.7,201.1z"
+      <text transform="matrix(1 0 0 1 1052.7617 187.583)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Job market "}
+        </tspan>
+        <tspan x={1.2} y={8.4} className="st27 st3 st28">
+          {"restrictions"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.9732 -0.2298 0.2298 0.9732 -16.8507 239.1278)"
+        className="st26"
+        cx="1018.5"
+        cy="191.9"
+        r="17.7"
       />
+      <text transform="matrix(1 0 0 1 1005.6421 187.0154)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Transitioning "}
+        </tspan>
+        <tspan x={2.5} y={4.9} className="st27 st3 st28">
+          {"Recruits in "}
+        </tspan>
+        <tspan x={2.7} y={9.8} className="st27 st3 st28">
+          {"the Mixed "}
+        </tspan>
+        <tspan x={2.3} y={14.7} className="st27 st3 st28">
+          {"Duty Phase"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st1"
-        d="M193.2,196.7l-10.4,10.4c-2.3,2.3-6,2.3-8.3,0l-1.3-1.3c-2.3-2.3-2.3-6,0-8.3l10.4-10.4c2.3-2.3,6-2.3,8.3,0 l1.3,1.3C195.5,190.7,195.5,194.4,193.2,196.7z"
+        className="st26"
+        d="M1018.5,135c10.9,0,19.7,8.8,19.7,19.7c0,10.9-8.8,19.7-19.7,19.7c-10.9,0-19.7-8.8-19.7-19.7 C998.8,143.8,1007.6,135,1018.5,135z"
       />
-      <path
-        className="st1"
-        d="M183.5,207l-10.3-10.3c-2.3-2.3-2.3-6,0-8.3l1.3-1.3c2.3-2.3,6-2.3,8.3,0l10.4,10.4c2.3,2.3,2.3,6,0,8.3 l-1.3,1.3C189.5,209.3,185.9,209.3,183.5,207z"
+      <text transform="matrix(1 0 0 1 1007.0112 145.452)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Transition "}
+        </tspan>
+        <tspan x={1.1} y={5.7} className="st27 st3 st28">
+          {"between "}
+        </tspan>
+        <tspan x={-3.3} y={11.4} className="st27 st3 st28">
+          {"specialty and "}
+        </tspan>
+        <tspan x={-2.4} y={17.1} className="st27 st3 st28">
+          {"professional "}
+        </tspan>
+        <tspan x={3.3} y={22.8} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.2298 -0.9732 0.9732 0.2298 685.8254 1234.0736)"
+        className="st30"
+        cx="1122.6"
+        cy="183.7"
+        r="18.5"
       />
+      <text transform="matrix(1 0 0 1 1114.3672 177.1849)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Possible "}
+        </tspan>
+        <tspan x={-9} y={5} className="st27 st3 st28">
+          {"reorganization of "}
+        </tspan>
+        <tspan x={-8.7} y={10} className="st27 st3 st28">
+          {"the military to be "}
+        </tspan>
+        <tspan x={-7.2} y={15} className="st27 st3 st28">
+          {"officer-centered"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st1"
-        d="M307.9,140.7L297,151.5c-2.3,2.3-6,2.3-8.3,0l-1.6-1.6c-2.3-2.3-2.3-6,0-8.3l10.9-10.9c2.3-2.3,6-2.3,8.3,0 l1.6,1.6C310.3,134.6,310.3,138.4,307.9,140.7z"
+        className="st23"
+        d="M1183.8,138.9l2.4-2.4c2.8-2.8,2.8-7.1,0-9.8l-5.8-5.8c-2.8-2.8-7.1-2.8-9.8,0l-2.4,2.4l-2.4-2.4 c-2.8-2.8-7.1-2.8-9.8,0l-5.8,5.8c-2.8,2.8-2.8,7.1,0,9.8l2.4,2.4l-2.4,2.4c-2.8,2.8-2.8,7.1,0,9.8l5.8,5.8c2.8,2.8,7.1,2.8,9.8,0 l2.4-2.4l2.4,2.4c2.8,2.8,7.1,2.8,9.8,0l5.8-5.8c2.8-2.8,2.8-7.1,0-9.8L1183.8,138.9z"
       />
-      <path
-        className="st1"
-        d="M298.1,151.5l-10.9-10.9c-2.3-2.3-2.3-6,0-8.3l1.6-1.6c2.3-2.3,6-2.3,8.3,0l10.9,10.9c2.3,2.3,2.3,6,0,8.3 l-1.6,1.6C304.1,153.8,300.4,153.8,298.1,151.5z"
+      <text transform="matrix(1.0417 0 0 1 1157.249 137.2723)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Attrition"}
+        </tspan>
+        <tspan x={-5.1} y={6.7} className="st27 st3 st28">
+          {"of Reservists"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.3827 -0.9239 0.9239 0.3827 561.2165 1135.4305)"
+        className="st26"
+        cx="1130.3"
+        cy="147.8"
+        r="17.7"
       />
+      <text transform="matrix(1 0 0 1 1116.4199 143.6265)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Transition to "}
+        </tspan>
+        <tspan x={0.6} y={5.5} className="st27 st3 st28">
+          {"a vocational "}
+        </tspan>
+        <tspan x={-1.4} y={10.9} className="st27 st3 st28">
+          {"reserve system"}
+        </tspan>
+      </text>
     </g>
     <g>
       <path
-        className="st1"
-        d="M411.7,154.3l-16.9,16.9c-3.3,3.3-8.7,3.3-12,0l-2.9-2.9c-3.3-3.3-3.3-8.7,0-12l16.9-16.9 c3.3-3.3,8.7-3.3,12,0l2.9,2.9C415,145.6,415,151,411.7,154.3z"
+        className="st23"
+        d="M1161.7,211.3l2.1-2.1c2.3-2.3,2.3-6.1,0-8.5l-5-5c-2.3-2.3-6.1-2.3-8.5,0l-2.1,2.1l-2.1-2.1 c-2.3-2.3-6.1-2.3-8.5,0l-5,5c-2.3,2.3-2.3,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.5l5,5c2.3,2.3,6.1,2.3,8.5,0l2.1-2.1 l2.1,2.1c2.3,2.3,6.1,2.3,8.5,0l5-5c2.3-2.3,2.3-6.1,0-8.5L1161.7,211.3z"
       />
-      <path
-        className="st1"
-        d="M396.9,171.2L380,154.3c-3.3-3.3-3.3-8.7,0-12l2.9-2.9c3.3-3.3,8.7-3.3,12,0l16.9,16.9c3.3,3.3,3.3,8.7,0,12 l-2.9,2.9C405.5,174.6,400.2,174.6,396.9,171.2z"
-      />
+      <text transform="matrix(1 0 0 1 1139.1641 202.2559)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Sufficient "}
+        </tspan>
+        <tspan x={-1} y={4.7} className="st27 st3 st28">
+          {"number of "}
+        </tspan>
+        <tspan x={5.5} y={9.4} className="st27 st3 st28">
+          {"non"}
+        </tspan>
+        <tspan x={-4.4} y={14.1} className="st27 st3 st28">
+          {"commissioned "}
+        </tspan>
+        <tspan x={2.4} y={18.7} className="st27 st3 st28">
+          {"officers"}
+        </tspan>
+      </text>
     </g>
-    <text transform="matrix(1 0 0 1 289.1881 135.8746)" className="st11">
+    <g>
+      <circle
+        transform="matrix(0.2298 -0.9732 0.9732 0.2298 810.1683 1400.9176)"
+        className="st26"
+        cx="1290.2"
+        cy="188.6"
+        r="15.8"
+      />
+      <text transform="matrix(1 0 0 1 1277.5732 184.7832)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"No female "}
+        </tspan>
+        <tspan x={-0.2} y={6} className="st27 st3 st28">
+          {"enlistment "}
+        </tspan>
+        <tspan x={2.9} y={12.1} className="st27 st3 st28">
+          {"required"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1347.1,188l2.9-2.9c3.3-3.3,3.3-8.6,0-11.7l-6.9-6.9c-3.3-3.3-8.6-3.3-11.7,0l-2.9,2.9l-2.9-2.9 c-3.3-3.3-8.6-3.3-11.7,0l-6.9,6.9c-3.3,3.3-3.3,8.6,0,11.7l2.9,2.9l-2.9,2.9c-3.3,3.3-3.3,8.6,0,11.7l6.9,6.9 c3.3,3.3,8.6,3.3,11.7,0l2.9-2.9l2.9,2.9c3.3,3.3,8.6,3.3,11.7,0l6.9-6.9c3.3-3.3,3.3-8.6,0-11.7L1347.1,188z"
+      />
+      <text transform="matrix(1 0 0 1 1310.4238 183.0576)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Rear-loading of "}
+        </tspan>
+        <tspan x={0.7} y={6.1} className="st27 st3 st28">
+          {"female soldiers "}
+        </tspan>
+        <tspan x={-3.2} y={12.1} className="st27 st3 st28">
+          {"after recruitment   "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st26" cx={1290.6} cy={158.9} r={13.4} />
+      <text transform="matrix(1 0 0 1 1283.0957 154.0176)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Sufficient "}
+        </tspan>
+        <tspan x={-0.8} y={3.9} className="st27 st3 st28">
+          {"number of "}
+        </tspan>
+        <tspan x={2} y={7.7} className="st27 st3 st28">
+          {"female "}
+        </tspan>
+        <tspan x={-3.9} y={11.6} className="st27 st3 st28">
+          {"military officers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1591.8,140.7l2.5-2.5c2.7-2.7,2.7-7.4,0-10.1l-6-6c-2.7-2.7-7.4-2.7-10.1,0l-2.5,2.5l-2.5-2.5 c-2.7-2.7-7.4-2.7-10.1,0l-6,6c-2.7,2.7-2.7,7.4,0,10.1l2.5,2.5l-2.5,2.5c-2.7,2.7-2.7,7.4,0,10.1l6,6c2.7,2.7,7.4,2.7,10.1,0 l2.5-2.5l2.5,2.5c2.7,2.7,7.4,2.7,10.1,0l6-6c2.7-2.7,2.7-7.4,0-10.1L1591.8,140.7z"
+      />
+      <text transform="matrix(1 0 0 1 1561.8125 135.3306)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Excessive"}
+        </tspan>
+        <tspan x={2} y={7.9} className="st27 st3 st28">
+          {"defense"}
+        </tspan>
+        <tspan x={3} y={15.7} className="st27 st3 st28">
+          {"budget"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.9239 -0.3827 0.3827 0.9239 59.293 597.37)"
+        className="st26"
+        cx="1531.2"
+        cy="149.6"
+        r="23.6"
+      />
+      <text transform="matrix(1 0 0 1 1520.6387 139.584)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Budget "}
+        </tspan>
+        <tspan x={-6} y={7.5} className="st27 st3 st28">
+          {"adjustment "}
+        </tspan>
+        <tspan x={-7.9} y={15.1} className="st27 st3 st28">
+          {"through unit "}
+        </tspan>
+        <tspan x={-8} y={22.6} className="st27 st3 st28">
+          {"consolidation"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1608.8,177l2.1-2.1c2.3-2.3,2.3-6.1,0-8.5l-5-5c-2.3-2.3-6.1-2.3-8.5,0l-2.1,2.1l-2.1-2.1 c-2.3-2.3-6.1-2.3-8.5,0l-5,5c-2.3,2.3-2.3,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.5l5,5c2.3,2.3,6.1,2.3,8.5,0l2.1-2.1 l2.1,2.1c2.3,2.3,6.1,2.3,8.5,0l5-5c2.3-2.3,2.3-6.1,0-8.5L1608.8,177z"
+      />
+      <text transform="matrix(1 0 0 1 1585.2754 170.1639)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unable to"}
+        </tspan>
+        <tspan x={2.8} y={5.8} className="st27 st3 st28">
+          {" adjust "}
+        </tspan>
+        <tspan x={-2.9} y={11.6} className="st27 st3 st28">
+          {"the defense "}
+        </tspan>
+        <tspan x={2.9} y={17.4} className="st27 st3 st28">
+          {"budget"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1723.3,187l2.8-2.8c3-3,3-7.9,0-10.9l-6.4-6.4c-3-3-7.9-3-10.9,0l-2.8,2.8l-2.8-2.8c-3-3-7.9-3-10.9,0 l-6.4,6.4c-3,3-3,7.9,0,10.9l2.8,2.8l-2.8,2.8c-3,3-3,7.9,0,10.9l6.4,6.4c3,3,7.9,3,10.9,0l2.8-2.8l2.8,2.8c3,3,7.9,3,10.9,0 l6.4-6.4c3-3,3-7.9,0-10.9L1723.3,187z"
+      />
+      <text transform="matrix(1.0025 0 0 1 1696.4316 178.9754)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Need to "}
+        </tspan>
+        <tspan x={-0.2} y={6.1} className="st27 st3 st28">
+          {"improve "}
+        </tspan>
+        <tspan x={-5.5} y={12.2} className="st27 st3 st28">
+          {"treatment of "}
+        </tspan>
+        <tspan x={1.3} y={18.3} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(9.853820e-02 -0.9951 0.9951 9.853820e-02 1352.7478 1776.272)"
+        className="st30"
+        cx="1656.8"
+        cy="141.5"
+        r="24.8"
+      />
+      <text transform="matrix(1 0 0 1 1638.0029 134.9139)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unable to "}
+        </tspan>
+        <tspan x={1.8} y={9.2} className="st27 st3 st28">
+          {"maintain "}
+        </tspan>
+        <tspan x={-3.2} y={18.4} className="st27 st3 st28">
+          {"conscription"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.9239 -0.3827 0.3827 0.9239 54.6602 640.9101)"
+        className="st26"
+        cx="1638.4"
+        cy="183.1"
+        r="20.4"
+      />
+      <text transform="matrix(1 0 0 1 1621.1201 178.9744)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Converting to "}
+        </tspan>
+        <tspan x={2.1} y={6.3} className="st27 st3 st28">
+          {"Professional "}
+        </tspan>
+        <tspan x={7.2} y={12.5} className="st27 st3 st28">
+          {"Soldiers "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1717.8,144.4l2.5-2.5c2.8-2.8,2.8-7.4,0-10.1l-6-6c-2.8-2.8-7.4-2.8-10.1,0l-2.5,2.5l-2.5-2.5 c-2.8-2.8-7.4-2.8-10.1,0l-6,6c-2.8,2.8-2.8,7.4,0,10.1l2.5,2.5l-2.5,2.5c-2.8,2.8-2.8,7.4,0,10.1l6,6c2.8,2.8,7.4,2.8,10.1,0 l2.5-2.5l2.5,2.5c2.8,2.8,7.4,2.8,10.1,0l6-6c2.8-2.8,2.8-7.4,0-10.1L1717.8,144.4z"
+      />
+      <text transform="matrix(1 0 0 1 1683.4092 140.2395)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Eliminate bad "}
+        </tspan>
+        <tspan x={8.5} y={6.9} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={7.3} y={13.9} className="st27 st3 st28">
+          {"practices"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M720.1,142.4l2-2c2.2-2.2,2.2-5.6,0-7.7l-4.6-4.6c-2.2-2.2-5.6-2.2-7.7,0l-2,2l-2-2c-2.2-2.2-5.6-2.2-7.7,0 l-4.6,4.6c-2.2,2.2-2.2,5.6,0,7.7l2,2l-2,2c-2.2,2.2-2.2,5.6,0,7.7l4.6,4.6c2.2,2.2,5.6,2.2,7.7,0l2-2l2,2c2.2,2.2,5.6,2.2,7.7,0 l4.6-4.6c2.2-2.2,2.2-5.6,0-7.7L720.1,142.4z"
+      />
+      <text transform="matrix(0.9857 0 0 1 694.3354 136.2767)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unpredictable "}
+        </tspan>
+        <tspan x={7.4} y={5} className="st27 st3 st28">
+          {"supply "}
+        </tspan>
+        <tspan x={1.3} y={10} className="st27 st3 st28">
+          {"and demand "}
+        </tspan>
+        <tspan x={5.3} y={15} className="st27 st3 st28">
+          {"of troops"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M696.3,175.8l3.3-3.3c3.7-3.7,3.7-9.7,0-13.4l-7.8-7.8c-3.7-3.7-9.7-3.7-13.4,0l-3.3,3.3l-3.3-3.3 c-3.7-3.7-9.7-3.7-13.4,0l-7.8,7.8c-3.7,3.7-3.7,9.7,0,13.4l3.3,3.3l-3.3,3.3c-3.7,3.7-3.7,9.7,0,13.4l7.8,7.8 c3.7,3.7,9.7,3.7,13.4,0l3.3-3.3l3.3,3.3c3.7,3.7,9.7,3.7,13.4,0l7.8-7.8c3.7-3.7,3.7-9.7,0-13.4L696.3,175.8z"
+      />
+      <text transform="matrix(1 0 0 1 658.2773 165.0125)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Economic "}
+        </tspan>
+        <tspan x={6.6} y={8.9} className="st27 st3 st28">
+          {"Boom "}
+        </tspan>
+        <tspan x={-4.2} y={17.7} className="st27 st3 st28">
+          {"Recruitment "}
+        </tspan>
+        <tspan x={4.3} y={26.6} className="st27 st3 st28">
+          {"Difficult"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M853,159l2.3-2.3c2.6-2.6,2.6-6.7,0-9.3l-5.5-5.5c-2.6-2.6-6.7-2.6-9.3,0l-2.3,2.3l-2.3-2.3 c-2.6-2.6-6.7-2.6-9.3,0l-5.5,5.5c-2.6,2.6-2.6,6.7,0,9.3l2.3,2.3l-2.3,2.3c-2.6,2.6-2.6,6.7,0,9.3l5.5,5.5c2.6,2.6,6.7,2.6,9.3,0 l2.3-2.3l2.3,2.3c2.6,2.6,6.7,2.6,9.3,0l5.5-5.5c2.6-2.6,2.6-6.7,0-9.3L853,159z"
+      />
+      <text transform="matrix(1 0 0 1 828.2578 152.1304)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Economic "}
+        </tspan>
+        <tspan x={4.3} y={5.7} className="st27 st3 st28">
+          {"Boom "}
+        </tspan>
+        <tspan x={-2.7} y={11.4} className="st27 st3 st28">
+          {"Recruitment "}
+        </tspan>
+        <tspan x={2.8} y={17.1} className="st27 st3 st28">
+          {"Difficult"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M709.3,216.1l1.8-1.8c2-2,2-5.3,0-7.3l-4.3-4.3c-2-2-5.3-2-7.3,0l-1.8,1.8l-1.8-1.8c-2-2-5.3-2-7.3,0 l-4.3,4.3c-2,2-2,5.3,0,7.3l1.7,1.8l-1.8,1.8c-2,2-2,5.3,0,7.3l4.3,4.3c2,2,5.3,2,7.3,0l1.8-1.8l1.8,1.8c2,2,5.3,2,7.3,0l4.3-4.3 c2-2,2-5.3,0-7.3L709.3,216.1z"
+      />
+      <text transform="matrix(1 0 0 1 689.9937 213.5838)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"U.S. military "}
+        </tspan>
+        <tspan x={0.2} y={3.2} className="st27 st3 st28">
+          {"recruitment "}
+        </tspan>
+        <tspan x={-3.7} y={6.4} className="st27 st3 st28">
+          {"is undersubscribed"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M733.2,176l2.1-2.1c2.3-2.3,2.3-6.1,0-8.5l-5-5c-2.3-2.3-6.1-2.3-8.5,0l-2.1,2.1l-2.1-2.1 c-2.3-2.3-6.1-2.3-8.5,0l-5,5c-2.3,2.3-2.3,6.1,0,8.5l2.1,2.1l-2.1,2.1c-2.3,2.3-2.3,6.1,0,8.5l5,5c2.3,2.3,6.1,2.3,8.5,0l2.1-2.1 l2.1,2.1c2.3,2.3,6.1,2.3,8.5,0l5-5c2.3-2.3,2.3-6.1,0-8.5L733.2,176z"
+      />
+      <text transform="matrix(1.0067 0 0 1 708.9961 171.3006)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"A certain "}
+        </tspan>
+        <tspan x={-1.8} y={6} className="st27 st3 st28">
+          {"amount of "}
+        </tspan>
+        <tspan x={6.3} y={12} className="st27 st3 st28">
+          {"jobs"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M858.5,192.9l1.9-1.9c2.1-2.1,2.1-5.5,0-7.6L856,179c-2.1-2.1-5.5-2.1-7.6,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.6,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.6l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.6l4.5,4.5c2.1,2.1,5.5,2.1,7.6,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.6,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.6L858.5,192.9z"
+      />
+      <text transform="matrix(1.0067 0 0 1 836.8569 188.5674)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"A certain "}
+        </tspan>
+        <tspan x={-1.6} y={5.2} className="st27 st3 st28">
+          {"amount of "}
+        </tspan>
+        <tspan x={5.5} y={10.4} className="st27 st3 st28">
+          {"jobs"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <ellipse className="st30" cx={645.2} cy={210.9} rx={16.6} ry={16.7} />
+      <text transform="matrix(0.9931 0 0 1 637.5508 209.2518)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Provide"}
+        </tspan>
+        <tspan x={-6.1} y={5.4} className="st27 st3 st28">
+          {"210,000 jobs"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.2136 -0.9769 0.9769 0.2136 448.1364 937.7002)"
+        className="st30"
+        cx="806.5"
+        cy="190.5"
+        r="24.5"
+      />
+      <text transform="matrix(0.9931 0 0 1 794.604 186.3232)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Provide"}
+        </tspan>
+        <tspan x={-9.1} y={8.1} className="st27 st3 st28">
+          {"210,000 jobs"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.3847 -0.9231 0.9231 0.3847 223.3512 688.9498)"
+        className="st26"
+        cx="628.4"
+        cy="177"
+        r="16.9"
+      />
+      <text transform="matrix(1 0 0 1 621.5742 171.0032)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Provide "}
+        </tspan>
+        <tspan x={-6.9} y={4.7} className="st27 st3 st28">
+          {"a foothold into "}
+        </tspan>
+        <tspan x={-7.5} y={9.5} className="st27 st3 st28">
+          {"the mainstream "}
+        </tspan>
+        <tspan x={-1.3} y={14.2} className="st27 st3 st28">
+          {"of society"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.2318 -0.9728 0.9728 0.2318 -27.5608 273.884)"
+        className="st26"
+        cx="159.6"
+        cy="154.4"
+        r="19.4"
+      />
+      <text transform="matrix(1 0 0 1 145.1528 148.4434)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Decline in "}
+        </tspan>
+        <tspan x={5.9} y={7.6} className="st27 st3 st28">
+          {"youth "}
+        </tspan>
+        <tspan x={-1.6} y={15.2} className="st27 st3 st28">
+          {"population "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.5227 -0.8525 0.8525 0.5227 -88.026 224.9724)"
+        className="st26"
+        cx="156.9"
+        cy="191.1"
+        r="17.6"
+      />
+      <text transform="matrix(1 0 0 1 144.7456 184.1839)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Increase in "}
+        </tspan>
+        <tspan x={3.7} y={5.8} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={4.7} y={11.7} className="st27 st3 st28">
+          {"misfits "}
+        </tspan>
+        <tspan x={0.7} y={17.5} className="st27 st3 st28">
+          {"every year "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M219.2,206.8l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L219.2,206.8z"
+      />
+      <text transform="matrix(1 0 0 1 200.4277 201.721)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Review of "}
+        </tspan>
+        <tspan x={-1.2} y={4.4} className="st27 st3 st28">
+          {"inadequate "}
+        </tspan>
+        <tspan x={2.1} y={8.8} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={4} y={13.1} className="st27 st3 st28">
+          {"policy"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M223.4,149l3.1-3.1c3.3-3.3,3.3-8.9,0-12.2l-7.2-7.2c-3.3-3.3-8.9-3.3-12.2,0l-3.1,3.1l-3.1-3.1 c-3.3-3.3-8.9-3.3-12.2,0l-7.2,7.2c-3.3,3.3-3.3,8.9,0,12.2l3.1,3.1l-3.1,3.1c-3.3,3.3-3.3,8.9,0,12.2l7.2,7.2 c3.3,3.3,8.9,3.3,12.2,0l3.1-3.1l3.1,3.1c3.3,3.3,8.9,3.3,12.2,0l7.2-7.2c3.3-3.3,3.3-8.9,0-12.2L223.4,149z"
+      />
+      <text transform="matrix(1 0 0 1 189.605 143.2314)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Inaction in"}
+        </tspan>
+        <tspan x={-4.8} y={7.4} className="st27 st3 st28">
+          {"preparing for "}
+        </tspan>
+        <tspan x={-2.4} y={14.8} className="st27 st3 st28">
+          {"surveillance "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.3847 -0.923 0.923 0.3847 -145.8439 173.9329)"
+        className="st30"
+        cx="57.5"
+        cy="196.4"
+        r="17.2"
+      />
+      <text transform="matrix(1 0 0 1 45.5747 189.7864)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unable to "}
+        </tspan>
+        <tspan x={1.2} y={6.4} className="st27 st3 st28">
+          {"maintain "}
+        </tspan>
+        <tspan x={1.6} y={12.8} className="st27 st3 st28">
+          {"500,000 "}
+        </tspan>
+        <tspan x={4.9} y={19.3} className="st27 st3 st28">
+          {"troops"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.1607 -0.987 0.987 0.1607 71.5962 481.494)"
+        className="st26"
+        cx="318.9"
+        cy="198.7"
+        r="21.7"
+      />
+      <text transform="matrix(1 0 0 1 306.1509 191.4131)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Unable to "}
+        </tspan>
+        <tspan x={1.4} y={7} className="st27 st3 st28">
+          {"maintain "}
+        </tspan>
+        <tspan x={1.7} y={14} className="st27 st3 st28">
+          {"500,000 "}
+        </tspan>
+        <tspan x={5.4} y={21} className="st27 st3 st28">
+          {"troops"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.7071 -0.7071 0.7071 0.7071 -89.5315 81.101)"
+        className="st30"
+        cx="53.1"
+        cy="148.6"
+        r="14.6"
+      />
+      <text transform="matrix(1 0 0 1 40.7148 146.8604)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Population "}
+        </tspan>
+        <tspan x={0.4} y={5.9} className="st27 st3 st28">
+          {"Cliff Threat"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M117.6,190l3-3c3.2-3.2,3.2-8.5,0-11.7l-6.9-6.9c-3.2-3.2-8.5-3.2-11.7,0l-3,3l-3-3c-3.2-3.2-8.5-3.2-11.7,0 l-6.9,6.9c-3.2,3.2-3.2,8.5,0,11.7l3,3l-3,3c-3.2,3.2-3.2,8.5,0,11.7l6.9,6.9c3.2,3.2,8.5,3.2,11.7,0l3-3l3,3 c3.2,3.2,8.5,3.2,11.7,0l6.9-6.9c3.2-3.2,3.2-8.5,0-11.7L117.6,190z"
+      />
+      <text transform="matrix(1 0 0 1 89.9458 179.4644)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"North"}
+        </tspan>
+        <tspan x={-3.3} y={8.5} className="st27 st3 st28">
+          {"Korean "}
+        </tspan>
+        <tspan x={-4} y={17} className="st27 st3 st28">
+          {"Nuclear "}
+        </tspan>
+        <tspan x={-1.1} y={25.5} className="st27 st3 st28">
+          {"Threat"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st26"
+        d="M181.4,197.8c7.7,0,14,6.3,14,14c0,7.7-6.3,14-14,14c-7.7,0-14-6.3-14-14 C167.4,204.1,173.6,197.8,181.4,197.8z"
+      />
+      <text transform="matrix(1 0 0 1 171.5542 208.66)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Increase in "}
+        </tspan>
+        <tspan x={0.6} y={4.7} className="st27 st3 st28">
+          {"interested "}
+        </tspan>
+        <tspan x={3.4} y={9.4} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.6641 -0.7477 0.7477 0.6641 -114.6271 89.0518)"
+        className="st30"
+        cx="41.8"
+        cy="172.1"
+        r="11.2"
+      />
+      <text transform="matrix(1 0 0 1 31.8335 171.4048)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Increased youth"}
+        </tspan>
+        <tspan x={0.4} y={3.3} className="st27 st3 st28">
+          {"unemployment"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M75.7,169.7l1.3-1.3c1.3-1.3,1.3-3.6,0-4.9l-2.9-2.9c-1.3-1.3-3.6-1.3-4.9,0l-1.3,1.3l-1.3-1.3 c-1.3-1.3-3.6-1.3-4.9,0l-2.9,2.9c-1.3,1.3-1.3,3.6,0,4.9l1.3,1.3l-1.3,1.3c-1.3,1.3-1.3,3.6,0,4.9l2.9,2.9c1.3,1.3,3.6,1.3,4.9,0 l1.3-1.3l1.3,1.3c1.3,1.3,3.6,1.3,4.9,0l2.9-2.9c1.3-1.3,1.3-3.6,0-4.9L75.7,169.7z"
+      />
+      <text transform="matrix(1 0 0 1 60.6143 168.4858)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Underestimating "}
+        </tspan>
+        <tspan x={0.6} y={2.2} className="st27 st3 st28">
+          {"Security Threats"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M102.6,143.5l2.5-2.5c2.6-2.6,2.6-6.9,0-9.5l-5.6-5.6c-2.6-2.6-6.9-2.6-9.5,0l-2.5,2.5l-2.5-2.5 c-2.6-2.6-6.9-2.6-9.5,0l-5.6,5.6c-2.6,2.6-2.6,6.9,0,9.5l2.5,2.5l-2.5,2.5c-2.6,2.6-2.6,6.9,0,9.5l5.6,5.6c2.6,2.6,6.9,2.6,9.5,0 l2.5-2.5l2.5,2.5c2.6,2.6,6.9,2.6,9.5,0l5.6-5.6c2.6-2.6,2.6-6.9,0-9.5L102.6,143.5z"
+      />
+      <text transform="matrix(1 0 0 1 69.2554 139.6934)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Underestimating "}
+        </tspan>
+        <tspan x={9.4} y={5.5} className="st27 st3 st28">
+          {"Security "}
+        </tspan>
+        <tspan x={10.5} y={11} className="st27 st3 st28">
+          {"Threats"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.7071 -0.7071 0.7071 0.7071 -76.6033 186.8325)"
+        className="st79"
+        cx="187.2"
+        cy="185.9"
+        r="12.9"
+      />
+      <text transform="matrix(1 0 0 1 176.1748 184.9607)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Transition to a "}
+        </tspan>
+        <tspan x={0.8} y={4} className="st27 st3 st28">
+          {"Smart Military"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.1655 -0.9862 0.9862 0.1655 109.9615 465.6726)"
+        className="st26"
+        cx="330.1"
+        cy="167.9"
+        r="10.9"
+      />
+      <text transform="matrix(1 0 0 1 323.4614 164.0332)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={-2.1} y={4.8} className="st27 st3 st28">
+          {"reduction "}
+        </tspan>
+        <tspan x={1} y={9.6} className="st27 st3 st28">
+          {"system"}
+        </tspan>
+      </text>
+    </g>
+    <circle className="st26" cx={294.1} cy={173.5} r={13.5} />
+    <text transform="matrix(1 0 0 1 281.5723 173.0996)" className="st7">
       <tspan x={0} y={0} className="st27 st3 st28">
-        {"Conscription "}
-      </tspan>
-      <tspan x={0.8} y={3.5} className="st27 st3 st28">
-        {"for General "}
-      </tspan>
-      <tspan x={2.5} y={6.9} className="st27 st3 st28">
-        {"Elections "}
-      </tspan>
-      <tspan x={3.1} y={10.4} className="st27 st3 st28">
-        {"without "}
-      </tspan>
-      <tspan x={2} y={13.8} className="st27 st3 st28">
-        {"Measures "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 261.6881 142.4785)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st29">
-        {"Unmanned "}
-      </tspan>
-      <tspan x={3.7} y={4.8} className="st27 st3 st29">
-        {"warfare"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 300.6805 179.2795)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st30">
-        {"Difficulties "}
-      </tspan>
-      <tspan x={9.4} y={5.7} className="st27 st3 st30">
-        {"in "}
-      </tspan>
-      <tspan x={-1.1} y={11.3} className="st27 st3 st30">
-        {"self-defense"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 352.6053 187.6989)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st31">
-        {"Reorganization "}
-      </tspan>
-      <tspan x={1} y={4.4} className="st27 st3 st31">
-        {"of the military "}
-      </tspan>
-      <tspan x={3.2} y={8.8} className="st27 st3 st31">
-        {"to focus on "}
-      </tspan>
-      <tspan x={2.6} y={13.2} className="st27 st3 st31">
-        {"professional "}
-      </tspan>
-      <tspan x={7} y={17.6} className="st27 st3 st31">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 341.8732 153.2497)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st32">
-        {"Military elite "}
-      </tspan>
-      <tspan x={4.3} y={4.7} className="st27 st3 st32">
-        {"through"}
-      </tspan>
-      <tspan x={3} y={9.4} className="st27 st3 st32">
-        {"reduction"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 386.8552 147.2086)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st33">
-        {"Introduce"}
-      </tspan>
-      <tspan x={2.4} y={4.7} className="st27 st3 st33">
-        {"AVMS "}
-      </tspan>
-      <tspan x={-2.7} y={9.4} className="st27 st3 st33">
-        {"after quality "}
-      </tspan>
-      <tspan x={-4} y={14.1} className="st27 st3 st33">
-        {"improvement "}
-      </tspan>
-      <tspan x={-8.5} y={18.8} className="st27 st3 st33">
-        {"and modernization"}
-      </tspan>
-    </text>
-    <text transform="matrix(0.9897 0 0 1 565.5899 139.6647)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st34">
-        {"Elite"}
-      </tspan>
-      <tspan x={-6.3} y={8.1} className="st27 st3 st34">
-        {"infantry "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 830.0038 179.2795)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st35">
-        {"Need to "}
-      </tspan>
-      <tspan x={-0.1} y={3.8} className="st27 st3 st35">
-        {"improve "}
-      </tspan>
-      <tspan x={-4} y={7.6} className="st27 st3 st35">
-        {"military social "}
-      </tspan>
-      <tspan x={-1.4} y={11.5} className="st27 st3 st35">
-        {"awareness"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 705.2115 154.8791)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st36">
-        {"Conscription "}
-      </tspan>
-      <tspan x={-0.1} y={4.9} className="st27 st3 st36">
-        {"career breaks"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 795.2669 148.0485)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st37">
-        {"Reducing "}
-      </tspan>
-      <tspan x={-0.5} y={4.8} className="st27 st3 st37">
-        {"bad habits"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 780.1751 175.44)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st38">
-        {"Self-development "}
-      </tspan>
-      <tspan x={7.5} y={3.8} className="st27 st3 st38">
-        {"benefits"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 823.9884 153.2496)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st39">
-        {"Limited "}
-      </tspan>
-      <tspan x={2.2} y={6.2} className="st27 st3 st39">
-        {"social "}
-      </tspan>
-      <tspan x={2.5} y={12.4} className="st27 st3 st39">
-        {"status"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 950.2827 142.5595)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st40">
-        {"Difficulty in "}
-      </tspan>
-      <tspan x={2.5} y={5.4} className="st27 st3 st40">
-        {"retaining "}
-      </tspan>
-      <tspan x={4.6} y={10.8} className="st27 st3 st40">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 949.8309 177.8288)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st41">
-        {"Job market "}
-      </tspan>
-      <tspan x={1} y={6.8} className="st27 st3 st41">
-        {"restrictions"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 901.0021 179.6794)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st42">
-        {"Transitioning "}
-      </tspan>
-      <tspan x={2.2} y={4.4} className="st27 st3 st42">
-        {"Recruits in "}
-      </tspan>
-      <tspan x={2.4} y={8.8} className="st27 st3 st42">
-        {"the Mixed "}
-      </tspan>
-      <tspan x={2.1} y={13.2} className="st27 st3 st42">
-        {"Duty Phase"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 902.2345 142.2563)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st43">
-        {"Transition "}
-      </tspan>
-      <tspan x={1} y={5.1} className="st27 st3 st43">
-        {"between "}
-      </tspan>
-      <tspan x={-3} y={10.3} className="st27 st3 st43">
-        {"specialty and "}
-      </tspan>
-      <tspan x={-2.2} y={15.4} className="st27 st3 st43">
-        {"professional "}
-      </tspan>
-      <tspan x={2.9} y={20.5} className="st27 st3 st43">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 998.8932 170.8278)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st44">
-        {"Possible "}
-      </tspan>
-      <tspan x={-8.1} y={4.5} className="st27 st3 st44">
-        {"reorganization of "}
-      </tspan>
-      <tspan x={-7.8} y={9} className="st27 st3 st44">
-        {"the military to be "}
-      </tspan>
-      <tspan x={-6.4} y={13.5} className="st27 st3 st44">
-        {"officer-centered"}
-      </tspan>
-    </text>
-    <text transform="matrix(1.0417 0 0 1 1045.6044 138.4938)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st45">
-        {"Attrition"}
-      </tspan>
-      <tspan x={-4.5} y={6} className="st27 st3 st45">
-        {"of Reservists"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1003.2952 138.7314)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st46">
-        {"Transition to "}
-      </tspan>
-      <tspan x={0.6} y={6} className="st27 st3 st46">
-        {"a vocational "}
-      </tspan>
-      <tspan x={-1.5} y={12} className="st27 st3 st46">
-        {"reserve system"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1025.0789 196.0749)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st47">
-        {"Sufficient "}
-      </tspan>
-      <tspan x={-1} y={4.4} className="st27 st3 st47">
-        {"number of "}
-      </tspan>
-      <tspan x={-7.4} y={8.8} className="st27 st3 st47">
-        {"noncommissioned "}
-      </tspan>
-      <tspan x={2.3} y={13.2} className="st27 st3 st47">
-        {"officers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1180.2981 181.591)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st48">
-        {"Men entering "}
-      </tspan>
-      <tspan x={-0.4} y={4.9} className="st27 st3 st48">
-        {"the workforce "}
-      </tspan>
-      <tspan x={0.3} y={9.7} className="st27 st3 st48">
-        {"two years late"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1232.7478 181.231)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st49">
-        {"No female "}
-      </tspan>
-      <tspan x={-0.2} y={6.3} className="st27 st3 st49">
-        {"enlistment "}
-      </tspan>
-      <tspan x={3.1} y={12.6} className="st27 st3 st49">
-        {"required"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1266.5479 176.7535)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st50">
-        {"Rear-loading of "}
-      </tspan>
-      <tspan x={0.5} y={4.6} className="st27 st3 st50">
-        {"female soldiers "}
-      </tspan>
-      <tspan x={-2.4} y={9.1} className="st27 st3 st50">
-        {"after recruitment   "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1193.8538 149.102)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st51">
-        {"Provide "}
-      </tspan>
-      <tspan x={-2.4} y={3.5} className="st27 st3 st51">
-        {"benefits for"}
-      </tspan>
-      <tspan x={-7.2} y={7.1} className="st27 st3 st51">
-        {"short-term service "}
-      </tspan>
-      <tspan x={-7.1} y={10.6} className="st27 st3 st51">
-        {"for female soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1237.6476 148.2408)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st52">
-        {"Sufficient "}
-      </tspan>
-      <tspan x={-0.9} y={4.3} className="st27 st3 st52">
-        {"number of "}
-      </tspan>
-      <tspan x={2.2} y={8.7} className="st27 st3 st52">
-        {"female "}
-      </tspan>
-      <tspan x={-4.3} y={13} className="st27 st3 st52">
-        {"military officers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1152.0516 149.5837)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st53">
-        {"Problem of"}
-      </tspan>
-      <tspan x={2.3} y={6} className="st27 st3 st53">
-        {"complex "}
-      </tspan>
-      <tspan x={-3} y={12.1} className="st27 st3 st53">
-        {"salary system "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1406.6998 134.2409)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st54">
-        {"Excessive"}
-      </tspan>
-      <tspan x={1.6} y={6.5} className="st27 st3 st54">
-        {"defense"}
-      </tspan>
-      <tspan x={2.5} y={13} className="st27 st3 st54">
-        {"budget"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1371.5247 129.7973)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st55">
-        {"Budget "}
-      </tspan>
-      <tspan x={-5.2} y={6.6} className="st27 st3 st55">
-        {"adjustment "}
-      </tspan>
-      <tspan x={-6.9} y={13.1} className="st27 st3 st55">
-        {"through unit "}
-      </tspan>
-      <tspan x={-7} y={19.7} className="st27 st3 st55">
-        {"consolidation"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1422.877 165.4069)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st56">
-        {"Unable to"}
-      </tspan>
-      <tspan x={2.5} y={5.2} className="st27 st3 st56">
-        {" adjust "}
-      </tspan>
-      <tspan x={-2.6} y={10.4} className="st27 st3 st56">
-        {"the defense "}
-      </tspan>
-      <tspan x={2.6} y={15.6} className="st27 st3 st56">
-        {"budget"}
-      </tspan>
-    </text>
-    <text transform="matrix(1.0025 0 0 1 1522.9561 172.4396)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st57">
-        {"Need to "}
-      </tspan>
-      <tspan x={-0.2} y={5.5} className="st27 st3 st57">
-        {"improve "}
-      </tspan>
-      <tspan x={-5} y={11} className="st27 st3 st57">
-        {"treatment of "}
-      </tspan>
-      <tspan x={1.1} y={16.5} className="st27 st3 st57">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1470.3496 132.7696)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st58">
-        {"Unable to "}
-      </tspan>
-      <tspan x={1.6} y={8.3} className="st27 st3 st58">
-        {"maintain "}
-      </tspan>
-      <tspan x={-2.9} y={16.6} className="st27 st3 st58">
-        {"conscription"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1455.1494 172.4395)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st59">
-        {"Converting to "}
-      </tspan>
-      <tspan x={1.9} y={5.6} className="st27 st3 st59">
-        {"Professional "}
-      </tspan>
-      <tspan x={6.5} y={11.3} className="st27 st3 st59">
-        {"Soldiers "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 1511.2321 137.5634)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st60">
-        {"Eliminate bad "}
-      </tspan>
-      <tspan x={7.6} y={6.2} className="st27 st3 st60">
-        {"military "}
-      </tspan>
-      <tspan x={6.6} y={12.5} className="st27 st3 st60">
-        {"practices"}
-      </tspan>
-    </text>
-    <text transform="matrix(0.9857 0 0 1 620.7159 133.9963)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st61">
         {"Unpredictable "}
       </tspan>
-      <tspan x={6.6} y={4.5} className="st27 st3 st61">
-        {"supply "}
-      </tspan>
-      <tspan x={1.2} y={9} className="st27 st3 st61">
-        {"and demand "}
-      </tspan>
-      <tspan x={4.8} y={13.5} className="st27 st3 st61">
-        {"of troops"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 588.2515 159.8683)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st62">
-        {"Economic "}
-      </tspan>
-      <tspan x={5.9} y={8} className="st27 st3 st62">
-        {"Boom "}
-      </tspan>
-      <tspan x={-3.8} y={16} className="st27 st3 st62">
-        {"Recruitment "}
-      </tspan>
-      <tspan x={3.9} y={23.9} className="st27 st3 st62">
-        {"Difficult"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 742.3257 150.2086)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st63">
-        {"Economic "}
-      </tspan>
-      <tspan x={3.9} y={5.3} className="st27 st3 st63">
-        {"Boom "}
-      </tspan>
-      <tspan x={-2.5} y={10.6} className="st27 st3 st63">
-        {"Recruitment "}
-      </tspan>
-      <tspan x={2.6} y={15.9} className="st27 st3 st63">
-        {"Difficult"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 616.8064 203.5998)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st64">
-        {"U.S. military "}
-      </tspan>
-      <tspan x={0.2} y={2.9} className="st27 st3 st64">
-        {"recruitment "}
-      </tspan>
-      <tspan x={-3.3} y={5.7} className="st27 st3 st64">
-        {"is undersubscribed"}
-      </tspan>
-    </text>
-    <text transform="matrix(1.0067 0 0 1 633.9164 165.53)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st65">
-        {"A certain "}
-      </tspan>
-      <tspan x={-1.6} y={5.4} className="st27 st3 st65">
-        {"amount of "}
-      </tspan>
-      <tspan x={5.7} y={10.8} className="st27 st3 st65">
-        {"jobs"}
-      </tspan>
-    </text>
-    <text transform="matrix(1.0067 0 0 1 739.5715 185.8623)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st65">
-        {"A certain "}
-      </tspan>
-      <tspan x={-1.6} y={5.4} className="st27 st3 st65">
-        {"amount of "}
-      </tspan>
-      <tspan x={5.7} y={10.8} className="st27 st3 st65">
-        {"jobs"}
-      </tspan>
-    </text>
-    <text transform="matrix(0.9931 0 0 1 569.5902 199.6994)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st66">
-        {"Provide"}
-      </tspan>
-      <tspan x={-5.5} y={4.9} className="st27 st3 st66">
-        {"210,000 jobs"}
-      </tspan>
-    </text>
-    <text transform="matrix(0.9931 0 0 1 708.6404 185.8625)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st66">
-        {"Provide"}
-      </tspan>
-      <tspan x={-5.5} y={4.9} className="st27 st3 st66">
-        {"210,000 jobs"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 555.205 165.2623)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st67">
-        {"Provide "}
-      </tspan>
-      <tspan x={-6.2} y={4.3} className="st27 st3 st67">
-        {"a foothold into "}
-      </tspan>
-      <tspan x={-6.8} y={8.5} className="st27 st3 st67">
-        {"the mainstream "}
-      </tspan>
-      <tspan x={-1.2} y={12.8} className="st27 st3 st67">
-        {"of society"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 126.4766 143.8235)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st68">
-        {"Decline in "}
-      </tspan>
-      <tspan x={5.6} y={7.2} className="st27 st3 st68">
-        {"youth "}
-      </tspan>
-      <tspan x={-1.5} y={14.4} className="st27 st3 st68">
-        {"population "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 125.8917 177.1291)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st69">
-        {"Increase in "}
-      </tspan>
-      <tspan x={3.3} y={5.3} className="st27 st3 st69">
-        {"military "}
-      </tspan>
-      <tspan x={4.2} y={10.5} className="st27 st3 st69">
-        {"misfits "}
-      </tspan>
-      <tspan x={0.6} y={15.8} className="st27 st3 st69">
-        {"every year "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 176.025 192.9187)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st70">
-        {"Review of "}
-      </tspan>
-      <tspan x={-1.1} y={3.9} className="st27 st3 st70">
-        {"inadequate "}
-      </tspan>
-      <tspan x={1.9} y={7.9} className="st27 st3 st70">
-        {"military "}
-      </tspan>
-      <tspan x={3.6} y={11.8} className="st27 st3 st70">
-        {"policy"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 167.4639 140.4641)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st71">
-        {"Inaction in"}
-      </tspan>
-      <tspan x={-4.1} y={6.4} className="st27 st3 st71">
-        {"preparing for "}
-      </tspan>
-      <tspan x={-2.1} y={12.8} className="st27 st3 st71">
-        {"surveillance "}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 38.4029 180.3728)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st72">
-        {"Unable to "}
-      </tspan>
-      <tspan x={1.1} y={5.8} className="st27 st3 st72">
-        {"maintain "}
-      </tspan>
-      <tspan x={1.4} y={11.6} className="st27 st3 st72">
-        {"500,000 "}
-      </tspan>
-      <tspan x={4.4} y={17.3} className="st27 st3 st72">
-        {"troops"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 269.6313 184.0474)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st72">
-        {"Unable to "}
-      </tspan>
-      <tspan x={1.1} y={5.8} className="st27 st3 st72">
-        {"maintain "}
-      </tspan>
-      <tspan x={1.4} y={11.6} className="st27 st3 st72">
-        {"500,000 "}
-      </tspan>
-      <tspan x={4.4} y={17.3} className="st27 st3 st72">
-        {"troops"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 45.5499 136.7751)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st73">
-        {"Population "}
-      </tspan>
-      <tspan x={0.3} y={4.8} className="st27 st3 st73">
-        {"Cliff Threat"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 76.9078 175.7243)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st74">
-        {"North"}
-      </tspan>
-      <tspan x={-2.8} y={7.2} className="st27 st3 st74">
-        {"Korean "}
-      </tspan>
-      <tspan x={-3.4} y={14.3} className="st27 st3 st74">
-        {"Nuclear "}
-      </tspan>
-      <tspan x={-0.9} y={21.5} className="st27 st3 st74">
-        {"Threat"}
-      </tspan>
-    </text>
-    <circle className="st5" cx={158.9} cy={202} r={12.6} />
-    <text transform="matrix(1 0 0 1 150.0284 199.1667)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st75">
-        {"Increase in "}
-      </tspan>
-      <tspan x={0.5} y={4.3} className="st27 st3 st75">
-        {"interested "}
-      </tspan>
-      <tspan x={3} y={8.5} className="st27 st3 st75">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={38.6} cy={158.1} r={11.9} />
-    <text transform="matrix(1 0 0 1 28.0323 157.4016)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st76">
-        {"Increased youth"}
-      </tspan>
-      <tspan x={0.4} y={3.5} className="st27 st3 st76">
-        {"unemployment"}
-      </tspan>
-    </text>
-    <g>
-      <path
-        className="st1"
-        d="M68.6,161.2l-8.9,8.9c-1.8,1.8-4.8,1.8-6.5,0l-1.4-1.4c-1.8-1.8-1.8-4.8,0-6.5l8.9-8.9c1.8-1.8,4.8-1.8,6.5,0 l1.4,1.4C70.4,156.5,70.4,159.4,68.6,161.2z"
-      />
-      <path
-        className="st1"
-        d="M60.7,170.1l-8.9-8.9c-1.8-1.8-1.8-4.8,0-6.5l1.4-1.4c1.8-1.8,4.8-1.8,6.5,0l8.9,8.9c1.8,1.8,1.8,4.8,0,6.5 l-1.4,1.4C65.4,171.9,62.4,171.9,60.7,170.1z"
-      />
-    </g>
-    <text transform="matrix(1 0 0 1 53.1182 161.219)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st77">
-        {"Underestimating "}
-      </tspan>
-      <tspan x={0.6} y={2.2} className="st27 st3 st77">
-        {"Security Threats"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 73.5348 143.8244)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st78">
-        {"Underestimating "}
-      </tspan>
-      <tspan x={7.2} y={4.2} className="st27 st3 st78">
-        {"Security "}
-      </tspan>
-      <tspan x={8.1} y={8.4} className="st27 st3 st78">
-        {"Threats"}
-      </tspan>
-    </text>
-    <circle className="st79" cx={164.1} cy={178.7} r={11.6} />
-    <text transform="matrix(1 0 0 1 154.1886 177.8288)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st80">
-        {"Transition to a "}
-      </tspan>
-      <tspan x={0.7} y={3.6} className="st27 st3 st80">
-        {"Smart Military"}
-      </tspan>
-    </text>
-    <circle className="st5" cx={285} cy={161.8} r={10.6} />
-    <text transform="matrix(1 0 0 1 278.4812 158.0938)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st81">
-        {"military "}
-      </tspan>
-      <tspan x={-2.1} y={4.7} className="st27 st3 st81">
-        {"reduction "}
-      </tspan>
-      <tspan x={1} y={9.4} className="st27 st3 st81">
-        {"system"}
-      </tspan>
-    </text>
-    <circle className="st5" cx={262.3} cy={165.8} r={13.2} />
-    <text transform="matrix(1 0 0 1 250.057 165.4443)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st82">
-        {"Unpredictable "}
-      </tspan>
-      <tspan x={2.6} y={4.3} className="st27 st3 st82">
+      <tspan x={2.7} y={4.5} className="st27 st3 st28">
         {"future wars"}
       </tspan>
     </text>
     <g>
       <path
-        className="st1"
-        d="M328.3,157.6l-9.6,9.6c-2.3,2.3-6,2.3-8.3,0l-0.9-0.9c-2.3-2.3-2.3-6,0-8.3l9.6-9.6c2.3-2.3,6-2.3,8.3,0 l0.9,0.9C330.5,151.5,330.5,155.3,328.3,157.6z"
+        className="st23"
+        d="M368.3,161.8l1.6-1.7c1.7-1.8,1.7-4.7-0.1-6.4l-3.8-3.7c-1.8-1.7-4.7-1.7-6.4,0.1l-1.6,1.7l-1.7-1.6 c-1.8-1.7-4.7-1.7-6.4,0.1l-3.7,3.8c-1.7,1.8-1.7,4.7,0.1,6.4l1.7,1.6l-1.6,1.7c-1.7,1.8-1.7,4.7,0.1,6.4l3.8,3.7 c1.8,1.7,4.7,1.7,6.4-0.1l1.6-1.7l1.7,1.6c1.8,1.7,4.7,1.7,6.4-0.1l3.7-3.8c1.7-1.8,1.7-4.7-0.1-6.4L368.3,161.8z"
       />
-      <path
-        className="st1"
-        d="M318.9,167.2l-9.6-9.6c-2.3-2.3-2.3-6,0-8.3l0.9-0.9c2.3-2.3,6-2.3,8.3,0l9.6,9.6c2.3,2.3,2.3,6,0,8.3 l-0.9,0.9C325,169.5,321.3,169.5,318.9,167.2z"
-      />
+      <text
+        transform="matrix(0.9999 -1.043959e-02 1.043959e-02 0.9999 352.4758 157.4642)"
+        className="st7"
+      >
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Need to "}
+        </tspan>
+        <tspan x={-0.6} y={3.9} className="st27 st3 st28">
+          {"maintain "}
+        </tspan>
+        <tspan x={-4.9} y={7.8} className="st27 st3 st28">
+          {"the number of "}
+        </tspan>
+        <tspan x={0.8} y={11.7} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
     </g>
-    <text transform="matrix(1 0 0 1 313.6054 153.6213)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st83">
-        {"Need to "}
-      </tspan>
-      <tspan x={-0.5} y={3.4} className="st27 st3 st83">
-        {"maintain "}
-      </tspan>
-      <tspan x={-4.2} y={6.7} className="st27 st3 st83">
-        {"the number of "}
-      </tspan>
-      <tspan x={0.7} y={10.1} className="st27 st3 st83">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={370} cy={138} r={10.1} />
-    <text transform="matrix(1 0 0 1 364.5987 134.9919)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st84">
-        {"A small "}
-      </tspan>
-      <tspan x={2.4} y={4} className="st27 st3 st84">
-        {"elite "}
-      </tspan>
-      <tspan x={0.5} y={7.9} className="st27 st3 st84">
-        {"military"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={345.4} cy={177.4} r={9.1} />
-    <text transform="matrix(1 0 0 1 337.5322 176.7379)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st85">
-        {"Mechanization "}
-      </tspan>
-      <tspan x={0.8} y={2.7} className="st27 st3 st85">
-        {"of the military"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 388.9841 184.0473)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st86">
-        {"Smart "}
-      </tspan>
-      <tspan x={0.7} y={6.7} className="st27 st3 st86">
-        {"Army "}
-      </tspan>
-      <tspan x={-0.7} y={13.5} className="st27 st3 st86">
-        {"System"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M532.6,186.7l1.9-1.9c2-2,2-5.3,0-7.3l-4.3-4.3c-2-2-5.3-2-7.3,0l-1.9,1.9l-1.9-1.9c-2-2-5.3-2-7.3,0l-4.3,4.3 c-2,2-2,5.3,0,7.3l1.9,1.9l-1.9,1.9c-2,2-2,5.3,0,7.3l4.3,4.3c2,2,5.3,2,7.3,0l1.9-1.9l1.9,1.9c2,2,5.3,2,7.3,0l4.3-4.3 c2-2,2-5.3,0-7.3L532.6,186.7z"
-    />
-    <circle className="st6" cx={490.5} cy={191.2} r={15.6} />
-    <circle className="st6" cx={479.9} cy={154.4} r={13.4} />
+    <g>
+      <circle className="st30" cx={415.9} cy={140.7} r={11.2} />
+      <text transform="matrix(1 0 0 1 409.8721 137.3826)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"A small "}
+        </tspan>
+        <tspan x={2.6} y={4.4} className="st27 st3 st28">
+          {"elite "}
+        </tspan>
+        <tspan x={0.5} y={8.8} className="st27 st3 st28">
+          {"military"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={388.6} cy={184.5} r={10.1} />
+      <text transform="matrix(1 0 0 1 379.8096 183.7493)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Mechanization "}
+        </tspan>
+        <tspan x={0.9} y={2.9} className="st27 st3 st28">
+          {"of the military"}
+        </tspan>
+      </text>
+    </g>
     <g>
       <path
-        className="st1"
-        d="M535,153.3l-15.9,15.9c-3.3,3.3-8.7,3.3-12,0l-2.3-2.3c-3.3-3.3-3.3-8.7,0-12l15.9-15.9c3.3-3.3,8.7-3.3,12,0 l2.3,2.3C538.3,144.7,538.3,150,535,153.3z"
+        className="st28"
+        d="M459.3,197.9l2-2c2.3-2.3,2.3-6,0-8.3l-4.9-4.9c-2.3-2.3-6-2.3-8.3,0l-2,2l-2-2c-2.3-2.3-6-2.3-8.3,0 l-4.9,4.9c-2.3,2.3-2.3,6,0,8.3l2,2l-2,2c-2.3,2.3-2.3,6,0,8.3l4.9,4.9c2.3,2.3,6,2.3,8.3,0l2-2l2,2c2.3,2.3,6,2.3,8.3,0l4.9-4.9 c2.3-2.3,2.3-6,0-8.3L459.3,197.9z"
       />
-      <path
-        className="st1"
-        d="M520.7,169.2l-15.9-15.9c-3.3-3.3-3.3-8.7,0-12l2.3-2.3c3.3-3.3,8.7-3.3,12,0l15.9,15.9c3.3,3.3,3.3,8.7,0,12 l-2.3,2.3C529.4,172.5,524,172.5,520.7,169.2z"
-      />
+      <text transform="matrix(1 0 0 1 437.4053 192.2627)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Smart "}
+        </tspan>
+        <tspan x={0.8} y={7.3} className="st27 st3 st28">
+          {"Army "}
+        </tspan>
+        <tspan x={-0.7} y={14.7} className="st27 st3 st28">
+          {"System"}
+        </tspan>
+      </text>
     </g>
-    <circle className="st6" cx={495.1} cy={137.3} r={9.7} />
-    <circle className="st6" cx={469.7} cy={173.6} r={8.1} />
-    <ellipse className="st6" cx={601.6} cy={128.9} rx={16.2} ry={16.5} />
-    <text transform="matrix(0.9897 0 0 1 593.6685 120.7541)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st87">
-        {"Avoiding "}
-      </tspan>
-      <tspan x={1.4} y={4.4} className="st27 st3 st87">
-        {"military "}
-      </tspan>
-      <tspan x={-1.1} y={8.8} className="st27 st3 st87">
-        {"service for "}
-      </tspan>
-      <tspan x={-1.5} y={13.2} className="st27 st3 st87">
-        {"children of "}
-      </tspan>
-      <tspan x={-3.4} y={17.7} className="st27 st3 st87">
-        {"high rankings"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M821.3,195.3l1.5-1.5c1.6-1.6,1.6-4,0-5.6l-3.3-3.3c-1.6-1.6-4-1.6-5.6,0l-1.5,1.5l-1.5-1.5 c-1.6-1.6-4-1.6-5.6,0l-3.3,3.3c-1.6,1.6-1.6,4,0,5.6l1.5,1.5l-1.5,1.5c-1.6,1.6-1.6,4,0,5.6l3.3,3.3c1.6,1.6,4,1.6,5.6,0l1.5-1.5 l1.5,1.5c1.6,1.6,4,1.6,5.6,0l3.3-3.3c1.6-1.6,1.6-4,0-5.6L821.3,195.3z"
-    />
-    <text transform="matrix(1 0 0 1 802.9612 192.6025)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st88">
-        {"Difficulty in "}
-      </tspan>
-      <tspan x={2} y={4.4} className="st27 st3 st88">
-        {"retaining "}
-      </tspan>
-      <tspan x={3.8} y={8.9} className="st27 st3 st88">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M948.8,201.5l1.6-1.6c1.8-1.8,1.8-4.5,0-6.2l-3.6-3.6c-1.8-1.8-4.5-1.8-6.2,0l-1.6,1.6l-1.6-1.6 c-1.8-1.8-4.5-1.8-6.2,0l-3.6,3.6c-1.8,1.8-1.8,4.5,0,6.2l1.6,1.6l-1.6,1.6c-1.8,1.8-1.8,4.5,0,6.2l3.6,3.6c1.8,1.8,4.5,1.8,6.2,0 l1.6-1.6l1.6,1.6c1.8,1.8,4.5,1.8,6.2,0l3.6-3.6c1.8-1.8,1.8-4.5,0-6.2L948.8,201.5z"
-    />
-    <text transform="matrix(1 0 0 1 931.2074 197.5954)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st89">
-        {"Lack of "}
-      </tspan>
-      <tspan x={-1.2} y={5.7} className="st27 st3 st89">
-        {"sense of "}
-      </tspan>
-      <tspan x={0.3} y={11.3} className="st27 st3 st89">
-        {"mission"}
-      </tspan>
-    </text>
-    <circle className="st5" cx={936.5} cy={131.6} r={12.8} />
-    <text transform="matrix(1 0 0 1 927.6092 128.2881)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st90">
-        {"Increasing "}
-      </tspan>
-      <tspan x={2.8} y={4.5} className="st27 st3 st90">
-        {"Soldier "}
-      </tspan>
-      <tspan x={0.1} y={8.9} className="st27 st3 st90">
-        {"Autonomy"}
-      </tspan>
-    </text>
-    <path
-      className="st1"
-      d="M943.6,169l1.2-1.2c1.5-1.5,1.5-3.7,0-5.2l-3-3c-1.5-1.5-3.7-1.5-5.2,0l-1.2,1.2l-1.2-1.2 c-1.5-1.5-3.7-1.5-5.2,0l-3,3c-1.5,1.5-1.5,3.7,0,5.2l1.2,1.2l-1.2,1.2c-1.5,1.5-1.5,3.7,0,5.2l3,3c1.5,1.5,3.7,1.5,5.2,0l1.2-1.2 l1.2,1.2c1.5,1.5,3.7,1.5,5.2,0l3-3c1.5-1.5,1.5-3.7,0-5.2L943.6,169z"
-    />
-    <text transform="matrix(1.0417 0 0 1 927.7395 166.4938)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st91">
-        {"Pessimistic "}
-      </tspan>
-      <tspan x={2.3} y={3.6} className="st27 st3 st91">
-        {"military "}
-      </tspan>
-      <tspan x={0.3} y={7.2} className="st27 st3 st91">
-        {"perception"}
-      </tspan>
-    </text>
-    <path
-      className="st1"
-      d="M1083.5,177.4l2.4-2.4c2.6-2.6,2.6-6.9,0-9.5l-5.6-5.6c-2.6-2.6-6.9-2.6-9.5,0l-2.4,2.4l-2.4-2.4 c-2.6-2.6-6.9-2.6-9.5,0l-5.6,5.6c-2.6,2.6-2.6,6.9,0,9.5l2.4,2.4l-2.4,2.4c-2.6,2.6-2.6,6.9,0,9.5l5.6,5.6c2.6,2.6,6.9,2.6,9.5,0 l2.4-2.4l2.4,2.4c2.6,2.6,6.9,2.6,9.5,0l5.6-5.6c2.6-2.6,2.6-6.9,0-9.5L1083.5,177.4z"
-    />
-    <text transform="matrix(1 0 0 1 1058.015 168.5715)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st92">
-        {"Need to "}
-      </tspan>
-      <tspan x={-0.2} y={7} className="st27 st3 st92">
-        {"increase "}
-      </tspan>
-      <tspan x={-0.1} y={14} className="st27 st3 st92">
-        {"officers' "}
-      </tspan>
-      <tspan x={1.8} y={21.1} className="st27 st3 st92">
-        {"salaries"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={1154.9} cy={183.2} r={10.8} />
-    <text transform="matrix(1 0 0 1 1146.0729 180.8527)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st93">
-        {"Reorganize "}
-      </tspan>
-      <tspan x={0.7} y={4} className="st27 st3 st93">
-        {"the officer "}
-      </tspan>
-      <tspan x={3.8} y={7.9} className="st27 st3 st93">
-        {"system"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M1174.3,198l1-1c1.1-1.1,1.1-2.9,0-4l-2.4-2.4c-1.1-1.1-2.9-1.1-4,0l-1,1l-1-1c-1.1-1.1-2.9-1.1-4,0l-2.4,2.4 c-1.1,1.1-1.1,2.9,0,4l1,1l-1,1c-1.1,1.1-1.1,2.9,0,4l2.4,2.4c1.1,1.1,2.9,1.1,4,0l1-1l1,1c1.1,1.1,2.9,1.1,4,0l2.4-2.4 c1.1-1.1,1.1-2.9,0-4L1174.3,198z"
-    />
-    <text transform="matrix(1 0 0 1 1162.8848 195.9579)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st94">
-        {"Revival of "}
-      </tspan>
-      <tspan x={-0.5} y={2.6} className="st27 st3 st94">
-        {"the military"}
-      </tspan>
-      <tspan x={-1.2} y={5.3} className="st27 st3 st94">
-        {"merit system"}
-      </tspan>
-    </text>
-    <path
-      className="st1"
-      d="M1286.3,148.1l1.7-1.7c1.9-1.9,1.9-4.9,0-6.7l-3.9-3.9c-1.9-1.9-4.9-1.9-6.7,0l-1.7,1.7l-1.7-1.7 c-1.9-1.9-4.9-1.9-6.7,0l-3.9,3.9c-1.9,1.9-1.9,4.9,0,6.7l1.7,1.7l-1.7,1.7c-1.9,1.9-1.9,4.9,0,6.7l3.9,3.9c1.9,1.9,4.9,1.9,6.7,0 l1.7-1.7l1.7,1.7c1.9,1.9,4.9,1.9,6.7,0l3.9-3.9c1.9-1.9,1.9-4.9,0-6.7L1286.3,148.1z"
-    />
-    <text transform="matrix(1 0 0 1 1264.7042 146.981)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st95">
-        {"No unisex "}
-      </tspan>
-      <tspan x={0} y={5.7} className="st27 st3 st95">
-        {"enlistment"}
-      </tspan>
-    </text>
-    <circle className="st6" cx={1376.7} cy={192.1} r={13.7} />
-    <text transform="matrix(1 0 0 1 1367.2545 188.0398)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st96">
-        {"Sell off "}
-      </tspan>
-      <tspan x={-0.5} y={6.6} className="st27 st3 st96">
-        {"military "}
-      </tspan>
-      <tspan x={4} y={13.1} className="st27 st3 st96">
-        {"land"}
-      </tspan>
-    </text>
-    <path
-      className="st1"
-      d="M1411.5,202.5l1.3-1.3c1.5-1.5,1.5-3.9,0-5.4l-3.2-3.2c-1.5-1.5-3.9-1.5-5.4,0l-1.3,1.3l-1.3-1.3 c-1.5-1.5-3.9-1.5-5.4,0l-3.2,3.2c-1.5,1.5-1.5,3.9,0,5.4l1.3,1.3l-1.3,1.3c-1.5,1.5-1.5,3.9,0,5.4l3.2,3.2c1.5,1.5,3.9,1.5,5.4,0 l1.3-1.3l1.3,1.3c1.5,1.5,3.9,1.5,5.4,0l3.2-3.2c1.5-1.5,1.5-3.9,0-5.4L1411.5,202.5z"
-    />
-    <text transform="matrix(1 0 0 1 1396.3605 198.3473)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st97">
-        {"Maintain "}
-      </tspan>
-      <tspan x={-1.8} y={3.7} className="st27 st3 st97">
-        {"a minimum "}
-      </tspan>
-      <tspan x={0.8} y={7.5} className="st27 st3 st97">
-        {"number "}
-      </tspan>
-      <tspan x={0.3} y={11.2} className="st27 st3 st97">
-        {"of troops"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M1414.1,177.3l1.8-1.8c2-2,2-5.1,0-7.1l-4.1-4.1c-2-2-5.1-2-7.1,0l-1.8,1.8l-1.8-1.8c-2-2-5.1-2-7.1,0l-4.1,4.1 c-2,2-2,5.1,0,7.1l1.8,1.8l-1.8,1.8c-2,2-2,5.1,0,7.1l4.1,4.1c2,2,5.1,2,7.1,0l1.8-1.8l1.8,1.8c2,2,5.1,2,7.1,0l4.1-4.1 c2-2,2-5.1,0-7.1L1414.1,177.3z"
-    />
-    <text transform="matrix(1 0 0 1 1393.3649 173.1305)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st98">
-        {"Need to "}
-      </tspan>
-      <tspan x={-1} y={6.1} className="st27 st3 st98">
-        {"maintain "}
-      </tspan>
-      <tspan x={2.5} y={12.2} className="st27 st3 st98">
-        {"troops"}
-      </tspan>
-    </text>
-    <circle className="st5" cx={1362.1} cy={167.6} r={14.6} />
-    <text transform="matrix(1 0 0 1 1348.7604 164.7082)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st99">
-        {"Maintain key "}
-      </tspan>
-      <tspan x={-0.3} y={5.3} className="st27 st3 st99">
-        {"maneuvering "}
-      </tspan>
-      <tspan x={2.6} y={10.7} className="st27 st3 st99">
-        {"equipment"}
-      </tspan>
-    </text>
-    <path
-      className="st0"
-      d="M1510.2,200l2-2c2.2-2.2,2.2-5.8,0-8l-4.7-4.7c-2.2-2.2-5.8-2.2-8,0l-2,2l-2-2c-2.2-2.2-5.8-2.2-8,0l-4.7,4.7 c-2.2,2.2-2.2,5.8,0,8l2,2l-2,2c-2.2,2.2-2.2,5.8,0,8l4.7,4.7c2.2,2.2,5.8,2.2,8,0l2-2l2,2c2.2,2.2,5.8,2.2,8,0l4.7-4.7 c2.2-2.2,2.2-5.8,0-8L1510.2,200z"
-    />
-    <text transform="matrix(1.0025 0 0 1 1486.6365 196.0749)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st100">
-        {"Improved "}
-      </tspan>
-      <tspan x={3.3} y={5.6} className="st27 st3 st100">
-        {"wages "}
-      </tspan>
-      <tspan x={-0.8} y={11.2} className="st27 st3 st100">
-        {"for officers"}
-      </tspan>
-    </text>
-    <circle className="st19" cx={165.4} cy={165.9} r={49.6} />
-    <circle className="st19" cx={68.9} cy={166.3} r={46.5} />
-    <ellipse
-      transform="matrix(0.1602 -0.9871 0.9871 0.1602 78.4967 427.9)"
-      className="st19"
-      cx={290.7}
-      cy={167.8}
-      rx={43}
-      ry={43}
-    />
-    <circle className="st19" cx={378.5} cy={170.3} r={43.8} />
-    <ellipse
-      transform="matrix(0.7071 -0.7071 0.7071 0.7071 56.9544 476.2491)"
-      className="st19"
-      cx={603.4}
-      cy={169.4}
-      rx={57.7}
-      ry={57.7}
-    />
-    <circle className="st19" cx={503.3} cy={168.5} r={42.1} />
-    <circle className="st19" cx={736.3} cy={171.4} r={41.3} />
-    <circle className="st19" cx={815.6} cy={170.6} r={38} />
-    <circle className="st19" cx={938.7} cy={166.7} r={48.8} />
-    <circle className="st19" cx={1039.8} cy={167.8} r={52.3} />
-    <circle className="st19" cx={1180.7} cy={169} r={41.9} />
-    <circle className="st19" cx={1263.8} cy={170.4} r={40.2} />
-    <circle className="st19" cx={1504.2} cy={164.7} r={54.1} />
-    <circle className="st19" cx={1398.1} cy={163.6} r={51.3} />
+    <g>
+      <ellipse className="st30" cx={673.1} cy={130.7} rx={18} ry={18.3} />
+      <text transform="matrix(0.9897 0 0 1 664.2944 121.5696)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Avoiding "}
+        </tspan>
+        <tspan x={1.5} y={4.9} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={-1.2} y={9.8} className="st27 st3 st28">
+          {"service for "}
+        </tspan>
+        <tspan x={-1.7} y={14.7} className="st27 st3 st28">
+          {"children of "}
+        </tspan>
+        <tspan x={-3.8} y={19.6} className="st27 st3 st28">
+          {"high rankings"}
+        </tspan>
+      </text>
+    </g>
     <g>
       <path
-        className="st0"
-        d="M210.1,176l-10.4,10.4c-2.3,2.3-6,2.3-8.3,0l-1.3-1.3c-2.3-2.3-2.3-6,0-8.3l10.4-10.4c2.3-2.3,6-2.3,8.3,0 l1.3,1.3C212.4,170,212.4,173.7,210.1,176z"
+        className="st28"
+        d="M916.9,203.3l1.7-1.7c1.9-1.9,1.9-4.8,0-6.7l-3.9-3.9c-1.9-1.9-4.8-1.9-6.7,0l-1.7,1.7l-1.7-1.7 c-1.9-1.9-4.8-1.9-6.7,0l-3.9,3.9c-1.9,1.9-1.9,4.8,0,6.7l1.7,1.7l-1.7,1.7c-1.9,1.9-1.9,4.8,0,6.7l3.9,3.9c1.9,1.9,4.8,1.9,6.7,0 l1.7-1.7l1.7,1.7c1.9,1.9,4.8,1.9,6.7,0l3.9-3.9c1.9-1.9,1.9-4.8,0-6.7L916.9,203.3z"
       />
-      <path
-        className="st0"
-        d="M200.5,186.3L190.2,176c-2.3-2.3-2.3-6,0-8.3l1.3-1.3c2.3-2.3,6-2.3,8.3,0l10.4,10.4c2.3,2.3,2.3,6,0,8.3 l-1.3,1.3C206.5,188.6,202.8,188.6,200.5,186.3z"
-      />
+      <text transform="matrix(1 0 0 1 895.0972 200.0684)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Difficulty in "}
+        </tspan>
+        <tspan x={2.4} y={5.3} className="st27 st3 st28">
+          {"retaining "}
+        </tspan>
+        <tspan x={4.5} y={10.6} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
     </g>
-    <text transform="matrix(1 0 0 1 192.1178 172.8249)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st101">
-        {"Maintain "}
-      </tspan>
-      <tspan x={0.4} y={4.8} className="st27 st3 st101">
-        {"250,000 "}
-      </tspan>
-      <tspan x={1.9} y={9.5} className="st27 st3 st101">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 478.0061 184.9523)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st31">
-        {"Reorganization "}
-      </tspan>
-      <tspan x={1} y={4.4} className="st27 st3 st31">
-        {"of the military "}
-      </tspan>
-      <tspan x={3.2} y={8.8} className="st27 st3 st31">
-        {"to focus on "}
-      </tspan>
-      <tspan x={2.6} y={13.2} className="st27 st3 st31">
-        {"professional "}
-      </tspan>
-      <tspan x={7} y={17.6} className="st27 st3 st31">
-        {"soldiers"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 468.2142 152.1539)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st32">
-        {"Military elite "}
-      </tspan>
-      <tspan x={4.3} y={4.7} className="st27 st3 st32">
-        {"through"}
-      </tspan>
-      <tspan x={3} y={9.4} className="st27 st3 st32">
-        {"reduction"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 511.2661 144.5395)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st33">
-        {"Introduce"}
-      </tspan>
-      <tspan x={2.4} y={4.7} className="st27 st3 st33">
-        {"AVMS "}
-      </tspan>
-      <tspan x={-2.7} y={9.4} className="st27 st3 st33">
-        {"after quality "}
-      </tspan>
-      <tspan x={-4} y={14.1} className="st27 st3 st33">
-        {"improvement "}
-      </tspan>
-      <tspan x={-8.5} y={18.8} className="st27 st3 st33">
-        {"and modernization"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 489.4335 133.7193)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st84">
-        {"A small "}
-      </tspan>
-      <tspan x={2.4} y={4} className="st27 st3 st84">
-        {"elite "}
-      </tspan>
-      <tspan x={0.5} y={7.9} className="st27 st3 st84">
-        {"military"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 462.1852 172.8248)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st85">
-        {"Mechanization "}
-      </tspan>
-      <tspan x={0.8} y={2.7} className="st27 st3 st85">
-        {"of the military"}
-      </tspan>
-    </text>
-    <text transform="matrix(1 0 0 1 513.2229 181.8764)" className="st11">
-      <tspan x={0} y={0} className="st27 st3 st86">
-        {"Smart "}
-      </tspan>
-      <tspan x={0.7} y={6.7} className="st27 st3 st86">
-        {"Army "}
-      </tspan>
-      <tspan x={-0.7} y={13.5} className="st27 st3 st86">
-        {"System"}
-      </tspan>
-    </text>
+    <g>
+      <path
+        className="st28"
+        d="M1050.2,213.2l1.5-1.5c1.7-1.7,1.7-4.3,0-6l-3.5-3.5c-1.7-1.7-4.3-1.7-6,0l-1.5,1.5l-1.5-1.5 c-1.7-1.7-4.3-1.7-6,0l-3.5,3.5c-1.7,1.7-1.7,4.3,0,6l1.5,1.5l-1.5,1.5c-1.7,1.7-1.7,4.3,0,6l3.5,3.5c1.7,1.7,4.3,1.7,6,0l1.5-1.5 l1.5,1.5c1.7,1.7,4.3,1.7,6,0l3.5-3.5c1.7-1.7,1.7-4.3,0-6L1050.2,213.2z"
+      />
+      <text transform="matrix(1 0 0 1 1033.3008 209.4424)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Lack of "}
+        </tspan>
+        <tspan x={-1.2} y={5.4} className="st27 st3 st28">
+          {"sense of "}
+        </tspan>
+        <tspan x={0.2} y={10.9} className="st27 st3 st28">
+          {"mission"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(0.1602 -0.9871 0.9871 0.1602 745.7375 1143.8054)"
+        className="st26"
+        cx="1045.1"
+        cy="133.6"
+        r="14.2"
+      />
+      <text transform="matrix(1 0 0 1 1035.1938 129.9368)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Increasing "}
+        </tspan>
+        <tspan x={3.1} y={4.9} className="st27 st3 st28">
+          {"Soldier "}
+        </tspan>
+        <tspan x={0.1} y={9.9} className="st27 st3 st28">
+          {"Autonomy"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1055.5,164.7l1.2-1.2c1.4-1.4,1.4-3.6,0-5.1l-2.9-2.9c-1.4-1.4-3.6-1.4-5.1,0l-1.2,1.2l-1.2-1.2 c-1.4-1.4-3.6-1.4-5.1,0l-2.9,2.9c-1.4,1.4-1.4,3.6,0,5.1l1.2,1.2l-1.2,1.2c-1.4,1.4-1.4,3.6,0,5.1l2.9,2.9c1.4,1.4,3.6,1.4,5.1,0 l1.2-1.2l1.2,1.2c1.4,1.4,3.6,1.4,5.1,0l2.9-2.9c1.4-1.4,1.4-3.6,0-5.1L1055.5,164.7z"
+      />
+      <text transform="matrix(1.0417 0 0 1 1039.9648 162.2998)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Pessimistic "}
+        </tspan>
+        <tspan x={2.2} y={3.5} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={0.3} y={7} className="st27 st3 st28">
+          {"perception"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1207.2,184.9l3.2-3.2c3.4-3.4,3.4-9.2,0-12.7l-7.5-7.5c-3.4-3.4-9.2-3.4-12.7,0l-3.2,3.2l-3.2-3.2 c-3.4-3.4-9.2-3.4-12.7,0l-7.5,7.5c-3.4,3.4-3.4,9.2,0,12.7l3.2,3.2l-3.2,3.2c-3.4,3.4-3.4,9.2,0,12.7l7.5,7.5 c3.4,3.4,9.2,3.4,12.7,0l3.2-3.2l3.2,3.2c3.4,3.4,9.2,3.4,12.7,0l7.5-7.5c3.4-3.4,3.4-9.2,0-12.7L1207.2,184.9z"
+      />
+      <text transform="matrix(1 0 0 1 1173.2803 173.2124)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Need to "}
+        </tspan>
+        <tspan x={-0.3} y={9.3} className="st27 st3 st28">
+          {"increase "}
+        </tspan>
+        <tspan x={-0.1} y={18.7} className="st27 st3 st28">
+          {"officers' "}
+        </tspan>
+        <tspan x={2.4} y={28} className="st27 st3 st28">
+          {"salaries"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1331.7,149.4l1.9-1.9c2.1-2.2,2-5.6-0.1-7.7l-4.5-4.4c-2.2-2.1-5.6-2-7.7,0.1l-1.9,1.9l-1.9-1.9 c-2.2-2.1-5.6-2-7.7,0.1l-4.4,4.5c-2.1,2.2-2,5.6,0.1,7.7l1.9,1.9l-1.9,1.9c-2.1,2.2-2,5.6,0.1,7.7l4.5,4.4c2.2,2.1,5.6,2,7.7-0.1 l1.9-1.9l1.9,1.9c2.2,2.1,5.6,2,7.7-0.1l4.4-4.5c2.1-2.2,2-5.6-0.1-7.7L1331.7,149.4z"
+      />
+      <text
+        transform="matrix(0.9999 -1.497861e-02 1.497861e-02 0.9999 1307.1531 148.5055)"
+        className="st7"
+      >
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"No unisex "}
+        </tspan>
+        <tspan x={0} y={6.4} className="st27 st3 st28">
+          {"enlistment"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={1551} cy={208.8} r={15.2} />
+      <text transform="matrix(1 0 0 1 1540.4971 204.3011)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Sell off "}
+        </tspan>
+        <tspan x={-0.6} y={7.3} className="st27 st3 st28">
+          {"military "}
+        </tspan>
+        <tspan x={4.5} y={14.6} className="st27 st3 st28">
+          {"land"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M1588.6,206.3l1.5-1.5c1.6-1.6,1.6-4.4,0-6l-3.6-3.6c-1.6-1.6-4.4-1.6-6,0l-1.5,1.5l-1.5-1.5 c-1.6-1.6-4.4-1.6-6,0l-3.6,3.6c-1.6,1.6-1.6,4.4,0,6l1.5,1.5l-1.5,1.5c-1.6,1.6-1.6,4.4,0,6l3.6,3.6c1.6,1.6,4.4,1.6,6,0l1.5-1.5 l1.5,1.5c1.6,1.6,4.4,1.6,6,0l3.6-3.6c1.6-1.6,1.6-4.4,0-6L1588.6,206.3z"
+      />
+      <text transform="matrix(1 0 0 1 1571.8252 201.7493)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Maintain "}
+        </tspan>
+        <tspan x={-2} y={4.2} className="st27 st3 st28">
+          {"a minimum "}
+        </tspan>
+        <tspan x={0.8} y={8.3} className="st27 st3 st28">
+          {"number "}
+        </tspan>
+        <tspan x={0.3} y={12.5} className="st27 st3 st28">
+          {"of troops"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1573.8,177.7l1.9-1.9c2.1-2.1,2.1-5.5,0-7.7l-4.5-4.5c-2.1-2.1-5.5-2.1-7.7,0l-1.9,1.9l-1.9-1.9 c-2.1-2.1-5.5-2.1-7.7,0l-4.5,4.5c-2.1,2.1-2.1,5.5,0,7.7l1.9,1.9l-1.9,1.9c-2.1,2.1-2.1,5.5,0,7.7l4.5,4.5c2.1,2.1,5.5,2.1,7.7,0 l1.9-1.9l1.9,1.9c2.1,2.1,5.5,2.1,7.7,0l4.5-4.5c2.1-2.1,2.1-5.5,0-7.7L1573.8,177.7z"
+      />
+      <text transform="matrix(1 0 0 1 1551.3682 173.2002)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Need to "}
+        </tspan>
+        <tspan x={-1.1} y={6.6} className="st27 st3 st28">
+          {"maintain "}
+        </tspan>
+        <tspan x={2.7} y={13.3} className="st27 st3 st28">
+          {"troops"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st26" cx={1524.8} cy={190.6} r={16.2} />
+      <text transform="matrix(1 0 0 1 1509.9561 187.388)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Maintain key "}
+        </tspan>
+        <tspan x={-0.3} y={5.9} className="st27 st3 st28">
+          {"maneuvering "}
+        </tspan>
+        <tspan x={2.9} y={11.9} className="st27 st3 st28">
+          {"equipment"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1682.2,209.5l2.2-2.2c2.4-2.4,2.4-6.4,0-8.9l-5.2-5.2c-2.4-2.4-6.4-2.4-8.9,0l-2.2,2.2l-2.2-2.2 c-2.4-2.4-6.4-2.4-8.9,0l-5.2,5.2c-2.4,2.4-2.4,6.4,0,8.9l2.2,2.2l-2.2,2.2c-2.4,2.4-2.4,6.4,0,8.9l5.2,5.2c2.4,2.4,6.4,2.4,8.9,0 l2.2-2.2l2.2,2.2c2.4,2.4,6.4,2.4,8.9,0l5.2-5.2c2.4-2.4,2.4-6.4,0-8.9L1682.2,209.5z"
+      />
+      <text transform="matrix(1.0025 0 0 1 1656.0928 205.2264)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Improved "}
+        </tspan>
+        <tspan x={3.6} y={6.2} className="st27 st3 st28">
+          {"wages "}
+        </tspan>
+        <tspan x={-0.9} y={12.5} className="st27 st3 st28">
+          {"for officers"}
+        </tspan>
+      </text>
+    </g>
+    <circle
+      transform="matrix(0.7071 -0.7071 0.7071 0.7071 -66.1187 183.7701)"
+      className="st15"
+      cx="188.8"
+      cy="171.7"
+      r="55.2"
+    />
+    <circle className="st15" cx={81.5} cy={172.2} r={51.7} />
+    <circle className="st15" cx={327.8} cy={173.8} r={47.8} />
+    <circle
+      transform="matrix(0.963 -0.2695 0.2695 0.963 -31.8575 121.1707)"
+      className="st15"
+      cx="425.4"
+      cy="176.6"
+      r="48.6"
+    />
+    <circle
+      transform="matrix(0.1658 -0.9862 0.9862 0.1658 390.0122 812.1856)"
+      className="st15"
+      cx="675.1"
+      cy="175.6"
+      r="64.0"
+    />
+    <circle className="st15" cx={822.8} cy={177.9} r={45.8} />
+    <circle className="st15" cx={910.8} cy={177} r={42.2} />
+    <circle
+      transform="matrix(0.7071 -0.7071 0.7071 0.7071 184.7695 791.2258)"
+      className="st15"
+      cx="1047.5"
+      cy="172.6"
+      r="54.2"
+    />
+    <circle className="st15" cx={1159.8} cy={173.8} r={58} />
+    <g>
+      <path
+        className="st28"
+        d="M1443.8,186.1l2.4-2.4c2.8-2.8,2.8-7.1,0-9.9l-5.8-5.8c-2.8-2.8-7.1-2.8-9.9,0l-2.4,2.4l-2.4-2.4 c-2.8-2.8-7.1-2.8-9.9,0l-5.8,5.8c-2.8,2.8-2.8,7.1,0,9.9l2.4,2.4l-2.4,2.4c-2.8,2.8-2.8,7.1,0,9.9l5.8,5.8c2.8,2.8,7.1,2.8,9.9,0 l2.4-2.4l2.4,2.4c2.8,2.8,7.1,2.8,9.9,0l5.8-5.8c2.8-2.8,2.8-7.1,0-9.9L1443.8,186.1z"
+      />
+      <text transform="matrix(1 0 0 1 1413.3506 181.8223)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Men entering "}
+        </tspan>
+        <tspan x={-0.5} y={5.6} className="st27 st3 st28">
+          {"the workforce "}
+        </tspan>
+        <tspan x={0.3} y={11.3} className="st27 st3 st28">
+          {"two years late"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1435.8,151.3l1.7-1.7c1.9-1.9,1.9-5.1,0-7.1l-4.1-4.1c-1.9-1.9-5.1-1.9-7.1,0l-1.7,1.7l-1.7-1.7 c-1.9-1.9-5.1-1.9-7.1,0l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7.1l1.7,1.7l-1.7,1.7c-1.9,1.9-1.9,5.1,0,7.1l4.1,4.1c1.9,1.9,5.1,1.9,7.1,0 l1.7-1.7l1.7,1.7c1.9,1.9,5.1,1.9,7.1,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7.1L1435.8,151.3z"
+      />
+      <text transform="matrix(1 0 0 1 1419.9414 147.0029)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Provide "}
+        </tspan>
+        <tspan x={-2.2} y={3.3} className="st27 st3 st28">
+          {"benefits for"}
+        </tspan>
+        <tspan x={-6.6} y={6.5} className="st27 st3 st28">
+          {"short-term service "}
+        </tspan>
+        <tspan x={-6.5} y={9.8} className="st27 st3 st28">
+          {"for female soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle
+        transform="matrix(8.362155e-02 -0.9965 0.9965 8.362155e-02 1104.8994 1534.2709)"
+        className="st30"
+        cx="1386.7"
+        cy="166.4"
+        r="24.2"
+      />
+      <text
+        transform="matrix(0.9999 -1.497861e-02 1.497861e-02 0.9999 1371.0117 160.9413)"
+        className="st7"
+      >
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Problem of"}
+        </tspan>
+        <tspan x={2.9} y={7.5} className="st27 st3 st28">
+          {"complex "}
+        </tspan>
+        <tspan x={-3.7} y={15.1} className="st27 st3 st28">
+          {"salary system "}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st30"
+        d="M1387.6,190.9c6.6,0,12,5.4,12,12c0,6.6-5.4,12-12,12s-12-5.4-12-12C1375.6,196.3,1381,190.9,1387.6,190.9z"
+      />
+      <text transform="matrix(1 0 0 1 1377.8379 200.3191)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Reorganize "}
+        </tspan>
+        <tspan x={0.7} y={4.4} className="st27 st3 st28">
+          {"the officer "}
+        </tspan>
+        <tspan x={4.3} y={8.8} className="st27 st3 st28">
+          {"system"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M1416.1,211.4l1.2-1.2c1.3-1.3,1.3-3.2,0-4.5l-2.6-2.6c-1.3-1.3-3.2-1.3-4.5,0l-1.2,1.2l-1.2-1.2 c-1.3-1.3-3.2-1.3-4.5,0l-2.6,2.6c-1.3,1.3-1.3,3.2,0,4.5l1.2,1.2l-1.2,1.2c-1.3,1.3-1.3,3.2,0,4.5l2.6,2.6c1.3,1.3,3.2,1.3,4.5,0 l1.2-1.2l1.2,1.2c1.3,1.3,3.2,1.3,4.5,0l2.6-2.6c1.3-1.3,1.3-3.2,0-4.5L1416.1,211.4z"
+      />
+      <text transform="matrix(1 0 0 1 1403.5088 209.0965)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Revival of "}
+        </tspan>
+        <tspan x={-0.6} y={2.9} className="st27 st3 st28">
+          {"the military"}
+        </tspan>
+        <tspan x={-1.4} y={5.8} className="st27 st3 st28">
+          {"merit system"}
+        </tspan>
+      </text>
+    </g>
+    <circle
+      transform="matrix(0.2298 -0.9732 0.9732 0.2298 912.7621 1503.545)"
+      className="st15"
+      cx="1406.3"
+      cy="175.1"
+      r="46.5"
+    />
+    <circle className="st15" cx={1314.5} cy={176.7} r={44.7} />
+    <circle
+      transform="matrix(0.7071 -0.7071 0.7071 0.7071 370.2805 1234.7124)"
+      className="st15"
+      cx="1675.6"
+      cy="170.4"
+      r="60.1"
+    />
+    <circle
+      transform="matrix(0.2298 -0.9732 0.9732 0.2298 1035.2533 1646.3413)"
+      className="st15"
+      cx="1557.7"
+      cy="169.1"
+      r="57.0"
+    />
+    <g>
+      <path
+        className="st28"
+        d="M236.9,184.1l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L236.9,184.1z"
+      />
+      <text transform="matrix(1 0 0 1 217.3013 179.4031)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Maintain "}
+        </tspan>
+        <tspan x={0.4} y={5.3} className="st27 st3 st28">
+          {"250,000 "}
+        </tspan>
+        <tspan x={2.1} y={10.6} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <path className="st105" d="M1752.6-19.7" />
+    <path className="st105" d="M973,318.4" />
+    <g>
+      <circle className="st30" cx={550.6} cy={197.7} r={17.1} />
+      <text transform="matrix(1 0 0 1 537.1704 191.1675)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Reorganization "}
+        </tspan>
+        <tspan x={1.1} y={4.7} className="st27 st3 st28">
+          {"of the military "}
+        </tspan>
+        <tspan x={3.4} y={9.3} className="st27 st3 st28">
+          {"to focus on "}
+        </tspan>
+        <tspan x={2.7} y={14} className="st27 st3 st28">
+          {"professional "}
+        </tspan>
+        <tspan x={7.4} y={18.6} className="st27 st3 st28">
+          {"soldiers"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={537.7} cy={157.3} r={14.7} />
+      <text transform="matrix(1 0 0 1 525.8018 154.6792)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Military elite "}
+        </tspan>
+        <tspan x={4.5} y={5} className="st27 st3 st28">
+          {"through"}
+        </tspan>
+        <tspan x={3.1} y={10} className="st27 st3 st28">
+          {"reduction"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st23"
+        d="M598.7,156.9l2.4-2.4c2.7-2.7,2.7-7.1,0-9.8l-5.8-5.8c-2.7-2.7-7.1-2.7-9.8,0l-2.4,2.4l-2.4-2.4 c-2.7-2.7-7.1-2.7-9.8,0l-5.8,5.8c-2.7,2.7-2.7,7.1,0,9.8l2.4,2.4l-2.4,2.4c-2.7,2.7-2.7,7.1,0,9.8l5.8,5.8c2.7,2.7,7.1,2.7,9.8,0 l2.4-2.4l2.4,2.4c2.7,2.7,7.1,2.7,9.8,0l5.8-5.8c2.7-2.7,2.7-7.1,0-9.8L598.7,156.9z"
+      />
+      <text transform="matrix(1 0 0 1 574.4023 147.3257)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Introduce"}
+        </tspan>
+        <tspan x={2.6} y={5} className="st27 st3 st28">
+          {"AVMS "}
+        </tspan>
+        <tspan x={-2.9} y={10} className="st27 st3 st28">
+          {"after quality "}
+        </tspan>
+        <tspan x={-4.2} y={15} className="st27 st3 st28">
+          {"improvement "}
+        </tspan>
+        <tspan x={-9} y={19.9} className="st27 st3 st28">
+          {"and modernization"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={555.6} cy={138.5} r={10.7} />
+      <text transform="matrix(1 0 0 1 549.8735 135.3394)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"A small "}
+        </tspan>
+        <tspan x={2.5} y={4.2} className="st27 st3 st28">
+          {"elite "}
+        </tspan>
+        <tspan x={0.5} y={8.4} className="st27 st3 st28">
+          {"military"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <circle className="st30" cx={529.5} cy={180.3} r={9.6} />
+      <text transform="matrix(1 0 0 1 521.2036 179.5581)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Mechanization "}
+        </tspan>
+        <tspan x={0.8} y={2.8} className="st27 st3 st28">
+          {"of the military"}
+        </tspan>
+      </text>
+    </g>
+    <g>
+      <path
+        className="st28"
+        d="M597,193l1.9-1.9c2.2-2.2,2.2-5.7,0-7.9l-4.6-4.6c-2.2-2.2-5.7-2.2-7.9,0l-1.9,1.9l-1.9-1.9 c-2.2-2.2-5.7-2.2-7.9,0l-4.6,4.6c-2.2,2.2-2.2,5.7,0,7.9l1.9,1.9L570,195c-2.2,2.2-2.2,5.7,0,7.9l4.6,4.6c2.2,2.2,5.7,2.2,7.9,0 l1.9-1.9l1.9,1.9c2.2,2.2,5.7,2.2,7.9,0l4.6-4.6c2.2-2.2,2.2-5.7,0-7.9L597,193z"
+      />
+      <text transform="matrix(1 0 0 1 576.1318 187.6772)" className="st7">
+        <tspan x={0} y={0} className="st27 st3 st28">
+          {"Smart "}
+        </tspan>
+        <tspan x={0.8} y={7} className="st27 st3 st28">
+          {"Army "}
+        </tspan>
+        <tspan x={-0.7} y={14} className="st27 st3 st28">
+          {"System"}
+        </tspan>
+      </text>
+    </g>
+    <circle
+      transform="matrix(0.963 -0.2695 0.2695 0.963 -25.6635 158.5649)"
+      className="st15"
+      cx="564.6"
+      cy="172.7"
+      r="46.4"
+    />
   </svg>
 );
-export default BubbleEng;
+export default BubbleEngg;
