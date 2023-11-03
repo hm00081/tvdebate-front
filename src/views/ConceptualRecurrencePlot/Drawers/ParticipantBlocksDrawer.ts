@@ -45,7 +45,7 @@ export class ParticipantBlocksDrawer {
     this.utteranceObjectsForDrawing.sort((a, b) => {
       return a.beginningPointOfXY - b.beginningPointOfXY;
     });
-    console.log("After sorting: ", this.utteranceObjectsForDrawing);
+    //console.log("After sorting: ", this.utteranceObjectsForDrawing);
     this.update();
   }
 

@@ -23,7 +23,7 @@ export class SimilarityBlockManager {
   private _positiveSumStandard: number = 0.5;
   private _colUtteranceLongStandard: number = 5;
   private _hostWeight: number = 1;
-  private _hostLongStandard: number = 100; // 진행자 문자 수
+  private _hostLongStandard: number = 100; // Host 문자 수
   private _debaterWeights: number[] = [1, 1, 1, 1];
   private _debaterIndexDict: { [debaterName: string]: number } = {};
 
@@ -153,12 +153,14 @@ export class SimilarityBlockManager {
             weight *= this._insistenceWeight;
           }
         }
-
+        //console.log(rowUtteranceObject);
         // apply host_weight
         if (
-          (rowUtteranceObject.name === "진행자" &&
+          ((rowUtteranceObject.name === "진행자" ||
+            rowUtteranceObject.name === "Host") &&
             rowUtteranceObject.utterance.length > this._hostLongStandard) ||
-          (colUtteranceObject.name === "진행자" &&
+          ((colUtteranceObject.name === "진행자" ||
+            colUtteranceObject.name === "Host") &&
             colUtteranceObject.utterance.length > this._hostLongStandard)
         ) {
           weight *= this._hostWeight;
@@ -228,7 +230,10 @@ export class SimilarityBlockManager {
                 ];
               const team1 = p.participantDict[utteranceOjbect1.name].team;
               const team2 = p.participantDict[utteranceOjbect2.name].team;
-              // team1과 team2가 다르고 둘 다 양수, team이 음수면 진행자
+              // console.log("team1", team1);
+              // console.log("team2", team2);
+
+              // team1과 team2가 다르고 둘 다 양수, team이 음수면 Host
               if (team1 !== team2 && team1 > 0 && team2 > 0) {
                 const utteranceObjectOfRebuttalTarget =
                   p.utteranceObjectsForDrawing[
@@ -270,8 +275,10 @@ export class SimilarityBlockManager {
             team1 > 0 &&
             team2 > 0 &&
             // similarityBlock.similarity > 0.05 &&
-            similarityBlock.rowUtteranceName !== "진행자") ||
-          (similarityBlock.colUtteranceName !== "진행자" &&
+            similarityBlock.rowUtteranceName !== "진행자" &&
+            similarityBlock.rowUtteranceName !== "Host") ||
+          (similarityBlock.rowUtteranceName !== "진행자" &&
+            similarityBlock.colUtteranceName !== "Host" &&
             condition >= 1 &&
             //colUtteranceObject.utterance.length > p.colUtteranceLongStandard ||
             filtered.length >= 1 &&

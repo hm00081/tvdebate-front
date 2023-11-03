@@ -10,6 +10,13 @@ import CP4 from "./Bubble/CP4";
 import CP5 from "./Bubble/CP5";
 import CP6 from "./Bubble/CP6";
 import CP7 from "./Bubble/CP7";
+import CP1K from "./BubbleKor/CP1";
+import CP2K from "./BubbleKor/CP2";
+import CP3K from "./BubbleKor/CP3";
+import CP4K from "./BubbleKor/CP4";
+import CP5K from "./BubbleKor/CP5";
+import CP6K from "./BubbleKor/CP6";
+import CP7K from "./BubbleKor/CP7";
 
 interface TooltipState {
   display: boolean;
@@ -62,13 +69,20 @@ const BubbleEngg = (props) => {
           }
         </style>
         <Pie />
-        <CP1 />
+        <CP1K />
+        <CP2K />
+        <CP3K />
+        <CP4K />
+        <CP5K />
+        <CP6K />
+        <CP7K />
+        {/* <CP1 />
         <CP2 />
         <CP3 />
         <CP4 />
         <CP5 />
         <CP6 />
-        <CP7 />
+        <CP7 /> */}
       </svg>
       {tooltip.display && (
         <div

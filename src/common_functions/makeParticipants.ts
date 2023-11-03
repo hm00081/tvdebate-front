@@ -189,35 +189,42 @@ export function makeParticipants( // 참가자 노드 생성 구간
       // 4: "rgba(51, 51, 51, 1)", // 사회자
       //초파주빨
       //#00AB6E #122CAB #C7611E #B60E3C
-      // 0: "#00AB6E", // 김종대, host
-      // 1: "#C7611E", // 박휘락, 장경태
-      // 2: "#B60E3C", // 이준석, 김종대
-      // 3: "#00a0e2", // 장경태, 이준석
-      // 4: "#808080", // 사회자, 박휘락
-      //0905 바뀜.
-      0: "#808080", // 김종대, host
-      1: "#00a0e2", // 박휘락, 장경태
-      2: "#00AB6E", // 이준석, 김종대
-      3: "#B60E3C", // 장경태, 이준석
-      4: "#C7611E", // 사회자, 박휘락
+      // kor
+      0: "#00AB6E", // 김종대, host
+      1: "#C7611E", // 박휘락, 장경태
+      2: "#B60E3C", // 이준석, 김종대
+      3: "#00a0e2", // 장경태, 이준석
+      4: "#808080", // 사회자, 박휘락
+      //0905 바뀜. 1023 change
+      // eng
+      // 0: "#808080", // 김종대, host
+      // 1: "#00a0e2", // 박휘락, 장경태
+      // 2: "#00AB6E", // 이준석, 김종대
+      // 3: "#B60E3C", // 장경태, 이준석
+      // 4: "#C7611E", // 사회자, 박휘락
     };
     participants = _.map(names, (name, index) => {
       let team: number;
       switch (index) {
         case 0:
           team = 1;
+          //team = -2;
           break;
         case 1:
           team = 2;
+          //team = 1;
           break;
         case 2:
           team = 2;
+          //team = 1;
           break;
         case 3:
           team = 1;
+          //team = 2;
           break;
         case 4:
           team = -2;
+          //team = 2;
           break;
         default:
           team = -3;

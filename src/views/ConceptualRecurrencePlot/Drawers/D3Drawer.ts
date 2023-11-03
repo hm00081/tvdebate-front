@@ -90,7 +90,7 @@ export class D3Drawer {
             }
           })
       );
-
+    // 동시발생행렬 그려지는 구간
     this.svgGSelection = this.svgSelection.select(".svgG");
 
     this.participantBlocksDrawer = new ParticipantBlocksDrawer(

@@ -10,12 +10,17 @@ interface LegendProps {
   svgPath?: string[];
 }
 
+interface HeaderProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const participantColors = [
-  { color: "#B60E3C", label: "Lee Joonseok" },
-  { color: "#C7611E", label: "Park Hwirak" },
-  { color: "#00AB6E", label: "Kim Jongdae" },
-  { color: "#00a0e2", label: "Jang Kyungtae" },
-  { color: "#808080", label: "Host" },
+  { color: "#B60E3C", label: "이준석" },
+  { color: "#C7611E", label: "박휘락" },
+  { color: "#00AB6E", label: "김종대" },
+  { color: "#00a0e2", label: "장경태" },
+  { color: "#808080", label: "진행자" },
 ];
 
 // const topicColors = [
@@ -24,8 +29,8 @@ const participantColors = [
 // ];
 
 const topicColors = [
-  { color: "#400000", label: "Argumentation" },
-  { color: "#ff0000", label: "Argumentation area" },
+  { color: "#400000", label: "논쟁" },
+  { color: "#ff0000", label: "논쟁구간" },
 ];
 
 const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
@@ -74,8 +79,7 @@ const LegendItem: React.FC<LegendProps> = ({ color, label }) => {
   );
 };
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(true);
+export default function Header({ isOpen, setIsOpen }: HeaderProps) {
   return (
     <a className={style.mainLink}>
       <div
@@ -118,8 +122,9 @@ export default function Header() {
             height="22"
             style={{
               marginBottom: "28px",
-              marginLeft: "-293px",
-              scale: "0.8",
+              marginLeft: "-290px",
+              marginTop: "8px",
+              scale: "0.9",
             }}
           >
             <path
@@ -134,14 +139,14 @@ export default function Header() {
 		C17,4.6,13.4,1,9,1L9,1z"
             />
           </svg>
-          <div style={{ marginTop: "-23px", marginLeft: "2px" }}>Pros</div>
+          <div style={{ marginTop: "-23px", marginLeft: "2px" }}>찬성</div>
           <svg
             width="22"
             height="22"
             style={{
               marginBottom: "21px",
-              marginLeft: "17px",
-              scale: "0.8",
+              marginLeft: "15px",
+              scale: "0.85",
             }}
           >
             <path
@@ -161,7 +166,7 @@ export default function Header() {
               c1.5-1.5,1.5-3.9,0-5.4l-0.4-0.4L15.8,9c1.5-1.5,1.5-3.9,0-5.4l-1.1-1.1C14,1.8,13,1.4,12,1.4L12,1.4z"
             />
           </svg>
-          <div style={{ marginTop: "-23px", marginLeft: "2px" }}>Cons</div>
+          <div style={{ marginTop: "-23px", marginLeft: "2px" }}>반대</div>
           <svg
             width="19"
             height="19"
@@ -200,13 +205,20 @@ export default function Header() {
               }}
             ></path>
           </svg>
-          <div style={{ marginLeft: "-333px", marginTop: "28px" }}>
-            Bubble Chart for Comparing Argumentation
+          <div style={{ marginLeft: "-315px", marginTop: "28px" }}>
+            Circle Packing for Comparing Argumentation
           </div>
         </div>
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          style={{ marginLeft: "auto" }}
+          onClick={() => setIsOpen((prev) => !prev)}
+          style={{
+            marginLeft: "120px",
+            marginBottom: "20px",
+            background: "#9c27b0",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+          }}
         >
           {isOpen ? "Hide Script" : "View Script"}
         </button>

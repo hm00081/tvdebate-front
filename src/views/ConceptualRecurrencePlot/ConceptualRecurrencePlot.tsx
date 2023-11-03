@@ -29,14 +29,17 @@ import ParticipantTooltip from "../../components/ParticipantTooltip/ParticipantT
 import SimilarityTooltip from "../../components/SimilarityTooltip/SimilarityTooltip";
 import Header from "./../Header/Header";
 import HeaderTwo from "./../Header/HeaderTwo";
+import HeaderTwoKor from "./../Header/HeaderTwoKor";
 import style from "./rootStyle.module.scss";
 import Bubble from "./Bubble";
 import BubbleKor from "./BubbleKor";
 import BubbleEng from "./BubbleEng";
 import BubbleEngg from "./BubbleEngg";
+import CircleCom from "./BubbleKor/CircleCom";
 import * as d3 from "d3";
 import Outline from "./Outline";
 import SubChart from "./SubChart";
+import SubChartKor from "./SubChartKor";
 
 function ConceptualRecurrencePlot() {
   const query = new URLSearchParams(useLocation().search);
@@ -294,7 +297,8 @@ function ConceptualRecurrencePlot() {
   return (
     <div className="root-div" style={{ overflow: "hidden" }}>
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-      <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} /> */}
+      <HeaderTwoKor isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="vis-area">
         <div className="bubble" style={{ borderBottom: "1px solid black" }}>
           {/* <BubbleEng /> */}
@@ -331,16 +335,14 @@ function ConceptualRecurrencePlot() {
             >
               <g className="svgG" ref={svgGRef}>
                 <g
-                  transform={`translate(${-315}, ${270}) scale(1.32 -1.32) rotate(-45)`}
+                  // transform={`translate(${-265}, ${220}) scale(1.32 -1.32) rotate(-45)`}
+                  transform={`translate(${-235}, ${205}) scale(1 -1) rotate(-45)`}
                 >
-                  {/* <g
-                  transform={`translate(${translate.x}, ${translate.y}) scale(1 -1) rotate(-45)`}
-                > */}
-                  <SubChart setWidth={setSubChartWidth} />
+                  {/* <SubChart setWidth={setSubChartWidth} /> */}
+                  <SubChartKor setWidth={setSubChartWidth} />
                   <rect
                     style={{
                       fill: "#ffffff",
-                      //width: subChartWidth, // SubChart의 가로 길이를 rect에도 적용
                     }}
                     width={subChartWidth}
                   />

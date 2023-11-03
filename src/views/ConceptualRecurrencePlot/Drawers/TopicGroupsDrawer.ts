@@ -434,7 +434,7 @@ export class TopicGroupsDrawer {
             arg.termUtteranceBooleanMatrixTransposed,
             arg.termList
           );
-          return `terms: ${extractedTerms}`; // terms: ~.
+          return ``; // terms: ~.
         });
     }
   }

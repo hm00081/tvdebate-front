@@ -81,6 +81,7 @@ export class SimilarityBlocksDrawer {
       .attr("width", (d) => d.width)
       .attr("height", (d) => d.height)
       .style("fill", (d) => {
+        //console.log("similarityBlock:", d.refutation);
         return d.visible
           ? fillColorOfSimilarityBlock(
               d,
@@ -101,7 +102,7 @@ export class SimilarityBlocksDrawer {
       )
       .on("click", (e, d) => {
         const mouseEvent = (e as unknown) as MouseEvent;
-        console.log("similarity block clicked");
+        //console.log("similarity block clicked");
         mouseEvent.stopPropagation();
         const similarityBlock = (d as unknown) as SimilarityBlock;
         if (this._clickListener) {
@@ -667,7 +668,7 @@ export class SimilarityBlocksDrawer {
 
   public set showEngagementPoint(showEngagementPoint: boolean) {
     this._showEngagementPoint = showEngagementPoint;
-    console.log("setter inner", this._showEngagementPoint);
+    //console.log("setter inner", this._showEngagementPoint);
   }
 
   public set coloringRebuttal(coloringRebuttal: boolean) {
