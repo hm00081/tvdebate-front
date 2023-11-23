@@ -140,429 +140,443 @@ const SubChartKor = (props) => {
       </g>
       <g className="김종대">
         <g className="김종대-1">
-          <title>Demographic Cliff</title>
-          <rect x={42.2} y={86} className="stt8" width={36.8} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 44.8876 93.2448)"
-            className="stt16 stt0 stt36"
-          >
-            {"Demographic Cliff"}
+          <title>인구절벽</title>
+          <rect
+            x={42.2}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={33}
+            height={12.8}
+          />
+          <text transform="matrix(0.9048 0 0 1 44.8876 93.2448)">
+            <tspan x={0} y={1} className="stt40 stt0 stt22">
+              {"인구절벽"}
+            </tspan>
           </text>
         </g>
         <g className="김종대-2">
-          <title>
-            Decline in youth population, increase in military misfits
-          </title>
-          <rect x={187.4} y={86} className="stt8" width={53.8} height={12.8} />
+          <title>청년인구 감소, 군 부적응자 증가</title>
+          <rect
+            x={180.4}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={90}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 190.0822 90.9879)">
-            <tspan x={0} y={0} className="stt16 stt0 stt22">
-              {"Decline in youth population, "}
-            </tspan>
-            <tspan x={0} y={5} className="stt16 stt0 stt22">
-              {"increase in military misfits"}
+            <tspan x={-7} y={3} className="stt40 stt0 stt22">
+              {"청년인구 감소, 군 부적응자 증가"}
             </tspan>
           </text>
         </g>
         <g className="김종대-3">
-          <title>Unable to maintain 500,000 troops, unmanned warfare</title>
-          <rect x={294.6} y={86} className="stt8" width={96.6} height={12.8} />
+          <title>50만 군 유지불가, 전쟁양상 무인화</title>
+          <rect
+            x={294.6}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={103}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 298.7792 90.9879)">
-            <tspan x={0} y={0} className="stt16 stt0 stt22">
-              {"Unable to maintain 500,000 troops, "}
-            </tspan>
-            <tspan x={0} y={5} className="stt16 stt0 stt22">
-              {"unmanned warfare"}
+            <tspan x={0} y={3} className="stt40 stt0 stt22">
+              {"50만 군 유지불가, 전쟁양상 무인화"}
             </tspan>
           </text>
         </g>
         <g className="김종대-4">
-          <title>Provide social value</title>
-          <rect x={415.7} y={86} className="stt8" width={44.5} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 418.5161 93.4811)"
-            className="stt16 stt0 stt17"
-          >
-            {"Provide social value"}
+          <title>사회적가치 제공</title>
+          <rect
+            x={415.7}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={50}
+            height={12.8}
+          />
+          <text transform="matrix(0.9048 0 0 1 418.5161 93.4811)">
+            <tspan x={0} y={0} className="stt40 stt0 stt22">
+              {"사회적가치 제공"}
+            </tspan>
           </text>
         </g>
         <g className="김종대-5">
-          <title>Reduction of bad habits, self-development benefits</title>
-          <rect x={697.6} y={86} className="stt8" width={56.8} height={12.8} />
+          <title>악폐습 감소, 자기개발</title>
+          <rect
+            x={680}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={70}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 700.0448 90.9882)">
-            <tspan x={0} y={0} className="stt16 stt0 stt17">
-              {"Reduction of bad habits, "}
-            </tspan>
-            <tspan x={0} y={5.8} className="stt16 stt0 stt17">
-              {"self-development benefits"}
+            <tspan x={-16} y={3} className="stt40 stt0 stt22">
+              {"악폐습 감소, 자기개발"}
             </tspan>
           </text>
         </g>
         <g className="김종대-6">
-          <title>
-            Job mixing sttage, transition between special forces and
-            professional soldiers
-          </title>
-          <rect x={760.1} y={86} className="stt8" width={93.3} height={12.8} />
+          <title>직무혼합단계, 특수병과 직업군인 전환</title>
+          <rect
+            x={760.1}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={105}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 762.6777 90.6489)">
-            <tspan x={0} y={0} className="stt16 stt0 stt17">
-              {"Job mixing sttage, transition between special "}
-            </tspan>
-            <tspan x={0} y={5.8} className="stt16 stt0 stt17">
-              {"forces and professional soldiers"}
+            <tspan x={0} y={3} className="stt40 stt0 stt22">
+              {"직무혼합단계, 특수병과 직업군인 전환"}
             </tspan>
           </text>
         </g>
         <g className="김종대-7">
-          <title>Budget adjusttment through unit consolidation</title>
-          <rect x={1267.1} y={86} className="stt8" width={57.5} height={12.8} />
+          <title>직업예비군제 전환</title>
+          <rect
+            x={1267.1}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={57.5}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 1269.0715 91.1128)">
-            <tspan x={0} y={0} className="stt16 stt0 stt18">
-              {"Budget adjusttment through "}
-            </tspan>
-            <tspan x={0} y={5.6} className="stt16 stt0 stt18">
-              {"unit consolidation"}
+            <tspan x={2} y={3.5} className="stt40 stt0 stt22">
+              {"직업예비군제 전환"}
             </tspan>
           </text>
         </g>
         <g className="김종대-8">
-          <title>Maintain core maneuvering equipment</title>
-          <rect x={1354} y={86} className="stt8" width={52.6} height={12.8} />
+          <title>핵심기동장비 유지</title>
+          <rect
+            x={1354}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={55}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 1356.4791 91.1128)">
-            <tspan x={0} y={0} className="stt16 stt0 stt18">
-              {"Maintain core "}
-            </tspan>
-            <tspan x={0} y={5.6} className="stt16 stt0 stt18">
-              {"maneuvering equipment"}
+            <tspan x={0} y={3} className="stt40 stt0 stt22">
+              {"핵심기동장비 유지"}
             </tspan>
           </text>
         </g>
         <g className="김종대-9">
-          <title>Transition to professional soldiers</title>
-          <rect x={1529} y={86} className="stt8" width={43.9} height={12.8} />
+          <title>직업군인 전환</title>
+          <rect
+            x={1529}
+            y={86}
+            className="stt8"
+            rx="5"
+            ry="5"
+            width={43.9}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 1532.1721 91.1128)">
-            <tspan x={0} y={0} className="stt16 stt0 stt18">
-              {"Transition to  "}
-            </tspan>
-            <tspan x={0} y={5.6} className="stt16 stt0 stt18">
-              {"professional soldiers"}
+            <tspan x={0} y={3} className="stt40 stt0 stt22">
+              {"직업군인 전환"}
             </tspan>
           </text>
         </g>
       </g>
       <g className="이준석">
-        <title>Underesttimation of security threats</title>
+        <title>안보위협 과소평가</title>
         <g className="이준석-1">
-          <rect x={86.6} y={17} className="stt9" width={40.1} height={12.8} />
+          <rect x={68} y={17} className="stt9" width={57} height={12.8} />
           <text transform="matrix(0.9587 0 0 1 88.9567 21.0914)">
-            <tspan x={0} y={0} className="stt3 stt0 stt11">
-              {"Underesttimation "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt11">
-              {"of security threats"}
+            <tspan x={-18} y={4} className="stt40 stt0 stt22">
+              {"안보위협 과소평가"}
             </tspan>
           </text>
         </g>
         <g className="이준석-2">
-          <title>Inaction in preparing for surveillance</title>
-          <rect x={168.5} y={17} className="stt9" width={46.4} height={12.8} />
+          <title>감군대비 무대책</title>
+          <rect x={162} y={17} className="stt9" width={50} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 171.5255 21.8512)">
-            <tspan x={0} y={0} className="stt3 stt0 stt21">
-              {"Inaction in preparing "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt21">
-              {"for surveillance"}
+            <tspan x={-10} y={3} className="stt40 stt0 stt22">
+              {"감군대비 무대책"}
             </tspan>
           </text>
         </g>
         <g className="이준석-3">
-          <title>Difficulties in self-defense</title>
-          <rect x={218} y={17} className="stt9" width={49.9} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 220.0312 24.8564)"
-            className="stt3 stt0 stt21"
-          >
-            {"Difficulties in self-defense"}
+          <title>자주국방 어려움</title>
+          <rect x={222} y={17} className="stt9" width={50} height={12.8} />
+          <text transform="matrix(0.9048 0 0 1 220.0312 24.8564)">
+            <tspan x={2} className="stt40 stt0 stt22">
+              {"자주국방 어려움"}
+            </tspan>
           </text>
         </g>
         <g className="이준석-4">
-          <title>
-            Unpredictable supply and demand of troops, difficulty in recruiting
-            during economic boom
-          </title>
-          <rect x={309.9} y={17} className="stt9" width={124.4} height={12.8} />
+          <title>병력수요공급 예측불가, 경제호황 모병어려움</title>
+          <rect x={309.9} y={17} className="stt9" width={125} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 330.0588 21.5068)">
-            <tspan x={0} y={0} className="stt3 stt0 stt21">
-              {"Unpredictable supply and demand of troops, "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt21">
-              {"difficulty in recruiting during economic boom"}
+            <tspan x={-18} y={4} className="stt40 stt0 stt22">
+              {" 병력수요공급 예측불가, 경제호황 모병어려움"}
             </tspan>
           </text>
         </g>
         <g className="이준석-5">
-          <title>A certain amount of job</title>
-          <rect x={489.7} y={17} className="stt9" width={46.4} height={12.8} />
+          <title>일자리 총량 일정</title>
+          <rect x={489.7} y={17} className="stt9" width={50} height={12.8} />
           <text
             transform="matrix(0.9048 0 0 1 491.3352 24.856)"
-            className="stt3 stt0 stt21"
+            className="stt40 stt0 stt22"
           >
-            {"A certain amount of job"}
+            {"일자리 총량 일정"}
           </text>
         </g>
         <g className="이준석-6">
-          <title>Difficulty in retaining soldiers, limited job market</title>
-          <rect x={739.3} y={17} className="stt9" width={95.8} height={12.8} />
+          <title>병사 장기복무 어려움, 취업시장 제한</title>
+          <rect x={739.3} y={17} className="stt9" width={105} height={12.8} />
           <text
             transform="matrix(0.9048 0 0 1 743.3804 24.8013)"
-            className="stt3 stt0 stt21"
+            className="stt40 stt0 stt22"
           >
-            {"Difficulty in retaining soldiers, limited job market"}
+            <tspan x={0} y={0} className="stt40 stt0 stt22">
+              {"병사 장기복무 어려움, 취업시장 제한"}
+            </tspan>
           </text>
         </g>
         <g className="이준석-7">
-          <title>
-            Men entering the workforce two years late, violating equal rights
-          </title>
-          <rect x={973.8} y={17} className="stt9" width={100.8} height={12.8} />
+          <title>남성 2년 늦는 취업시기, 평등권 침해</title>
+          <rect x={968.8} y={17} className="stt9" width={105} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 976.5809 22.1646)">
-            <tspan x={0} y={0} className="stt3 stt0 stt21">
-              {"Men entering the workforce two years late, "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt21">
-              {"violating equal rights"}
+            <tspan x={-5} y={3} className="stt40 stt0 stt22">
+              {"남성 2년 늦는 취업시기, 평등권 침해"}
             </tspan>
           </text>
         </g>
         <g className="이준석-8">
-          <title>
-            Unable to adjust defense budget, 2 trillion won in personnel costts
-          </title>
-          <rect x={1300.5} y={17} className="stt9" width={66.8} height={12.8} />
+          <title>국방예산 조정불가, 사병인건비 2조</title>
+          <rect x={1300.5} y={17} className="stt9" width={98} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 1303.4598 22.1646)">
-            <tspan x={0} y={0} className="stt3 stt0 stt21">
-              {"Unable to adjust defense budget, "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt21">
-              {"2 trillion won in personnel costts"}
+            <tspan x={0} y={2.5} className="stt40 stt0 stt22">
+              {"국방예산 조정불가, 사병인건비 2조"}
             </tspan>
           </text>
         </g>
         <g className="이준석-9">
-          <title>Need to improve treatment of soldiers</title>
-          <rect x={1479.8} y={17} className="stt9" width={54.1} height={12.8} />
+          <title>병사처우개선 필요</title>
+          <rect x={1479.8} y={17} className="stt9" width={55} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 1482.2146 22.1646)">
-            <tspan x={0} y={0} className="stt3 stt0 stt21">
-              {"Need to improve treatment "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt3 stt0 stt21">
-              {"of soldiers"}
+            <tspan x={0} y={2} className="stt40 stt0 stt22">
+              {"병사처우개선 필요"}
             </tspan>
           </text>
         </g>
       </g>
       <g className="장경태">
-        <title>500,000 Troops Unsusttainable, Demographic Cliff</title>
+        <title>50만군 유지불가, 인구절벽</title>
         <g className="장경태-1">
-          <rect x={60.6} y={40} className="stt12" width={65.9} height={12.8} />
+          <rect
+            x={45}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={80}
+            height={12.8}
+          />
           <text transform="matrix(0.9048 0 0 1 62.1424 43.9254)">
-            <tspan x={0} y={0} className="stt4 stt0 stt13">
-              {"500,000 Troops Unsusttainable, "}
-            </tspan>
-            <tspan x={0} y={5.7} className="stt4 stt0 stt13">
-              {"Demographic Cliff"}
+            <tspan x={-14} y={4.5} className="stt40 stt0 stt22">
+              {"50만군 유지불가, 인구절벽"}
             </tspan>
           </text>
         </g>
         <g className="장경태-2">
-          <title>Smart Army</title>
-          <rect x={163.2} y={40} className="stt12" width={35} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 167.2165 47.8141)"
-            className="stt4 stt0 stt28"
-          >
-            {"Smart Army"}
+          <title>작지만 강한 스마트군대</title>
+          <rect
+            x={163.2}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={70}
+            height={12.8}
+          />
+          <text transform="matrix(0.9048 0 0 1 167.2165 47.8141)">
+            <tspan y={0.5} className="stt40 stt0 stt22">
+              {"작지만 강한 스마트군대"}
+            </tspan>
           </text>
         </g>
         <g className="장경태-3">
-          <title>Military qualification, career breaks problem solved</title>
-          <rect x={343.4} y={40} className="stt12" width={63.8} height={12.8} />
+          <title>군 정예화, 경력단절문제 해결</title>
+          <rect
+            x={343.4}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={93}
+            height={12.8}
+          />
           <text transform="matrix(0.9781 0 0 1 348.0743 44.5465)">
-            <tspan x={0} y={0} className="stt4 stt0 stt19">
-              {"Military qualification, "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt4 stt0 stt19">
-              {"career breaks problem solved"}
+            <tspan x={0} y={4} className="stt40 stt0 stt22">
+              {"군 정예화, 경력단절문제 해결"}
             </tspan>
           </text>
         </g>
         <g className="장경태-4">
-          <title>Elite infantry, provide 210,000 jobs</title>
-          <rect x={521.5} y={40} className="stt12" width={74.5} height={12.8} />
-          <text
-            transform="matrix(0.9781 0 0 1 523.1106 46.7104)"
-            className="stt4 stt0 stt19"
-          >
-            {"Elite infantry, provide 210,000 jobs"}
+          <title>정예화된 보병, 21만 일자리 제공</title>
+          <rect
+            x={491}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={98}
+            height={12.8}
+          />
+          <text transform="matrix(0.9781 0 0 1 523.1106 46.7104)">
+            <tspan x={-30} y={1.5} className="stt40 stt0 stt22">
+              {"정예화된 보병, 21만 일자리 제공"}
+            </tspan>
           </text>
         </g>
         <g className="장경태-5">
-          <title>Military reorganization centered on officers</title>
-          <rect x={892.6} y={40} className="stt12" width={62.1} height={12.8} />
+          <title>간부중심 군 개편</title>
+          <rect
+            x={892.6}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={57}
+            height={12.8}
+          />
           <text transform="matrix(0.9781 0 0 1 895.3335 44.5464)">
-            <tspan x={0} y={0} className="stt4 stt0 stt19">
-              {"Military reorganization"}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt4 stt0 stt19">
-              {"centered on officers "}
+            <tspan x={0} y={3.5} className="stt40 stt0 stt22">
+              {"간부중심 군 개편"}
             </tspan>
           </text>
         </g>
         <g className="장경태-6">
-          <title>
-            Female preference recruitment systtem, salary systtem change
-          </title>
-          <rect x={989.2} y={40} className="stt12" width={84.9} height={12.8} />
+          <title>여성희망징집제, 봉급체계변화</title>
+          <rect
+            x={978}
+            y={40}
+            className="stt12"
+            rx="5"
+            ry="5"
+            width={95}
+            height={12.8}
+          />
           <text transform="matrix(0.9781 0 0 1 991.8525 44.5464)">
-            <tspan x={0} y={0} className="stt4 stt0 stt19">
-              {"Female preference recruitment systtem, "}
-            </tspan>
-            <tspan x={0} y={5.2} className="stt4 stt0 stt19">
-              {"salary systtem change  "}
+            <tspan x={-8} y={3} className="stt40 stt0 stt22">
+              {"여성희망징집제, 봉급체계변화"}
             </tspan>
           </text>
         </g>
         <g className="장경태-7">
-          <title>
-            Difficulty in reducing the budget, maintaining conscription
-            Weakening defense power
-          </title>
+          <title>예산절감 어려움, 징병유지 국방력약화</title>
           <rect
-            x={1329.8}
+            x={1320}
             y={40}
             className="stt12"
-            width={106.4}
+            rx="5"
+            ry="5"
+            width={118}
             height={12.8}
           />
           <text transform="matrix(0.9781 0 0 1 1332.6628 44.9459)">
-            <tspan x={0} y={0} className="stt4 stt0 stt20">
-              {"Difficulty in reducing the budget, "}
-            </tspan>
-            <tspan x={0} y={5} className="stt4 stt0 stt20">
-              {"maintaining conscription Weakening defense power"}
+            <tspan x={-8} y={3} className="stt40 stt0 stt22">
+              {"예산절감 어려움, 징병유지 국방력약화"}
             </tspan>
           </text>
         </g>
         <g className="장경태-8">
-          <title>Unsusttainable Conscription</title>
+          <title>징집 편제유지불가</title>
           <rect
-            x={1504.3}
+            x={1500}
             y={40}
             className="stt12"
-            width={56.9}
+            rx="5"
+            ry="5"
+            width={58}
             height={12.8}
           />
-          <text
-            transform="matrix(0.9781 0 0 1 1506.838 47.2965)"
-            className="stt4 stt0 stt37"
-          >
-            {"Unsusttainable Conscription"}
+          <text transform="matrix(0.9781 0 0 1 1506.838 47.2965)">
+            <tspan x={-2} y={1} className="stt40 stt0 stt22">
+              {"징집 편제유지불가"}
+            </tspan>
           </text>
         </g>
       </g>
       <g className="박휘락">
-        <title>North Korean Nuclear Threat</title>
+        <title>북 핵위협</title>
         <g className="박휘락-1">
-          <rect x={47.4} y={63} className="stt14" width={50.6} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 48.7585 70.4)"
-            className="stt5 stt0 stt29"
-          >
-            {"North Korean Nuclear Threat"}
+          <rect x={47.4} y={63} className="stt14" width={33} height={12.8} />
+          <text transform="matrix(0.9048 0 0 1 48.7585 70.4)">
+            <tspan x={1.4} y={1} className="stt40 stt0 stt22">
+              {"북 핵위협"}
+            </tspan>
           </text>
         </g>
         <g className="박휘락-2">
-          <title>
-            Recruitment systtem for general elections, incomplete military
-            policy review
-          </title>
-          <rect x={191.1} y={63} className="stt14" width={76.8} height={12.8} />
+          <title>총선용 모병제, 미비한 군정책검토</title>
+          <rect x={178} y={63} className="stt14" width={95} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 192.7844 67.7929)">
-            <tspan x={0} y={0} className="stt5 stt0 stt24">
-              {"Recruitment systtem for general elections, "}
-            </tspan>
-            <tspan x={0} y={5} className="stt5 stt0 stt24">
-              {"incomplete military policy review"}
+            <tspan x={-13} y={4} className="stt40 stt0 stt22">
+              {"총선용 모병제, 미비한 군정책검토"}
             </tspan>
           </text>
         </g>
         <g className="박휘락-3">
-          <title>Need for qualitative improvement and modernization</title>
-          <rect x={381.1} y={63} className="stt14" width={66} height={12.8} />
+          <title>질적향상과 현대화 필요</title>
+          <rect x={380} y={63} className="stt14" width={68} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 384.0538 67.7929)">
-            <tspan x={0} y={0} className="stt5 stt0 stt24">
-              {"Need for qualitative improvement "}
-            </tspan>
-            <tspan x={0} y={5} className="stt5 stt0 stt24">
-              {"and modernization"}
+            <tspan x={-1.2} y={4.5} className="stt40 stt0 stt22">
+              {"질적향상과 현대화 필요"}
             </tspan>
           </text>
         </g>
         <g className="박휘락-4">
-          <title>Limited social sttatus</title>
-          <rect x={688.5} y={63} className="stt14" width={54.2} height={12.8} />
-          <text
-            transform="matrix(0.9048 0 0 1 691.2057 70.8967)"
-            className="stt5 stt0 stt25"
-          >
-            {"Limited social sttatus"}
+          <title>제한된 사회적 지위</title>
+          <rect x={688.5} y={63} className="stt14" width={58} height={12.8} />
+          <text transform="matrix(0.9048 0 0 1 691.2057 70.8967)">
+            <tspan x={0} y={0} className="stt40 stt0 stt22">
+              {"제한된 사회적 지위"}
+            </tspan>
           </text>
         </g>
         <g className="박휘락-5">
-          <title>
-            Attrition of reservistts, insufficient number of noncommissioned
-            officers, rear-guarding of female soldiers
-          </title>
-          <rect
-            x={905.2}
-            y={63}
-            className="stt14"
-            width={122.5}
-            height={12.8}
-          />
+          <title>예비역 소멸문제, 충분한 부사관 수, 여군 후방투입</title>
+          <rect x={904.5} y={63} className="stt14" width={140} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 906.7999 68.1227)">
-            <tspan x={0} y={0} className="stt5 stt0 stt27">
-              {"Attrition of reservistts, insufficient number of "}
-            </tspan>
-            <tspan x={0} y={5.7} className="stt5 stt0 stt27">
-              {"noncommissioned officers, rear-guarding of female soldiers"}
+            <tspan x={0} y={3.5} className="stt40 stt0 stt22">
+              {"예비역 소멸문제, 충분한 부사관 수, 여군 후방투입"}
             </tspan>
           </text>
         </g>
         <g className="박휘락-6">
-          <title>Excessive defense budget</title>
-          <rect
-            x={1255.6}
-            y={63}
-            className="stt14"
-            width={63.3}
-            height={12.8}
-          />
-          <text
-            transform="matrix(0.9048 0 0 1 1258.0261 70.8969)"
-            className="stt5 stt0 stt25"
-          >
-            {"Excessive defense budget"}
+          <title>국방예산초과</title>
+          <rect x={1260} y={63} className="stt14" width={43} height={12.8} />
+          <text x={5} y={0} transform="matrix(0.9048 0 0 1 1258.0261 70.8969)">
+            <tspan className="stt40 stt0 stt22">{"국방예산초과"}</tspan>
           </text>
         </g>
         <g className="박휘락-7">
-          <title>Eliminate bad habits, improve military culture</title>
-          <rect x={1511.6} y={63} className="stt14" width={49} height={12.8} />
+          <title>악폐습철폐, 군문화개선</title>
+          <rect x={1500} y={63} className="stt14" width={70} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 1513.6693 68.3844)">
-            <tspan x={0} y={0} className="stt5 stt0 stt26">
-              {"Eliminate bad habits, "}
-            </tspan>
-            <tspan x={0} y={5.5} className="stt5 stt0 stt26">
-              {"improve military culture"}
+            <tspan x={-11} y={3} className="stt40 stt0 stt22">
+              {"악폐습철폐, 군문화개선"}
             </tspan>
           </text>
         </g>

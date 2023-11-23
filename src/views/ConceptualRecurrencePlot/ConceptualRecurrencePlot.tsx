@@ -20,7 +20,10 @@ import {
   DebateDataSet,
   EvaluationDataSet,
 } from "../../interfaces/DebateDataInterface";
-import { DataStructureManager } from "./DataStructureMaker/DataStructureManager";
+import {
+  DataStructureManager,
+  DataStructureSet,
+} from "./DataStructureMaker/DataStructureManager";
 import DataImporter, { DebateName, TermType } from "./DataImporter";
 import { CHANGE_STANDARD_SIMILARITY_SCORE } from "../../redux/actionTypes";
 import CombinedEGsMaker from "./DataStructureMaker/CombinedEGsMaker";
@@ -41,22 +44,123 @@ import Outline from "./Outline";
 import SubChart from "./SubChart";
 import SubChartKor from "./SubChartKor";
 
+// props 타입 정의
+interface ConceptualRecurrencePlotProps {
+  debateDataSet: DebateDataSet;
+  dataStructureSet: DataStructureSet;
+  termType: TermType;
+}
+
 function ConceptualRecurrencePlot() {
+  //const { debateDataSet, dataStructureSet, termType } = props;
   const query = new URLSearchParams(useLocation().search);
   const debateNameOfQuery = query.get("debate_name") as DebateName;
   const termTypeOfQuery = query.get("term_type") as TermType;
   const [subChartWidth, setSubChartWidth] = useState(0);
-  const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const [scaleValues, setScaleValues] = useState({ x: 1, y: -1 });
+  const [transformValues, setTransformValues] = useState({ x: -235, y: 205 });
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+  //@ts-ignore
+  const debateDataSet = useSelector((state) => state.debateData);
+  //@ts-ignore
+  const dataStructureSet = useSelector((state) => state.dataStructure);
+  //@ts-ignore
+  const termType = useSelector((state) => state.termType);
+
   const svgGRef = useRef<SVGGElement>(null);
+
   useEffect(() => {
-    if (svgGRef.current) {
-      const bbox = svgGRef.current.getBBox();
-      setTranslate({
-        x: bbox.x,
-        y: bbox.y + bbox.height, // svgG의 바로 아래로 위치하도록 y 값 조절
-      });
+    // D3Drawer 인스턴스 생성 및 초기화
+    if (debateDataSet && dataStructureSet && termType) {
+      const drawer = new D3Drawer(debateDataSet, dataStructureSet, termType);
+      const centerValues = drawer.centerConceptualRecurrentPlot();
+
+      if (centerValues) {
+        const { adjustedWidth, adjustedHeight } = centerValues;
+        console.log(
+          "adjustedWidth, adjustedHeight",
+          adjustedWidth,
+          adjustedHeight
+        );
+        // 이제 adjustedWidth와 adjustedHeight를 사용할 수 있습니다.
+        // 예: transform 스타일 업데이트
+        setTransformValues({
+          x: adjustedWidth,
+          y: adjustedHeight,
+        });
+      }
     }
+  }, [debateDataSet, dataStructureSet, termType]);
+
+  useEffect(() => {
+    function handleResize() {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      const { scaleX, scaleY } = calculateScale(currentWidth, currentHeight);
+
+      setScaleValues({ x: scaleX, y: -scaleX }); // Y축은 항상 반전
+      setWindowSize({
+        width: currentWidth,
+        height: currentHeight,
+      });
+
+      // svgG 요소의 transform 스타일 업데이트
+      setTransformValues({
+        x: calculateTransformX(currentWidth),
+        y: calculateTransformY(currentHeight),
+      });
+
+      // SubChartKor 너비 업데이트
+      setSubChartWidth(currentWidth - 330);
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // 초기 설정
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log("SubChart Width:", subChartWidth); // SubChartKor 너비 로깅
   }, [subChartWidth]);
+
+  function calculateTransformX(width: number) {
+    const baseWidth = 1440;
+    const baseTransformX = -235;
+    // 기준 해상도와 현재 해상도 간의 비율을 사용하여 X 좌표 조정
+    const scaleX = width / baseWidth;
+    return baseTransformX * scaleX;
+  }
+
+  function calculateTransformY(height: number) {
+    const baseHeight = 900;
+    const baseTransformY = 205;
+    if (height === 900) {
+      return 205; // 기준 해상도에서는 기존 값을 유지
+    }
+    // 기준 해상도와 현재 해상도 간의 비율을 사용하여 Y 좌표 조정
+    const scaleY = height / baseHeight;
+    return baseTransformY * scaleY;
+  }
+
+  function calculateScale(width: number, height: number) {
+    const baseWidth = 1440;
+    const baseHeight = 900;
+
+    const scaleX = baseWidth / width;
+    const scaleY = baseHeight / height;
+
+    console.log("scaleX, scaleY", scaleX, scaleY);
+    return { scaleX: scaleX, scaleY: -scaleY }; // Y축은 항상 반전
+  }
+
+  useEffect(() => {
+    console.log("Transform Values:", transformValues.x, transformValues.y);
+  }, [transformValues]);
+  console.log("Transform Values:", transformValues.x, transformValues.y);
+  const transformStyle = `translate(${transformValues.x}, ${transformValues.y}) scale(${scaleValues.x}, ${scaleValues.y}) rotate(-45)`;
 
   const [isOpen, setIsOpen] = useState(true);
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
@@ -336,10 +440,12 @@ function ConceptualRecurrencePlot() {
               <g className="svgG" ref={svgGRef}>
                 <g
                   // transform={`translate(${-265}, ${220}) scale(1.32 -1.32) rotate(-45)`}
-                  transform={`translate(${-235}, ${205}) scale(1 -1) rotate(-45)`}
+                  transform={transformStyle}
                 >
-                  {/* <SubChart setWidth={setSubChartWidth} /> */}
-                  <SubChartKor setWidth={setSubChartWidth} />
+                  <SubChartKor
+                    width={windowSize.width - 330}
+                    height={windowSize.height}
+                  />
                   <rect
                     style={{
                       fill: "#ffffff",

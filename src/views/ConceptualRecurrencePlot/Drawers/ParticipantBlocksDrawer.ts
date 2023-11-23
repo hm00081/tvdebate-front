@@ -149,7 +149,7 @@ export class ParticipantBlocksDrawer {
           .slice(0, 3) // 상위 3개 항목만 추출
           .map(([term, count]) => term)
           .join(", ");
-        // console.log(compoundTermCountDict, sortedTerms);
+        //console.log(sortedTerms);
         return `mainTerms:${sortedTerms}\n ${d.name}: ${d.utterance}
             `;
       })

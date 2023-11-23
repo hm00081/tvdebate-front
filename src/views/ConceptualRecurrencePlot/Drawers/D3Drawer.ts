@@ -69,9 +69,10 @@ export class D3Drawer {
 
     // this.svgWidth = 1130;
     // this.svgHeight = 600;
+
     this.svgWidth = window.innerWidth - 330;
     this.svgHeight = window.innerHeight;
-
+    console.log("Window Size:", this.svgWidth);
     this.svgSelection = this.conceptRecurrencePlotDiv
       .select<SVGSVGElement>("svg")
       .attr("width", this.svgWidth)
@@ -306,7 +307,7 @@ export class D3Drawer {
       ar.push(utteranceObjectsForDrawing[i].width.toFixed(2));
       arr.push(utteranceObjectsForDrawing[i].name);
     }
-    console.log(ar);
+    //console.log(ar);
 
     if (utteranceObjectsForDrawing.length !== 0) {
       const lastUtteranceObjectForDrawing =
@@ -315,6 +316,7 @@ export class D3Drawer {
       const minusWidth =
         lastUtteranceObjectForDrawing.beginningPointOfXY +
         lastUtteranceObjectForDrawing.width;
+      console.log("minusWidth", minusWidth);
       const adjustedWidth = (this.svgWidth - minusWidth) / 2;
 
       const adjustedHeight = (this.svgHeight - minusWidth) / 2;
@@ -328,6 +330,7 @@ export class D3Drawer {
         const transform = zoomTransform(element);
         this._zoomListener(transform.translate(adjustedWidth, adjustedHeight));
       }
+      return { adjustedWidth, adjustedHeight };
     } else {
       console.warn("no utteranceObjectsForDrawing");
     }

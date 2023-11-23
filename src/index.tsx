@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
@@ -5,6 +6,10 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { DebateDataSet } from "./interfaces/DebateDataInterface";
+import { DataStructureSet } from "./views/ConceptualRecurrencePlot/DataStructureMaker/DataStructureManager";
+import { TermType } from "./views/ConceptualRecurrencePlot/DataImporter";
+import { useSelector } from "react-redux";
 
 ReactDOM.render(
   // <React.StrictMode>

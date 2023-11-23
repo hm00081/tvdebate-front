@@ -8,61 +8,29 @@
     "sentenceObjects": [
       {
         "sentence": "<100분토론> 오늘은 모병제 찬반 논란에 대해 토론해보겠습니다.",
-        "singleTermCountDict": {
-          "토론": 2,
-          "모병": 1,
-          "찬반": 1,
-          "논란": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 2,
-          "모병": 1,
-          "찬반": 1,
-          "논란": 1
-        },
+        "singleTermCountDict": { "토론": 2, "모병": 1, "찬반": 1, "논란": 1 },
+        "compoundTermCountDict": { "토론": 2, "모병": 1, "찬반": 1, "논란": 1 },
         "sentiment": 0,
         "time": "﻿00:00:00"
       },
       {
         "sentence": "함께 할 패널 소개합니다.",
-        "singleTermCountDict": {
-          "패널": 1,
-          "소개": 1
-        },
-        "compoundTermCountDict": {
-          "패널": 1,
-          "소개": 1
-        },
+        "singleTermCountDict": { "패널": 1, "소개": 1 },
+        "compoundTermCountDict": { "패널": 1, "소개": 1 },
         "sentiment": 0.5,
         "time": "00:01:20"
       },
       {
         "sentence": "먼저 모병제를 찬성하는 분들이십니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "찬성": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "찬성": 1
-        },
+        "singleTermCountDict": { "모병": 1, "찬성": 1 },
+        "compoundTermCountDict": { "모병": 1, "찬성": 1 },
         "sentiment": 0,
         "time": "00:01:22"
       },
       {
         "sentence": "오래 전부터 한국형 모병제 도입을 주장해오셨죠.",
-        "singleTermCountDict": {
-          "한국": 1,
-          "모병": 1,
-          "도입": 1,
-          "주장": 1
-        },
-        "compoundTermCountDict": {
-          "한국": 1,
-          "모병": 1,
-          "도입": 1,
-          "주장": 1
-        },
+        "singleTermCountDict": { "한국": 1, "모병": 1, "도입": 1, "주장": 1 },
+        "compoundTermCountDict": { "한국": 1, "모병": 1, "도입": 1, "주장": 1 },
         "sentiment": 0,
         "time": "00:01:25"
       },
@@ -106,14 +74,8 @@
       },
       {
         "sentence": "이번에는 모병제를 반대하는 분들이십니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "반대": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "반대": 1
-        },
+        "singleTermCountDict": { "모병": 1, "반대": 1 },
+        "compoundTermCountDict": { "모병": 1, "반대": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:01:43"
       },
@@ -160,13 +122,8 @@
       },
       {
         "sentence": "민주연구원이 지난 7일이었습니다.",
-        "singleTermCountDict": {
-          "민주": 1,
-          "연구": 1
-        },
-        "compoundTermCountDict": {
-          "민주연구": 1
-        },
+        "singleTermCountDict": { "민주": 1, "연구": 1 },
+        "compoundTermCountDict": { "민주연구": 1 },
         "sentiment": 0,
         "time": "00:02:03"
       },
@@ -219,35 +176,15 @@
       },
       {
         "sentence": "방금 영상에서도 보셨겠지만 여야 각 당에서도 내부적으로 의견이 갈리고 있어요.",
-        "singleTermCountDict": {
-          "영상": 1,
-          "여야": 1,
-          "내부": 1,
-          "의견": 1
-        },
-        "compoundTermCountDict": {
-          "영상": 1,
-          "여야": 1,
-          "내부": 1,
-          "의견": 1
-        },
+        "singleTermCountDict": { "영상": 1, "여야": 1, "내부": 1, "의견": 1 },
+        "compoundTermCountDict": { "영상": 1, "여야": 1, "내부": 1, "의견": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:02:20"
       },
       {
         "sentence": "여당이라고해서 다 찬성하는 것도 아니고 야당이라고 다 반대하는 것도 아닌데요.",
-        "singleTermCountDict": {
-          "여당": 1,
-          "찬성": 1,
-          "야당": 1,
-          "반대": 1
-        },
-        "compoundTermCountDict": {
-          "여당": 1,
-          "찬성": 1,
-          "야당": 1,
-          "반대": 1
-        },
+        "singleTermCountDict": { "여당": 1, "찬성": 1, "야당": 1, "반대": 1 },
+        "compoundTermCountDict": { "여당": 1, "찬성": 1, "야당": 1, "반대": 1 },
         "sentiment": -0.5,
         "time": "00:02:26"
       },
@@ -277,16 +214,8 @@
       },
       {
         "sentence": "김종대 의원님 먼저 시작해주시죠.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1,
-          "시작": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1,
-          "시작": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1, "시작": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1, "시작": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:02:38"
       }
@@ -297,6 +226,7 @@
     "findDisagreeScale": 4,
     "name": "김종대",
     "evaluateAgainst": "찬성",
+
     "utterance": "이번에 민주연구원에서 뜻하지 않게 단계적 모병제 방안을 문제제기를 한 거예요. 사실 이게 뭐 완성된 연구도 아니고 단순히 논의를 전개하기 위한 시론의 성격에 해당되는데 때마침 이제 우리 군도 대전환을 서둘러야 되는 시기에 적절한 문제제기였다고 생각이 됩니다. 지금 인구절벽과 4차 산업혁명을 얘기합니다만 이 두 가지 그 쓰나미와 같은 충격에 가장 민감하게 영향을 받는 조직이 군대입니다. 적어도 군대는 다른 대체나 보완 수단이 없이 이 두 가지 쓰나미 충격에 곧바로 영향을 받을 수 있습니다. 그 시점은 제가 보기에 2025년에서 2030년 사이입니다. 이때 되면 새로운 세계, 새로운 세상에서 더욱 작아진 군대가 어떤 그 전문 직업주의를 기초로 해서 싸우는 군대로 전환되지 않는다면 현 징병제 틀을 그때까지도 계속 고수하다가는 저는 폭삭 망한다고 봅니다. 이게 지금도 늦었다 오히려 더 서둘러야 된다 저는 그렇게 봅니다.",
     "sentenceObjects": [
       {
@@ -309,14 +239,7 @@
           "문제": 1,
           "제기": 1
         },
-        "compoundTermCountDict": {
-          "민주": 1,
-          "연구": 1,
-          "모병": 1,
-          "방안": 1,
-          "문제": 1,
-          "제기": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:02:41"
       },
@@ -380,14 +303,8 @@
       },
       {
         "sentence": "그 시점은 제가 보기에 2025년에서 2030년 사이입니다.",
-        "singleTermCountDict": {
-          "시점": 1,
-          "사이": 1
-        },
-        "compoundTermCountDict": {
-          "시점": 1,
-          "사이": 1
-        },
+        "singleTermCountDict": { "시점": 1, "사이": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:03:21"
       },
@@ -439,14 +356,8 @@
       },
       {
         "sentence": "박휘락 교수님.",
-        "singleTermCountDict": {
-          "박휘락": 1,
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "박휘락": 1,
-          "교수": 1
-        },
+        "singleTermCountDict": { "박휘락": 1, "교수": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:03:47"
       }
@@ -488,12 +399,8 @@
       },
       {
         "sentence": "또 세계적 추세다.",
-        "singleTermCountDict": {
-          "추세": 1
-        },
-        "compoundTermCountDict": {
-          "추세": 1
-        },
+        "singleTermCountDict": { "추세": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.699999988079071,
         "time": "00:04:00"
       },
@@ -506,13 +413,8 @@
       },
       {
         "sentence": "가장 중요한 게 사실 위협입니다.",
-        "singleTermCountDict": {
-          "중요": 1,
-          "위협": 1
-        },
-        "compoundTermCountDict": {
-          "안보위협": 7
-        },
+        "singleTermCountDict": { "중요": 1, "위협": 1 },
+        "compoundTermCountDict": { "안보위협": 7 },
         "sentiment": -0.5,
         "time": "00:04:03"
       },
@@ -536,12 +438,8 @@
       },
       {
         "sentence": "사실 저는 오히려 여야가 바뀐 것 같아요.",
-        "singleTermCountDict": {
-          "여야": 1
-        },
-        "compoundTermCountDict": {
-          "여야": 1
-        },
+        "singleTermCountDict": { "여야": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:04:24"
       },
@@ -595,9 +493,7 @@
           "충원": 1,
           "과정": 1
         },
-        "compoundTermCountDict": {
-          "간부 진급문제": 1
-        },
+        "compoundTermCountDict": { "간부 진급문제": 1 },
         "sentiment": 0,
         "time": "00:04:59"
       },
@@ -638,31 +534,15 @@
     "sentenceObjects": [
       {
         "sentence": "그런 부분에 대해서 추후에 토론과정에서 좀 더 자세하게 짚어볼 예정입니다.",
-        "singleTermCountDict": {
-          "추후": 1,
-          "토론": 1,
-          "과정": 1,
-          "예정": 1
-        },
-        "compoundTermCountDict": {
-          "추후": 1,
-          "토론": 1,
-          "과정": 1,
-          "예정": 1
-        },
+        "singleTermCountDict": { "추후": 1, "토론": 1, "과정": 1, "예정": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:05:18"
       },
       {
         "sentence": "장경태 위원장님.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:05:24"
       }
@@ -684,37 +564,21 @@
       },
       {
         "sentence": "먼저 애초에 유지가 불가능합니다.",
-        "singleTermCountDict": {
-          "애초": 1,
-          "유지": 1,
-          "불가능": 1
-        },
-        "compoundTermCountDict": {
-          "징병제 유지불가": 1
-        },
+        "singleTermCountDict": { "애초": 1, "유지": 1, "불가능": 1 },
+        "compoundTermCountDict": { "징병제 유지불가": 1 },
         "sentiment": -0.5,
         "time": "00:05:27"
       },
       {
         "sentence": "지금 50만 대군의 또 특히 보병유지를 위해서 어찌됐건 다시 해도 될까요.",
-        "singleTermCountDict": {
-          "대군": 1,
-          "보병": 1,
-          "유지": 1
-        },
-        "compoundTermCountDict": {
-          "50만군 편제불가": 0
-        },
+        "singleTermCountDict": { "대군": 1, "보병": 1, "유지": 1 },
+        "compoundTermCountDict": { "50만군 편제불가": 0 },
         "sentiment": 0.20000000298023224,
         "time": "00:05:29"
       },
       {
         "sentence": "애초 유지도 불가능하다고 생각하는데요.",
-        "singleTermCountDict": {
-          "애초": 1,
-          "유지": 1,
-          "불가능": 1
-        },
+        "singleTermCountDict": { "애초": 1, "유지": 1, "불가능": 1 },
         "compoundTermCountDict": {
           "50만군 유지불가": 15
         },
@@ -723,23 +587,14 @@
       },
       {
         "sentence": "인구절벽에 맞닥뜨리고 있습니다.",
-        "singleTermCountDict": {
-          "인구": 1,
-          "절벽": 1
-        },
-        "compoundTermCountDict": {
-          "인구절벽위협": 10
-        },
+        "singleTermCountDict": { "인구": 1, "절벽": 1 },
+        "compoundTermCountDict": { "인구절벽위협": 10 },
         "sentiment": 0.10000000149011612,
         "time": "00:05:40"
       },
       {
         "sentence": "그렇기 때문에 보병이 50만 편제는 유지가 어렵고요.",
-        "singleTermCountDict": {
-          "보병": 1,
-          "편제": 1,
-          "유지": 1
-        },
+        "singleTermCountDict": { "보병": 1, "편제": 1, "유지": 1 },
         "compoundTermCountDict": {
           "50만 보병유지 불가능": 1
         },
@@ -748,14 +603,8 @@
       },
       {
         "sentence": "또 유지하기 위해서는 복무연장을 해야 됩니다.",
-        "singleTermCountDict": {
-          "유지": 1,
-          "복무": 1,
-          "연장": 1
-        },
-        "compoundTermCountDict": {
-          "편제유지위한 복무연장필요": 2
-        },
+        "singleTermCountDict": { "유지": 1, "복무": 1, "연장": 1 },
+        "compoundTermCountDict": { "편제유지위한 복무연장필요": 2 },
         "sentiment": 0,
         "time": "00:05:46"
       },
@@ -768,33 +617,20 @@
           "징병": 1,
           "설명": 1
         },
-        "compoundTermCountDict": {
-          "복무": 1,
-          "연장": 1,
-          "주장": 2,
-          "징병": 1,
-          "설명": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:05:49"
       },
       {
         "sentence": "두 번째는 국방력을 강화시켜야 됩니다.",
         "singleTermCountDict": {},
-        "compoundTermCountDict": {
-          "국방력 강화필요": 1
-        },
+        "compoundTermCountDict": { "국방력 강화필요": 1 },
         "sentiment": 0,
         "time": "00:05:55"
       },
       {
         "sentence": "현대전과 이제 선진화된 군대를 양성해야 되지 않겠습니까?",
-        "singleTermCountDict": {
-          "현대전": 1,
-          "선진": 1,
-          "군대": 1,
-          "양성": 1
-        },
+        "singleTermCountDict": { "현대전": 1, "선진": 1, "군대": 1, "양성": 1 },
         "compoundTermCountDict": {
           "선진화 군대 양성": 1
         },
@@ -824,13 +660,8 @@
       },
       {
         "sentence": "세 번째는 이제 경제둔화기에 접어들고 있는데요.",
-        "singleTermCountDict": {
-          "경제": 1,
-          "화기": 1
-        },
-        "compoundTermCountDict": {
-          "경제둔화기": 1
-        },
+        "singleTermCountDict": { "경제": 1, "화기": 1 },
+        "compoundTermCountDict": { "경제둔화기": 1 },
         "sentiment": 0,
         "time": "00:06:12"
       },
@@ -858,13 +689,8 @@
       },
       {
         "sentence": "네 번째 사회갈등도 줄여나가야 됩니다.",
-        "singleTermCountDict": {
-          "사회": 1,
-          "갈등": 1
-        },
-        "compoundTermCountDict": {
-          "사회갈등 해소필요": 1
-        },
+        "singleTermCountDict": { "사회": 1, "갈등": 1 },
+        "compoundTermCountDict": { "사회갈등 해소필요": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:06:30"
       },
@@ -905,14 +731,8 @@
     "sentenceObjects": [
       {
         "sentence": "이준석 위원님.",
-        "singleTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "이준석": 1, "위원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:06:43"
       }
@@ -936,15 +756,7 @@
           "로베스피에르": 1,
           "주장": 1
         },
-        "compoundTermCountDict": {
-          "예전": 1,
-          "프랑스": 2,
-          "혁명": 2,
-          "정부": 1,
-          "이후": 1,
-          "로베스피에르": 1,
-          "주장": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:06:45"
       },
@@ -958,46 +770,21 @@
           "가격": 1,
           "제한": 1
         },
-        "compoundTermCountDict": {
-          "인민": 1,
-          "우유": 2,
-          "권리": 1,
-          "선언": 1,
-          "가격": 1,
-          "제한": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:06:51"
       },
       {
         "sentence": "그런데 얼마 정도 지나고 나니까 우유 가격이 폭등했어요.",
-        "singleTermCountDict": {
-          "얼마": 1,
-          "우유": 1,
-          "가격": 1,
-          "폭등": 1
-        },
-        "compoundTermCountDict": {
-          "얼마": 1,
-          "우유": 1,
-          "가격": 1,
-          "폭등": 1
-        },
+        "singleTermCountDict": { "얼마": 1, "우유": 1, "가격": 1, "폭등": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:06:58"
       },
       {
         "sentence": "가격제한 조치 때문에.",
-        "singleTermCountDict": {
-          "가격": 1,
-          "제한": 1,
-          "조치": 1
-        },
-        "compoundTermCountDict": {
-          "가격": 1,
-          "제한": 1,
-          "조치": 1
-        },
+        "singleTermCountDict": { "가격": 1, "제한": 1, "조치": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:07:01"
       },
@@ -1041,29 +828,15 @@
       },
       {
         "sentence": "부동산 때려잡겠다고 여러 가지 정책을 내놨지만 부동산 가격은 오히려 오르죠.",
-        "singleTermCountDict": {
-          "부동": 2,
-          "정책": 1,
-          "가격": 1
-        },
-        "compoundTermCountDict": {
-          "부동산 정책실패": 2
-        },
+        "singleTermCountDict": { "부동": 2, "정책": 1, "가격": 1 },
+        "compoundTermCountDict": { "부동산 정책실패": 2 },
         "sentiment": 0,
         "time": "00:07:20"
       },
       {
         "sentence": "대북지원은 강화하겠다고 했는데 오히려 미사일은 날아오죠.",
-        "singleTermCountDict": {
-          "대북": 1,
-          "지원": 1,
-          "강화": 1,
-          "미사일": 1
-        },
-        "compoundTermCountDict": {
-          "대북지원 실패": 1,
-          "북 미사일": 1
-        },
+        "singleTermCountDict": { "대북": 1, "지원": 1, "강화": 1, "미사일": 1 },
+        "compoundTermCountDict": { "대북지원 실패": 1, "북 미사일": 1 },
         "sentiment": -0.5,
         "time": "00:07:25"
       },
@@ -1080,17 +853,7 @@
           "의심": 1,
           "계제": 1
         },
-        "compoundTermCountDict": {
-          "마찬가지": 1,
-          "모병": 1,
-          "의도": 1,
-          "현실": 1,
-          "해법": 1,
-          "제시": 1,
-          "악의": 1,
-          "의심": 1,
-          "계제": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:07:27"
       },
@@ -1128,14 +891,8 @@
       },
       {
         "sentence": "그러니까 저는 줄여놓고 저희한테 늘릴 거냐고 물어보는 건 저지르고 나서 왜 항상 대안은 야당에게 내놓으라고 합니까?",
-        "singleTermCountDict": {
-          "대안": 1,
-          "야당": 1
-        },
-        "compoundTermCountDict": {
-          "대안": 1,
-          "야당": 1
-        },
+        "singleTermCountDict": { "대안": 1, "야당": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.699999988079071,
         "time": "00:07:58"
       },
@@ -1151,40 +908,21 @@
           "공식": 1,
           "견해": 1
         },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "민주": 1,
-          "연구": 2,
-          "보고": 1,
-          "내용": 1,
-          "의견": 1,
-          "공식": 1,
-          "견해": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:08:06"
       },
       {
         "sentence": "이게 얼마나 비겁한 여당의 정책제안입니까?",
-        "singleTermCountDict": {
-          "여당": 1,
-          "정책": 1,
-          "제안": 1
-        },
-        "compoundTermCountDict": {
-          "비겁한 여당": 1
-        },
+        "singleTermCountDict": { "여당": 1, "정책": 1, "제안": 1 },
+        "compoundTermCountDict": { "비겁한 여당": 1 },
         "sentiment": 0,
         "time": "00:08:14"
       },
       {
         "sentence": "저는 좀 더 연구해서 내놨으면 좋겠습니다.",
-        "singleTermCountDict": {
-          "연구": 1
-        },
-        "compoundTermCountDict": {
-          "정책수정 필요": 1
-        },
+        "singleTermCountDict": { "연구": 1 },
+        "compoundTermCountDict": { "정책수정 필요": 1 },
         "sentiment": 0,
         "time": "00:08:17"
       }
@@ -1199,12 +937,7 @@
     "sentenceObjects": [
       {
         "sentence": "지금 정책 제언이다 라고 얘기했는데 보고서에서는 뭐 이게 공식적인.",
-        "singleTermCountDict": {
-          "정책": 1,
-          "제언": 1,
-          "보고": 1,
-          "공식": 1
-        },
+        "singleTermCountDict": { "정책": 1, "제언": 1, "보고": 1, "공식": 1 },
         "compoundTermCountDict": {
           "정책제언": 1
         },
@@ -1222,14 +955,8 @@
     "sentenceObjects": [
       {
         "sentence": "개인의견이라고 돼 있어요.",
-        "singleTermCountDict": {
-          "개인": 1,
-          "의견": 1
-        },
-        "compoundTermCountDict": {
-          "개인": 1,
-          "의견": 1
-        },
+        "singleTermCountDict": { "개인": 1, "의견": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:08:21"
       }
@@ -1244,13 +971,8 @@
     "sentenceObjects": [
       {
         "sentence": "개인의견이라고 돼 있긴 한데 이게 사실은 지금 왜 가지고 나오느냐 라고 얘기가 많습니다.",
-        "singleTermCountDict": {
-          "개인": 1,
-          "의견": 1
-        },
-        "compoundTermCountDict": {
-          "개인의견": 1
-        },
+        "singleTermCountDict": { "개인": 1, "의견": 1 },
+        "compoundTermCountDict": { "개인의견": 1 },
         "sentiment": -0.5,
         "time": "00:08:24"
       },
@@ -1282,25 +1004,15 @@
       },
       {
         "sentence": "여야를 가리지 않고 됐었습니다.",
-        "singleTermCountDict": {
-          "여야": 1
-        },
-        "compoundTermCountDict": {
-          "여야": 1
-        },
+        "singleTermCountDict": { "여야": 1 },
+        "compoundTermCountDict": { "여야": 1 },
         "sentiment": 0,
         "time": "00:08:39"
       },
       {
         "sentence": "진보 보수를 가리지 않고.",
-        "singleTermCountDict": {
-          "진보": 1,
-          "보수": 1
-        },
-        "compoundTermCountDict": {
-          "진보": 1,
-          "보수": 1
-        },
+        "singleTermCountDict": { "진보": 1, "보수": 1 },
+        "compoundTermCountDict": { "진보": 1, "보수": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:08:40"
       },
@@ -1344,14 +1056,8 @@
       },
       {
         "sentence": "이게 결국엔 선거용이었기 때문 아니냐라는 의심이 그래서 나오는 건데 어떻게 생각하십니까?",
-        "singleTermCountDict": {
-          "선거": 1,
-          "의심": 1
-        },
-        "compoundTermCountDict": {
-          "선거": 1,
-          "의심": 1
-        },
+        "singleTermCountDict": { "선거": 1, "의심": 1 },
+        "compoundTermCountDict": { "선거": 1, "의심": 1 },
         "sentiment": -0.4000000059604645,
         "time": "00:08:54"
       }
@@ -1366,13 +1072,8 @@
     "sentenceObjects": [
       {
         "sentence": "그 얘기는 당사자가 민주당인 것 같습니다.",
-        "singleTermCountDict": {
-          "당사": 1,
-          "민주당": 1
-        },
-        "compoundTermCountDict": {
-          "총선용이 아닌 모병제": 1
-        },
+        "singleTermCountDict": { "당사": 1, "민주당": 1 },
+        "compoundTermCountDict": { "총선용이 아닌 모병제": 1 },
         "sentiment": 0,
         "time": "00:09:03"
       }
@@ -1405,51 +1106,29 @@
       },
       {
         "sentence": "이미 박근혜 정부에서도 18개월 공약하지 않았습니까?",
-        "singleTermCountDict": {
-          "박근혜": 1,
-          "정부": 1,
-          "공약": 1
-        },
-        "compoundTermCountDict": {
-          "박근혜 복무단축공약": 1
-        },
+        "singleTermCountDict": { "박근혜": 1, "정부": 1, "공약": 1 },
+        "compoundTermCountDict": { "박근혜 복무단축공약": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:09:10"
       },
       {
         "sentence": "하지만 공약을 지키지 않았습니다.",
-        "singleTermCountDict": {
-          "공약": 1
-        },
-        "compoundTermCountDict": {
-          "박근혜 공약미이행": 1
-        },
+        "singleTermCountDict": { "공약": 1 },
+        "compoundTermCountDict": { "박근혜 공약미이행": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:09:13"
       },
       {
         "sentence": "그 정부는.",
-        "singleTermCountDict": {
-          "정부": 1
-        },
-        "compoundTermCountDict": {
-          "정부": 1
-        },
+        "singleTermCountDict": { "정부": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:09:14"
       },
       {
         "sentence": "그리고 또 김관진 전 국방부 장관이시죠.",
-        "singleTermCountDict": {
-          "김관진": 1,
-          "국방": 1,
-          "장관": 1
-        },
-        "compoundTermCountDict": {
-          "김관진": 1,
-          "국방": 1,
-          "장관": 1
-        },
+        "singleTermCountDict": { "김관진": 1, "국방": 1, "장관": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:09:15"
       },
@@ -1465,9 +1144,7 @@
           "이야기": 1,
           "나라": 1
         },
-        "compoundTermCountDict": {
-          "군인수 25만 적정": 2
-        },
+        "compoundTermCountDict": { "군인수 25만 적정": 2 },
         "sentiment": 0,
         "time": "00:09:19"
       },
@@ -1507,12 +1184,8 @@
     "sentenceObjects": [
       {
         "sentence": "이건 짧게 반박하고 가자면요.",
-        "singleTermCountDict": {
-          "반박": 1
-        },
-        "compoundTermCountDict": {
-          "반박": 1
-        },
+        "singleTermCountDict": { "반박": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:09:47"
       },
@@ -1584,12 +1257,7 @@
       },
       {
         "sentence": "저는 오히려 그런 유연성이 좋다고 보는 것이지 지금 와서 박근혜 정부의 공약으로 돌아가라, 그게 잘못된 공약인 걸 박근혜 정부는 알아채기라도 했던 것이죠.",
-        "singleTermCountDict": {
-          "유연": 1,
-          "박근혜": 2,
-          "정부": 2,
-          "공약": 2
-        },
+        "singleTermCountDict": { "유연": 1, "박근혜": 2, "정부": 2, "공약": 2 },
         "compoundTermCountDict": {
           "박근혜 복무단축공약": 2,
           "공약 문제": 2
@@ -1599,13 +1267,8 @@
       },
       {
         "sentence": "그런데 문재인 정부는 밀어붙였잖아요.",
-        "singleTermCountDict": {
-          "문재인": 1,
-          "정부": 1
-        },
-        "compoundTermCountDict": {
-          "문재인 정부 정책실패": 1
-        },
+        "singleTermCountDict": { "문재인": 1, "정부": 1 },
+        "compoundTermCountDict": { "문재인 정부 정책실패": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:10:30"
       }
@@ -1627,16 +1290,8 @@
       },
       {
         "sentence": "지금 하실 말씀 있으시면 김종대 의원님 짧게 부탁드릴게요.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1,
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1, "부탁": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1, "부탁": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:10:32"
       }
@@ -1651,14 +1306,8 @@
     "sentenceObjects": [
       {
         "sentence": "지금 이 문제에서 저도 정치인입니다만 저는 정말 정치얘기 뺐으면 합니다.",
-        "singleTermCountDict": {
-          "문제": 1,
-          "정치": 2
-        },
-        "compoundTermCountDict": {
-          "문제": 1,
-          "정치": 2
-        },
+        "singleTermCountDict": { "문제": 1, "정치": 2 },
+        "compoundTermCountDict": { "문제": 1, "정치": 2 },
         "sentiment": -0.30000001192092896,
         "time": "00:10:36"
       },
@@ -1691,15 +1340,8 @@
       },
       {
         "sentence": "이렇기 때문에 이것을 정치적 프레임에 갇혀서 우리가 얘기할 수가 없고 이 논의를 해방시키자, 뭐냐 하면 지금은 이 논의를 얘기할 적기가 됐기 때문입니다.",
-        "singleTermCountDict": {
-          "프레임": 1,
-          "논의": 2,
-          "해방": 1,
-          "적기": 1
-        },
-        "compoundTermCountDict": {
-          "국방개혁 정치프레임 불필요": 8
-        },
+        "singleTermCountDict": { "프레임": 1, "논의": 2, "해방": 1, "적기": 1 },
+        "compoundTermCountDict": { "국방개혁 정치프레임 불필요": 8 },
         "sentiment": -0.699999988079071,
         "time": "00:11:00"
       },
@@ -1713,50 +1355,28 @@
           "개혁": 1,
           "완료": 1
         },
-        "compoundTermCountDict": {
-          "나라": 1,
-          "남자": 1,
-          "인구": 1,
-          "국방": 1,
-          "개혁": 1,
-          "완료": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:11:10"
       },
       {
         "sentence": "청년인구가 1/3이 줄어드는 겁니다.",
-        "singleTermCountDict": {
-          "청년": 1,
-          "인구": 1
-        },
-        "compoundTermCountDict": {
-          "청년인구 감소": 20
-        },
+        "singleTermCountDict": { "청년": 1, "인구": 1 },
+        "compoundTermCountDict": { "청년인구 감소": 20 },
         "sentiment": -0.20000000298023224,
         "time": "00:11:22"
       },
       {
         "sentence": "그러다가 이게 2025년이 되면 21만 명, 22만 명 수준을 유지하다가 2030년이 되면 17만 명이에요.",
-        "singleTermCountDict": {
-          "수준": 1,
-          "유지": 1
-        },
-        "compoundTermCountDict": {
-          "수준": 1,
-          "유지": 1
-        },
+        "singleTermCountDict": { "수준": 1, "유지": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:11:24"
       },
       {
         "sentence": "반토막 나는 겁니다.",
-        "singleTermCountDict": {
-          "토막": 1
-        },
-        "compoundTermCountDict": {
-          "10년 후 군인수 반토막": 1
-        },
+        "singleTermCountDict": { "토막": 1 },
+        "compoundTermCountDict": { "10년 후 군인수 반토막": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:11:33"
       },
@@ -1797,13 +1417,8 @@
       },
       {
         "sentence": "사실 지금 징병제는 귀퉁이부터 무너져 내리고 있습니다.",
-        "singleTermCountDict": {
-          "징병": 1,
-          "귀퉁이": 1
-        },
-        "compoundTermCountDict": {
-          "징병제 붕괴": 1
-        },
+        "singleTermCountDict": { "징병": 1, "귀퉁이": 1 },
+        "compoundTermCountDict": { "징병제 붕괴": 1 },
         "sentiment": 0,
         "time": "00:11:47"
       },
@@ -1869,14 +1484,8 @@
       },
       {
         "sentence": "그러면 물경 얼마입니까?",
-        "singleTermCountDict": {
-          "물경": 1,
-          "얼마": 1
-        },
-        "compoundTermCountDict": {
-          "물경": 1,
-          "얼마": 1
-        },
+        "singleTermCountDict": { "물경": 1, "얼마": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:12:16"
       },
@@ -1889,13 +1498,8 @@
       },
       {
         "sentence": "입실환자 또 많습니다.",
-        "singleTermCountDict": {
-          "입실": 1,
-          "환자": 1
-        },
-        "compoundTermCountDict": {
-          "입실환자 증가": 1
-        },
+        "singleTermCountDict": { "입실": 1, "환자": 1 },
+        "compoundTermCountDict": { "입실환자 증가": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:12:19"
       },
@@ -1939,23 +1543,15 @@
       },
       {
         "sentence": "더 큰 충격을 받기 전에.",
-        "singleTermCountDict": {
-          "충격": 1
-        },
-        "compoundTermCountDict": {
-          "충격": 1
-        },
+        "singleTermCountDict": { "충격": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:12:41"
       },
       {
         "sentence": "이게 엄중한 경고라고 저는 생각합니다.",
-        "singleTermCountDict": {
-          "경고": 1
-        },
-        "compoundTermCountDict": {
-          "경고": 1
-        },
+        "singleTermCountDict": { "경고": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:12:43"
       }
@@ -2020,24 +1616,15 @@
     "sentenceObjects": [
       {
         "sentence": "그 부분을 이야기해보려고 하는데요.",
-        "singleTermCountDict": {
-          "이야기": 1
-        },
-        "compoundTermCountDict": {
-          "이야기": 1
-        },
+        "singleTermCountDict": { "이야기": 1 },
+        "compoundTermCountDict": { "이야기": 1 },
         "sentiment": 0,
         "time": "00:13:07"
       },
       {
         "sentence": "지금 인구절벽이란 얘기하고 있지 않습니까?",
-        "singleTermCountDict": {
-          "인구": 1,
-          "절벽": 1
-        },
-        "compoundTermCountDict": {
-          "인구절벽": 10
-        },
+        "singleTermCountDict": { "인구": 1, "절벽": 1 },
+        "compoundTermCountDict": { "인구절벽": 10 },
         "sentiment": -0.20000000298023224,
         "time": "00:13:08"
       },
@@ -2115,18 +1702,8 @@
       },
       {
         "sentence": "집권할 때는 모든 것을 해결한다 하다가 2년 반쯤 지났는데 그건 도저히 해결 못하겠다 그러면 기정사실화 하고 거기에 따른 대책이 이거다, 이건 좀 그렇고요.",
-        "singleTermCountDict": {
-          "집권": 1,
-          "해결": 2,
-          "기정": 1,
-          "대책": 1
-        },
-        "compoundTermCountDict": {
-          "집권": 1,
-          "해결": 2,
-          "기정": 1,
-          "대책": 1
-        },
+        "singleTermCountDict": { "집권": 1, "해결": 2, "기정": 1, "대책": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:13:37"
       },
@@ -2154,51 +1731,29 @@
       },
       {
         "sentence": "왜 많은 군대를 갖느냐하면 위협이 크기 때문입니다.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "위협": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "위협": 1
-        },
+        "singleTermCountDict": { "군대": 1, "위협": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.800000011920929,
         "time": "00:14:14"
       },
       {
         "sentence": "우리가 옛날에는 3년까지 근무했지 않습니까?",
-        "singleTermCountDict": {
-          "옛날": 1,
-          "근무": 1
-        },
-        "compoundTermCountDict": {
-          "옛날": 1,
-          "근무": 1
-        },
+        "singleTermCountDict": { "옛날": 1, "근무": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:14:17"
       },
       {
         "sentence": "왜 3년 근무 했습니까?",
-        "singleTermCountDict": {
-          "근무": 1
-        },
-        "compoundTermCountDict": {
-          "근무": 1
-        },
+        "singleTermCountDict": { "근무": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:14:20"
       },
       {
         "sentence": "우리가 뭐 학생들 노는 게 싫어서 군대 보낸 거 아니지 않습니까?",
-        "singleTermCountDict": {
-          "학생": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "학생": 1,
-          "군대": 1
-        },
+        "singleTermCountDict": { "학생": 1, "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:14:21"
       },
@@ -2240,21 +1795,7 @@
           "정치": 1,
           "제안": 1
         },
-        "compoundTermCountDict": {
-          "더불어민주당": 1,
-          "민주": 1,
-          "연구": 2,
-          "총선": 4,
-          "얼마": 1,
-          "김종대": 1,
-          "의원": 1,
-          "민주당": 1,
-          "정권": 1,
-          "당장": 1,
-          "문제": 2,
-          "정치": 1,
-          "제안": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:14:45"
       },
@@ -2267,13 +1808,8 @@
       },
       {
         "sentence": "그 사람들이 충분한 정책적 검토를 갖고 했습니까?",
-        "singleTermCountDict": {
-          "사람": 1,
-          "검토": 1
-        },
-        "compoundTermCountDict": {
-          "미비한 군정책검토": 10
-        },
+        "singleTermCountDict": { "사람": 1, "검토": 1 },
+        "compoundTermCountDict": { "미비한 군정책검토": 10 },
         "sentiment": -0.10000000149011612,
         "time": "00:15:11"
       },
@@ -2287,26 +1823,14 @@
           "도움": 1,
           "계산": 1
         },
-        "compoundTermCountDict": {
-          "대책없는 총선용 모병제": 16
-        },
+        "compoundTermCountDict": { "대책없는 총선용 모병제": 16 },
         "sentiment": -0.10000000149011612,
         "time": "00:15:14"
       },
       {
         "sentence": "이제는 오늘 토론하려면 정치적인 그걸 좀 획득하려고 한 건 사실이다, 그렇지만 이건 해야 되겠다, 이건 좀 선행돼야 된다고 생각합니다.",
-        "singleTermCountDict": {
-          "토론": 1,
-          "정치": 1,
-          "획득": 1,
-          "선행": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1,
-          "정치": 1,
-          "획득": 1,
-          "선행": 1
-        },
+        "singleTermCountDict": { "토론": 1, "정치": 1, "획득": 1, "선행": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:15:24"
       }
@@ -2344,36 +1868,22 @@
     "sentenceObjects": [
       {
         "sentence": "박 교수님이 제 얘기를 똑같이 하신 거예요.",
-        "singleTermCountDict": {
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "교수": 1
-        },
+        "singleTermCountDict": { "교수": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:15:33"
       },
       {
         "sentence": "제가 전적으로 찬성이에요.",
-        "singleTermCountDict": {
-          "전적": 1,
-          "찬성": 1
-        },
-        "compoundTermCountDict": {
-          "전적": 1,
-          "찬성": 1
-        },
+        "singleTermCountDict": { "전적": 1, "찬성": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:15:36"
       },
       {
         "sentence": "오늘 토론은 그래야 됩니다.",
-        "singleTermCountDict": {
-          "토론": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1
-        },
+        "singleTermCountDict": { "토론": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:15:37"
       }
@@ -2388,25 +1898,15 @@
     "sentenceObjects": [
       {
         "sentence": "박 교수님께서 갈 길이 멉니다.",
-        "singleTermCountDict": {
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "교수": 1
-        },
+        "singleTermCountDict": { "교수": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:15:39"
       },
       {
         "sentence": "토론할 게 많으니까 조금 진정하셔도 될 것 같고요.",
-        "singleTermCountDict": {
-          "토론": 1,
-          "진정": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1,
-          "진정": 1
-        },
+        "singleTermCountDict": { "토론": 1, "진정": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:15:41"
       },
@@ -2441,6 +1941,7 @@
         },
         "compoundTermCountDict": {
           "인구절벽": 2,
+
           "청년인구": 1
         },
         "sentiment": 0,
@@ -2473,12 +1974,8 @@
     "sentenceObjects": [
       {
         "sentence": "짧게 부탁드리겠습니다.",
-        "singleTermCountDict": {
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "부탁": 1
-        },
+        "singleTermCountDict": { "부탁": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:16:03"
       }
@@ -2493,14 +1990,8 @@
     "sentenceObjects": [
       {
         "sentence": "자, 50만 군대 유지가 불가능합니다.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "유지": 1,
-          "불가능": 1
-        },
-        "compoundTermCountDict": {
-          "50만군 유지불가": 15
-        },
+        "singleTermCountDict": { "군대": 1, "유지": 1, "불가능": 1 },
+        "compoundTermCountDict": { "50만군 유지불가": 15 },
         "sentiment": -0.6000000238418579,
         "time": "00:16:05"
       },
@@ -2513,24 +2004,13 @@
           "군대": 1,
           "유지": 1
         },
-        "compoundTermCountDict": {
-          "현행": 1,
-          "복무": 1,
-          "기간": 1,
-          "군대": 1,
-          "유지": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:16:07"
       },
       {
         "sentence": "현재 2022년까지 50만을 하겠다는 얘기지 국방부가 그 이후에는 어떻게 할 거냐 새로운 국방개혁안 준비해야 된다 그랬어요.",
-        "singleTermCountDict": {
-          "국방": 2,
-          "이후": 1,
-          "개혁": 1,
-          "준비": 1
-        },
+        "singleTermCountDict": { "국방": 2, "이후": 1, "개혁": 1, "준비": 1 },
         "compoundTermCountDict": {
           "국방개혁안 준비": 1
         },
@@ -2539,25 +2019,15 @@
       },
       {
         "sentence": "이거 다 인정하는 사실입니다.",
-        "singleTermCountDict": {
-          "인정": 1
-        },
-        "compoundTermCountDict": {
-          "인정": 1
-        },
+        "singleTermCountDict": { "인정": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:16:22"
       },
       {
         "sentence": "자, 그렇다면 일단은 병력 수요 자체가 확 줄어드는 것 아닙니까?",
-        "singleTermCountDict": {
-          "병력": 1,
-          "수요": 1,
-          "자체": 1
-        },
-        "compoundTermCountDict": {
-          "병력수요 감소": 1
-        },
+        "singleTermCountDict": { "병력": 1, "수요": 1, "자체": 1 },
+        "compoundTermCountDict": { "병력수요 감소": 1 },
         "sentiment": 0,
         "time": "00:16:24"
       },
@@ -2578,48 +2048,29 @@
       },
       {
         "sentence": "지금 이제 전쟁 양상이 무인화 되고 있어요.",
-        "singleTermCountDict": {
-          "전쟁": 1,
-          "양상": 1,
-          "무인": 1
-        },
-        "compoundTermCountDict": {
-          "전쟁양상 무인화": 16
-        },
+        "singleTermCountDict": { "전쟁": 1, "양상": 1, "무인": 1 },
+        "compoundTermCountDict": { "전쟁양상 무인화": 16 },
         "sentiment": 0.5,
         "time": "00:16:38"
       },
       {
         "sentence": "드론봇이 생겨나고 있습니다.",
-        "singleTermCountDict": {
-          "드론봇": 1
-        },
-        "compoundTermCountDict": {
-          "드론봇 운용": 1
-        },
+        "singleTermCountDict": { "드론봇": 1 },
+        "compoundTermCountDict": { "드론봇 운용": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:16:41"
       },
       {
         "sentence": "워리어 플랫폼이 생겨나고 있습니다.",
-        "singleTermCountDict": {
-          "워리어": 1,
-          "플랫폼": 1
-        },
-        "compoundTermCountDict": {
-          "워리어 플랫폼": 1
-        },
+        "singleTermCountDict": { "워리어": 1, "플랫폼": 1 },
+        "compoundTermCountDict": { "워리어 플랫폼": 1 },
         "sentiment": 0.4000000059604645,
         "time": "00:16:42"
       },
       {
         "sentence": "아미타이거가 생겨나고 있습니다.",
-        "singleTermCountDict": {
-          "아미타이거": 1
-        },
-        "compoundTermCountDict": {
-          "아미타이거": 1
-        },
+        "singleTermCountDict": { "아미타이거": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:16:45"
       },
@@ -2803,12 +2254,8 @@
       },
       {
         "sentence": "그런데 이 안을 보면서 저희가 가끔 식당에 가 보면 이런 분들 있어요.",
-        "singleTermCountDict": {
-          "식당": 1
-        },
-        "compoundTermCountDict": {
-          "식당": 1
-        },
+        "singleTermCountDict": { "식당": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:17:54"
       },
@@ -2824,29 +2271,14 @@
           "제로": 1,
           "콜라": 1
         },
-        "compoundTermCountDict": {
-          "체중": 1,
-          "감량": 1,
-          "관심": 1,
-          "고기": 1,
-          "패티": 1,
-          "햄버거": 1,
-          "제로": 1,
-          "콜라": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:17:59"
       },
       {
         "sentence": "이러면 전체적인 균형을 봤을 때 그래도 살이 찔 것 같거든요.",
-        "singleTermCountDict": {
-          "전체": 1,
-          "균형": 1
-        },
-        "compoundTermCountDict": {
-          "전체": 1,
-          "균형": 1
-        },
+        "singleTermCountDict": { "전체": 1, "균형": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:18:06"
       },
@@ -2873,6 +2305,7 @@
           "대전": 1,
           "동서": 1,
           "갈등": 1,
+
           "감군": 1,
           "방식": 2,
           "선택": 1,
@@ -2905,14 +2338,8 @@
       },
       {
         "sentence": "첫째로는 자주국방이란 단어가 있어요.",
-        "singleTermCountDict": {
-          "자주": 1,
-          "국방": 1,
-          "단어": 1
-        },
-        "compoundTermCountDict": {
-          "자주국방": 1
-        },
+        "singleTermCountDict": { "자주": 1, "국방": 1, "단어": 1 },
+        "compoundTermCountDict": { "자주국방": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:18:37"
       },
@@ -3002,12 +2429,8 @@
     "sentenceObjects": [
       {
         "sentence": "그건 산술적으로, 제가 한 말씀만.",
-        "singleTermCountDict": {
-          "산술": 1
-        },
-        "compoundTermCountDict": {
-          "산술": 1
-        },
+        "singleTermCountDict": { "산술": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:19:02"
       }
@@ -3022,14 +2445,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 의원부터 말씀 들어보도록 하죠.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "의원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:19:05"
       }
@@ -3084,38 +2501,22 @@
       },
       {
         "sentence": "그렇기 때문에 전쟁은 사람이 하는 시대는 끝났습니다.",
-        "singleTermCountDict": {
-          "전쟁": 1,
-          "사람": 1,
-          "시대": 1
-        },
-        "compoundTermCountDict": {
-          "군대 기계화": 1
-        },
+        "singleTermCountDict": { "전쟁": 1, "사람": 1, "시대": 1 },
+        "compoundTermCountDict": { "군대 기계화": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:19:53"
       },
       {
         "sentence": "무기가 하는 것이죠.",
-        "singleTermCountDict": {
-          "무기": 1
-        },
-        "compoundTermCountDict": {
-          "무기": 1
-        },
+        "singleTermCountDict": { "무기": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:19:55"
       },
       {
         "sentence": "소총 들고 하는 것이 아니라 전투기와 결국 탱크가 하는 것이거든요.",
-        "singleTermCountDict": {
-          "소총": 1,
-          "전투": 1,
-          "탱크": 1
-        },
-        "compoundTermCountDict": {
-          "군대 기계화": 1
-        },
+        "singleTermCountDict": { "소총": 1, "전투": 1, "탱크": 1 },
+        "compoundTermCountDict": { "군대 기계화": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:19:56"
       },
@@ -3132,12 +2533,8 @@
       },
       {
         "sentence": "예산도 안 되고요.",
-        "singleTermCountDict": {
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "예산문제": 1
-        },
+        "singleTermCountDict": { "예산": 1 },
+        "compoundTermCountDict": { "예산문제": 1 },
         "sentiment": -0.800000011920929,
         "time": "00:20:11"
       },
@@ -3188,14 +2585,8 @@
       },
       {
         "sentence": "그런데 우려가 되는 건 생화학무기입니다.",
-        "singleTermCountDict": {
-          "우려": 1,
-          "화학": 1,
-          "무기": 1
-        },
-        "compoundTermCountDict": {
-          "생화학무기": 1
-        },
+        "singleTermCountDict": { "우려": 1, "화학": 1, "무기": 1 },
+        "compoundTermCountDict": { "생화학무기": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:20:32"
       },
@@ -3219,16 +2610,8 @@
       },
       {
         "sentence": "예를 들면 생화학 무기 하나라도 터진다고 하면 MOPP 5단계 하고 KD1 할 겁니다.",
-        "singleTermCountDict": {
-          "화학": 1,
-          "무기": 1,
-          "단계": 1
-        },
-        "compoundTermCountDict": {
-          "화학": 1,
-          "무기": 1,
-          "단계": 1
-        },
+        "singleTermCountDict": { "화학": 1, "무기": 1, "단계": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:20:41"
       },
@@ -3244,30 +2627,14 @@
           "화학": 1,
           "무기": 1
         },
-        "compoundTermCountDict": {
-          "판초우": 1,
-          "제독": 1,
-          "가능": 1,
-          "대한민국": 1,
-          "청년": 1,
-          "병사": 1,
-          "화학": 1,
-          "무기": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:20:47"
       },
       {
         "sentence": "그런 병사 만들지 말고 제대로 보호 장비 갖춰서 제대로 싸워서 할 수 있게 하자는 게 바로 모병제입니다.",
-        "singleTermCountDict": {
-          "병사": 1,
-          "보호": 1,
-          "장비": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "체계화된 모병제": 1
-        },
+        "singleTermCountDict": { "병사": 1, "보호": 1, "장비": 1, "모병": 1 },
+        "compoundTermCountDict": { "체계화된 모병제": 1 },
         "sentiment": -0.4000000059604645,
         "time": "00:20:55"
       }
@@ -3282,13 +2649,8 @@
     "sentenceObjects": [
       {
         "sentence": "지금 인력 확충 얘기가 나와서 조금 짚고 가야 될 것 같은데요.",
-        "singleTermCountDict": {
-          "인력": 1,
-          "확충": 1
-        },
-        "compoundTermCountDict": {
-          "인력확충": 1
-        },
+        "singleTermCountDict": { "인력": 1, "확충": 1 },
+        "compoundTermCountDict": { "인력확충": 1 },
         "sentiment": 0,
         "time": "00:21:01"
       }
@@ -3333,15 +2695,8 @@
       },
       {
         "sentence": "징병제로 모인 사람이 더 가스에 취약합니까?",
-        "singleTermCountDict": {
-          "징병": 1,
-          "사람": 1,
-          "가스": 1,
-          "취약": 1
-        },
-        "compoundTermCountDict": {
-          "징병제": 1
-        },
+        "singleTermCountDict": { "징병": 1, "사람": 1, "가스": 1, "취약": 1 },
+        "compoundTermCountDict": { "징병제": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:21:23"
       }
@@ -3356,54 +2711,29 @@
     "sentenceObjects": [
       {
         "sentence": "아니 정부가 감군을 하려고 하는 게 아니고요.",
-        "singleTermCountDict": {
-          "정부": 1,
-          "감군": 1
-        },
-        "compoundTermCountDict": {
-          "정부주도 감군": 1
-        },
+        "singleTermCountDict": { "정부": 1, "감군": 1 },
+        "compoundTermCountDict": { "정부주도 감군": 1 },
         "sentiment": -0.699999988079071,
         "time": "00:21:26"
       },
       {
         "sentence": "병력을 유지하는 것 자체가 안 되고요.",
-        "singleTermCountDict": {
-          "병력": 1,
-          "유지": 1,
-          "자체": 1
-        },
-        "compoundTermCountDict": {
-          "병력유지불가": 7
-        },
+        "singleTermCountDict": { "병력": 1, "유지": 1, "자체": 1 },
+        "compoundTermCountDict": { "병력유지불가": 7 },
         "sentiment": -0.800000011920929,
         "time": "00:21:28"
       },
       {
         "sentence": "그 병력을 유지하는 상태로 정예화 하면 좋겠죠.",
-        "singleTermCountDict": {
-          "병력": 1,
-          "유지": 1,
-          "상태": 1,
-          "정예": 1
-        },
-        "compoundTermCountDict": {
-          "병력유지": 1
-        },
+        "singleTermCountDict": { "병력": 1, "유지": 1, "상태": 1, "정예": 1 },
+        "compoundTermCountDict": { "병력유지": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:21:30"
       },
       {
         "sentence": "그런데 정예화 할 수 없기 때문에 감축과정에서 정예화 하자, 이렇게 논리가 되는 거죠.",
-        "singleTermCountDict": {
-          "정예": 2,
-          "감축": 1,
-          "과정": 1,
-          "논리": 1
-        },
-        "compoundTermCountDict": {
-          "감축을 통한 군 정예화": 14
-        },
+        "singleTermCountDict": { "정예": 2, "감축": 1, "과정": 1, "논리": 1 },
+        "compoundTermCountDict": { "감축을 통한 군 정예화": 14 },
         "sentiment": -0.30000001192092896,
         "time": "00:21:32"
       }
@@ -3418,26 +2748,15 @@
     "sentenceObjects": [
       {
         "sentence": "모병제가 되면 질 높은 군대가 된다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "군대": 1
-        },
+        "singleTermCountDict": { "모병": 1, "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:21:39"
       },
       {
         "sentence": "이 부분부터 점검이 필요합니다.",
-        "singleTermCountDict": {
-          "점검": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "모병제 점검필요": 1
-        },
+        "singleTermCountDict": { "점검": 1, "필요": 1 },
+        "compoundTermCountDict": { "모병제 점검필요": 1 },
         "sentiment": -0.6000000238418579,
         "time": "00:21:43"
       },
@@ -3487,43 +2806,21 @@
           "근무": 1,
           "군대": 1
         },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "사람": 2,
-          "나라": 1,
-          "판교": 1,
-          "산업": 1,
-          "근무": 1,
-          "군대": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:22:06"
       },
       {
         "sentence": "사실은 그게 전부 다 이번에 모병제 나오면서 젊은이들 군대 안 가도 되겠다, 왜냐하면 다른 사람이 가니까.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "젊은이": 1,
-          "군대": 1,
-          "사람": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "젊은이": 1,
-          "군대": 1,
-          "사람": 1
-        },
+        "singleTermCountDict": { "모병": 1, "젊은이": 1, "군대": 1, "사람": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:22:18"
       },
       {
         "sentence": "그런데 그 다른 사람이 결국 그중에 한 사람이라는 거죠.",
-        "singleTermCountDict": {
-          "사람": 2
-        },
-        "compoundTermCountDict": {
-          "사람": 2
-        },
+        "singleTermCountDict": { "사람": 2 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:22:26"
       },
@@ -3544,67 +2841,36 @@
       },
       {
         "sentence": "우리가 앞으로 20년을 노력해도 현재 미군 따라가기 어렵습니다.",
-        "singleTermCountDict": {
-          "노력": 1,
-          "미군": 1
-        },
-        "compoundTermCountDict": {
-          "미군": 1
-        },
+        "singleTermCountDict": { "노력": 1, "미군": 1 },
+        "compoundTermCountDict": { "미군": 1 },
         "sentiment": 0,
         "time": "00:22:41"
       },
       {
         "sentence": "그런데 미국이 완전 로봇 군대가 됐습니까?",
-        "singleTermCountDict": {
-          "미국": 1,
-          "완전": 1,
-          "로봇": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "미군": 1,
-          "스마트군대": 1
-        },
+        "singleTermCountDict": { "미국": 1, "완전": 1, "로봇": 1, "군대": 1 },
+        "compoundTermCountDict": { "미군": 1, "스마트군대": 1 },
         "sentiment": 0,
         "time": "00:22:45"
       },
       {
         "sentence": "미군도 지금 숫자가 중요합니다.",
-        "singleTermCountDict": {
-          "미군": 1,
-          "숫자": 1,
-          "중요": 1
-        },
-        "compoundTermCountDict": {
-          "군 숫자 중요": 5
-        },
+        "singleTermCountDict": { "미군": 1, "숫자": 1, "중요": 1 },
+        "compoundTermCountDict": { "군 숫자 중요": 5 },
         "sentiment": 0.30000001192092896,
         "time": "00:22:47"
       },
       {
         "sentence": "사실은 우리와 같은 산악지역에서는 숫자를 무시할 수가 없습니다.",
-        "singleTermCountDict": {
-          "산악": 1,
-          "지역": 1,
-          "숫자": 1,
-          "무시": 1
-        },
-        "compoundTermCountDict": {
-          "산악지역": 1
-        },
+        "singleTermCountDict": { "산악": 1, "지역": 1, "숫자": 1, "무시": 1 },
+        "compoundTermCountDict": { "산악지역": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:22:49"
       },
       {
         "sentence": "그리고 아까 이제 그 로봇 군대 된다 그랬는데 좋습니다.",
-        "singleTermCountDict": {
-          "로봇": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "스마트군대": 1
-        },
+        "singleTermCountDict": { "로봇": 1, "군대": 1 },
+        "compoundTermCountDict": { "스마트군대": 1 },
         "sentiment": 0.800000011920929,
         "time": "00:22:53"
       },
@@ -3626,16 +2892,8 @@
       },
       {
         "sentence": "모병제는 미리 그렇게 준비해서 20년 전부터 해나갈 필요가 없습니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "준비": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "준비": 1,
-          "필요": 1
-        },
+        "singleTermCountDict": { "모병": 1, "준비": 1, "필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:23:03"
       },
@@ -3674,16 +2932,8 @@
     "sentenceObjects": [
       {
         "sentence": "박휘락 교수님께서 제가 던지려던 주제를 얘기하셨어요.",
-        "singleTermCountDict": {
-          "박휘락": 1,
-          "교수": 1,
-          "주제": 1
-        },
-        "compoundTermCountDict": {
-          "박휘락": 1,
-          "교수": 1,
-          "주제": 1
-        },
+        "singleTermCountDict": { "박휘락": 1, "교수": 1, "주제": 1 },
+        "compoundTermCountDict": { "박휘락": 1, "교수": 1, "주제": 1 },
         "sentiment": 0,
         "time": "00:23:23"
       },
@@ -3789,25 +3039,14 @@
       },
       {
         "sentence": "소총 필요합니다.",
-        "singleTermCountDict": {
-          "소총": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "소총": 1,
-          "필요": 1
-        },
+        "singleTermCountDict": { "소총": 1, "필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:23:58"
       },
       {
         "sentence": "그런데 원시전쟁은 첨단 전쟁하고 같이 공존하는 거예요.",
-        "singleTermCountDict": {
-          "원시": 1,
-          "전쟁": 2,
-          "첨단": 1,
-          "공존": 1
-        },
+        "singleTermCountDict": { "원시": 1, "전쟁": 2, "첨단": 1, "공존": 1 },
         "compoundTermCountDict": {
           "원시, 첨단전쟁 공존": 3
         },
@@ -3831,15 +3070,8 @@
       },
       {
         "sentence": "미래전쟁 양상에 대해서 정말 묻는다면 모른다가 정답이에요.",
-        "singleTermCountDict": {
-          "미래": 1,
-          "전쟁": 1,
-          "양상": 1,
-          "정답": 1
-        },
-        "compoundTermCountDict": {
-          "미래전쟁 예측불가": 1
-        },
+        "singleTermCountDict": { "미래": 1, "전쟁": 1, "양상": 1, "정답": 1 },
+        "compoundTermCountDict": { "미래전쟁 예측불가": 1 },
         "sentiment": 0.6000000238418579,
         "time": "00:24:08"
       },
@@ -3860,14 +3092,8 @@
       },
       {
         "sentence": "지금 이 감군이냐 모병이냐 이 논의는 같이 가야 됩니다.",
-        "singleTermCountDict": {
-          "감군": 1,
-          "모병": 1,
-          "논의": 1
-        },
-        "compoundTermCountDict": {
-          "감군체제": 1
-        },
+        "singleTermCountDict": { "감군": 1, "모병": 1, "논의": 1 },
+        "compoundTermCountDict": { "감군체제": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:24:19"
       },
@@ -3890,42 +3116,22 @@
       },
       {
         "sentence": "그래서 육군이 응답하는 거예요.",
-        "singleTermCountDict": {
-          "육군": 1,
-          "응답": 1
-        },
-        "compoundTermCountDict": {
-          "육군": 1,
-          "응답": 1
-        },
+        "singleTermCountDict": { "육군": 1, "응답": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:24:33"
       },
       {
         "sentence": "제가 아까 게임체인저들을 쭉 말씀드렸는데 전부 현실화 되고 있는 것들입니다.",
-        "singleTermCountDict": {
-          "게임": 1,
-          "체인저": 1,
-          "현실": 1
-        },
-        "compoundTermCountDict": {
-          "게임": 1,
-          "체인저": 1,
-          "현실": 1
-        },
+        "singleTermCountDict": { "게임": 1, "체인저": 1, "현실": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:24:35"
       },
       {
         "sentence": "그러니까 양과 질은 분리해서 생각할 수 없다, 이 문제를 꼭 말씀드리고 싶고요.",
-        "singleTermCountDict": {
-          "분리": 1,
-          "문제": 1
-        },
-        "compoundTermCountDict": {
-          "분리": 1,
-          "문제": 1
-        },
+        "singleTermCountDict": { "분리": 1, "문제": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:24:40"
       },
@@ -3952,29 +3158,15 @@
       },
       {
         "sentence": "그래서 이미 올해부터 완전 모병제로 전환이 됐고요.",
-        "singleTermCountDict": {
-          "올해": 1,
-          "완전": 1,
-          "모병": 1,
-          "전환": 1
-        },
-        "compoundTermCountDict": {
-          "완전 모병제": 1
-        },
+        "singleTermCountDict": { "올해": 1, "완전": 1, "모병": 1, "전환": 1 },
+        "compoundTermCountDict": { "완전 모병제": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:25:01"
       },
       {
         "sentence": "미국 모병제는 세계에서 가장 성공한 사례입니다.",
-        "singleTermCountDict": {
-          "미국": 1,
-          "세계": 1,
-          "성공": 1,
-          "사례": 1
-        },
-        "compoundTermCountDict": {
-          "미국 모병제": 1
-        },
+        "singleTermCountDict": { "미국": 1, "세계": 1, "성공": 1, "사례": 1 },
+        "compoundTermCountDict": { "미국 모병제": 1 },
         "sentiment": 0.6000000238418579,
         "time": "00:25:04"
       },
@@ -4010,23 +3202,15 @@
       },
       {
         "sentence": "모병제가.",
-        "singleTermCountDict": {
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1
-        },
+        "singleTermCountDict": { "모병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.800000011920929,
         "time": "00:25:31"
       },
       {
         "sentence": "대단히 성공한 거예요.",
-        "singleTermCountDict": {
-          "성공": 1
-        },
-        "compoundTermCountDict": {
-          "성공": 1
-        },
+        "singleTermCountDict": { "성공": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:25:32"
       },
@@ -4047,21 +3231,7 @@
           "시민": 1,
           "연금": 1
         },
-        "compoundTermCountDict": {
-          "흑인": 1,
-          "렘가": 1,
-          "마약": 1,
-          "배달": 1,
-          "범죄": 1,
-          "연루": 1,
-          "군대": 1,
-          "입대": 1,
-          "대학": 1,
-          "자랑": 1,
-          "미국": 1,
-          "시민": 1,
-          "연금": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:25:33"
       },
@@ -4074,13 +3244,7 @@
           "계층": 1,
           "터부": 1
         },
-        "compoundTermCountDict": {
-          "현상": 1,
-          "자체": 1,
-          "사회": 1,
-          "계층": 1,
-          "터부": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:25:46"
       },
@@ -4095,15 +3259,7 @@
           "청년": 1,
           "군대": 1
         },
-        "compoundTermCountDict": {
-          "강남": 1,
-          "타워": 1,
-          "팰리스": 1,
-          "테크": 1,
-          "노파크": 1,
-          "청년": 1,
-          "군대": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:25:55"
       },
@@ -4125,13 +3281,8 @@
       },
       {
         "sentence": "내 꿈을 실현할 수 있는 디딤돌이거든요.",
-        "singleTermCountDict": {
-          "실현": 1,
-          "디딤": 1
-        },
-        "compoundTermCountDict": {
-          "사회적 가치 제공": 12
-        },
+        "singleTermCountDict": { "실현": 1, "디딤": 1 },
+        "compoundTermCountDict": { "사회적 가치 제공": 12 },
         "sentiment": 0.699999988079071,
         "time": "00:26:15"
       }
@@ -4188,14 +3339,8 @@
     "sentenceObjects": [
       {
         "sentence": "이준석 위원장님.",
-        "singleTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "이준석": 1, "위원": 1 },
+        "compoundTermCountDict": { "이준석": 1, "위원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:26:42"
       }
@@ -4210,16 +3355,8 @@
     "sentenceObjects": [
       {
         "sentence": "아까 말씀하신 정예화를 위해서 모병제를 한다는 논리에 맞지 않죠.",
-        "singleTermCountDict": {
-          "정예": 1,
-          "모병": 1,
-          "논리": 1
-        },
-        "compoundTermCountDict": {
-          "정예": 1,
-          "모병": 1,
-          "논리": 1
-        },
+        "singleTermCountDict": { "정예": 1, "모병": 1, "논리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:26:44"
       }
@@ -4254,12 +3391,14 @@
           "교수": 1,
           "이준석": 1,
           "위원": 1,
+
           "진행": 1
         },
         "compoundTermCountDict": {
           "교수": 1,
           "이준석": 1,
           "위원": 1,
+
           "진행": 1
         },
         "sentiment": 0.10000000149011612,
@@ -4341,15 +3480,7 @@
           "지원": 1,
           "문제": 1
         },
-        "compoundTermCountDict": {
-          "나라": 1,
-          "중국": 1,
-          "징병": 1,
-          "제도": 1,
-          "모병": 1,
-          "지원": 1,
-          "문제": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:27:25"
       },
@@ -4380,14 +3511,8 @@
       },
       {
         "sentence": "거의 수치가 동일합니다.",
-        "singleTermCountDict": {
-          "수치": 1,
-          "동일": 1
-        },
-        "compoundTermCountDict": {
-          "수치": 1,
-          "동일": 1
-        },
+        "singleTermCountDict": { "수치": 1, "동일": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:27:42"
       },
@@ -4400,38 +3525,21 @@
           "숫자": 1,
           "호황": 1
         },
-        "compoundTermCountDict": {
-          "미군": 2,
-          "모병": 2,
-          "상황": 1,
-          "숫자": 1,
-          "호황": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:27:44"
       },
       {
         "sentence": "모병 목표치에 1만 명이 미달했어요.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "목표": 1,
-          "미달": 1
-        },
-        "compoundTermCountDict": {
-          "모병 미달": 1
-        },
+        "singleTermCountDict": { "모병": 1, "목표": 1, "미달": 1 },
+        "compoundTermCountDict": { "모병 미달": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:27:54"
       },
       {
         "sentence": "이게 무슨 말이냐 하면 경제적 보상에 따라서 모병치가 달라지는 겁니다.",
-        "singleTermCountDict": {
-          "보상": 1,
-          "모병치": 1
-        },
-        "compoundTermCountDict": {
-          "모병 미달": 1
-        },
+        "singleTermCountDict": { "보상": 1, "모병치": 1 },
+        "compoundTermCountDict": { "모병 미달": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:27:56"
       },
@@ -4455,16 +3563,8 @@
       },
       {
         "sentence": "그러면 우리가 정책을 펼치는데 있어서 무슨 경제가 안 되길 기원해야 되는 겁니까?",
-        "singleTermCountDict": {
-          "정책": 1,
-          "경제": 1,
-          "기원": 1
-        },
-        "compoundTermCountDict": {
-          "정책": 1,
-          "경제": 1,
-          "기원": 1
-        },
+        "singleTermCountDict": { "정책": 1, "경제": 1, "기원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.6000000238418579,
         "time": "00:28:15"
       },
@@ -4503,16 +3603,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 의원님 부탁드립니다.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "의원": 1,
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "의원": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "의원": 1, "부탁": 1 },
+        "compoundTermCountDict": { "장경태": 1, "의원": 1, "부탁": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:28:31"
       }
@@ -4527,14 +3619,8 @@
     "sentenceObjects": [
       {
         "sentence": "이런 가변적인 제도로 우리가 군수요를 맞출 수 있겠느냐, 이런 거죠.",
-        "singleTermCountDict": {
-          "가변": 1,
-          "제도": 1,
-          "군수요": 1
-        },
-        "compoundTermCountDict": {
-          "군수요 유지불가": 1
-        },
+        "singleTermCountDict": { "가변": 1, "제도": 1, "군수요": 1 },
+        "compoundTermCountDict": { "군수요 유지불가": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:28:32"
       }
@@ -4549,12 +3635,8 @@
     "sentenceObjects": [
       {
         "sentence": "잠깐만요.",
-        "singleTermCountDict": {
-          "잠깐": 1
-        },
-        "compoundTermCountDict": {
-          "잠깐": 1
-        },
+        "singleTermCountDict": { "잠깐": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:28:33"
       }
@@ -4569,14 +3651,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 위원장님 말씀 듣고요.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": { "장경태": 1, "위원": 1 },
         "sentiment": 0.30000001192092896,
         "time": "00:28:34"
       }
@@ -4591,13 +3667,8 @@
     "sentenceObjects": [
       {
         "sentence": "북한 모병제예요.",
-        "singleTermCountDict": {
-          "북한": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "북한 모병제": 1
-        },
+        "singleTermCountDict": { "북한": 1, "모병": 1 },
+        "compoundTermCountDict": { "북한 모병제": 1 },
         "sentiment": 0,
         "time": "00:28:35"
       }
@@ -4612,29 +3683,15 @@
     "sentenceObjects": [
       {
         "sentence": "북한 모병제입니다.",
-        "singleTermCountDict": {
-          "북한": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "북한": 1,
-          "모병": 1
-        },
+        "singleTermCountDict": { "북한": 1, "모병": 1 },
+        "compoundTermCountDict": { "북한": 1, "모병": 1 },
         "sentiment": 0,
         "time": "00:28:37"
       },
       {
         "sentence": "장경태 의원님 말씀 부탁드리죠.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "의원": 1,
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "의원": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "의원": 1, "부탁": 1 },
+        "compoundTermCountDict": { "장경태": 1, "의원": 1, "부탁": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:28:39"
       }
@@ -4649,25 +3706,15 @@
     "sentenceObjects": [
       {
         "sentence": "고정 병력수가 120만 정도 유지되고 있지 않습니까?",
-        "singleTermCountDict": {
-          "고정": 1,
-          "병력": 1,
-          "유지": 1
-        },
-        "compoundTermCountDict": {
-          "120만 북한군": 5
-        },
+        "singleTermCountDict": { "고정": 1, "병력": 1, "유지": 1 },
+        "compoundTermCountDict": { "120만 북한군": 5 },
         "sentiment": -0.10000000149011612,
         "time": "00:28:41"
       },
       {
         "sentence": "북한은.",
-        "singleTermCountDict": {
-          "북한": 1
-        },
-        "compoundTermCountDict": {
-          "북한": 1
-        },
+        "singleTermCountDict": { "북한": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:28:41"
       }
@@ -4682,14 +3729,8 @@
     "sentenceObjects": [
       {
         "sentence": "그런데 제도는 모병제라고요.",
-        "singleTermCountDict": {
-          "제도": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "제도": 1,
-          "모병": 1
-        },
+        "singleTermCountDict": { "제도": 1, "모병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:28:42"
       }
@@ -4720,14 +3761,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 위원장님.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": { "장경태": 1, "위원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:28:44"
       }
@@ -4742,12 +3777,8 @@
     "sentenceObjects": [
       {
         "sentence": "아니 제도가 그렇게 돼 있는 것은 사실이지.",
-        "singleTermCountDict": {
-          "제도": 1
-        },
-        "compoundTermCountDict": {
-          "제도": 1
-        },
+        "singleTermCountDict": { "제도": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:28:43"
       }
@@ -4769,14 +3800,8 @@
       },
       {
         "sentence": "김종대 의원님.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:28:43"
       }
@@ -4807,14 +3832,8 @@
       },
       {
         "sentence": "지금 당장 2021년부터 모병제를 전환해야 된다 이런 건 아니고요.",
-        "singleTermCountDict": {
-          "당장": 1,
-          "모병": 1,
-          "전환": 1
-        },
-        "compoundTermCountDict": {
-          "급속모병전환 불필요": 1
-        },
+        "singleTermCountDict": { "당장": 1, "모병": 1, "전환": 1 },
+        "compoundTermCountDict": { "급속모병전환 불필요": 1 },
         "sentiment": 0,
         "time": "00:28:57"
       },
@@ -4858,18 +3877,8 @@
       },
       {
         "sentence": "심지어 일본 자위대 인터넷에서는 항상 약하다고 예를 들면 놀리기도 합니다만 일본 군대 약하다고 하진 않거든요.",
-        "singleTermCountDict": {
-          "일본": 2,
-          "자위": 1,
-          "인터넷": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "일본": 2,
-          "자위": 1,
-          "인터넷": 1,
-          "군대": 1
-        },
+        "singleTermCountDict": { "일본": 2, "자위": 1, "인터넷": 1, "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:29:21"
       },
@@ -4888,19 +3897,7 @@
           "해체": 1,
           "의미": 1
         },
-        "compoundTermCountDict": {
-          "국방": 2,
-          "약화": 1,
-          "제도": 1,
-          "모병": 2,
-          "징병": 1,
-          "강화": 1,
-          "논리": 1,
-          "자체": 1,
-          "육군": 1,
-          "해체": 1,
-          "의미": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:29:28"
       },
@@ -4922,40 +3919,22 @@
       },
       {
         "sentence": "이 부분에 대해서 자꾸만 육군을 해체하자는 식으로 논리를 끌고 가시는 것 같아서 그 부분에 대해서 말씀드리고 싶고요.",
-        "singleTermCountDict": {
-          "육군": 1,
-          "해체": 1,
-          "논리": 1
-        },
-        "compoundTermCountDict": {
-          "육군": 1,
-          "해체": 1,
-          "논리": 1
-        },
+        "singleTermCountDict": { "육군": 1, "해체": 1, "논리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:29:46"
       },
       {
         "sentence": "경제적 호황기가 돼서 만약에 모병이 제대로 이뤄지지 않는다면 정말 좋을 것 같습니다.",
-        "singleTermCountDict": {
-          "호황": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "호황": 1,
-          "모병": 1
-        },
+        "singleTermCountDict": { "호황": 1, "모병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:29:53"
       },
       {
         "sentence": "저는 개인적으로.",
-        "singleTermCountDict": {
-          "개인": 1
-        },
-        "compoundTermCountDict": {
-          "개인": 1
-        },
+        "singleTermCountDict": { "개인": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:29:57"
       },
@@ -4986,28 +3965,14 @@
           "파장": 2,
           "고려": 1
         },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "문제": 1,
-          "사회": 1,
-          "파장": 2,
-          "고려": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:30:05"
       },
       {
         "sentence": "과연 이 징집제도가 그러면 평등합니까?",
-        "singleTermCountDict": {
-          "징집": 1,
-          "제도": 1,
-          "평등": 1
-        },
-        "compoundTermCountDict": {
-          "징집": 1,
-          "제도": 1,
-          "평등": 1
-        },
+        "singleTermCountDict": { "징집": 1, "제도": 1, "평등": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:30:05"
       },
@@ -5029,15 +3994,7 @@
           "사람": 1,
           "소득": 1
         },
-        "compoundTermCountDict": {
-          "기본": 1,
-          "부자": 2,
-          "자산": 1,
-          "형성": 1,
-          "가난": 2,
-          "사람": 1,
-          "소득": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:30:18"
       },
@@ -5057,13 +4014,7 @@
           "군대": 1,
           "가난": 1
         },
-        "compoundTermCountDict": {
-          "기본": 1,
-          "부자": 1,
-          "사람": 1,
-          "군대": 1,
-          "가난": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:30:28"
       },
@@ -5086,16 +4037,7 @@
           "생계": 1,
           "노력": 1
         },
-        "compoundTermCountDict": {
-          "가난": 1,
-          "사람": 1,
-          "군대": 1,
-          "소득": 1,
-          "제대": 1,
-          "이후": 1,
-          "생계": 1,
-          "노력": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:30:33"
       }
@@ -5110,16 +4052,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 위원장님 청년위원장이라서 제가 여쭤보겠는데요.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 2,
-          "청년": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1,
-          "청년위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 2, "청년": 1 },
+        "compoundTermCountDict": { "장경태": 1, "위원": 1, "청년위원": 1 },
         "sentiment": 0,
         "time": "00:30:40"
       },
@@ -5190,15 +4124,8 @@
       },
       {
         "sentence": "그래서 새로운 신분제가 만들어질 수도 있다는 논란이 있는데 그 부분에 대해서는 어떻게 생각하시나요?",
-        "singleTermCountDict": {
-          "신분": 1,
-          "논란": 1
-        },
-        "compoundTermCountDict": {
-          "신분": 1,
-          "논란": 1,
-          "새로운 신분제": 12
-        },
+        "singleTermCountDict": { "신분": 1, "논란": 1 },
+        "compoundTermCountDict": { "신분": 1, "논란": 1, "새로운 신분제": 12 },
         "sentiment": 0,
         "time": "00:31:06"
       }
@@ -5249,16 +4176,8 @@
       },
       {
         "sentence": "오히려 4대강 사업 예를 들고 싶은데 MB때 4대강 일자리 20조 써서 20만 개 일자리를 만든다고 했습니다.",
-        "singleTermCountDict": {
-          "대강": 1,
-          "사업": 1,
-          "자리": 2
-        },
-        "compoundTermCountDict": {
-          "대강": 1,
-          "사업": 1,
-          "자리": 2
-        },
+        "singleTermCountDict": { "대강": 1, "사업": 1, "자리": 2 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:31:25"
       },
@@ -5271,26 +4190,15 @@
       },
       {
         "sentence": "오히려 이 모병제로 바뀌었을 때 2조 3000억 정도 드는데 여기에 21만 명 일자리가 더 생깁니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "자리": 1
-        },
-        "compoundTermCountDict": {
-          "모병제 전환": 1,
-          "21만 일자리 제공": 15
-        },
+        "singleTermCountDict": { "모병": 1, "자리": 1 },
+        "compoundTermCountDict": { "모병제 전환": 1, "21만 일자리 제공": 15 },
         "sentiment": 0,
         "time": "00:31:35"
       },
       {
         "sentence": "오히려 더욱더 양질의 일자리,.",
-        "singleTermCountDict": {
-          "양질": 1,
-          "자리": 1
-        },
-        "compoundTermCountDict": {
-          "일자리 증가": 1
-        },
+        "singleTermCountDict": { "양질": 1, "자리": 1 },
+        "compoundTermCountDict": { "일자리 증가": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:31:41"
       }
@@ -5340,37 +4248,22 @@
     "sentenceObjects": [
       {
         "sentence": "제가 지적할게요.",
-        "singleTermCountDict": {
-          "지적": 1
-        },
-        "compoundTermCountDict": {
-          "지적": 1
-        },
+        "singleTermCountDict": { "지적": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:31:52"
       },
       {
         "sentence": "민주당은 그렇게 하면 일자리가 늘어난다고 하는데요.",
-        "singleTermCountDict": {
-          "민주당": 1,
-          "자리": 1
-        },
-        "compoundTermCountDict": {
-          "민주당": 1,
-          "자리": 1
-        },
+        "singleTermCountDict": { "민주당": 1, "자리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:31:54"
       },
       {
         "sentence": "제 생각에 직업군인으로 가게 되면요.",
-        "singleTermCountDict": {
-          "직업": 1,
-          "군인": 1
-        },
-        "compoundTermCountDict": {
-          "직업군인": 1
-        },
+        "singleTermCountDict": { "직업": 1, "군인": 1 },
+        "compoundTermCountDict": { "직업군인": 1 },
         "sentiment": 0,
         "time": "00:31:57"
       },
@@ -5392,14 +4285,8 @@
       },
       {
         "sentence": "통계청장을 아무리 바꿔도 그건 안 바뀔 겁니다.",
-        "singleTermCountDict": {
-          "통계": 1,
-          "청장": 1
-        },
-        "compoundTermCountDict": {
-          "통계": 1,
-          "청장": 1
-        },
+        "singleTermCountDict": { "통계": 1, "청장": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:32:05"
       }
@@ -5529,16 +4416,8 @@
     "sentenceObjects": [
       {
         "sentence": "로마는 용병제를 채택했죠.",
-        "singleTermCountDict": {
-          "로마": 1,
-          "용병": 1,
-          "채택": 1
-        },
-        "compoundTermCountDict": {
-          "로마": 1,
-          "용병": 1,
-          "채택": 1
-        },
+        "singleTermCountDict": { "로마": 1, "용병": 1, "채택": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:32:57"
       },
@@ -5551,18 +4430,8 @@
       },
       {
         "sentence": "로마군대를 보고 모병제라고 이야기하지 않습니다.",
-        "singleTermCountDict": {
-          "로마": 1,
-          "군대": 1,
-          "모병": 1,
-          "이야기": 1
-        },
-        "compoundTermCountDict": {
-          "로마": 1,
-          "군대": 1,
-          "모병": 1,
-          "이야기": 1
-        },
+        "singleTermCountDict": { "로마": 1, "군대": 1, "모병": 1, "이야기": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:32:57"
       }
@@ -5577,12 +4446,8 @@
     "sentenceObjects": [
       {
         "sentence": "지원병제로.",
-        "singleTermCountDict": {
-          "지원": 1
-        },
-        "compoundTermCountDict": {
-          "지원": 1
-        },
+        "singleTermCountDict": { "지원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:32:59"
       }
@@ -5597,14 +4462,8 @@
     "sentenceObjects": [
       {
         "sentence": "용병제라고 표현하시죠.",
-        "singleTermCountDict": {
-          "용병": 1,
-          "표현": 1
-        },
-        "compoundTermCountDict": {
-          "용병": 1,
-          "표현": 1
-        },
+        "singleTermCountDict": { "용병": 1, "표현": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:33:00"
       }
@@ -5619,12 +4478,8 @@
     "sentenceObjects": [
       {
         "sentence": "그게 왜 용병제입니까?",
-        "singleTermCountDict": {
-          "용병": 1
-        },
-        "compoundTermCountDict": {
-          "용병": 1
-        },
+        "singleTermCountDict": { "용병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:33:01"
       }
@@ -5639,25 +4494,15 @@
     "sentenceObjects": [
       {
         "sentence": "장 위원님 묻고 싶어요.",
-        "singleTermCountDict": {
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "위원": 1
-        },
+        "singleTermCountDict": { "위원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.5,
         "time": "00:33:02"
       },
       {
         "sentence": "장 위원님 아들 있으십니까?",
-        "singleTermCountDict": {
-          "위원": 1,
-          "아들": 1
-        },
-        "compoundTermCountDict": {
-          "위원": 1,
-          "아들": 1
-        },
+        "singleTermCountDict": { "위원": 1, "아들": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:33:02"
       }
@@ -5688,12 +4533,8 @@
     "sentenceObjects": [
       {
         "sentence": "결혼을 안 했죠.",
-        "singleTermCountDict": {
-          "결혼": 1
-        },
-        "compoundTermCountDict": {
-          "결혼": 1
-        },
+        "singleTermCountDict": { "결혼": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:33:04"
       }
@@ -5708,12 +4549,8 @@
     "sentenceObjects": [
       {
         "sentence": "북한 안 했습니까?",
-        "singleTermCountDict": {
-          "북한": 1
-        },
-        "compoundTermCountDict": {
-          "북한": 1
-        },
+        "singleTermCountDict": { "북한": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:33:05"
       },
@@ -5729,16 +4566,7 @@
           "평생": 1,
           "찬성": 1
         },
-        "compoundTermCountDict": {
-          "아들": 2,
-          "아빠": 1,
-          "모병": 1,
-          "병장": 2,
-          "특정": 1,
-          "부대": 1,
-          "평생": 1,
-          "찬성": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:33:05"
       }
@@ -5753,18 +4581,8 @@
     "sentenceObjects": [
       {
         "sentence": "본인이 지원한다면 자원한다면 당연히 찬성할 수 있습니다.",
-        "singleTermCountDict": {
-          "본인": 1,
-          "지원": 1,
-          "자원": 1,
-          "찬성": 1
-        },
-        "compoundTermCountDict": {
-          "본인": 1,
-          "지원": 1,
-          "자원": 1,
-          "찬성": 1
-        },
+        "singleTermCountDict": { "본인": 1, "지원": 1, "자원": 1, "찬성": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:33:15"
       }
@@ -5779,18 +4597,8 @@
     "sentenceObjects": [
       {
         "sentence": "그럼 주변 친구들 중에서 찬성하는 사람 많을 거라고 생각하십니까?",
-        "singleTermCountDict": {
-          "주변": 1,
-          "친구": 1,
-          "찬성": 1,
-          "사람": 1
-        },
-        "compoundTermCountDict": {
-          "주변": 1,
-          "친구": 1,
-          "찬성": 1,
-          "사람": 1
-        },
+        "singleTermCountDict": { "주변": 1, "친구": 1, "찬성": 1, "사람": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:33:19"
       }
@@ -5805,29 +4613,15 @@
     "sentenceObjects": [
       {
         "sentence": "이게 지금 군대 가면 몸 버린다, 군대 가면 시간 낭비한다, 군대 가면 항상 2년간 썩는다는 인식이 있는 군대에서는 당연히 그럴 수 있습니다.",
-        "singleTermCountDict": {
-          "군대": 4,
-          "시간": 1,
-          "낭비": 1,
-          "인식": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 4,
-          "시간": 1,
-          "낭비": 1,
-          "인식": 1
-        },
+        "singleTermCountDict": { "군대": 4, "시간": 1, "낭비": 1, "인식": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:33:23"
       },
       {
         "sentence": "그런데 그런 군대 언제까지 안고 있을 겁니까?",
-        "singleTermCountDict": {
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1
-        },
+        "singleTermCountDict": { "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:33:30"
       },
@@ -5881,29 +4675,15 @@
       },
       {
         "sentence": "너 나름대로 머리도 좋고 그런데 IT 쪽으로 가든지 아니면 다른 것도 한 번 해봐라, 저는 이렇게 말할 것 같아요.",
-        "singleTermCountDict": {
-          "머리": 1
-        },
-        "compoundTermCountDict": {
-          "머리": 1
-        },
+        "singleTermCountDict": { "머리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:33:59"
       },
       {
         "sentence": "자꾸 특별한 경우, 다른 사람 애들은 군대 가고 내 아들은 안 가는 그런 건 저는 생각해서 안 된다는 거죠.",
-        "singleTermCountDict": {
-          "특별": 1,
-          "사람": 1,
-          "군대": 1,
-          "아들": 1
-        },
-        "compoundTermCountDict": {
-          "특별": 1,
-          "사람": 1,
-          "군대": 1,
-          "아들": 1
-        },
+        "singleTermCountDict": { "특별": 1, "사람": 1, "군대": 1, "아들": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.6000000238418579,
         "time": "00:34:07"
       },
@@ -5918,41 +4698,21 @@
           "조건": 1,
           "모병": 1
         },
-        "compoundTermCountDict": {
-          "의원": 1,
-          "아들": 1,
-          "상황": 1,
-          "직장": 1,
-          "선택": 1,
-          "조건": 1,
-          "모병": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:32:13"
       },
       {
         "sentence": "그래서 사회적인 인식하고 여러 가지가 좋아져야 됩니다.",
-        "singleTermCountDict": {
-          "사회": 1,
-          "인식": 1
-        },
-        "compoundTermCountDict": {
-          "군 사회인식 개선필요": 8
-        },
+        "singleTermCountDict": { "사회": 1, "인식": 1 },
+        "compoundTermCountDict": { "군 사회인식 개선필요": 8 },
         "sentiment": 0,
         "time": "00:33:58"
       },
       {
         "sentence": "그런데 미국 같이 군대를 좋아하고 존경하는 그런데도 어려운데 우리와 같이 사실은 사실 군대 썩는다는 게 금방 인식이 바뀌지 않지 않습니까?",
-        "singleTermCountDict": {
-          "미국": 1,
-          "군대": 2,
-          "존경": 1,
-          "인식": 1
-        },
-        "compoundTermCountDict": {
-          "비관적 군대인식": 2
-        },
+        "singleTermCountDict": { "미국": 1, "군대": 2, "존경": 1, "인식": 1 },
+        "compoundTermCountDict": { "비관적 군대인식": 2 },
         "sentiment": 0.10000000149011612,
         "time": "00:34:32"
       },
@@ -5982,51 +4742,29 @@
       },
       {
         "sentence": "예를 들어서 우리가 왜 옛날에 3년 있고 60만, 70만 군대가 있었습니까?",
-        "singleTermCountDict": {
-          "옛날": 1,
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "옛날": 1,
-          "군대": 1
-        },
+        "singleTermCountDict": { "옛날": 1, "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:34:54"
       },
       {
         "sentence": "위협이 컸기 때문에 그렇습니다.",
-        "singleTermCountDict": {
-          "위협": 1
-        },
-        "compoundTermCountDict": {
-          "적군위협": 1
-        },
+        "singleTermCountDict": { "위협": 1 },
+        "compoundTermCountDict": { "적군위협": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:34:58"
       },
       {
         "sentence": "미국이 왜 저 정도 150만 군대를 유지합니까?",
-        "singleTermCountDict": {
-          "미국": 1,
-          "군대": 1,
-          "유지": 1
-        },
-        "compoundTermCountDict": {
-          "미국 대군유지": 1
-        },
+        "singleTermCountDict": { "미국": 1, "군대": 1, "유지": 1 },
+        "compoundTermCountDict": { "미국 대군유지": 1 },
         "sentiment": -0.4000000059604645,
         "time": "00:35:00"
       },
       {
         "sentence": "세계 도처에 위협이 있기 때문입니다.",
-        "singleTermCountDict": {
-          "세계": 1,
-          "도처": 1,
-          "위협": 1
-        },
-        "compoundTermCountDict": {
-          "도처위협": 1
-        },
+        "singleTermCountDict": { "세계": 1, "도처": 1, "위협": 1 },
+        "compoundTermCountDict": { "도처위협": 1 },
         "sentiment": -0.5,
         "time": "00:35:02"
       },
@@ -6039,24 +4777,14 @@
           "군대": 1,
           "해체": 1
         },
-        "compoundTermCountDict": {
-          "미국": 1,
-          "세계": 1,
-          "대전": 1,
-          "군대": 1,
-          "해체": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:35:04"
       },
       {
         "sentence": "위협이 줄었기 때문입니다.",
-        "singleTermCountDict": {
-          "위협": 1
-        },
-        "compoundTermCountDict": {
-          "위협감소": 1
-        },
+        "singleTermCountDict": { "위협": 1 },
+        "compoundTermCountDict": { "위협감소": 1 },
         "sentiment": -0.5,
         "time": "00:35:07"
       },
@@ -6105,14 +4833,8 @@
       },
       {
         "sentence": "그건 국방부가 있을 필요가 없는 거죠.",
-        "singleTermCountDict": {
-          "국방": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "국방": 1,
-          "필요": 1
-        },
+        "singleTermCountDict": { "국방": 1, "필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:35:43"
       }
@@ -6134,14 +4856,8 @@
       },
       {
         "sentence": "김종대 의원님.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:35:43"
       }
@@ -6156,53 +4872,29 @@
     "sentenceObjects": [
       {
         "sentence": "모병제 관한 많은 어떤 논쟁 중에 얘기됐던 부분입니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "논쟁": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "논쟁": 1
-        },
+        "singleTermCountDict": { "모병": 1, "논쟁": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:35:47"
       },
       {
         "sentence": "우리가 지금 현역병을 얘기하지만 우리나라 300만 예비역이 있어요.",
-        "singleTermCountDict": {
-          "현역": 1,
-          "나라": 1,
-          "예비": 1
-        },
-        "compoundTermCountDict": {
-          "현역": 1,
-          "나라": 1,
-          "예비": 1
-        },
+        "singleTermCountDict": { "현역": 1, "나라": 1, "예비": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:35:49"
       },
       {
         "sentence": "지금 예비군이 전 세계에서 제일 큰 규모입니다.",
-        "singleTermCountDict": {
-          "예비": 1,
-          "세계": 1,
-          "규모": 1
-        },
-        "compoundTermCountDict": {
-          "한국 대규모 예비군": 1
-        },
+        "singleTermCountDict": { "예비": 1, "세계": 1, "규모": 1 },
+        "compoundTermCountDict": { "한국 대규모 예비군": 1 },
         "sentiment": 0.699999988079071,
         "time": "00:35:54"
       },
       {
         "sentence": "우리나라가.",
-        "singleTermCountDict": {
-          "나라": 1
-        },
-        "compoundTermCountDict": {
-          "나라": 1
-        },
+        "singleTermCountDict": { "나라": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:35:56"
       },
@@ -6215,22 +4907,14 @@
           "전쟁": 1,
           "병력": 1
         },
-        "compoundTermCountDict": {
-          "옛날": 1,
-          "일본": 1,
-          "태평양": 1,
-          "전쟁": 1,
-          "병력": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:35:57"
       },
       {
         "sentence": "우리 300만입니다.",
         "singleTermCountDict": {},
-        "compoundTermCountDict": {
-          "충분한 300만 예비군": 8
-        },
+        "compoundTermCountDict": { "충분한 300만 예비군": 8 },
         "sentiment": 0.10000000149011612,
         "time": "00:36:01"
       },
@@ -6260,13 +4944,7 @@
           "보완": 1,
           "존재": 1
         },
-        "compoundTermCountDict": {
-          "토론": 1,
-          "개발": 1,
-          "대체": 1,
-          "보완": 1,
-          "존재": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.6000000238418579,
         "time": "00:36:10"
       },
@@ -6321,38 +4999,21 @@
           "위협": 1,
           "존재": 1
         },
-        "compoundTermCountDict": {
-          "지속": 1,
-          "가능": 1,
-          "방법": 1,
-          "위협": 1,
-          "존재": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:36:43"
       },
       {
         "sentence": "여기서는 상수예요.",
-        "singleTermCountDict": {
-          "상수": 1
-        },
-        "compoundTermCountDict": {
-          "상수": 1
-        },
+        "singleTermCountDict": { "상수": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:36:47"
       },
       {
         "sentence": "그런데 지속가능하지 않은 시점이 대략 2025년 이후에 닥친단 말이에요.",
-        "singleTermCountDict": {
-          "지속": 1,
-          "가능": 1,
-          "시점": 1,
-          "이후": 1
-        },
-        "compoundTermCountDict": {
-          "징병제 지속불가": 1
-        },
+        "singleTermCountDict": { "지속": 1, "가능": 1, "시점": 1, "이후": 1 },
+        "compoundTermCountDict": { "징병제 지속불가": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:36:49"
       },
@@ -6365,28 +5026,14 @@
           "저하": 1,
           "미군": 1
         },
-        "compoundTermCountDict": {
-          "군대": 2,
-          "공부": 1,
-          "자원": 1,
-          "저하": 1,
-          "미군": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.6000000238418579,
         "time": "00:36:54"
       },
       {
         "sentence": "사회에서 가장 질이 낮은 자원이 와도 가장 수준이 높게 써먹습니다.",
-        "singleTermCountDict": {
-          "사회": 1,
-          "자원": 1,
-          "수준": 1
-        },
-        "compoundTermCountDict": {
-          "사회": 1,
-          "자원": 1,
-          "수준": 1
-        },
+        "singleTermCountDict": { "사회": 1, "자원": 1, "수준": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:37:06"
       },
@@ -6424,12 +5071,8 @@
       },
       {
         "sentence": "그런데 수준 낮게 써먹어요.",
-        "singleTermCountDict": {
-          "수준": 1
-        },
-        "compoundTermCountDict": {
-          "수준": 1
-        },
+        "singleTermCountDict": { "수준": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:37:21"
       },
@@ -6482,14 +5125,7 @@
           "부자": 1,
           "적응": 1
         },
-        "compoundTermCountDict": {
-          "청년": 1,
-          "자율": 1,
-          "창의": 1,
-          "가난": 1,
-          "부자": 1,
-          "적응": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.800000011920929,
         "time": "00:37:42"
       },
@@ -6513,13 +5149,12 @@
         "singleTermCountDict": {
           "책임": 1,
           "전문": 1,
+
           "직업": 1,
           "정신": 1,
           "부여": 1
         },
-        "compoundTermCountDict": {
-          "직업정신 부여": 1
-        },
+        "compoundTermCountDict": { "직업정신 부여": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:37:55"
       },
@@ -6555,12 +5190,8 @@
     "sentenceObjects": [
       {
         "sentence": "잠깐만요.",
-        "singleTermCountDict": {
-          "잠깐": 1
-        },
-        "compoundTermCountDict": {
-          "잠깐": 1
-        },
+        "singleTermCountDict": { "잠깐": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:38:14"
       }
@@ -6582,12 +5213,7 @@
       },
       {
         "sentence": "박휘락 교수님 저희가 시청자 의견이 있습니다.",
-        "singleTermCountDict": {
-          "박휘락": 1,
-          "교수": 1,
-          "시청": 1,
-          "의견": 1
-        },
+        "singleTermCountDict": { "박휘락": 1, "교수": 1, "시청": 1, "의견": 1 },
         "compoundTermCountDict": {
           "박휘락": 1,
           "교수": 1,
@@ -6600,23 +5226,15 @@
       },
       {
         "sentence": "질문도 있고요.",
-        "singleTermCountDict": {
-          "질문": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1
-        },
+        "singleTermCountDict": { "질문": 1 },
+        "compoundTermCountDict": { "질문": 1 },
         "sentiment": 0.5,
         "time": "00:38:16"
       },
       {
         "sentence": "그래서 이에 대한 답변도 해주셔야 하니까 잠시만 기다려 주시고요.",
-        "singleTermCountDict": {
-          "답변": 1
-        },
-        "compoundTermCountDict": {
-          "답변": 1
-        },
+        "singleTermCountDict": { "답변": 1 },
+        "compoundTermCountDict": { "답변": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:38:18"
       },
@@ -6635,6 +5253,7 @@
           "의견": 1,
           "질문": 1,
           "소개": 1,
+
           "답변": 1,
           "토론": 1
         },
@@ -6667,29 +5286,15 @@
       },
       {
         "sentence": "이번 주제 정말 관심들이 많으셨어요.",
-        "singleTermCountDict": {
-          "주제": 1,
-          "관심": 1
-        },
-        "compoundTermCountDict": {
-          "주제": 1,
-          "관심": 1
-        },
+        "singleTermCountDict": { "주제": 1, "관심": 1 },
+        "compoundTermCountDict": { "주제": 1, "관심": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:38:32"
       },
       {
         "sentence": "진짜로 많은 의견과 질문을 던져주셨는데 네, ID장동엽님께서 보내주신 의견입니다.",
-        "singleTermCountDict": {
-          "의견": 2,
-          "질문": 1,
-          "장동엽": 1
-        },
-        "compoundTermCountDict": {
-          "의견": 2,
-          "질문": 1,
-          "장동엽": 1
-        },
+        "singleTermCountDict": { "의견": 2, "질문": 1, "장동엽": 1 },
+        "compoundTermCountDict": { "의견": 2, "질문": 1, "장동엽": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:38:35"
       },
@@ -6750,6 +5355,7 @@
           "아까": 1,
           "미국": 1,
           "베트남": 1,
+
           "모병": 1,
           "전환": 1,
           "향상": 1,
@@ -6760,6 +5366,7 @@
           "아까": 1,
           "미국": 1,
           "베트남": 1,
+
           "모병": 1,
           "전환": 1,
           "향상": 1,
@@ -6770,16 +5377,8 @@
       },
       {
         "sentence": "그래서 이 부분에 대해서 모병제 반대하시는 분들께서 답변을 해주셔야 될 것 같은데요.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "반대": 1,
-          "답변": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "반대": 1,
-          "답변": 1
-        },
+        "singleTermCountDict": { "모병": 1, "반대": 1, "답변": 1 },
+        "compoundTermCountDict": { "모병": 1, "반대": 1, "답변": 1 },
         "sentiment": 0,
         "time": "00:39:09"
       }
@@ -6812,69 +5411,36 @@
       },
       {
         "sentence": "그런데 아까 박 교수님도 지적하셨듯이 군에서는 결국 한 계급이 올라갈 때마다 첨예화 될 수밖에 없거든요.",
-        "singleTermCountDict": {
-          "교수": 1,
-          "지적": 1,
-          "계급": 1,
-          "첨예": 1
-        },
-        "compoundTermCountDict": {
-          "계급첨예화": 1
-        },
+        "singleTermCountDict": { "교수": 1, "지적": 1, "계급": 1, "첨예": 1 },
+        "compoundTermCountDict": { "계급첨예화": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:39:23"
       },
       {
         "sentence": "인력구조가.",
-        "singleTermCountDict": {
-          "인력": 1,
-          "구조": 1
-        },
-        "compoundTermCountDict": {
-          "인력": 1,
-          "구조": 1
-        },
+        "singleTermCountDict": { "인력": 1, "구조": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:39:29"
       },
       {
         "sentence": "그렇다면 20년 동안 병장으로 장기복무할래?",
-        "singleTermCountDict": {
-          "동안": 1,
-          "병장": 1,
-          "장기": 1,
-          "복무": 1
-        },
-        "compoundTermCountDict": {
-          "병사 장기복무불가": 7
-        },
+        "singleTermCountDict": { "동안": 1, "병장": 1, "장기": 1, "복무": 1 },
+        "compoundTermCountDict": { "병사 장기복무불가": 7 },
         "sentiment": 0,
         "time": "00:39:29"
       },
       {
         "sentence": "이런 말 자체가 성립하지 않죠.",
-        "singleTermCountDict": {
-          "자체": 1,
-          "성립": 1
-        },
-        "compoundTermCountDict": {
-          "자체": 1,
-          "성립": 1
-        },
+        "singleTermCountDict": { "자체": 1, "성립": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.699999988079071,
         "time": "00:39:32"
       },
       {
         "sentence": "그런 체제 하에서는 아까 저희가 언급되었던 사명감과 전문성이 생기기 어렵죠.",
-        "singleTermCountDict": {
-          "체제": 1,
-          "언급": 1,
-          "사명": 1,
-          "전문": 1
-        },
-        "compoundTermCountDict": {
-          "사명감 부재": 2
-        },
+        "singleTermCountDict": { "체제": 1, "언급": 1, "사명": 1, "전문": 1 },
+        "compoundTermCountDict": { "사명감 부재": 2 },
         "sentiment": 0.10000000149011612,
         "time": "00:39:34"
       },
@@ -6970,16 +5536,8 @@
       },
       {
         "sentence": "이 문제로는 여러 번 토론하고 저희가 대안을 만들었어요.",
-        "singleTermCountDict": {
-          "문제": 1,
-          "토론": 1,
-          "대안": 1
-        },
-        "compoundTermCountDict": {
-          "문제": 1,
-          "토론": 1,
-          "대안": 1
-        },
+        "singleTermCountDict": { "문제": 1, "토론": 1, "대안": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:40:40"
       },
@@ -7001,67 +5559,35 @@
           "혼합": 1,
           "단계": 1
         },
-        "compoundTermCountDict": {
-          "보고": 1,
-          "정독": 1,
-          "전환": 1,
-          "설정": 2,
-          "직무": 1,
-          "혼합": 1,
-          "단계": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:40:46"
       },
       {
         "sentence": "그래서 단계적 전환이에요.",
-        "singleTermCountDict": {
-          "전환": 1
-        },
-        "compoundTermCountDict": {
-          "단계적 전환": 1
-        },
+        "singleTermCountDict": { "전환": 1 },
+        "compoundTermCountDict": { "단계적 전환": 1 },
         "sentiment": 0,
         "time": "00:40:53"
       },
       {
         "sentence": "정의당 안이 똑같습니다.",
-        "singleTermCountDict": {
-          "정의당": 1
-        },
-        "compoundTermCountDict": {
-          "정의당": 1
-        },
+        "singleTermCountDict": { "정의당": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:40:55"
       },
       {
         "sentence": "직무혼합제를 중간 단계로 해서 2030년까지 가야 됩니다.",
-        "singleTermCountDict": {
-          "직무": 1,
-          "혼합": 1,
-          "중간": 1,
-          "단계": 1
-        },
-        "compoundTermCountDict": {
-          "직무": 1,
-          "혼합": 1,
-          "중간": 1,
-          "단계": 1
-        },
+        "singleTermCountDict": { "직무": 1, "혼합": 1, "중간": 1, "단계": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:40:57"
       },
       {
         "sentence": "그런데 지금의 체질전환은 뭐냐 하면 우리 전방에 한 번 보자고요.",
-        "singleTermCountDict": {
-          "전환": 1,
-          "전방": 1
-        },
-        "compoundTermCountDict": {
-          "전환": 1,
-          "전방": 1
-        },
+        "singleTermCountDict": { "전환": 1, "전방": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:41:01"
       },
@@ -7081,48 +5607,21 @@
           "전투": 1,
           "전방": 1
         },
-        "compoundTermCountDict": {
-          "소초": 1,
-          "중위": 1,
-          "부소": 1,
-          "초장": 1,
-          "중사": 1,
-          "상사": 1,
-          "병사": 1,
-          "연령": 1,
-          "경험": 1,
-          "나이": 1,
-          "전투": 1,
-          "전방": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:41:06"
       },
       {
         "sentence": "이런 군대는 없습니다.",
-        "singleTermCountDict": {
-          "군대": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1
-        },
+        "singleTermCountDict": { "군대": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:41:22"
       },
       {
         "sentence": "그러다 보니까 어떻게 되느냐하면 내가 생전 처음 보는 장소에 생전 처음 보는 사람과 생전 처음 겪는 일을 하는 거거든요.",
-        "singleTermCountDict": {
-          "생전": 3,
-          "처음": 3,
-          "장소": 1,
-          "사람": 1
-        },
-        "compoundTermCountDict": {
-          "생전": 3,
-          "처음": 3,
-          "장소": 1,
-          "사람": 1
-        },
+        "singleTermCountDict": { "생전": 3, "처음": 3, "장소": 1, "사람": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:41:24"
       },
@@ -7205,15 +5704,8 @@
     "sentenceObjects": [
       {
         "sentence": "한 4개월 정도 훈련기간을 두고 징병을 해야 된다는 안이.",
-        "singleTermCountDict": {
-          "훈련": 1,
-          "기간": 1,
-          "징병": 1
-        },
-        "compoundTermCountDict": {
-          "훈련기간": 1,
-          "징병": 1
-        },
+        "singleTermCountDict": { "훈련": 1, "기간": 1, "징병": 1 },
+        "compoundTermCountDict": { "훈련기간": 1, "징병": 1 },
         "sentiment": -0.4000000059604645,
         "time": "00:42:11"
       }
@@ -7228,13 +5720,8 @@
     "sentenceObjects": [
       {
         "sentence": "훈련기간이 꼭 4개월은 아닙니다만 그리고 지금 보면.",
-        "singleTermCountDict": {
-          "훈련": 1,
-          "기간": 1
-        },
-        "compoundTermCountDict": {
-          "장기훈련": 1
-        },
+        "singleTermCountDict": { "훈련": 1, "기간": 1 },
+        "compoundTermCountDict": { "장기훈련": 1 },
         "sentiment": 0,
         "time": "00:42:14"
       }
@@ -7249,14 +5736,8 @@
     "sentenceObjects": [
       {
         "sentence": "김종대 의원께서 그렇게 말씀하셔서요.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:42:17"
       }
@@ -7306,13 +5787,8 @@
       },
       {
         "sentence": "징병을 투입하고 있어요.",
-        "singleTermCountDict": {
-          "징병": 1,
-          "투입": 1
-        },
-        "compoundTermCountDict": {
-          "징병 투입": 1
-        },
+        "singleTermCountDict": { "징병": 1, "투입": 1 },
+        "compoundTermCountDict": { "징병 투입": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:42:34"
       },
@@ -7441,12 +5917,8 @@
       },
       {
         "sentence": "지금 다른 질문으로 가야 돼서요.",
-        "singleTermCountDict": {
-          "질문": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1
-        },
+        "singleTermCountDict": { "질문": 1 },
+        "compoundTermCountDict": { "질문": 1 },
         "sentiment": 0,
         "time": "00:43:21"
       }
@@ -7461,12 +5933,8 @@
     "sentenceObjects": [
       {
         "sentence": "이병 계속 어떻게 올라갑니까?",
-        "singleTermCountDict": {
-          "이병": 1
-        },
-        "compoundTermCountDict": {
-          "이병": 1
-        },
+        "singleTermCountDict": { "이병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:43:24"
       }
@@ -7481,18 +5949,8 @@
     "sentenceObjects": [
       {
         "sentence": "말씀하실 때 직업군인을 몇%로 하고 몇 년간 복무하게 하겠다 이런 말씀은 아닌 것 같고 어쨌든 9급 공무원에 준해서.",
-        "singleTermCountDict": {
-          "직업": 1,
-          "군인": 1,
-          "복무": 1,
-          "공무": 1
-        },
-        "compoundTermCountDict": {
-          "직업": 1,
-          "군인": 1,
-          "복무": 1,
-          "공무": 1
-        },
+        "singleTermCountDict": { "직업": 1, "군인": 1, "복무": 1, "공무": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:43:27"
       }
@@ -7507,14 +5965,8 @@
     "sentenceObjects": [
       {
         "sentence": "이런 내용이 빠진 상태에서 어떻게,.",
-        "singleTermCountDict": {
-          "내용": 1,
-          "상태": 1
-        },
-        "compoundTermCountDict": {
-          "내용": 1,
-          "상태": 1
-        },
+        "singleTermCountDict": { "내용": 1, "상태": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:43:28"
       }
@@ -7529,38 +5981,22 @@
     "sentenceObjects": [
       {
         "sentence": "잠시 제가 정리를 해야 될 것 같아서요.",
-        "singleTermCountDict": {
-          "정리": 1
-        },
-        "compoundTermCountDict": {
-          "정리": 1
-        },
+        "singleTermCountDict": { "정리": 1 },
+        "compoundTermCountDict": { "정리": 1 },
         "sentiment": 0,
         "time": "00:43:31"
       },
       {
         "sentence": "질문이 아직 많이 남아 있습니다.",
-        "singleTermCountDict": {
-          "질문": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1
-        },
+        "singleTermCountDict": { "질문": 1 },
+        "compoundTermCountDict": { "질문": 1 },
         "sentiment": 0,
         "time": "00:43:36"
       },
       {
         "sentence": "제가 박휘락 교수님께도 기회를 드릴 거고요.",
-        "singleTermCountDict": {
-          "박휘락": 1,
-          "교수": 1,
-          "기회": 1
-        },
-        "compoundTermCountDict": {
-          "박휘락": 1,
-          "교수": 1,
-          "기회": 1
-        },
+        "singleTermCountDict": { "박휘락": 1, "교수": 1, "기회": 1 },
+        "compoundTermCountDict": { "박휘락": 1, "교수": 1, "기회": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:43:38"
       },
@@ -7610,12 +6046,8 @@
     "sentenceObjects": [
       {
         "sentence": "그건 징집병, 징집병 얘기입니다.",
-        "singleTermCountDict": {
-          "징집": 2
-        },
-        "compoundTermCountDict": {
-          "징집병": 2
-        },
+        "singleTermCountDict": { "징집": 2 },
+        "compoundTermCountDict": { "징집병": 2 },
         "sentiment": 0,
         "time": "00:43:49"
       }
@@ -7630,29 +6062,15 @@
     "sentenceObjects": [
       {
         "sentence": "두 번째 질문을 드리겠습니다.",
-        "singleTermCountDict": {
-          "질문": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1
-        },
+        "singleTermCountDict": { "질문": 1 },
+        "compoundTermCountDict": { "질문": 1 },
         "sentiment": 0,
         "time": "00:43:52"
       },
       {
         "sentence": "ID Jong Seok Yoon님께서 보내주신 의견인데 장교 출신 남성이라고 하십니다.",
-        "singleTermCountDict": {
-          "의견": 1,
-          "장교": 1,
-          "출신": 1,
-          "남성": 1
-        },
-        "compoundTermCountDict": {
-          "의견": 1,
-          "장교": 1,
-          "출신": 1,
-          "남성": 1
-        },
+        "singleTermCountDict": { "의견": 1, "장교": 1, "출신": 1, "남성": 1 },
+        "compoundTermCountDict": { "의견": 1, "장교": 1, "출신": 1, "남성": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:43:54"
       },
@@ -7677,16 +6095,8 @@
       },
       {
         "sentence": "의사들도 군의관에는 지원하지 않을 것 같습니다.",
-        "singleTermCountDict": {
-          "의사": 1,
-          "군의": 1,
-          "지원": 1
-        },
-        "compoundTermCountDict": {
-          "의사": 1,
-          "군의": 1,
-          "지원": 1
-        },
+        "singleTermCountDict": { "의사": 1, "군의": 1, "지원": 1 },
+        "compoundTermCountDict": { "의사": 1, "군의": 1, "지원": 1 },
         "sentiment": -0.6000000238418579,
         "time": "00:44:04"
       },
@@ -7782,12 +6192,7 @@
       },
       {
         "sentence": "그렇기 때문에 많은 장교와 부사관이 필요한 체제거든요.",
-        "singleTermCountDict": {
-          "장교": 1,
-          "부사관": 1,
-          "필요": 1,
-          "체제": 1
-        },
+        "singleTermCountDict": { "장교": 1, "부사관": 1, "필요": 1, "체제": 1 },
         "compoundTermCountDict": {
           "간부체제 개편": 7
         },
@@ -7811,12 +6216,8 @@
       },
       {
         "sentence": "군의관 부분도 그렇습니다.",
-        "singleTermCountDict": {
-          "군의": 1
-        },
-        "compoundTermCountDict": {
-          "군의관개편": 1
-        },
+        "singleTermCountDict": { "군의": 1 },
+        "compoundTermCountDict": { "군의관개편": 1 },
         "sentiment": 0.6000000238418579,
         "time": "00:44:52"
       },
@@ -7832,16 +6233,7 @@
           "병원": 1,
           "이용": 1
         },
-        "compoundTermCountDict": {
-          "군의": 2,
-          "의사": 1,
-          "면허": 1,
-          "군대": 1,
-          "복무": 1,
-          "민간": 1,
-          "병원": 1,
-          "이용": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:44:53"
       },
@@ -7856,30 +6248,14 @@
           "병원": 1,
           "이용": 1
         },
-        "compoundTermCountDict": {
-          "병사": 2,
-          "모병": 1,
-          "외출": 1,
-          "자유": 1,
-          "민간": 1,
-          "병원": 1,
-          "이용": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:45:00"
       },
       {
         "sentence": "오히려 좀 더 질 좋은 의료서비스 제공 받을 수 있을 겁니다.",
-        "singleTermCountDict": {
-          "의료": 1,
-          "서비스": 1,
-          "제공": 1
-        },
-        "compoundTermCountDict": {
-          "의료": 1,
-          "서비스": 1,
-          "제공": 1
-        },
+        "singleTermCountDict": { "의료": 1, "서비스": 1, "제공": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:45:08"
       }
@@ -7910,13 +6286,8 @@
     "sentenceObjects": [
       {
         "sentence": "고심 끝에 군의관 해체예요?",
-        "singleTermCountDict": {
-          "고심": 1,
-          "군의": 1
-        },
-        "compoundTermCountDict": {
-          "군의관해체": 1
-        },
+        "singleTermCountDict": { "고심": 1, "군의": 1 },
+        "compoundTermCountDict": { "군의관해체": 1 },
         "sentiment": 0,
         "time": "00:45:11"
       }
@@ -7958,14 +6329,8 @@
     "sentenceObjects": [
       {
         "sentence": "김 의원께서 혼합을, 이미 혼합을 하고 있습니다.",
-        "singleTermCountDict": {
-          "의원": 1,
-          "혼합": 2
-        },
-        "compoundTermCountDict": {
-          "의원": 1,
-          "혼합": 2
-        },
+        "singleTermCountDict": { "의원": 1, "혼합": 2 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:45:16"
       },
@@ -7978,9 +6343,7 @@
       },
       {
         "sentence": "지금 부사관을 10만에서 15만 늘려가고 있고요.",
-        "singleTermCountDict": {
-          "부사관": 1
-        },
+        "singleTermCountDict": { "부사관": 1 },
         "compoundTermCountDict": {
           "부사관편성 증가": 2,
           "충분한 부사관수": 14
@@ -7990,55 +6353,29 @@
       },
       {
         "sentence": "사실은 부사관이 전형적 모병제 군인 아니겠습니까?",
-        "singleTermCountDict": {
-          "부사관": 1,
-          "모병": 1,
-          "군인": 1
-        },
-        "compoundTermCountDict": {
-          "부사관": 1,
-          "모병": 1,
-          "군인": 1
-        },
+        "singleTermCountDict": { "부사관": 1, "모병": 1, "군인": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:45:26"
       },
       {
         "sentence": "그 사람들이 가장 숙련도가 필요한 그런 임무에 다 가고 있습니다.",
-        "singleTermCountDict": {
-          "사람": 1,
-          "숙련": 1,
-          "필요": 1,
-          "임무": 1
-        },
-        "compoundTermCountDict": {
-          "사람": 1,
-          "숙련": 1,
-          "필요": 1,
-          "임무": 1
-        },
+        "singleTermCountDict": { "사람": 1, "숙련": 1, "필요": 1, "임무": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.5,
         "time": "00:45:30"
       },
       {
         "sentence": "그 다음에 현재 병사들이 조금 군에서 부자연스럽게 느끼는 것, 저는 그건 지금이라도 할 수 있다는 겁니다.",
-        "singleTermCountDict": {
-          "병사": 1
-        },
-        "compoundTermCountDict": {
-          "병사": 1
-        },
+        "singleTermCountDict": { "병사": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:45:34"
       },
       {
         "sentence": "최근에 뭐 많이 늘어났지 않습니까?",
-        "singleTermCountDict": {
-          "최근": 1
-        },
-        "compoundTermCountDict": {
-          "최근": 1
-        },
+        "singleTermCountDict": { "최근": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:45:42"
       }
@@ -8099,39 +6436,21 @@
           "지휘": 1,
           "필요": 1
         },
-        "compoundTermCountDict": {
-          "부대": 1,
-          "병사": 1,
-          "사고": 1,
-          "지휘": 1,
-          "필요": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:45:51"
       },
       {
         "sentence": "병사들이 자기 알아서 자기가 잘못한 것에 대해서 자기가 책임져야 되는 거고 만약 선탑 같은 것 필요 없는 것 아니겠습니까?",
-        "singleTermCountDict": {
-          "병사": 1,
-          "선탑": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "병사": 1,
-          "선탑": 1,
-          "필요": 1
-        },
+        "singleTermCountDict": { "병사": 1, "선탑": 1, "필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:45:56"
       },
       {
         "sentence": "자기가 운전하다가 잘못되면 사고 나면.",
-        "singleTermCountDict": {
-          "운전": 1
-        },
-        "compoundTermCountDict": {
-          "운전": 1
-        },
+        "singleTermCountDict": { "운전": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:46:02"
       }
@@ -8199,25 +6518,15 @@
       },
       {
         "sentence": "열심히 전방만 보면 됩니다.",
-        "singleTermCountDict": {
-          "전방": 1
-        },
-        "compoundTermCountDict": {
-          "전방": 1
-        },
+        "singleTermCountDict": { "전방": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:46:43"
       },
       {
         "sentence": "사실 보병의 입장에서 사실 말로는 전문성이라고 말하지만 크게 전문성이 없을 수도 있습니다.",
-        "singleTermCountDict": {
-          "보병": 1,
-          "입장": 1,
-          "전문": 2
-        },
-        "compoundTermCountDict": {
-          "보병 전문성부재": 2
-        },
+        "singleTermCountDict": { "보병": 1, "입장": 1, "전문": 2 },
+        "compoundTermCountDict": { "보병 전문성부재": 2 },
         "sentiment": -0.10000000149011612,
         "time": "00:46:46"
       },
@@ -8244,12 +6553,8 @@
       },
       {
         "sentence": "그 다음에 예비역을 아까 말씀하셨는데.",
-        "singleTermCountDict": {
-          "예비": 1
-        },
-        "compoundTermCountDict": {
-          "예비": 1
-        },
+        "singleTermCountDict": { "예비": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:47:11"
       }
@@ -8264,27 +6569,15 @@
     "sentenceObjects": [
       {
         "sentence": "제가 질문 드렸던 부분은 장교와 군의관 부분입니다.",
-        "singleTermCountDict": {
-          "질문": 1,
-          "장교": 1,
-          "군의": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1,
-          "장교": 1,
-          "군의": 1
-        },
+        "singleTermCountDict": { "질문": 1, "장교": 1, "군의": 1 },
+        "compoundTermCountDict": { "질문": 1, "장교": 1, "군의": 1 },
         "sentiment": 0,
         "time": "00:47:13"
       },
       {
         "sentence": "교수님,.",
-        "singleTermCountDict": {
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "교수": 1
-        },
+        "singleTermCountDict": { "교수": 1 },
+        "compoundTermCountDict": { "교수": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:47:17"
       }
@@ -8306,12 +6599,7 @@
       },
       {
         "sentence": "예비역도 예를 들면 지금 현재처럼 하면 짧게 근무해도 근무 경험이 많기 때문에 예비역이 충분히 됩니다.",
-        "singleTermCountDict": {
-          "예비": 2,
-          "현재": 1,
-          "근무": 2,
-          "경험": 1
-        },
+        "singleTermCountDict": { "예비": 2, "현재": 1, "근무": 2, "경험": 1 },
         "compoundTermCountDict": {
           "예비역": 2,
           "예비역 근무경험": 2
@@ -8321,29 +6609,15 @@
       },
       {
         "sentence": "그런데 모병제를 해버리면 예비역 자체가 없습니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "예비": 1,
-          "자체": 1
-        },
-        "compoundTermCountDict": {
-          "예비역 소멸문제": 11
-        },
+        "singleTermCountDict": { "모병": 1, "예비": 1, "자체": 1 },
+        "compoundTermCountDict": { "예비역 소멸문제": 11 },
         "sentiment": -0.5,
         "time": "00:47:25"
       },
       {
         "sentence": "상당기간 오래 해버리면 전역할 때 늙어버리니까.",
-        "singleTermCountDict": {
-          "상당": 1,
-          "기간": 1,
-          "전역": 1
-        },
-        "compoundTermCountDict": {
-          "상당": 1,
-          "기간": 1,
-          "전역": 1
-        },
+        "singleTermCountDict": { "상당": 1, "기간": 1, "전역": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.699999988079071,
         "time": "00:47:28"
       }
@@ -8358,13 +6632,8 @@
     "sentenceObjects": [
       {
         "sentence": "직업예비군제가 있습니다.",
-        "singleTermCountDict": {
-          "직업": 1,
-          "예비": 1
-        },
-        "compoundTermCountDict": {
-          "직업예비군제 전환": 14
-        },
+        "singleTermCountDict": { "직업": 1, "예비": 1 },
+        "compoundTermCountDict": { "직업예비군제 전환": 14 },
         "sentiment": 0.30000001192092896,
         "time": "00:47:32"
       }
@@ -8386,44 +6655,22 @@
       },
       {
         "sentence": "그럴 때면 또다시 군대도 안 간 사람으로 reservist 같은 미국의 그런 제도를 만들어야 되는 거고요.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "사람": 1,
-          "미국": 1,
-          "제도": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "사람": 1,
-          "미국": 1,
-          "제도": 1
-        },
+        "singleTermCountDict": { "군대": 1, "사람": 1, "미국": 1, "제도": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:47:33"
       },
       {
         "sentence": "그 다음에 장교하고 이런 문제, 그런 부분도 저는 충분히 일리가 있다고 생각해요.",
-        "singleTermCountDict": {
-          "문제": 1,
-          "일리": 1
-        },
-        "compoundTermCountDict": {
-          "문제": 1,
-          "일리": 1
-        },
+        "singleTermCountDict": { "문제": 1, "일리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:47:39"
       },
       {
         "sentence": "병사 안 가도 되는데 왜 장교로 가겠느냐, 사실 장교를 하면 여러 가지 스트레스도 많지 않습니까?",
-        "singleTermCountDict": {
-          "병사": 1,
-          "장교": 2,
-          "스트레스": 1
-        },
-        "compoundTermCountDict": {
-          "장교 스트레스": 2
-        },
+        "singleTermCountDict": { "병사": 1, "장교": 2, "스트레스": 1 },
+        "compoundTermCountDict": { "장교 스트레스": 2 },
         "sentiment": -0.5,
         "time": "00:47:42"
       },
@@ -8456,18 +6703,7 @@
           "전력": 1,
           "받침": 1
         },
-        "compoundTermCountDict": {
-          "병사": 1,
-          "처우": 1,
-          "사람": 1,
-          "한정": 1,
-          "부사관": 1,
-          "장교": 1,
-          "확산": 1,
-          "국가": 1,
-          "전력": 1,
-          "받침": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "00:48:01"
       }
@@ -8482,12 +6718,8 @@
     "sentenceObjects": [
       {
         "sentence": "저도 좀 부사관.",
-        "singleTermCountDict": {
-          "부사관": 1
-        },
-        "compoundTermCountDict": {
-          "부사관": 1
-        },
+        "singleTermCountDict": { "부사관": 1 },
+        "compoundTermCountDict": { "부사관": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:48:13"
       }
@@ -8509,12 +6741,7 @@
       },
       {
         "sentence": "저희가 다른 질문이 있어 갖고 그걸로 넘어가야 될 것 같아서 마무리 발언 때 제가 부탁을 드릴 수 있을 것 같습니다.",
-        "singleTermCountDict": {
-          "질문": 1,
-          "마무리": 1,
-          "발언": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "질문": 1, "마무리": 1, "발언": 1, "부탁": 1 },
         "compoundTermCountDict": {
           "질문": 1,
           "마무리": 1,
@@ -8569,25 +6796,14 @@
       },
       {
         "sentence": "사실은 들어온 질문과 의견 중에서 이게 가장 많았습니다.",
-        "singleTermCountDict": {
-          "질문": 1,
-          "의견": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1,
-          "의견": 1
-        },
+        "singleTermCountDict": { "질문": 1, "의견": 1 },
+        "compoundTermCountDict": { "질문": 1, "의견": 1 },
         "sentiment": 0.30000001192092896,
         "time": "00:48:41"
       },
       {
         "sentence": "인구절벽이라면서 왜 인구의 반인 여성은 군대를 가지 않는 겁니까?",
-        "singleTermCountDict": {
-          "인구": 2,
-          "절벽": 1,
-          "여성": 1,
-          "군대": 1
-        },
+        "singleTermCountDict": { "인구": 2, "절벽": 1, "여성": 1, "군대": 1 },
         "compoundTermCountDict": {
           "인구절벽": 1,
           "인구": 1,
@@ -8599,12 +6815,8 @@
       },
       {
         "sentence": "라는 질문입니다.",
-        "singleTermCountDict": {
-          "질문": 1
-        },
-        "compoundTermCountDict": {
-          "질문": 1
-        },
+        "singleTermCountDict": { "질문": 1 },
+        "compoundTermCountDict": { "질문": 1 },
         "sentiment": 0,
         "time": "00:48:49"
       },
@@ -8692,13 +6904,8 @@
       },
       {
         "sentence": "특히 이 문제는 군 가산점 문제랑 엮일 수밖에 없다는 생각을 하게 됩니다.",
-        "singleTermCountDict": {
-          "문제": 2,
-          "가산": 1
-        },
-        "compoundTermCountDict": {
-          "군가산점": 1
-        },
+        "singleTermCountDict": { "문제": 2, "가산": 1 },
+        "compoundTermCountDict": { "군가산점": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:49:15"
       },
@@ -8779,14 +6986,8 @@
       },
       {
         "sentence": "만약에 사병 복무에 대해서 가산점을 줬을 경우에.",
-        "singleTermCountDict": {
-          "사병": 1,
-          "복무": 1,
-          "가산": 1
-        },
-        "compoundTermCountDict": {
-          "군가산점": 1
-        },
+        "singleTermCountDict": { "사병": 1, "복무": 1, "가산": 1 },
+        "compoundTermCountDict": { "군가산점": 1 },
         "sentiment": 0,
         "time": "00:50:08"
       },
@@ -8819,27 +7020,14 @@
           "허용": 1,
           "노력": 1
         },
-        "compoundTermCountDict": {
-          "미국": 1,
-          "여성": 2,
-          "전투": 1,
-          "근무": 1,
-          "허용": 1,
-          "노력": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:50:21"
       },
       {
         "sentence": "그런데 저는 그런 비슷한 시도 자체가 우리나라에서도 있을 수 있지 않나 이런 생각을 하는 거죠.",
-        "singleTermCountDict": {
-          "자체": 1,
-          "나라": 1
-        },
-        "compoundTermCountDict": {
-          "자체": 1,
-          "나라": 1
-        },
+        "singleTermCountDict": { "자체": 1, "나라": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:50:29"
       },
@@ -8874,14 +7062,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 의원님,.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "의원": 1 },
+        "compoundTermCountDict": { "장경태": 1, "의원": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:50:45"
       }
@@ -8911,40 +7093,22 @@
       },
       {
         "sentence": "결국 모병하고 비슷한 말씀이라고 생각하고요.",
-        "singleTermCountDict": {
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1
-        },
+        "singleTermCountDict": { "모병": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:50:51"
       },
       {
         "sentence": "모병제로 전환하면 이런 부분들이 많이 해소가 될 거라고 생각합니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "전환": 1,
-          "해소": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "전환": 1,
-          "해소": 1
-        },
+        "singleTermCountDict": { "모병": 1, "전환": 1, "해소": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.5,
         "time": "00:50:53"
       },
       {
         "sentence": "오히려 여성 사병들이 발생할 거거든요.",
-        "singleTermCountDict": {
-          "여성": 1,
-          "사병": 1,
-          "발생": 1
-        },
-        "compoundTermCountDict": {
-          "여성 사병": 1
-        },
+        "singleTermCountDict": { "여성": 1, "사병": 1, "발생": 1 },
+        "compoundTermCountDict": { "여성 사병": 1 },
         "sentiment": -0.4000000059604645,
         "time": "00:50:56"
       },
@@ -8966,15 +7130,8 @@
       },
       {
         "sentence": "같은 호봉에 맞춰서 병사2호봉과 하사2호봉이 비슷할 수 있고 물론 차이는 있을 겁니다.",
-        "singleTermCountDict": {
-          "호봉": 3,
-          "병사": 1,
-          "하사": 1,
-          "차이": 1
-        },
-        "compoundTermCountDict": {
-          "호봉": 3
-        },
+        "singleTermCountDict": { "호봉": 3, "병사": 1, "하사": 1, "차이": 1 },
+        "compoundTermCountDict": { "호봉": 3 },
         "sentiment": 0.30000001192092896,
         "time": "00:51:05"
       },
@@ -9005,14 +7162,7 @@
           "책임": 1,
           "사명": 1
         },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "계급": 1,
-          "차이": 1,
-          "모두": 1,
-          "책임": 1,
-          "사명": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:51:18"
       }
@@ -9027,13 +7177,8 @@
     "sentenceObjects": [
       {
         "sentence": "아니, 그런데 사병 1호봉이 300만 원이면.",
-        "singleTermCountDict": {
-          "사병": 1,
-          "호봉": 1
-        },
-        "compoundTermCountDict": {
-          "병사월급 300만원": 1
-        },
+        "singleTermCountDict": { "사병": 1, "호봉": 1 },
+        "compoundTermCountDict": { "병사월급 300만원": 1 },
         "sentiment": -0.30000001192092896,
         "time": "00:51:25"
       }
@@ -9056,14 +7201,7 @@
           "전공": 1,
           "페인트": 1
         },
-        "compoundTermCountDict": {
-          "징집": 1,
-          "군대": 1,
-          "특례": 1,
-          "미술": 1,
-          "전공": 1,
-          "페인트": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:51:26"
       },
@@ -9079,16 +7217,7 @@
           "운동": 1,
           "멩이": 1
         },
-        "compoundTermCountDict": {
-          "생물": 1,
-          "전공": 1,
-          "잔디": 1,
-          "지리": 1,
-          "학과": 1,
-          "출신": 1,
-          "운동": 1,
-          "멩이": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:51:32"
       },
@@ -9114,12 +7243,8 @@
       },
       {
         "sentence": "아무리 위험해도.",
-        "singleTermCountDict": {
-          "위험": 1
-        },
-        "compoundTermCountDict": {
-          "위험": 1
-        },
+        "singleTermCountDict": { "위험": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:51:50"
       },
@@ -9132,13 +7257,7 @@
           "시작": 1,
           "환경": 1
         },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "노력": 1,
-          "논의": 1,
-          "시작": 1,
-          "환경": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:51:21"
       }
@@ -9153,15 +7272,8 @@
     "sentenceObjects": [
       {
         "sentence": "김종대 의원님은 여성모병제를 어떻게 생각하십니까?",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1,
-          "여성": 1,
-          "모병": 1
-        },
-        "compoundTermCountDict": {
-          "여성모병": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1, "여성": 1, "모병": 1 },
+        "compoundTermCountDict": { "여성모병": 1 },
         "sentiment": 0,
         "time": "00:51:51"
       }
@@ -9208,14 +7320,8 @@
     "sentenceObjects": [
       {
         "sentence": "그 논의는 아마 봉급체계는 또 달라지겠죠.",
-        "singleTermCountDict": {
-          "논의": 1,
-          "봉급": 1,
-          "체계": 1
-        },
-        "compoundTermCountDict": {
-          "봉급체계 변화": 12
-        },
+        "singleTermCountDict": { "논의": 1, "봉급": 1, "체계": 1 },
+        "compoundTermCountDict": { "봉급체계 변화": 12 },
         "sentiment": 0,
         "time": "00:52:16"
       }
@@ -9230,12 +7336,8 @@
     "sentenceObjects": [
       {
         "sentence": "곤란한 건 다 빼고 하려고 하니까.",
-        "singleTermCountDict": {
-          "곤란": 1
-        },
-        "compoundTermCountDict": {
-          "곤란": 1
-        },
+        "singleTermCountDict": { "곤란": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:52:19"
       }
@@ -9281,13 +7383,7 @@
           "사병": 1,
           "폐지": 1
         },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "청년": 1,
-          "용어": 2,
-          "사병": 1,
-          "폐지": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:52:28"
       }
@@ -9302,23 +7398,15 @@
     "sentenceObjects": [
       {
         "sentence": "용사로 가겠습니다.",
-        "singleTermCountDict": {
-          "용사": 1
-        },
-        "compoundTermCountDict": {
-          "용사": 1
-        },
+        "singleTermCountDict": { "용사": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:52:29"
       },
       {
         "sentence": "용사.",
-        "singleTermCountDict": {
-          "용사": 1
-        },
-        "compoundTermCountDict": {
-          "용사": 1
-        },
+        "singleTermCountDict": { "용사": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:52:29"
       }
@@ -9343,27 +7431,14 @@
           "용어": 1,
           "병사": 1
         },
-        "compoundTermCountDict": {
-          "사병": 2,
-          "용사": 1,
-          "전방": 1,
-          "전투": 1,
-          "부대": 1,
-          "공식": 1,
-          "용어": 1,
-          "병사": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:52:34"
       },
       {
         "sentence": "병사.",
-        "singleTermCountDict": {
-          "병사": 1
-        },
-        "compoundTermCountDict": {
-          "병사": 1
-        },
+        "singleTermCountDict": { "병사": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:52:41"
       },
@@ -9377,14 +7452,7 @@
           "용어": 2,
           "폐지": 1
         },
-        "compoundTermCountDict": {
-          "자유": 1,
-          "한국당": 1,
-          "의원": 1,
-          "하사": 1,
-          "용어": 2,
-          "폐지": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:52:43"
       },
@@ -9397,51 +7465,29 @@
       },
       {
         "sentence": "지금 부사관입니다.",
-        "singleTermCountDict": {
-          "부사관": 1
-        },
-        "compoundTermCountDict": {
-          "부사관": 1
-        },
+        "singleTermCountDict": { "부사관": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:52:51"
       },
       {
         "sentence": "부사관.",
-        "singleTermCountDict": {
-          "부사관": 1
-        },
-        "compoundTermCountDict": {
-          "부사관": 1
-        },
+        "singleTermCountDict": { "부사관": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:52:52"
       },
       {
         "sentence": "그런데 막 이런 용어들부터 남발하는 것들 보면 저는 좀 진정성에 문제가 있다.",
-        "singleTermCountDict": {
-          "용어": 1,
-          "남발": 1,
-          "진정": 1,
-          "문제": 1
-        },
-        "compoundTermCountDict": {
-          "용어": 1,
-          "남발": 1,
-          "진정": 1,
-          "문제": 1
-        },
+        "singleTermCountDict": { "용어": 1, "남발": 1, "진정": 1, "문제": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:52:54"
       },
       {
         "sentence": "우선 충분히 더 공부가 돼야 된다고 보고요.",
-        "singleTermCountDict": {
-          "공부": 1
-        },
-        "compoundTermCountDict": {
-          "공부": 1
-        },
+        "singleTermCountDict": { "공부": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.30000001192092896,
         "time": "00:52:59"
       }
@@ -9456,13 +7502,8 @@
     "sentenceObjects": [
       {
         "sentence": "여성징병제에 대해서 어떻게 생각하십니까?",
-        "singleTermCountDict": {
-          "여성": 1,
-          "징병": 1
-        },
-        "compoundTermCountDict": {
-          "여성징병": 1
-        },
+        "singleTermCountDict": { "여성": 1, "징병": 1 },
+        "compoundTermCountDict": { "여성징병": 1 },
         "sentiment": 0,
         "time": "00:52:59"
       }
@@ -9522,12 +7563,8 @@
     "sentenceObjects": [
       {
         "sentence": "의원님 제가 한 가지만 짚고 넘어가면.",
-        "singleTermCountDict": {
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "의원": 1
-        },
+        "singleTermCountDict": { "의원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:53:28"
       }
@@ -9542,12 +7579,8 @@
     "sentenceObjects": [
       {
         "sentence": "여성은 왜 안 간다고 생각하십니까?",
-        "singleTermCountDict": {
-          "여성": 1
-        },
-        "compoundTermCountDict": {
-          "여성": 1
-        },
+        "singleTermCountDict": { "여성": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "00:53:31"
       }
@@ -9700,12 +7733,8 @@
       },
       {
         "sentence": "제가 다음, 이 얘기 나오고 이쪽이 먼저 얘기를 했기 때문에 제가 다음으로 드리도록 하겠습니다.",
-        "singleTermCountDict": {
-          "다음": 2
-        },
-        "compoundTermCountDict": {
-          "다음": 2
-        },
+        "singleTermCountDict": { "다음": 2 },
+        "compoundTermCountDict": { "다음": 2 },
         "sentiment": 0,
         "time": "00:54:10"
       },
@@ -9727,26 +7756,15 @@
     "sentenceObjects": [
       {
         "sentence": "그 취지에 찬성을 하고요.",
-        "singleTermCountDict": {
-          "취지": 1,
-          "찬성": 1
-        },
-        "compoundTermCountDict": {
-          "여성모병": 1
-        },
+        "singleTermCountDict": { "취지": 1, "찬성": 1 },
+        "compoundTermCountDict": { "여성모병": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:54:17"
       },
       {
         "sentence": "바로 그런 것들이 모병제 당위성을 또 뒷받침해주는 측면 중에 하나예요.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "당위": 1,
-          "뒷받침": 1
-        },
-        "compoundTermCountDict": {
-          "모병제 당위성": 1
-        },
+        "singleTermCountDict": { "모병": 1, "당위": 1, "뒷받침": 1 },
+        "compoundTermCountDict": { "모병제 당위성": 1 },
         "sentiment": 0.699999988079071,
         "time": "00:54:17"
       },
@@ -9768,12 +7786,8 @@
       },
       {
         "sentence": "그리고 교수님께서.",
-        "singleTermCountDict": {
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "교수": 1
-        },
+        "singleTermCountDict": { "교수": 1 },
+        "compoundTermCountDict": { "교수": 1 },
         "sentiment": 0.30000001192092896,
         "time": "00:54:28"
       }
@@ -9788,14 +7802,8 @@
     "sentenceObjects": [
       {
         "sentence": "의원님 짧게 부탁드릴게요.",
-        "singleTermCountDict": {
-          "의원": 1,
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "의원": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "의원": 1, "부탁": 1 },
+        "compoundTermCountDict": { "의원": 1, "부탁": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:54:28"
       }
@@ -9810,12 +7818,8 @@
     "sentenceObjects": [
       {
         "sentence": "오늘 우리 500분 토론하겠는데요.",
-        "singleTermCountDict": {
-          "토론": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1
-        },
+        "singleTermCountDict": { "토론": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:54:36"
       }
@@ -9830,25 +7834,15 @@
     "sentenceObjects": [
       {
         "sentence": "군대 여러 가지 어떤 개선을 통해 가지고 우리 군대 진화하고 있습니다.",
-        "singleTermCountDict": {
-          "군대": 2,
-          "개선": 1,
-          "진화": 1
-        },
-        "compoundTermCountDict": {
-          "군대환경 개선": 2
-        },
+        "singleTermCountDict": { "군대": 2, "개선": 1, "진화": 1 },
+        "compoundTermCountDict": { "군대환경 개선": 2 },
         "sentiment": 0.5,
         "time": "00:54:38"
       },
       {
         "sentence": "하루가 다릅니다.",
-        "singleTermCountDict": {
-          "하루": 1
-        },
-        "compoundTermCountDict": {
-          "하루": 1
-        },
+        "singleTermCountDict": { "하루": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:54:42"
       },
@@ -9861,13 +7855,7 @@
           "모병": 1,
           "이미지": 1
         },
-        "compoundTermCountDict": {
-          "과정": 1,
-          "최종": 1,
-          "완성태": 1,
-          "모병": 1,
-          "이미지": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:54:44"
       },
@@ -9934,14 +7922,8 @@
     "sentenceObjects": [
       {
         "sentence": "가장 모병제다운 제도죠.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "제도": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "제도": 1
-        },
+        "singleTermCountDict": { "모병": 1, "제도": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "00:55:09"
       }
@@ -10007,27 +7989,15 @@
       },
       {
         "sentence": "그런데 이게 월급 300만 원 갖고 되는 게 아니거든요.",
-        "singleTermCountDict": {
-          "월급": 1
-        },
-        "compoundTermCountDict": {
-          "월급": 1
-        },
+        "singleTermCountDict": { "월급": 1 },
+        "compoundTermCountDict": { "월급": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:55:31"
       },
       {
         "sentence": "미국 같은 경우 월급이 그것보다 제가 알기에 처음 들어가면 낮습니다.",
-        "singleTermCountDict": {
-          "미국": 1,
-          "월급": 1,
-          "처음": 1
-        },
-        "compoundTermCountDict": {
-          "미국": 1,
-          "월급": 1,
-          "처음": 1
-        },
+        "singleTermCountDict": { "미국": 1, "월급": 1, "처음": 1 },
+        "compoundTermCountDict": { "미국": 1, "월급": 1, "처음": 1 },
         "sentiment": 0,
         "time": "00:55:35"
       },
@@ -10065,23 +8035,15 @@
     "sentenceObjects": [
       {
         "sentence": "시민권도 주기도하죠.",
-        "singleTermCountDict": {
-          "시민": 1
-        },
-        "compoundTermCountDict": {
-          "시민권 부여": 1
-        },
+        "singleTermCountDict": { "시민": 1 },
+        "compoundTermCountDict": { "시민권 부여": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:55:38"
       },
       {
         "sentence": "예전에는.",
-        "singleTermCountDict": {
-          "예전": 1
-        },
-        "compoundTermCountDict": {
-          "예전": 1
-        },
+        "singleTermCountDict": { "예전": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:55:38"
       }
@@ -10096,12 +8058,8 @@
     "sentenceObjects": [
       {
         "sentence": "그건 외국인 경우.",
-        "singleTermCountDict": {
-          "외국": 1
-        },
-        "compoundTermCountDict": {
-          "외국": 1
-        },
+        "singleTermCountDict": { "외국": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "00:55:39"
       }
@@ -10116,36 +8074,22 @@
     "sentenceObjects": [
       {
         "sentence": "시민권을 주기도 하고요.",
-        "singleTermCountDict": {
-          "시민": 1
-        },
-        "compoundTermCountDict": {
-          "시민": 1
-        },
+        "singleTermCountDict": { "시민": 1 },
+        "compoundTermCountDict": { "시민": 1 },
         "sentiment": 0.30000001192092896,
         "time": "00:55:44"
       },
       {
         "sentence": "외국인의 경우에는.",
-        "singleTermCountDict": {
-          "외국": 1
-        },
-        "compoundTermCountDict": {
-          "외국": 1
-        },
+        "singleTermCountDict": { "외국": 1 },
+        "compoundTermCountDict": { "외국": 1 },
         "sentiment": 0,
         "time": "00:55:46"
       },
       {
         "sentence": "굉장히 많은 혜택이 주어지는데 그리고 연금은 당연하고요.",
-        "singleTermCountDict": {
-          "혜택": 1,
-          "연금": 1
-        },
-        "compoundTermCountDict": {
-          "혜택": 1,
-          "연금": 1
-        },
+        "singleTermCountDict": { "혜택": 1, "연금": 1 },
+        "compoundTermCountDict": { "혜택": 1, "연금": 1 },
         "sentiment": 0.699999988079071,
         "time": "00:55:49"
       },
@@ -10198,12 +8142,8 @@
     "sentenceObjects": [
       {
         "sentence": "주제 자꾸 늦어져서 이걸 꼭 말씀드려야 될 것 같아요.",
-        "singleTermCountDict": {
-          "주제": 1
-        },
-        "compoundTermCountDict": {
-          "여군 모병 후 후방투입": 27
-        },
+        "singleTermCountDict": { "주제": 1 },
+        "compoundTermCountDict": { "여군 후방투입": 27 },
         "sentiment": 0.30000001192092896,
         "time": "00:56:01"
       }
@@ -10218,12 +8158,8 @@
     "sentenceObjects": [
       {
         "sentence": "예산부분 말씀해주시기 바랍니다.",
-        "singleTermCountDict": {
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "예산부분": 1
-        },
+        "singleTermCountDict": { "예산": 1 },
+        "compoundTermCountDict": { "예산부분": 1 },
         "sentiment": -0.10000000149011612,
         "time": "00:56:02"
       }
@@ -10238,13 +8174,8 @@
     "sentenceObjects": [
       {
         "sentence": "저는 여성 그걸 굉장히 좀 진지하게 생각을 했어요.",
-        "singleTermCountDict": {
-          "여성": 1
-        },
-        "compoundTermCountDict": {
-          "여성징집": 1,
-          "남녀 전투투입 어려움": 8
-        },
+        "singleTermCountDict": { "여성": 1 },
+        "compoundTermCountDict": { "여성징집": 1, "남녀 전투투입 어려움": 8 },
         "sentiment": -0.10000000149011612,
         "time": "00:56:03"
       },
@@ -10266,14 +8197,8 @@
     "sentenceObjects": [
       {
         "sentence": "지금 또 주제를 벗어난 말씀하고 계신데 짧게 부탁드리겠습니다.",
-        "singleTermCountDict": {
-          "주제": 1,
-          "부탁": 1
-        },
-        "compoundTermCountDict": {
-          "주제": 1,
-          "부탁": 1
-        },
+        "singleTermCountDict": { "주제": 1, "부탁": 1 },
+        "compoundTermCountDict": { "주제": 1, "부탁": 1 },
         "sentiment": 0,
         "time": "00:56:14"
       }
@@ -10323,40 +8248,21 @@
           "포로": 1,
           "능욕": 1
         },
-        "compoundTermCountDict": {
-          "텐트": 1,
-          "남녀": 1,
-          "병사": 1,
-          "전투": 1,
-          "여성": 1,
-          "군인": 1,
-          "포로": 1,
-          "능욕": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "00:56:25"
       },
       {
         "sentence": "그래서 저는 사실 여군 여성들이 들어오는 걸 저는 환영합니다.",
-        "singleTermCountDict": {
-          "여군": 1,
-          "여성": 1,
-          "환영": 1
-        },
-        "compoundTermCountDict": {
-          "여군 환영": 2
-        },
+        "singleTermCountDict": { "여군": 1, "여성": 1, "환영": 1 },
+        "compoundTermCountDict": { "여군 환영": 2 },
         "sentiment": 0.4000000059604645,
         "time": "00:56:39"
       },
       {
         "sentence": "저는 장점도 많은 것 같아요.",
-        "singleTermCountDict": {
-          "장점": 1
-        },
-        "compoundTermCountDict": {
-          "여군 장점존재": 1
-        },
+        "singleTermCountDict": { "장점": 1 },
+        "compoundTermCountDict": { "여군 장점존재": 1 },
         "sentiment": 0.8999999761581421,
         "time": "00:56:43"
       },
@@ -10374,8 +8280,7 @@
           "최소": 1
         },
         "compoundTermCountDict": {
-          "부대이동 최소화": 1,
-          "여군 모병 후 후방투입": 27
+          "부대이동 최소화": 1
         },
         "sentiment": 0.20000000298023224,
         "time": "00:56:44"
@@ -10402,12 +8307,8 @@
       },
       {
         "sentence": "아까 사실은 조금은 그 2조 어느 정도 말씀하셨는데 300만 원 갖고 제가 25만을 계산해보니까 그 9조가 나오더라고요.",
-        "singleTermCountDict": {
-          "계산": 1
-        },
-        "compoundTermCountDict": {
-          "국방예산초과": 16.5
-        },
+        "singleTermCountDict": { "계산": 1 },
+        "compoundTermCountDict": { "국방예산초과": 16.5 },
         "sentiment": 0.10000000149011612,
         "time": "00:57:04"
       },
@@ -10420,39 +8321,22 @@
       },
       {
         "sentence": "그런데 9조가 봉급만 해도 300만 원에서 봉급만 해도 9조예요.",
-        "singleTermCountDict": {
-          "봉급": 2
-        },
-        "compoundTermCountDict": {
-          "봉급": 2
-        },
+        "singleTermCountDict": { "봉급": 2 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "00:57:21"
       },
       {
         "sentence": "우리 국방예산 47조면 18%되는데요.",
-        "singleTermCountDict": {
-          "국방": 1,
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "국방예산": 1
-        },
+        "singleTermCountDict": { "국방": 1, "예산": 1 },
+        "compoundTermCountDict": { "국방예산": 1 },
         "sentiment": -0.20000000298023224,
         "time": "00:57:25"
       },
       {
         "sentence": "18%추가로 돼야 되고 이 사람들 추가 집도 줘야 되고 하다 보면 너무 너무 예산이 많이 들어요.",
-        "singleTermCountDict": {
-          "추가": 2,
-          "사람": 1,
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "추가": 2,
-          "사람": 1,
-          "예산": 1
-        },
+        "singleTermCountDict": { "추가": 2, "사람": 1, "예산": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.30000001192092896,
         "time": "00:57:29"
       },
@@ -10494,12 +8378,8 @@
     "sentenceObjects": [
       {
         "sentence": "만만치 않은 예산 말씀하셨는데요.",
-        "singleTermCountDict": {
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "예산": 1
-        },
+        "singleTermCountDict": { "예산": 1 },
+        "compoundTermCountDict": { "예산": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:57:35"
       }
@@ -10540,15 +8420,8 @@
       },
       {
         "sentence": "7조 원 정도 소요가 되고 초봉은 9급 공무원 기준으로 했어요.",
-        "singleTermCountDict": {
-          "소요": 1,
-          "초봉": 1,
-          "공무": 1,
-          "기준": 1
-        },
-        "compoundTermCountDict": {
-          "초봉인상": 1
-        },
+        "singleTermCountDict": { "소요": 1, "초봉": 1, "공무": 1, "기준": 1 },
+        "compoundTermCountDict": { "초봉인상": 1 },
         "sentiment": 0.10000000149011612,
         "time": "00:58:18"
       },
@@ -10580,15 +8453,8 @@
       },
       {
         "sentence": "시설운영예산도 다 절감될 겁니다.",
-        "singleTermCountDict": {
-          "시설": 1,
-          "운영": 1,
-          "예산": 1,
-          "절감": 1
-        },
-        "compoundTermCountDict": {
-          "시설운영예산 절감": 1
-        },
+        "singleTermCountDict": { "시설": 1, "운영": 1, "예산": 1, "절감": 1 },
+        "compoundTermCountDict": { "시설운영예산 절감": 1 },
         "sentiment": 0.699999988079071,
         "time": "00:58:42"
       },
@@ -10613,25 +8479,15 @@
       },
       {
         "sentence": "이건 수도 없이 시뮬레이션을 굴려봤어요.",
-        "singleTermCountDict": {
-          "시뮬레이션": 1
-        },
-        "compoundTermCountDict": {
-          "시뮬레이션": 1
-        },
+        "singleTermCountDict": { "시뮬레이션": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "00:58:58"
       },
       {
         "sentence": "이런 정도면 내년 국방예산이 50조입니다.",
-        "singleTermCountDict": {
-          "내년": 1,
-          "국방": 1,
-          "예산": 1
-        },
-        "compoundTermCountDict": {
-          "국방예산 50조": 1
-        },
+        "singleTermCountDict": { "내년": 1, "국방": 1, "예산": 1 },
+        "compoundTermCountDict": { "국방예산 50조": 1 },
         "sentiment": 0.20000000298023224,
         "time": "00:59:01"
       },
@@ -10660,12 +8516,8 @@
       },
       {
         "sentence": "그동안 거의 공짜로 쓴 거예요.",
-        "singleTermCountDict": {
-          "동안": 1
-        },
-        "compoundTermCountDict": {
-          "동안": 1
-        },
+        "singleTermCountDict": { "동안": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "00:59:13"
       },
@@ -10677,10 +8529,7 @@
           "국방": 1,
           "예산": 1
         },
-        "compoundTermCountDict": {
-          "병사월급 100만원": 1,
-          "국방예산": 1
-        },
+        "compoundTermCountDict": { "병사월급 100만원": 1, "국방예산": 1 },
         "sentiment": 0,
         "time": "00:59:15"
       },
@@ -10710,15 +8559,8 @@
       },
       {
         "sentence": "그러니까 이런 부분들을 짜임새 있게 조정을 하면 우리가 이걸 짜임새 있게 한 번 잘 설계를 해보면 충분히 경로는 나온다는 것이죠.",
-        "singleTermCountDict": {
-          "짜임": 2,
-          "조정": 1,
-          "설계": 1,
-          "경로": 1
-        },
-        "compoundTermCountDict": {
-          "부대 통폐합을 통한 예산조정": 15
-        },
+        "singleTermCountDict": { "짜임": 2, "조정": 1, "설계": 1, "경로": 1 },
+        "compoundTermCountDict": { "부대 통폐합을 통한 예산조정": 15 },
         "sentiment": 0.30000001192092896,
         "time": "00:59:41"
       }
@@ -10733,14 +8575,8 @@
     "sentenceObjects": [
       {
         "sentence": "이준석 위원님,.",
-        "singleTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "이준석": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "이준석": 1, "위원": 1 },
+        "compoundTermCountDict": { "이준석": 1, "위원": 1 },
         "sentiment": -0.6000000238418579,
         "time": "00:59:41"
       }
@@ -10773,13 +8609,8 @@
       },
       {
         "sentence": "제가 말하는 게 뭐냐 하면 병력을 줄이면서 하면 비용이 그렇게 많이 늘지 않는다 똑같은 거예요.",
-        "singleTermCountDict": {
-          "병력": 1,
-          "비용": 1
-        },
-        "compoundTermCountDict": {
-          "병력유지": 1
-        },
+        "singleTermCountDict": { "병력": 1, "비용": 1 },
+        "compoundTermCountDict": { "병력유지": 1 },
         "sentiment": -0.5,
         "time": "01:00:02"
       },
@@ -10801,12 +8632,8 @@
     "sentenceObjects": [
       {
         "sentence": "인건비는 그렇죠.",
-        "singleTermCountDict": {
-          "인건": 1
-        },
-        "compoundTermCountDict": {
-          "인건": 1
-        },
+        "singleTermCountDict": { "인건": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "01:00:08"
       }
@@ -10828,13 +8655,7 @@
           "제로콜라": 1,
           "논리": 1
         },
-        "compoundTermCountDict": {
-          "고기": 1,
-          "패티": 1,
-          "햄버거": 1,
-          "제로콜라": 1,
-          "논리": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0.4000000059604645,
         "time": "01:00:09"
       }
@@ -10849,12 +8670,8 @@
     "sentenceObjects": [
       {
         "sentence": "간단한 산수예요.",
-        "singleTermCountDict": {
-          "산수": 1
-        },
-        "compoundTermCountDict": {
-          "산수": 1
-        },
+        "singleTermCountDict": { "산수": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.6000000238418579,
         "time": "01:00:13"
       }
@@ -10976,55 +8793,29 @@
       },
       {
         "sentence": "그 정도로 가야 모병규모를 맞추게 돼 있어요.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "규모": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "규모": 1
-        },
+        "singleTermCountDict": { "모병": 1, "규모": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:00:57"
       },
       {
         "sentence": "지금 예측치 정의당 예측치도 아까 9급 공무원 기준에 맞춘다고 했는데 저 같으면 9급 공무원 합니다.",
-        "singleTermCountDict": {
-          "예측": 2,
-          "정의당": 1,
-          "공무": 2,
-          "기준": 1
-        },
-        "compoundTermCountDict": {
-          "예측": 2,
-          "정의당": 1,
-          "공무": 2,
-          "기준": 1
-        },
+        "singleTermCountDict": { "예측": 2, "정의당": 1, "공무": 2, "기준": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "01:00:59"
       },
       {
         "sentence": "똑같은 조건이라면.",
-        "singleTermCountDict": {
-          "조건": 1
-        },
-        "compoundTermCountDict": {
-          "조건": 1
-        },
+        "singleTermCountDict": { "조건": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "01:01:05"
       },
       {
         "sentence": "당연히 그런 추산 자체가 맞지 않는...",
-        "singleTermCountDict": {
-          "추산": 1,
-          "자체": 1
-        },
-        "compoundTermCountDict": {
-          "추산": 1,
-          "자체": 1
-        },
+        "singleTermCountDict": { "추산": 1, "자체": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.699999988079071,
         "time": "01:01:06"
       }
@@ -11039,14 +8830,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 위원장님.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": { "장경태": 1, "위원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:01:06"
       }
@@ -11061,12 +8846,8 @@
     "sentenceObjects": [
       {
         "sentence": "제가 이거 하나만 더 지적할게요.",
-        "singleTermCountDict": {
-          "지적": 1
-        },
-        "compoundTermCountDict": {
-          "지적": 1
-        },
+        "singleTermCountDict": { "지적": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:01:07"
       },
@@ -11101,14 +8882,8 @@
       },
       {
         "sentence": "아까 의원님 지적하셨던 것처럼.",
-        "singleTermCountDict": {
-          "의원": 1,
-          "지적": 1
-        },
-        "compoundTermCountDict": {
-          "의원": 1,
-          "지적": 1
-        },
+        "singleTermCountDict": { "의원": 1, "지적": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:01:36"
       },
@@ -11131,25 +8906,15 @@
       },
       {
         "sentence": "그러면 우리도 멀쩡하게 돌아가던 훈련 줄여야 되는 것이고요.",
-        "singleTermCountDict": {
-          "훈련": 1
-        },
-        "compoundTermCountDict": {
-          "훈련": 1
-        },
+        "singleTermCountDict": { "훈련": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "01:01:46"
       },
       {
         "sentence": "전차에 기름 덜 넣어야 되는 것이고요.",
-        "singleTermCountDict": {
-          "전차": 1,
-          "기름": 1
-        },
-        "compoundTermCountDict": {
-          "전차": 1,
-          "기름": 1
-        },
+        "singleTermCountDict": { "전차": 1, "기름": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.6000000238418579,
         "time": "01:01:50"
       }
@@ -11180,12 +8945,8 @@
     "sentenceObjects": [
       {
         "sentence": "반론 해주시죠.",
-        "singleTermCountDict": {
-          "반론": 1
-        },
-        "compoundTermCountDict": {
-          "반론": 1
-        },
+        "singleTermCountDict": { "반론": 1 },
+        "compoundTermCountDict": { "반론": 1 },
         "sentiment": -0.699999988079071,
         "time": "01:01:52"
       }
@@ -11226,12 +8987,8 @@
     "sentenceObjects": [
       {
         "sentence": "탱크도 줄일까요?",
-        "singleTermCountDict": {
-          "탱크": 1
-        },
-        "compoundTermCountDict": {
-          "탱크": 1
-        },
+        "singleTermCountDict": { "탱크": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "01:02:01"
       }
@@ -11283,70 +9040,43 @@
       },
       {
         "sentence": "그 다음에 단계고요.",
-        "singleTermCountDict": {
-          "단계": 1
-        },
-        "compoundTermCountDict": {
-          "단계": 1
-        },
+        "singleTermCountDict": { "단계": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "01:02:22"
       },
       {
         "sentence": "여기서 국방비가 줄줄 새는 거란 말입니다.",
-        "singleTermCountDict": {
-          "국방": 1
-        },
-        "compoundTermCountDict": {
-          "국방비 누출": 1
-        },
+        "singleTermCountDict": { "국방": 1 },
+        "compoundTermCountDict": { "국방비 누출": 1 },
         "sentiment": 0,
         "time": "01:02:24"
       },
       {
         "sentence": "그 다음에 군수비용도 따라서 줄어듭니다.",
-        "singleTermCountDict": {
-          "군수": 1,
-          "비용": 1
-        },
-        "compoundTermCountDict": {
-          "군수비용 감소": 1
-        },
+        "singleTermCountDict": { "군수": 1, "비용": 1 },
+        "compoundTermCountDict": { "군수비용 감소": 1 },
         "sentiment": 0,
         "time": "01:02:27"
       },
       {
         "sentence": "그러면 이것을 초점화 해서 다시 병력 국방 경영을 재설계해야 되는 것이죠.",
-        "singleTermCountDict": {
-          "병력": 1,
-          "국방": 1,
-          "경영": 1
-        },
-        "compoundTermCountDict": {
-          "국방경영 재설계": 1
-        },
+        "singleTermCountDict": { "병력": 1, "국방": 1, "경영": 1 },
+        "compoundTermCountDict": { "국방경영 재설계": 1 },
         "sentiment": 0,
         "time": "01:02:29"
       },
       {
         "sentence": "안 되는 이유로 따지면 늘어나는 것만 다 보이실 것 아니예요.",
-        "singleTermCountDict": {
-          "이유": 1
-        },
-        "compoundTermCountDict": {
-          "이유": 1
-        },
+        "singleTermCountDict": { "이유": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "01:02:36"
       },
       {
         "sentence": "그렇지만 이걸 가지고 새로운 경영을 짜는 겁니다.",
-        "singleTermCountDict": {
-          "경영": 1
-        },
-        "compoundTermCountDict": {
-          "경영": 1
-        },
+        "singleTermCountDict": { "경영": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "01:02:39"
       }
@@ -11389,27 +9119,15 @@
     "sentenceObjects": [
       {
         "sentence": "병력을 20만으로 줄이면 더 많이 남지 않습니까?",
-        "singleTermCountDict": {
-          "병력": 1
-        },
-        "compoundTermCountDict": {
-          "병력감축": 1
-        },
+        "singleTermCountDict": { "병력": 1 },
+        "compoundTermCountDict": { "병력감축": 1 },
         "sentiment": 0,
         "time": "01:02:42"
       },
       {
         "sentence": "아까도 말했지만 이게 지금 서양 말 하듯이 꼬리가 몸통을 돌리는 거예요.",
-        "singleTermCountDict": {
-          "아까": 1,
-          "서양": 1,
-          "꼬리": 1
-        },
-        "compoundTermCountDict": {
-          "아까": 1,
-          "서양": 1,
-          "꼬리": 1
-        },
+        "singleTermCountDict": { "아까": 1, "서양": 1, "꼬리": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "01:02:47"
       },
@@ -11468,14 +9186,8 @@
       },
       {
         "sentence": "군대 가보시면 온갖 불필요하다 싶은 게 많잖아요.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "불필요": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "불필요": 1
-        },
+        "singleTermCountDict": { "군대": 1, "불필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.5,
         "time": "01:03:28"
       },
@@ -11488,16 +9200,8 @@
       },
       {
         "sentence": "그런데 어떤 전쟁 상황은 그게 또 필요합니다.",
-        "singleTermCountDict": {
-          "전쟁": 1,
-          "상황": 1,
-          "필요": 1
-        },
-        "compoundTermCountDict": {
-          "전쟁": 1,
-          "상황": 1,
-          "필요": 1
-        },
+        "singleTermCountDict": { "전쟁": 1, "상황": 1, "필요": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "01:03:31"
       },
@@ -11518,36 +9222,22 @@
       },
       {
         "sentence": "얼마나 절약할 수 있을는지.",
-        "singleTermCountDict": {
-          "절약": 1
-        },
-        "compoundTermCountDict": {
-          "절약": 1
-        },
+        "singleTermCountDict": { "절약": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.5,
         "time": "01:03:43"
       },
       {
         "sentence": "저는 아마 몇 백억도 못 절약할 겁니다.",
-        "singleTermCountDict": {
-          "절약": 1
-        },
-        "compoundTermCountDict": {
-          "절약": 1
-        },
+        "singleTermCountDict": { "절약": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:03:45"
       },
       {
         "sentence": "그러니까 국방예산 몇 조를 쉽게 절약해서 여기 있습니다 하는데 이것도 쉽게 생각하는 것 같아요.",
-        "singleTermCountDict": {
-          "국방": 1,
-          "예산": 1,
-          "절약": 1
-        },
-        "compoundTermCountDict": {
-          "국방예산 절약": 8
-        },
+        "singleTermCountDict": { "국방": 1, "예산": 1, "절약": 1 },
+        "compoundTermCountDict": { "국방예산 절약": 8 },
         "sentiment": 0.800000011920929,
         "time": "01:03:48"
       }
@@ -11578,14 +9268,8 @@
     "sentenceObjects": [
       {
         "sentence": "장경태 위원장님 말씀하시죠.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "01:03:55"
       }
@@ -11615,27 +9299,15 @@
       },
       {
         "sentence": "제가 주장했던 2.3조도 있고 혹은 예를 들면 3.9조나 6조도 있습니다.",
-        "singleTermCountDict": {
-          "주장": 1
-        },
-        "compoundTermCountDict": {
-          "주장": 1
-        },
+        "singleTermCountDict": { "주장": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.20000000298023224,
         "time": "01:04:03"
       },
       {
         "sentence": "그리고 방금 교수님께서 말씀하신 9조 원에 대한 소요도 예상될 수도 있는데요.",
-        "singleTermCountDict": {
-          "교수": 1,
-          "소요": 1,
-          "예상": 1
-        },
-        "compoundTermCountDict": {
-          "교수": 1,
-          "소요": 1,
-          "예상": 1
-        },
+        "singleTermCountDict": { "교수": 1, "소요": 1, "예상": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "01:04:07"
       },
@@ -11742,14 +9414,8 @@
     "sentenceObjects": [
       {
         "sentence": "저는 제로콜라의 예와 다르다고 생각합니다.",
-        "singleTermCountDict": {
-          "제로": 1,
-          "콜라": 1
-        },
-        "compoundTermCountDict": {
-          "제로": 1,
-          "콜라": 1
-        },
+        "singleTermCountDict": { "제로": 1, "콜라": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.10000000149011612,
         "time": "01:04:33"
       },
@@ -11771,12 +9437,7 @@
       },
       {
         "sentence": "그렇기 때문에 상쇄할 수 있다고 보고 만약에 군대가 체질이 개선된다면 방금 말씀하셨듯이 어떤 그런 어려움들은 분명히 상쇄될 거라고 봅니다.",
-        "singleTermCountDict": {
-          "상쇄": 2,
-          "군대": 1,
-          "개선": 1,
-          "어려움": 1
-        },
+        "singleTermCountDict": { "상쇄": 2, "군대": 1, "개선": 1, "어려움": 1 },
         "compoundTermCountDict": {
           "군대체질 개선": 3
         },
@@ -11810,18 +9471,8 @@
     "sentenceObjects": [
       {
         "sentence": "모병제를 하면 여러 가지 모든 게 딱 좋아진다면 어떤 수단과 방법을 쓰더라도 모병제하는 것 찬성해요.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "수단": 1,
-          "방법": 1,
-          "찬성": 1
-        },
-        "compoundTermCountDict": {
-          "모병": 1,
-          "수단": 1,
-          "방법": 1,
-          "찬성": 1
-        },
+        "singleTermCountDict": { "모병": 1, "수단": 1, "방법": 1, "찬성": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.6000000238418579,
         "time": "01:04:47"
       },
@@ -11882,17 +9533,7 @@
           "국방": 1,
           "약화": 1
         },
-        "compoundTermCountDict": {
-          "교수": 1,
-          "징병": 1,
-          "체제": 1,
-          "병력": 1,
-          "유지": 2,
-          "편제": 1,
-          "상태": 1,
-          "국방": 1,
-          "약화": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:05:13"
       }
@@ -11974,40 +9615,22 @@
       },
       {
         "sentence": "자로님이 보내주신 의견이에요.",
-        "singleTermCountDict": {
-          "자로": 1,
-          "의견": 1
-        },
-        "compoundTermCountDict": {
-          "자로": 1,
-          "의견": 1
-        },
+        "singleTermCountDict": { "자로": 1, "의견": 1 },
+        "compoundTermCountDict": { "자로": 1, "의견": 1 },
         "sentiment": 0.4000000059604645,
         "time": "01:05:33"
       },
       {
         "sentence": "‘지금 최저임금도 못 미치고’ 병사월급이요.",
-        "singleTermCountDict": {
-          "최저": 1,
-          "임금": 1,
-          "병사월급": 1
-        },
-        "compoundTermCountDict": {
-          "최저임금": 1,
-          "병사월급 100만원": 1
-        },
+        "singleTermCountDict": { "최저": 1, "임금": 1, "병사월급": 1 },
+        "compoundTermCountDict": { "최저임금": 1, "병사월급 100만원": 1 },
         "sentiment": -0.30000001192092896,
         "time": "01:05:35"
       },
       {
         "sentence": "‘군인권의식이 굉장히 낮습니다.",
-        "singleTermCountDict": {
-          "군인권": 1,
-          "의식": 1
-        },
-        "compoundTermCountDict": {
-          "낮은 군인권의식": 14
-        },
+        "singleTermCountDict": { "군인권": 1, "의식": 1 },
+        "compoundTermCountDict": { "낮은 군인권의식": 14 },
         "sentiment": 0.30000001192092896,
         "time": "01:05:39"
       },
@@ -12038,28 +9661,15 @@
       },
       {
         "sentence": "이 부분에 대해서 마무리발언 제가 한 30초 정도 물론 30초 라고 말씀드려도 1분씩 하시니까 일단 30초 정도 드리겠습니다.",
-        "singleTermCountDict": {
-          "마무리": 1,
-          "발언": 1
-        },
-        "compoundTermCountDict": {
-          "마무리발언": 1
-        },
+        "singleTermCountDict": { "마무리": 1, "발언": 1 },
+        "compoundTermCountDict": { "마무리발언": 1 },
         "sentiment": 0,
         "time": "01:05:53"
       },
       {
         "sentence": "이준석 위원님부터 시작해주시죠.",
-        "singleTermCountDict": {
-          "이준석": 1,
-          "위원": 1,
-          "시작": 1
-        },
-        "compoundTermCountDict": {
-          "이준석": 1,
-          "위원": 1,
-          "시작": 1
-        },
+        "singleTermCountDict": { "이준석": 1, "위원": 1, "시작": 1 },
+        "compoundTermCountDict": { "이준석": 1, "위원": 1, "시작": 1 },
         "sentiment": -0.5,
         "time": "01:06:02"
       }
@@ -12197,14 +9807,8 @@
       },
       {
         "sentence": "장경태 위원장님.",
-        "singleTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
-        "compoundTermCountDict": {
-          "장경태": 1,
-          "위원": 1
-        },
+        "singleTermCountDict": { "장경태": 1, "위원": 1 },
+        "compoundTermCountDict": { "장경태": 1, "위원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:07:15"
       }
@@ -12227,14 +9831,7 @@
           "사고": 1,
           "현재": 1
         },
-        "compoundTermCountDict": {
-          "변화": 1,
-          "사람": 2,
-          "미래": 1,
-          "준비": 1,
-          "사고": 1,
-          "현재": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:07:16"
       },
@@ -12260,14 +9857,8 @@
       },
       {
         "sentence": "오히려 안보를 지키기 위한 것인지 장군 수를 지키기 위한 것인지 그것이 좀 더 궁금하고요.",
-        "singleTermCountDict": {
-          "안보": 1,
-          "장군": 1
-        },
-        "compoundTermCountDict": {
-          "안보": 1,
-          "장군": 1
-        },
+        "singleTermCountDict": { "안보": 1, "장군": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.10000000149011612,
         "time": "01:07:32"
       },
@@ -12303,14 +9894,8 @@
     "sentenceObjects": [
       {
         "sentence": "박휘락 교수님.",
-        "singleTermCountDict": {
-          "박휘락": 1,
-          "교수": 1
-        },
-        "compoundTermCountDict": {
-          "박휘락": 1,
-          "교수": 1
-        },
+        "singleTermCountDict": { "박휘락": 1, "교수": 1 },
+        "compoundTermCountDict": { "박휘락": 1, "교수": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:07:50"
       }
@@ -12334,145 +9919,77 @@
           "사고": 1,
           "반성": 1
         },
-        "compoundTermCountDict": {
-          "국민": 1,
-          "모병": 1,
-          "선호": 1,
-          "이유": 1,
-          "계기": 1,
-          "사고": 1,
-          "반성": 1
-        },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:07:51"
       },
       {
         "sentence": "사실 저는 그래서 군대문화가 바뀌는 것이 굉장히 중요하다.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "문화": 1,
-          "중요": 1
-        },
-        "compoundTermCountDict": {
-          "군대문화 개선": 1
-        },
+        "singleTermCountDict": { "군대": 1, "문화": 1, "중요": 1 },
+        "compoundTermCountDict": { "군대문화 개선": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:08:02"
       },
       {
         "sentence": "특히 군의 간부들이 상당히 각성하고 과거와 다르게 해야 한다고 봅니다.",
-        "singleTermCountDict": {
-          "간부": 1,
-          "각성": 1,
-          "과거": 1
-        },
-        "compoundTermCountDict": {
-          "간부 각성": 1,
-          "간부 변화": 1
-        },
+        "singleTermCountDict": { "간부": 1, "각성": 1, "과거": 1 },
+        "compoundTermCountDict": { "간부 각성": 1, "간부 변화": 1 },
         "sentiment": -0.10000000149011612,
         "time": "01:08:07"
       },
       {
         "sentence": "특히 병사를 자기 진짜 사병으로 본다든지 또 이제 막 함부로 대한다, 이건 다 없어져야 될 것 같고요.",
-        "singleTermCountDict": {
-          "병사": 1,
-          "사병": 1
-        },
-        "compoundTermCountDict": {
-          "군 악폐습철폐": 12
-        },
+        "singleTermCountDict": { "병사": 1, "사병": 1 },
+        "compoundTermCountDict": { "군 악폐습철폐": 12 },
         "sentiment": 0.800000011920929,
         "time": "01:08:13"
       },
       {
         "sentence": "그래서 저는 우리 군대가 자율과 책임으로 나가야 된다.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "자율": 1,
-          "책임": 1
-        },
-        "compoundTermCountDict": {
-          "군대자율책임": 2
-        },
+        "singleTermCountDict": { "군대": 1, "자율": 1, "책임": 1 },
+        "compoundTermCountDict": { "군대자율책임": 2 },
         "sentiment": 0,
         "time": "01:08:20"
       },
       {
         "sentence": "모병군대와 똑같은 방식으로 현재 문화를 바꿔나가야 된다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "군대": 1,
-          "방식": 1,
-          "문화": 1
-        },
-        "compoundTermCountDict": {
-          "모병군대방식": 1,
-          "문화개선": 1
-        },
+        "singleTermCountDict": { "모병": 1, "군대": 1, "방식": 1, "문화": 1 },
+        "compoundTermCountDict": { "모병군대방식": 1, "문화개선": 1 },
         "sentiment": 0,
         "time": "01:08:24"
       },
       {
         "sentence": "그렇게 하다 보면 아마 모병제가 가능한 여건도 생길 것 같습니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "가능": 1,
-          "여건": 1
-        },
-        "compoundTermCountDict": {
-          "모병제 여건": 2
-        },
+        "singleTermCountDict": { "모병": 1, "가능": 1, "여건": 1 },
+        "compoundTermCountDict": { "모병제 여건": 2 },
         "sentiment": 0.4000000059604645,
         "time": "01:08:28"
       },
       {
         "sentence": "지금 사실 미군들보다 우리 병사들이 훨씬 더 우수하거든요.",
-        "singleTermCountDict": {
-          "미군": 1,
-          "병사": 1,
-          "우수": 1
-        },
-        "compoundTermCountDict": {
-          "우수한 병사": 1
-        },
+        "singleTermCountDict": { "미군": 1, "병사": 1, "우수": 1 },
+        "compoundTermCountDict": { "우수한 병사": 1 },
         "sentiment": 0.4000000059604645,
         "time": "01:08:31"
       },
       {
         "sentence": "그런 사람한테 자율과 책임을 주면 다 참 잘할 수가 있습니다.",
-        "singleTermCountDict": {
-          "사람": 1,
-          "자율": 1,
-          "책임": 1
-        },
-        "compoundTermCountDict": {
-          "병사 자율책임부여": 2
-        },
+        "singleTermCountDict": { "사람": 1, "자율": 1, "책임": 1 },
+        "compoundTermCountDict": { "병사 자율책임부여": 2 },
         "sentiment": 0.699999988079071,
         "time": "01:08:35"
       },
       {
         "sentence": "그 다음에 이제 한 가지는 이제 우리 안보인데요.",
-        "singleTermCountDict": {
-          "안보": 1
-        },
-        "compoundTermCountDict": {
-          "안보": 1
-        },
+        "singleTermCountDict": { "안보": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.20000000298023224,
         "time": "01:08:39"
       },
       {
         "sentence": "저는 참 북핵 문제에 대해서 나름대로 뭐 노력하고 있습니다만 굉장히 걱정합니다.",
-        "singleTermCountDict": {
-          "문제": 1,
-          "노력": 1,
-          "걱정": 1
-        },
-        "compoundTermCountDict": {
-          "북핵 문제": 1
-        },
+        "singleTermCountDict": { "문제": 1, "노력": 1, "걱정": 1 },
+        "compoundTermCountDict": { "북핵 문제": 1 },
         "sentiment": -0.5,
         "time": "01:08:43"
       },
@@ -12485,6 +10002,7 @@
           "연구": 1,
           "문제": 1,
           "해결": 1,
+
           "세항": 1,
           "국민": 1,
           "신뢰": 1
@@ -12514,14 +10032,8 @@
       },
       {
         "sentence": "김종대 의원님.",
-        "singleTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
-        "compoundTermCountDict": {
-          "김종대": 1,
-          "의원": 1
-        },
+        "singleTermCountDict": { "김종대": 1, "의원": 1 },
+        "compoundTermCountDict": { "김종대": 1, "의원": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:09:05"
       }
@@ -12536,61 +10048,36 @@
     "sentenceObjects": [
       {
         "sentence": "자율과 책임, 아주 좋은 말씀입니다.",
-        "singleTermCountDict": {
-          "자율": 1,
-          "책임": 1
-        },
-        "compoundTermCountDict": {
-          "자율책임": 1
-        },
+        "singleTermCountDict": { "자율": 1, "책임": 1 },
+        "compoundTermCountDict": { "자율책임": 1 },
         "sentiment": 0.8999999761581421,
         "time": "01:09:07"
       },
       {
         "sentence": "진화하고 있습니다.",
-        "singleTermCountDict": {
-          "진화": 1
-        },
-        "compoundTermCountDict": {
-          "진화": 1
-        },
+        "singleTermCountDict": { "진화": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.8999999761581421,
         "time": "01:09:09"
       },
       {
         "sentence": "특히 올해 많이 바뀌었고요.",
-        "singleTermCountDict": {
-          "올해": 1
-        },
-        "compoundTermCountDict": {
-          "올해": 1
-        },
+        "singleTermCountDict": { "올해": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0.6000000238418579,
         "time": "01:09:11"
       },
       {
         "sentence": "자율과 책임이 최대치로 높아졌을 때는 직업으로 가는 것입니다.",
-        "singleTermCountDict": {
-          "자율": 1,
-          "책임": 1,
-          "최대": 1,
-          "직업": 1
-        },
-        "compoundTermCountDict": {
-          "자율책임": 1,
-          "직업군인 전환": 14
-        },
+        "singleTermCountDict": { "자율": 1, "책임": 1, "최대": 1, "직업": 1 },
+        "compoundTermCountDict": { "자율책임": 1, "직업군인 전환": 14 },
         "sentiment": 0.30000001192092896,
         "time": "01:09:12"
       },
       {
         "sentence": "직장인 거예요.",
-        "singleTermCountDict": {
-          "직장": 1
-        },
-        "compoundTermCountDict": {
-          "직장": 1
-        },
+        "singleTermCountDict": { "직장": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:09:17"
       },
@@ -12614,79 +10101,43 @@
       },
       {
         "sentence": "그 다음에 청년 문제로 끝을 맺겠습니다.",
-        "singleTermCountDict": {
-          "청년": 1,
-          "문제": 1
-        },
-        "compoundTermCountDict": {
-          "청년문제": 1
-        },
+        "singleTermCountDict": { "청년": 1, "문제": 1 },
+        "compoundTermCountDict": { "청년문제": 1 },
         "sentiment": -0.10000000149011612,
         "time": "01:09:30"
       },
       {
         "sentence": "우리 청년들 남성의 경우에 30살이 돼서야 사회진출을 합니다.",
-        "singleTermCountDict": {
-          "청년": 1,
-          "남성": 1,
-          "사회": 1,
-          "진출": 1
-        },
-        "compoundTermCountDict": {
-          "뒤늦은 사회진출": 1
-        },
+        "singleTermCountDict": { "청년": 1, "남성": 1, "사회": 1, "진출": 1 },
+        "compoundTermCountDict": { "뒤늦은 사회진출": 1 },
         "sentiment": 0.10000000149011612,
         "time": "01:09:32"
       },
       {
         "sentence": "취업되는 연령이 서유럽보다 한 7년이나 늦어요.",
-        "singleTermCountDict": {
-          "취업": 1,
-          "연령": 1,
-          "서유럽": 1
-        },
-        "compoundTermCountDict": {
-          "늦은 취업연령": 1
-        },
+        "singleTermCountDict": { "취업": 1, "연령": 1, "서유럽": 1 },
+        "compoundTermCountDict": { "늦은 취업연령": 1 },
         "sentiment": 0,
         "time": "01:09:37"
       },
       {
         "sentence": "그 다음에 65세가 되면 또 노인취급 받습니다.",
-        "singleTermCountDict": {
-          "노인": 1,
-          "취급": 1
-        },
-        "compoundTermCountDict": {
-          "노인취급": 1
-        },
+        "singleTermCountDict": { "노인": 1, "취급": 1 },
+        "compoundTermCountDict": { "노인취급": 1 },
         "sentiment": -0.10000000149011612,
         "time": "01:09:41"
       },
       {
         "sentence": "그러면 100세 인생인데 앞에 30년, 뒤에 3030년, 60년이 잉여인간으로 산다는 얘기에요.",
-        "singleTermCountDict": {
-          "인생": 1,
-          "잉여": 1,
-          "인간": 1
-        },
-        "compoundTermCountDict": {
-          "인생": 1,
-          "잉여": 1,
-          "인간": 1
-        },
+        "singleTermCountDict": { "인생": 1, "잉여": 1, "인간": 1 },
+        "compoundTermCountDict": {},
         "sentiment": 0,
         "time": "01:09:44"
       },
       {
         "sentence": "이러면 국가가 존립할 수가 없습니다.",
-        "singleTermCountDict": {
-          "국가": 1,
-          "존립": 1
-        },
-        "compoundTermCountDict": {
-          "국가존립불가": 2
-        },
+        "singleTermCountDict": { "국가": 1, "존립": 1 },
+        "compoundTermCountDict": { "국가존립불가": 2 },
         "sentiment": -0.699999988079071,
         "time": "01:09:50"
       },
@@ -12733,30 +10184,15 @@
       },
       {
         "sentence": "거기에다 기술혁명의 속도는 이것보다 더 무서운 충격이다.",
-        "singleTermCountDict": {
-          "기술": 1,
-          "혁명": 1,
-          "속도": 1,
-          "충격": 1
-        },
-        "compoundTermCountDict": {
-          "기술": 1,
-          "혁명": 1,
-          "속도": 1,
-          "충격": 1
-        },
+        "singleTermCountDict": { "기술": 1, "혁명": 1, "속도": 1, "충격": 1 },
+        "compoundTermCountDict": {},
         "sentiment": -0.4000000059604645,
         "time": "01:10:14"
       },
       {
         "sentence": "싸우는 방식, 10년 뒤면 지금 사상 다 바뀝니다.",
-        "singleTermCountDict": {
-          "방식": 1,
-          "사상": 1
-        },
-        "compoundTermCountDict": {
-          "급변하는 전투방식": 1
-        },
+        "singleTermCountDict": { "방식": 1, "사상": 1 },
+        "compoundTermCountDict": { "급변하는 전투방식": 1 },
         "sentiment": 0,
         "time": "01:10:18"
       },
@@ -12777,14 +10213,8 @@
       },
       {
         "sentence": "저는 그런 점에서 모병제는 충분히 검토할만하다는 결론을 내립니다.",
-        "singleTermCountDict": {
-          "모병": 1,
-          "검토": 1,
-          "결론": 1
-        },
-        "compoundTermCountDict": {
-          "모병제 전환 검토필요": 2
-        },
+        "singleTermCountDict": { "모병": 1, "검토": 1, "결론": 1 },
+        "compoundTermCountDict": { "모병제 전환 검토필요": 2 },
         "sentiment": 0,
         "time": "01:10:32"
       }
@@ -12806,47 +10236,28 @@
       },
       {
         "sentence": "역시 군대 문제는 뜨겁군요.",
-        "singleTermCountDict": {
-          "군대": 1,
-          "문제": 1
-        },
-        "compoundTermCountDict": {
-          "군대": 1,
-          "문제": 1
-        },
+        "singleTermCountDict": { "군대": 1, "문제": 1 },
+        "compoundTermCountDict": { "군대": 1, "문제": 1 },
         "sentiment": 0.10000000149011612,
         "time": "01:10:38"
       },
       {
         "sentence": "토론이 굉장히 뜨거웠습니다.",
-        "singleTermCountDict": {
-          "토론": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1
-        },
+        "singleTermCountDict": { "토론": 1 },
+        "compoundTermCountDict": { "토론": 1 },
         "sentiment": 0.4000000059604645,
         "time": "01:10:39"
       },
       {
         "sentence": "오늘 좋은 말씀 감사드립니다.",
-        "singleTermCountDict": {
-          "감사": 1
-        },
-        "compoundTermCountDict": {
-          "감사": 1
-        },
+        "singleTermCountDict": { "감사": 1 },
+        "compoundTermCountDict": { "감사": 1 },
         "sentiment": 0.8999999761581421,
         "time": "01:10:42"
       },
       {
         "sentence": "제가 미국 한 공항에서 직접 목격한 이야기입니다.",
-        "singleTermCountDict": {
-          "미국": 1,
-          "공항": 1,
-          "목격": 1,
-          "이야기": 1
-        },
+        "singleTermCountDict": { "미국": 1, "공항": 1, "목격": 1, "이야기": 1 },
         "compoundTermCountDict": {
           "미국": 1,
           "공항": 1,
@@ -12946,12 +10357,7 @@
       },
       {
         "sentence": "고마움 더불어서 최소한이 아닌 최대한 예의를 갖춰야 된다고 생각합니다.",
-        "singleTermCountDict": {
-          "고마움": 1,
-          "최소": 1,
-          "최대": 1,
-          "예의": 1
-        },
+        "singleTermCountDict": { "고마움": 1, "최소": 1, "최대": 1, "예의": 1 },
         "compoundTermCountDict": {
           "고마움": 1,
           "최소한": 1,
@@ -12987,23 +10393,15 @@
       },
       {
         "sentence": "<100분토론> 오늘 여기서 마칩니다.",
-        "singleTermCountDict": {
-          "토론": 1
-        },
-        "compoundTermCountDict": {
-          "토론": 1
-        },
+        "singleTermCountDict": { "토론": 1 },
+        "compoundTermCountDict": { "토론": 1 },
         "sentiment": 0.20000000298023224,
         "time": "01:11:38"
       },
       {
         "sentence": "편안한 밤 되십시오.",
-        "singleTermCountDict": {
-          "편안": 1
-        },
-        "compoundTermCountDict": {
-          "편안": 1
-        },
+        "singleTermCountDict": { "편안": 1 },
+        "compoundTermCountDict": { "편안": 1 },
         "sentiment": 0.8999999761581421,
         "time": "01:11:40"
       }
