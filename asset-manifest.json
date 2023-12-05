@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tvdebate-front/static/css/main.1ddc2e8b.chunk.css",
-    "main.js": "/tvdebate-front/static/js/main.c0aa5d2b.chunk.js",
-    "main.js.map": "/tvdebate-front/static/js/main.c0aa5d2b.chunk.js.map",
+    "main.css": "/tvdebate-front/static/css/main.eb6bf738.chunk.css",
+    "main.js": "/tvdebate-front/static/js/main.fb2a2caa.chunk.js",
+    "main.js.map": "/tvdebate-front/static/js/main.fb2a2caa.chunk.js.map",
     "runtime-main.js": "/tvdebate-front/static/js/runtime-main.610ea4bd.js",
     "runtime-main.js.map": "/tvdebate-front/static/js/runtime-main.610ea4bd.js.map",
     "static/css/2.ac35b2ca.chunk.css": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css",
-    "static/js/2.3339df89.chunk.js": "/tvdebate-front/static/js/2.3339df89.chunk.js",
-    "static/js/2.3339df89.chunk.js.map": "/tvdebate-front/static/js/2.3339df89.chunk.js.map",
+    "static/js/2.a931a084.chunk.js": "/tvdebate-front/static/js/2.a931a084.chunk.js",
+    "static/js/2.a931a084.chunk.js.map": "/tvdebate-front/static/js/2.a931a084.chunk.js.map",
     "index.html": "/tvdebate-front/index.html",
-    "precache-manifest.a1e52c3b917c559b2818e3d5e0dc8175.js": "/tvdebate-front/precache-manifest.a1e52c3b917c559b2818e3d5e0dc8175.js",
+    "precache-manifest.5d63b9fa8c58922830c569be54e34fef.js": "/tvdebate-front/precache-manifest.5d63b9fa8c58922830c569be54e34fef.js",
     "service-worker.js": "/tvdebate-front/service-worker.js",
     "static/css/2.ac35b2ca.chunk.css.map": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css.map",
-    "static/css/main.1ddc2e8b.chunk.css.map": "/tvdebate-front/static/css/main.1ddc2e8b.chunk.css.map",
-    "static/js/2.3339df89.chunk.js.LICENSE.txt": "/tvdebate-front/static/js/2.3339df89.chunk.js.LICENSE.txt"
+    "static/css/main.eb6bf738.chunk.css.map": "/tvdebate-front/static/css/main.eb6bf738.chunk.css.map",
+    "static/js/2.a931a084.chunk.js.LICENSE.txt": "/tvdebate-front/static/js/2.a931a084.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.610ea4bd.js",
     "static/css/2.ac35b2ca.chunk.css",
-    "static/js/2.3339df89.chunk.js",
-    "static/css/main.1ddc2e8b.chunk.css",
-    "static/js/main.c0aa5d2b.chunk.js"
+    "static/js/2.a931a084.chunk.js",
+    "static/css/main.eb6bf738.chunk.css",
+    "static/js/main.fb2a2caa.chunk.js"
   ]
 }
