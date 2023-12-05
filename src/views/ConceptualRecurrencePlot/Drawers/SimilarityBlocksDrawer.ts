@@ -116,7 +116,11 @@ export class SimilarityBlocksDrawer {
             d.refutation ? d.refutation : "none"
           },\nLeading Speaker Index: ${
             d.columnUtteranceIndex
-          },\nTrailing Speaker Index: ${d.rowUtteranceIndex},\nargumentScore: ${
+          },\nLeading Speaker Nname: ${
+            d.colUtteranceName
+          }\nTrailing Speaker Index: ${
+            d.rowUtteranceIndex
+          },\nTrailing Speaker Name: ${d.rowUtteranceName},\nargumentScore: ${
             ((d.similarity * d.weight) /
               // Math.abs(d.columnUtteranceIndex - d.rowUtteranceIndex)) *
               Math.sqrt(

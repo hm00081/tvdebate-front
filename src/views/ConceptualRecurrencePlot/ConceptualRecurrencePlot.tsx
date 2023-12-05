@@ -114,6 +114,7 @@ function ConceptualRecurrencePlot() {
       });
 
       // SubChartKor 너비 업데이트
+      // setSubChartWidth(currentWidth - 330);
       setSubChartWidth(currentWidth - 330);
     }
 
@@ -156,11 +157,18 @@ function ConceptualRecurrencePlot() {
     return { scaleX: scaleX, scaleY: -scaleY }; // Y축은 항상 반전
   }
 
-  useEffect(() => {
-    console.log("Transform Values:", transformValues.x, transformValues.y);
-  }, [transformValues]);
-  console.log("Transform Values:", transformValues.x, transformValues.y);
+  // useEffect(() => {
+  //   console.log("Transform Values:", transformValues.x, transformValues.y);
+  // }, [transformValues]);
+  console.log(
+    "Transform Values:",
+    transformValues.x,
+    transformValues.y,
+    scaleValues.x,
+    scaleValues.y
+  );
   const transformStyle = `translate(${transformValues.x}, ${transformValues.y}) scale(${scaleValues.x}, ${scaleValues.y}) rotate(-45)`;
+  //const transformStyle = `translate(${-235}, ${205}) scale(${1}, ${-1}) rotate(-45)`;
 
   const [isOpen, setIsOpen] = useState(true);
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
@@ -443,6 +451,7 @@ function ConceptualRecurrencePlot() {
                   transform={transformStyle}
                 >
                   <SubChartKor
+                    // width={windowSize.width - 330}
                     width={windowSize.width - 330}
                     height={windowSize.height}
                   />

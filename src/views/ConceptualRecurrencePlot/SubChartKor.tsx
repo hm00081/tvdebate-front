@@ -298,25 +298,25 @@ const SubChartKor = (props) => {
         <g className="이준석-1">
           <rect x={68} y={17} className="stt9" width={57} height={12.8} />
           <text transform="matrix(0.9587 0 0 1 88.9567 21.0914)">
-            <tspan x={-18} y={4} className="stt40 stt0 stt22">
+            <tspan x={-17} y={4} className="stt40 stt0 stt22">
               {"안보위협 과소평가"}
             </tspan>
           </text>
         </g>
         <g className="이준석-2">
           <title>감군대비 무대책</title>
-          <rect x={162} y={17} className="stt9" width={50} height={12.8} />
+          <rect x={165} y={17} className="stt9" width={50} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 171.5255 21.8512)">
-            <tspan x={-10} y={3} className="stt40 stt0 stt22">
+            <tspan x={-5} y={3} className="stt40 stt0 stt22">
               {"감군대비 무대책"}
             </tspan>
           </text>
         </g>
         <g className="이준석-3">
           <title>자주국방 어려움</title>
-          <rect x={222} y={17} className="stt9" width={50} height={12.8} />
+          <rect x={220} y={17} className="stt9" width={50} height={12.8} />
           <text transform="matrix(0.9048 0 0 1 220.0312 24.8564)">
-            <tspan x={2} className="stt40 stt0 stt22">
+            <tspan x={3} className="stt40 stt0 stt22">
               {"자주국방 어려움"}
             </tspan>
           </text>
