@@ -12,8 +12,11 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface CP4KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
 //@ts-ignore
-const CP4K = (props) => {
+const CP4K = ({ onTitleClick, ...props }: CP3KProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
@@ -32,6 +35,13 @@ const CP4K = (props) => {
 
   const handleMouseOut = () => {
     setTooltip({ display: false, x: 0, y: 0, content: null });
+  };
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
   };
 
   return (
@@ -61,12 +71,14 @@ const CP4K = (props) => {
             <text
               transform="matrix(1 0 0 1 806.4214 56.5149)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(55)}
             >
               {"모병제, 일자리 문제"}
             </text>
             <text
               transform="matrix(1 0 0 1 842.4214 73.5149)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(55)}
             >
               {"해결책?"}
             </text>

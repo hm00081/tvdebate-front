@@ -25,14 +25,23 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface BubbleEnggProps {
+  onTitleClick: (index: number) => void;
+  // 여기에 BubbleEngg가 사용할 다른 props 타입 정의
+}
+
 //@ts-ignore
-const BubbleEngg = (props) => {
+const BubbleEngg = ({ onTitleClick, ...props }: BubbleEnggProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
     y: 0,
     content: null,
   });
+  const wrappedOnTitleClick = (index: number) => {
+    console.log(`BubbleEngg onTitleClick called with index: ${index}`);
+    onTitleClick(index);
+  };
   //@ts-ignore
   const handleMouseOver = (e, content) => {
     setTooltip({
@@ -57,7 +66,8 @@ const BubbleEngg = (props) => {
         y="0px"
         viewBox="0 0 1753 318"
         style={{
-          enableBackground: "new 0 0 1753 318",
+          // enableBackground 대신 필요한 경우 backgroundColor 사용
+          backgroundColor: "white", // 예시 색상
         }}
         xmlSpace="preserve"
         {...props}
@@ -69,13 +79,13 @@ const BubbleEngg = (props) => {
           }
         </style>
         <Pie />
-        <CP1K />
-        <CP2K />
-        <CP3K />
-        <CP4K />
-        <CP5K />
-        <CP6K />
-        <CP7K />
+        <CP1K onTitleClick={onTitleClick} />
+        <CP2K onTitleClick={onTitleClick} />
+        <CP3K onTitleClick={onTitleClick} />
+        <CP4K onTitleClick={onTitleClick} />
+        <CP5K onTitleClick={onTitleClick} />
+        <CP6K onTitleClick={onTitleClick} />
+        <CP7K onTitleClick={onTitleClick} />
         {/* <CP1 />
         <CP2 />
         <CP3 />
@@ -84,14 +94,14 @@ const BubbleEngg = (props) => {
         <CP6 />
         <CP7 /> */}
       </svg>
-      {tooltip.display && (
+      {/* {tooltip.display && (
         <div
           className="tooltip"
           style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
         >
           {tooltip.content}
         </div>
-      )}
+      )} */}
     </>
   );
 };

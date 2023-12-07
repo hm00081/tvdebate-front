@@ -11,8 +11,12 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface CP6KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
+
 //@ts-ignore
-const CP6K = (props) => {
+const CP6K = ({ onTitleClick, ...props }: CP6KProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
@@ -28,6 +32,13 @@ const CP6K = (props) => {
       content: content,
     });
   };
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
+  };
 
   const handleMouseOut = () => {
     setTooltip({ display: false, x: 0, y: 0, content: null });
@@ -42,9 +53,9 @@ const CP6K = (props) => {
         x="0px"
         y="0px"
         viewBox="0 0 1753 318"
-        style={{
-          enableBackground: "new 0 0 1753 318",
-        }}
+        // style={{
+        //   enableBackground: "new 0 0 1753 318",
+        // }}
         xmlSpace="preserve"
         {...props}
       >
@@ -60,6 +71,7 @@ const CP6K = (props) => {
             <text
               transform="matrix(1 0 0 1 1295.049 57.6955)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(100)}
             >
               {"여성 징집과 봉급체계"}
             </text>

@@ -11,14 +11,24 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface CP7KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
 //@ts-ignore
-const CP7K = (props) => {
+const CP7K = ({ onTitleClick, ...props }: CP7KProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
     y: 0,
     content: null,
   });
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
+  };
   //@ts-ignore
   const handleMouseOver = (e, content) => {
     setTooltip({
@@ -42,9 +52,9 @@ const CP7K = (props) => {
         x="0px"
         y="0px"
         viewBox="0 0 1753 318"
-        style={{
-          enableBackground: "new 0 0 1753 318",
-        }}
+        // style={{
+        //   enableBackground: "new 0 0 1753 318",
+        // }}
         xmlSpace="preserve"
         {...props}
       >
@@ -55,11 +65,12 @@ const CP7K = (props) => {
           }
         </style>
         <g className="CP7">
-          <title>Keyword: 국방 예산 이슈 및 토론 마무리</title>
+          {/* <title>Keyword: 국방 예산 이슈 및 토론 마무리</title> */}
           <g className="T7">
             <text
               transform="matrix(1 0 0 1 1525.0665 23.6643)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(148)}
             >
               {"국방 예산 이슈 및 토론 마무리 "}
             </text>

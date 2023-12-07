@@ -12,8 +12,12 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface CP2KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
+
 //@ts-ignore
-const CP2K = (props) => {
+const CP2K = ({ onTitleClick, ...props }: CP2KProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
@@ -34,6 +38,13 @@ const CP2K = (props) => {
     setTooltip({ display: false, x: 0, y: 0, content: null });
   };
 
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
+  };
   return (
     <>
       <svg
@@ -43,9 +54,9 @@ const CP2K = (props) => {
         x="0px"
         y="0px"
         viewBox="0 0 1753 318"
-        style={{
-          enableBackground: "new 0 0 1753 318",
-        }}
+        // style={{
+        //   enableBackground: "new 0 0 1753 318",
+        // }}
         xmlSpace="preserve"
         {...props}
       >
@@ -58,15 +69,18 @@ const CP2K = (props) => {
         <g className="CP2">
           <g className="T2">
             <title>인구절벽, 징병제에 미치는 영향</title>
+
             <text
               transform="matrix(1 0 0 1 315.9469 43.3986)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(15)}
             >
               {"인구절벽, 징병제에 "}
             </text>
             <text
               transform="matrix(1 0 0 1 340.4654 60.5979)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(15)}
             >
               {" 미치는 영향"}
             </text>
@@ -76,10 +90,20 @@ const CP2K = (props) => {
 
             <title>인구절벽, 모병제가 답인가?</title>
             <text transform="matrix(1 0 0 1 316.4375 105.6326)">
-              <tspan x={0} y={7} className="st0 st1 st14">
+              <tspan
+                x={0}
+                y={7}
+                className="st0 st1 st14"
+                onClick={() => titleClickHandler(16)}
+              >
                 {"인구절벽,"}
               </tspan>
-              <tspan x={-9} y={16.9} className="st0 st1 st14">
+              <tspan
+                x={-9}
+                y={16.9}
+                className="st0 st1 st14"
+                onClick={() => titleClickHandler(16)}
+              >
                 {"모병제가 답인가?"}
               </tspan>
             </text>
@@ -248,10 +272,20 @@ const CP2K = (props) => {
 
             <title>키워드: 인력확충 문제, 해결법은?</title>
             <text transform="matrix(1 0 0 1 389.0738 116.8055)">
-              <tspan x={10} y={-2} className="st0 st1 st14">
+              <tspan
+                x={10}
+                y={-2}
+                className="st0 st1 st14"
+                onClick={() => titleClickHandler(34)}
+              >
                 {"인력확충 문제,"}
               </tspan>
-              <tspan x={17} y={7} className="st0 st1 st14">
+              <tspan
+                x={17}
+                y={7}
+                className="st0 st1 st14"
+                onClick={() => titleClickHandler(34)}
+              >
                 {"해결법은?"}
               </tspan>
             </text>
@@ -389,14 +423,14 @@ const CP2K = (props) => {
           </g>
         </g>
       </svg>
-      {tooltip.display && (
+      {/* {tooltip.display && (
         <div
           className="tooltip"
           style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
         >
           {tooltip.content}
         </div>
-      )}
+      )} */}
     </>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-else-if */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useRef } from "react";
 import "./ConceptualRecurrencePlot.scss";
@@ -12,7 +13,9 @@ import Controllers from "./Controllers/Controllers";
 import store from "../../redux/store";
 import { groupEGsMaker } from "./DataStructureMaker/GroupEGsMaker";
 import { useLocation } from "react-router-dom";
-import TranscriptViewer from "./TranscriptViewer/TranscriptViewer";
+import TranscriptViewer, {
+  TranscriptViewerMethods,
+} from "./TranscriptViewer/TranscriptViewer";
 import { CombinedState } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { StandardSimilarityScoreState } from "../../redux/reducers/standardSimilarityScoreReducer";
@@ -71,6 +74,25 @@ function ConceptualRecurrencePlot() {
   const termType = useSelector((state) => state.termType);
 
   const svgGRef = useRef<SVGGElement>(null);
+  // const transcriptViewerRef = useRef<TranscriptViewer>(null);
+
+  // const handleTitleClick = (index: number) => {
+  //   // 옵셔널 체이닝을 사용하여 null 체크
+  //   const targetRef = transcriptViewerRef.current?.utteranceRefs.current[index];
+  //   if (targetRef) {
+  //     targetRef.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start',
+  //     });
+  //   }
+  // };
+  const transcriptViewerRef = useRef<TranscriptViewerMethods>(null);
+
+  const handleTitleClick = (index: number) => {
+    console.log("handleTitleClick called with index: ", index);
+    console.log("transcriptViewerRef.current: ", transcriptViewerRef.current);
+    transcriptViewerRef.current?.scrollToIndex(index);
+  };
 
   useEffect(() => {
     // D3Drawer 인스턴스 생성 및 초기화
@@ -80,11 +102,11 @@ function ConceptualRecurrencePlot() {
 
       if (centerValues) {
         const { adjustedWidth, adjustedHeight } = centerValues;
-        console.log(
-          "adjustedWidth, adjustedHeight",
-          adjustedWidth,
-          adjustedHeight
-        );
+        // console.log(
+        //   "adjustedWidth, adjustedHeight",
+        //   adjustedWidth,
+        //   adjustedHeight
+        // );
         // 이제 adjustedWidth와 adjustedHeight를 사용할 수 있습니다.
         // 예: transform 스타일 업데이트
         setTransformValues({
@@ -124,7 +146,7 @@ function ConceptualRecurrencePlot() {
   }, []);
 
   useEffect(() => {
-    console.log("SubChart Width:", subChartWidth); // SubChartKor 너비 로깅
+    //console.log("SubChart Width:", subChartWidth); // SubChartKor 너비 로깅
   }, [subChartWidth]);
 
   function calculateTransformX(width: number) {
@@ -157,18 +179,81 @@ function ConceptualRecurrencePlot() {
     return { scaleX: scaleX, scaleY: -scaleY }; // Y축은 항상 반전
   }
 
-  // useEffect(() => {
-  //   console.log("Transform Values:", transformValues.x, transformValues.y);
-  // }, [transformValues]);
-  console.log(
-    "Transform Values:",
-    transformValues.x,
-    transformValues.y,
-    scaleValues.x,
-    scaleValues.y
-  );
-  const transformStyle = `translate(${transformValues.x}, ${transformValues.y}) scale(${scaleValues.x}, ${scaleValues.y}) rotate(-45)`;
-  //const transformStyle = `translate(${-235}, ${205}) scale(${1}, ${-1}) rotate(-45)`;
+  let transformStyle;
+  // 해상도별 최종본 끼워맞추자.
+  //console.log("screen", window.screen.width, window.screen.height);
+  if (window.screen.width === 6720 && window.screen.height === 3780) {
+    transformStyle = `translate(-235, 205) scale(0.21429, -0.21429) rotate(-45)`;
+  } else if (window.screen.width === 6400 && window.screen.height === 3600) {
+    transformStyle = `translate(-235, 205) scale(0.22500, -0.22500) rotate(-45)`;
+  } else if (window.screen.width === 6016 && window.screen.height === 3384) {
+    transformStyle = `translate(-235, 205) scale(0.23936, -0.23936) rotate(-45)`;
+  } else if (window.screen.width === 5120 && window.screen.height === 2880) {
+    transformStyle = `translate(-235, 205) scale(0.28125, -0.28125) rotate(-45)`;
+  } else if (window.screen.width === 4608 && window.screen.height === 2592) {
+    transformStyle = `translate(-235, 205) scale(0.31250, -0.31250) rotate(-45)`;
+  } else if (window.screen.width === 4096 && window.screen.height === 2304) {
+    transformStyle = `translate(-235, 205) scale(0.35156, -0.35156) rotate(-45)`;
+  } else if (window.screen.width === 3840 && window.screen.height === 2160) {
+    transformStyle = `translate(-185, 155) scale(0.318, -0.318) rotate(-45)`;
+  } else if (window.screen.width === 3360 && window.screen.height === 2100) {
+    transformStyle = `translate(-235, 205) scale(0.42857, -0.42857) rotate(-45)`;
+  } else if (window.screen.width === 3360 && window.screen.height === 1890) {
+    transformStyle = `translate(-235, 205) scale(0.42857, -0.42857) rotate(-45)`;
+  } else if (window.screen.width === 3200 && window.screen.height === 1800) {
+    transformStyle = `translate(-190, 160) scale(0.39, -0.39) rotate(-45)`;
+  } else if (window.screen.width === 3008 && window.screen.height === 1692) {
+    transformStyle = `translate(-235, 205) scale(0.47872, -0.47872) rotate(-45)`;
+  } else if (window.screen.width === 2880 && window.screen.height === 1800) {
+    transformStyle = `translate(-235, 205) scale(0.50000, -0.50000) rotate(-45)`;
+  } else if (window.screen.width === 2560 && window.screen.height === 1600) {
+    transformStyle = `translate(-235, 205) scale(0.56250, -0.56250) rotate(-45)`;
+  } else if (window.screen.width === 2560 && window.screen.height === 1440) {
+    transformStyle = `translate(-192, 162) scale(0.503, -0.503) rotate(-45)`;
+  } else if (window.screen.width === 1920 && window.screen.height === 2160) {
+    transformStyle = `translate(-235, 205) scale(0.75000, -0.75000) rotate(-45)`;
+  } else if (window.screen.width === 1920 && window.screen.height === 1440) {
+    transformStyle = `translate(-235, 205) scale(0.75000, -0.75000) rotate(-45)`;
+  } else if (window.screen.width === 1920 && window.screen.height === 1200) {
+    transformStyle = `translate(-235, 205) scale(0.75000, -0.75000) rotate(-45)`;
+  } else if (window.screen.width === 1920 && window.screen.height === 1080) {
+    transformStyle = `translate(-235, 205) scale(0.75000, -0.75000) rotate(-45)`;
+  } else if (window.screen.width === 1680 && window.screen.height === 1050) {
+    transformStyle = `translate(-230, 200) scale(0.83, -0.83) rotate(-45)`;
+  } else if (window.screen.width === 1600 && window.screen.height === 1200) {
+    transformStyle = `translate(-235, 205) scale(0.90000, -0.90000) rotate(-45)`;
+  } else if (window.screen.width === 1600 && window.screen.height === 1024) {
+    transformStyle = `translate(-235, 205) scale(0.90000, -0.90000) rotate(-45)`;
+  } else if (window.screen.width === 1600 && window.screen.height === 900) {
+    transformStyle = `translate(-235, 205) scale(0.90000, -0.90000) rotate(-45)`;
+  } else if (window.screen.width === 1440 && window.screen.height === 1080) {
+    transformStyle = `translate(-235, 205) scale(1.00000, -1.00000) rotate(-45)`;
+  } else if (window.screen.width === 1440 && window.screen.height === 900) {
+    transformStyle = `translate(-235, 205) scale(1.00000, -1.00000) rotate(-45)`;
+  } // rlwns
+  else if (window.screen.width === 1366 && window.screen.height === 768) {
+    transformStyle = `translate(-235, 205) scale(1.05417, -1.05417) rotate(-45)`;
+  } else if (window.screen.width === 1280 && window.screen.height === 800) {
+    transformStyle = `translate(-235, 205) scale(1.12500, -1.12500) rotate(-45)`;
+  } else if (window.screen.width === 1280 && window.screen.height === 720) {
+    transformStyle = `translate(-235, 205) scale(1.12500, -1.12500) rotate(-45)`;
+  } else if (window.screen.width === 1152 && window.screen.height === 720) {
+    transformStyle = `translate(-235, 205) scale(1.25000, -1.25000) rotate(-45)`;
+  } else if (window.screen.width === 1152 && window.screen.height === 648) {
+    transformStyle = `translate(-235, 205) scale(1.25000, -1.25000) rotate(-45)`;
+  } else if (window.screen.width === 1024 && window.screen.height === 768) {
+    transformStyle = `translate(-235, 205) scale(1.40625, -1.40625) rotate(-45)`;
+  } else if (window.screen.width === 1024 && window.screen.height === 640) {
+    transformStyle = `translate(-255, 225) scale(1.6, -1.6) rotate(-45)`;
+  } else if (window.screen.width === 1024 && window.screen.height === 576) {
+    transformStyle = `translate(-255, 225) scale(1.6, -1.6) rotate(-45)`;
+  } else if (window.screen.width === 960 && window.screen.height === 600) {
+    transformStyle = `translate(-235, 205) scale(1.50000, -1.50000) rotate(-45)`;
+  } else {
+    transformStyle = `translate(${-235}, ${205}) scale(${
+      1440 / scaleValues.x
+    }, ${1440 / scaleValues.x}) rotate(-45)`;
+  }
 
   const [isOpen, setIsOpen] = useState(true);
   const [debateDataset, setDebateDataset] = useState<DebateDataSet | null>(
@@ -414,7 +499,7 @@ function ConceptualRecurrencePlot() {
       <div className="vis-area">
         <div className="bubble" style={{ borderBottom: "1px solid black" }}>
           {/* <BubbleEng /> */}
-          <BubbleEngg />
+          <BubbleEngg onTitleClick={handleTitleClick} />
         </div>
         <div
           className="concept-recurrence-plot"
@@ -470,6 +555,7 @@ function ConceptualRecurrencePlot() {
       <TranscriptViewer
         isOpen={isOpen}
         dataStructureMaker={dataStructureManager}
+        ref={transcriptViewerRef}
       ></TranscriptViewer>
       <ConceptualMapModal
         ref={conceptualMapModalRef}

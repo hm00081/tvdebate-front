@@ -11,8 +11,12 @@ interface TooltipState {
   content: JSX.Element | null;
 }
 
+interface CP5KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
+
 //@ts-ignore
-const CP5K = (props) => {
+const CP5K = ({ onTitleClick, ...props }: CP5KProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
@@ -32,6 +36,13 @@ const CP5K = (props) => {
   const handleMouseOut = () => {
     setTooltip({ display: false, x: 0, y: 0, content: null });
   };
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
+  };
 
   return (
     <>
@@ -42,9 +53,9 @@ const CP5K = (props) => {
         x="0px"
         y="0px"
         viewBox="0 0 1753 318"
-        style={{
-          enableBackground: "new 0 0 1753 318",
-        }}
+        // style={{
+        //   enableBackground: "new 0 0 1753 318",
+        // }}
         xmlSpace="preserve"
         {...props}
       >
@@ -60,12 +71,14 @@ const CP5K = (props) => {
             <text
               transform="matrix(1 0 0 1 1038.79 25.5832)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(75)}
             >
               {"모병제, 질적 향상 및 "}
             </text>
             <text
               transform="matrix(1 0 0 1 1048.79 43.7824)"
               className="st0 st1 st13"
+              onClick={() => titleClickHandler(75)}
             >
               {"   간부확보 문제는?"}
             </text>

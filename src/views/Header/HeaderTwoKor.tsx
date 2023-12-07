@@ -93,7 +93,9 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
           Legends:
         </h3>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}
+        >
           {participantColors.map((item, i) => (
             <LegendItem
               key={i}

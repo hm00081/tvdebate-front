@@ -7,18 +7,11 @@ interface TooltipState {
   y: number;
 }
 
-const MySvgComponent = () => (
-  <>
-    <g className="P1">
-      <path
-        className="st16"
-        d="M137.4,64.3v-8.1c-28.2,0-52.8,9-74.4,27l5.2,6.2C88.3,72.7,111.3,64.3,137.4,64.3z"
-      />
-    </g>
-  </>
-);
+interface CP1KProps extends React.SVGProps<SVGSVGElement> {
+  onTitleClick: (index: number) => void;
+}
 
-const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
+const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
   const [tooltip, setTooltip] = useState<TooltipState>({
     display: false,
     x: 0,
@@ -26,7 +19,7 @@ const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
   });
 
   useEffect(() => {
-    console.log("Tooltip state changed:", tooltip);
+    // console.log("Tooltip state changed:", tooltip);
   }, [tooltip]);
 
   const handleMouseOver = (e: React.MouseEvent<SVGGElement, MouseEvent>) => {
@@ -61,6 +54,14 @@ const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
     }
   }, []);
 
+  const titleClickHandler = (index: number) => {
+    if (typeof onTitleClick === "function") {
+      onTitleClick(index);
+    } else {
+      console.error("onTitleClick is not a function");
+    }
+  };
+
   return (
     <>
       <svg
@@ -88,7 +89,12 @@ const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
                 transform="matrix(1 0 0 1 59.5201 47.5178)"
                 className="st7"
               >
-                <tspan x={0} y={0} className="st0 st1 st13">
+                <tspan
+                  onClick={() => titleClickHandler(0)}
+                  x={0}
+                  y={0}
+                  className="st0 st1 st13"
+                >
                   {"토론 시작 및 모병제 도입"}
                 </tspan>
                 {/* <tspan x={-3} y={17.2} className="st0 st1 st13">
@@ -507,10 +513,10 @@ const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
           </g>
         </g>
       </svg>
-      {tooltip.display && (
+      {/* {tooltip.display && (
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             top: tooltip.y,
             left: tooltip.x,
             backgroundColor: "white",
@@ -525,7 +531,7 @@ const CP1K = (props: React.SVGProps<SVGSVGElement>) => {
             </g>
           </svg>
         </div>
-      )}
+      )} */}
     </>
   );
 };
