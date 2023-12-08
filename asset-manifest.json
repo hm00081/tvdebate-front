@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tvdebate-front/static/css/main.5059f5e8.chunk.css",
-    "main.js": "/tvdebate-front/static/js/main.885de826.chunk.js",
-    "main.js.map": "/tvdebate-front/static/js/main.885de826.chunk.js.map",
+    "main.js": "/tvdebate-front/static/js/main.8e64bcb0.chunk.js",
+    "main.js.map": "/tvdebate-front/static/js/main.8e64bcb0.chunk.js.map",
     "runtime-main.js": "/tvdebate-front/static/js/runtime-main.610ea4bd.js",
     "runtime-main.js.map": "/tvdebate-front/static/js/runtime-main.610ea4bd.js.map",
     "static/css/2.ac35b2ca.chunk.css": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css",
     "static/js/2.af127ac4.chunk.js": "/tvdebate-front/static/js/2.af127ac4.chunk.js",
     "static/js/2.af127ac4.chunk.js.map": "/tvdebate-front/static/js/2.af127ac4.chunk.js.map",
     "index.html": "/tvdebate-front/index.html",
-    "precache-manifest.9f1730ff7876d5fe8c8d91017d965831.js": "/tvdebate-front/precache-manifest.9f1730ff7876d5fe8c8d91017d965831.js",
+    "precache-manifest.82064d6b0cddb5aff65aac90f0ddde9b.js": "/tvdebate-front/precache-manifest.82064d6b0cddb5aff65aac90f0ddde9b.js",
     "service-worker.js": "/tvdebate-front/service-worker.js",
     "static/css/2.ac35b2ca.chunk.css.map": "/tvdebate-front/static/css/2.ac35b2ca.chunk.css.map",
     "static/css/main.5059f5e8.chunk.css.map": "/tvdebate-front/static/css/main.5059f5e8.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.ac35b2ca.chunk.css",
     "static/js/2.af127ac4.chunk.js",
     "static/css/main.5059f5e8.chunk.css",
-    "static/js/main.885de826.chunk.js"
+    "static/js/main.8e64bcb0.chunk.js"
   ]
 }
