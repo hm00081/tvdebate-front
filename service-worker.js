@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tvdebate-front/precache-manifest.82064d6b0cddb5aff65aac90f0ddde9b.js"
+  "/tvdebate-front/precache-manifest.c351f7c345eae0fcb335996c30499f8a.js"
 );
 
 self.addEventListener('message', (event) => {
