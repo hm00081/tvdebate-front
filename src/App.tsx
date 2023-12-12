@@ -21,13 +21,6 @@ interface AppProps {
 }
 
 function App() {
-  //@ts-ignore
-  const debateDataSet = useSelector((state) => state.debateData);
-  //@ts-ignore
-  const dataStructureSet = useSelector((state) => state.dataStructure);
-  //@ts-ignore
-  const termType = useSelector((state) => state.termType);
-
   return (
     <Router>
       <div>

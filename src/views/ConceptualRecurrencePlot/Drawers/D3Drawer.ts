@@ -17,7 +17,8 @@ import { RefutationIconDrawer } from "./RefutationIconDrawer";
 import { InsistenceIconDrawer } from "./InsistenceIconDrawer";
 import { InsistenceIconDrawerTwo } from "./InsistenceIconDrawerTwo";
 import { RefutationIconDrawerTwo } from "./RefutationIconDrawerTwo";
-
+import { TranscriptViewerMethods } from "../TranscriptViewer/TranscriptViewer";
+import { SentenceObject } from "./../../../interfaces/DebateDataInterface";
 export class D3Drawer {
   private readonly conceptRecurrencePlotDiv!: d3.Selection<
     HTMLDivElement,
@@ -53,11 +54,77 @@ export class D3Drawer {
   public readonly manualBigTGsDrawer: TopicGroupsDrawer;
   public readonly manualPeopleTGsDrawer: TopicGroupsDrawer;
   public readonly lcsegEGsDrawer: TopicGroupsDrawer;
+  private transcriptViewerRef: React.RefObject<
+    TranscriptViewerMethods
+  > | null = null;
   private readonly svgWidth: number;
   private readonly svgHeight: number;
+  //private dataStructureSet: DataStructureSet;
   // private readonly svgRotate: number;
   // private _svgBackgroundClickListener?: (event: MouseEvent) => void;
   private _zoomListener: ((transform: d3.ZoomTransform) => void) | null = null;
+
+  setupClickListener(
+    transcriptViewerRef: React.RefObject<TranscriptViewerMethods>
+  ) {
+    this.similarityBlocksDrawer.clickListener = (
+      e: MouseEvent,
+      d: SimilarityBlock
+    ) => {
+      const rowIndex = d.rowUtteranceIndex;
+      const colIndex = d.columnUtteranceIndex;
+
+      const rowUtterance = this.dataStructureSet
+        .utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[rowIndex];
+      const colUtterance = this.dataStructureSet
+        .utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[colIndex];
+
+      // 키워드 빈도수 계산 함수
+      const countCompoundTerms = (
+        data: SentenceObject[]
+      ): { [key: string]: number } => {
+        const result: { [key: string]: number } = {};
+
+        data.forEach(({ compoundTermCountDict }) => {
+          Object.keys(compoundTermCountDict).forEach((key) => {
+            result[key] = (result[key] || 0) + compoundTermCountDict[key];
+          });
+        });
+        return result;
+      };
+
+      // 각 인덱스의 키워드 빈도수 계산
+      const rowCompoundTerms = countCompoundTerms(rowUtterance.sentenceObjects);
+      const colCompoundTerms = countCompoundTerms(colUtterance.sentenceObjects);
+
+      // 각 인덱스의 상위 10개 키워드 추출
+      const getTopCompoundTerms = (
+        compoundTerms: { [key: string]: number },
+        topN: number
+      ) => {
+        return Object.entries(compoundTerms)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, topN)
+          .map(([term]) => term);
+      };
+
+      const rowTopTerms = getTopCompoundTerms(rowCompoundTerms, 30);
+      const colTopTerms = getTopCompoundTerms(colCompoundTerms, 30);
+
+      // console.log(`Row Top Terms:`, rowTopTerms);
+      // console.log(`Column Top Terms:`, colTopTerms);
+
+      if (transcriptViewerRef.current) {
+        transcriptViewerRef.current.scrollToIndex(colIndex);
+        transcriptViewerRef.current.highlightKeywords(
+          rowTopTerms,
+          colTopTerms,
+          rowIndex,
+          colIndex
+        );
+      }
+    };
+  }
 
   public constructor(
     private readonly debateDataSet: DebateDataSet,
@@ -140,40 +207,42 @@ export class D3Drawer {
       e: MouseEvent,
       d: SimilarityBlock
     ) => {
-      this.insistenceMarkersDrawer.visible = false;
-      this.refutationIconDrawer.similarityBlock = null;
-      this.refutationIconDrawerTwo.similarityBlock = null;
-      this.insistenceIconDrawer.similarityBlock = null;
-      this.insistenceIconDrawerTwo.similarityBlock = null; // 7
-      this.uncertainIconDrawer.similarityBlock = null;
-
-      if (d.colUtteranceName === "이준석" || d.colUtteranceName === "박휘락") {
-        this.insistenceIconDrawerTwo.similarityBlock = d;
-        this.refutationIconDrawer.similarityBlock = d;
-      } else if (
-        d.colUtteranceName === "김종대" ||
-        d.colUtteranceName === "장경태"
-      ) {
-        this.insistenceIconDrawer.similarityBlock = d;
-        this.refutationIconDrawerTwo.similarityBlock = d;
-      } else if (
-        d.rowUtteranceName === "이준석" ||
-        d.rowUtteranceName === "박휘락"
-      ) {
-        this.refutationIconDrawerTwo.similarityBlock = d;
-        this.insistenceIconDrawer.similarityBlock = d;
-      } else if (
-        d.rowUtteranceName === "김종대" ||
-        d.rowUtteranceName === "장경태"
-      ) {
-        this.refutationIconDrawer.similarityBlock = d;
-        this.insistenceIconDrawerTwo.similarityBlock = d;
-      } else null;
-      this.refutationIconDrawer.update();
-      this.refutationIconDrawerTwo.update();
-      this.insistenceIconDrawer.update();
-      this.insistenceIconDrawerTwo.update();
-      this.uncertainIconDrawer.update();
+      // this.insistenceMarkersDrawer.visible = false;
+      // this.refutationIconDrawer.similarityBlock = null;
+      // this.refutationIconDrawerTwo.similarityBlock = null;
+      // this.insistenceIconDrawer.similarityBlock = null;
+      // this.insistenceIconDrawerTwo.similarityBlock = null; // 7
+      // this.uncertainIconDrawer.similarityBlock = null;
+      //const index = /* 인덱스 결정 로직 */;
+      //   // transcriptViewerRef는 TranscriptViewer 컴포넌트에 대한 참조입니다.
+      //   //transcriptViewerRef.current.scrollToIndex(index);
+      //   // if (d.colUtteranceName === "이준석" || d.colUtteranceName === "박휘락") {
+      //   //   this.insistenceIconDrawerTwo.similarityBlock = d;
+      //   //   this.refutationIconDrawer.similarityBlock = d;
+      //   // } else if (
+      //   //   d.colUtteranceName === "김종대" ||
+      //   //   d.colUtteranceName === "장경태"
+      //   // ) {
+      //   //   this.insistenceIconDrawer.similarityBlock = d;
+      //   //   this.refutationIconDrawerTwo.similarityBlock = d;
+      //   // } else if (
+      //   //   d.rowUtteranceName === "이준석" ||
+      //   //   d.rowUtteranceName === "박휘락"
+      //   // ) {
+      //   //   this.refutationIconDrawerTwo.similarityBlock = d;
+      //   //   this.insistenceIconDrawer.similarityBlock = d;
+      //   // } else if (
+      //   //   d.rowUtteranceName === "김종대" ||
+      //   //   d.rowUtteranceName === "장경태"
+      //   // ) {
+      //   //   this.refutationIconDrawer.similarityBlock = d;
+      //   //   this.insistenceIconDrawerTwo.similarityBlock = d;
+      //   // } else null;
+      //   // this.refutationIconDrawer.update();
+      //   // this.refutationIconDrawerTwo.update();
+      //   // this.insistenceIconDrawer.update();
+      //   // this.insistenceIconDrawerTwo.update();
+      //   // this.uncertainIconDrawer.update();
     };
 
     this.similarityBlocksDrawer.mouseoverListener = (

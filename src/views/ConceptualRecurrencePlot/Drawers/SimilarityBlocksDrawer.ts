@@ -6,6 +6,7 @@ import { SentenceObject } from "../../../interfaces/DebateDataInterface";
 import { UtteranceObjectForDrawing } from "../interfaces";
 import { SimilarityBlock } from "../interfaces";
 import * as fs from "fs";
+import * as d3 from "d3";
 
 export type ColoringSelfSimilarities =
   | "none"
@@ -109,6 +110,29 @@ export class SimilarityBlocksDrawer {
           this._clickListener(mouseEvent, similarityBlock);
         }
       })
+      //1212 클릭이벤트
+      // .on("click", (e, d) => {
+      //   //d3.event.stopPropagation();
+      //   const mouseEvent = (e as unknown) as MouseEvent;
+      //   const similarityBlock = (d as unknown) as SimilarityBlock;
+      //   mouseEvent.stopPropagation();
+      //   // 모든 블록의 테두리 스타일을 초기화합니다.
+      //   this.conceptSimilarityRectGSelection
+      //     .selectAll<SVGRectElement, SimilarityBlock>("rect")
+      //     .style("stroke", null)
+      //     .style("stroke-width", null);
+
+      //   // 클릭된 블록에 빨간색 테두리를 적용합니다.
+      //   //@ts-ignore
+      //   d3.select(mouseEvent.currentTarget) // 현재 클릭된 rect 요소 선택
+      //     .style("stroke", "red")
+      //     .style("stroke-width", "2px");
+
+      //   if (this._clickListener) {
+      //     this._clickListener(mouseEvent, similarityBlock);
+      //   }
+      // })
+
       .append("title")
       .text(
         (d, i) =>

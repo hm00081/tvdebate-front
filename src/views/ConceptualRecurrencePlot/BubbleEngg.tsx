@@ -10,6 +10,8 @@ import CP4 from "./Bubble/CP4";
 import CP5 from "./Bubble/CP5";
 import CP6 from "./Bubble/CP6";
 import CP7 from "./Bubble/CP7";
+import { DataStructureSet } from "./DataStructureMaker/DataStructureManager";
+import { TranscriptViewerMethods } from "./TranscriptViewer/TranscriptViewer";
 import CP1K from "./BubbleKor/CP1";
 import CP2K from "./BubbleKor/CP2";
 import CP3K from "./BubbleKor/CP3";
@@ -27,21 +29,25 @@ interface TooltipState {
 
 interface BubbleEnggProps {
   onTitleClick: (index: number) => void;
+  dataStructureSet: DataStructureSet;
+  transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
   // 여기에 BubbleEngg가 사용할 다른 props 타입 정의
 }
 
 //@ts-ignore
-const BubbleEngg = ({ onTitleClick, ...props }: BubbleEnggProps) => {
+const BubbleEngg = ({
+  onTitleClick,
+  dataStructureSet,
+  transcriptViewerRef,
+  ...props
+}: BubbleEnggProps) => {
   const [tooltip, setTooltip] = useState({
     display: false,
     x: 0,
     y: 0,
     content: null,
   });
-  const wrappedOnTitleClick = (index: number) => {
-    console.log(`BubbleEngg onTitleClick called with index: ${index}`);
-    onTitleClick(index);
-  };
+  //console.log("dataStructureSetEngg", dataStructureSet); 잘 나옴
   //@ts-ignore
   const handleMouseOver = (e, content) => {
     setTooltip({
@@ -80,7 +86,11 @@ const BubbleEngg = ({ onTitleClick, ...props }: BubbleEnggProps) => {
         </style>
         <Pie />
         <CP1K onTitleClick={onTitleClick} />
-        <CP2K onTitleClick={onTitleClick} />
+        <CP2K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
         <CP3K onTitleClick={onTitleClick} />
         <CP4K onTitleClick={onTitleClick} />
         <CP5K onTitleClick={onTitleClick} />

@@ -20,12 +20,44 @@ interface ComponentProps {
 
 export interface TranscriptViewerMethods {
   scrollToIndex: (index: number) => void;
+  highlightKeywords: (
+    rowKeywords: string[],
+    colKeywords: string[],
+    rowIndex: number,
+    colIndex: number
+  ) => void;
 }
 
 const TranscriptViewer = forwardRef<TranscriptViewerMethods, ComponentProps>(
   (props, ref) => {
     const { isOpen, dataStructureMaker } = props;
     const utteranceRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [highlightedKeywords, setHighlightedKeywords] = useState<string[]>(
+      []
+    );
+    const [rowTopTerms, setRowTopTerms] = useState<string[]>([]);
+    const [colTopTerms, setColTopTerms] = useState<string[]>([]);
+    const [rowTopThirtyTerms, setRowTopThirtyTerms] = useState<string[]>([]);
+    const [colTopThirtyTerms, setColTopThirtyTerms] = useState<string[]>([]);
+    const [activeIndex, setActiveIndex] = useState<{
+      row: number | null;
+      col: number | null;
+    }>({ row: null, col: null });
+    //console.log("setRowTopTerms", setRowTopTerms);
+    //console.log("setColTopTerms", setColTopTerms);
+    // 하이라이팅 로직
+    const highlightText = (text: string, keywords: string[]) => {
+      let highlightedText = text;
+      keywords.forEach((keyword) => {
+        const regex = new RegExp(`(${keyword})`, "gi");
+        highlightedText = highlightedText.replace(
+          regex,
+          "<span class='highlight' style='border: 1.1px solid red; color: black;'>$1</span>"
+          //"<span class='highlight' style='border: 2px solid #400000; padding: 2px;'>$1</span>"
+        );
+      });
+      return highlightedText;
+    };
 
     useEffect(() => {
       if (dataStructureMaker) {
@@ -37,15 +69,27 @@ const TranscriptViewer = forwardRef<TranscriptViewerMethods, ComponentProps>(
 
     useImperativeHandle(ref, () => ({
       scrollToIndex: (index: number) => {
-        //console.log(`scrollToIndex called with index: ${index}`);
         const targetElement = utteranceRefs.current[index];
-        // console.log("targetElement", targetElement);
         if (targetElement) {
           targetElement.scrollIntoView({
             behavior: "smooth",
             block: "nearest",
           });
         }
+      },
+      highlightKeywords: (
+        rowKeywords: string[],
+        colKeywords: string[],
+        rowIndex: number,
+        colIndex: number
+      ) => {
+        //console.log("index", colIndex, rowIndex);
+        //console.log("colKeywords", colKeywords);
+        setActiveIndex({ row: rowIndex, col: colIndex });
+        setRowTopTerms(rowKeywords.slice(0, 3));
+        setColTopTerms(colKeywords.slice(0, 3));
+        setRowTopThirtyTerms(rowKeywords);
+        setColTopThirtyTerms(colKeywords);
       },
     }));
     if (!props.isOpen) return null;
@@ -56,11 +100,25 @@ const TranscriptViewer = forwardRef<TranscriptViewerMethods, ComponentProps>(
             props.dataStructureMaker.dataStructureSet
               .utteranceObjectsForDrawingManager.utteranceObjectsForDrawing,
             (utteranceObject, index) => {
+              // 현재 activeIndex에 따라 상위 3개 키워드 결정
+              const rowKeywords = index === activeIndex.row ? rowTopTerms : [];
+              const colKeywords = index === activeIndex.col ? colTopTerms : [];
+              const combinedKeywords = [...rowKeywords, ...colKeywords];
+              const currentKeywords =
+                index === activeIndex.row
+                  ? rowTopThirtyTerms
+                  : index === activeIndex.col
+                  ? colTopThirtyTerms
+                  : [];
+              // 해당 utterance에 하이라이트 적용
+              const highlightedUtterance = highlightText(
+                utteranceObject.utterance,
+                currentKeywords
+              );
               return (
                 <div
                   ref={(el) => {
                     utteranceRefs.current[index] = el;
-                    //console.log(`Ref for index ${index}: `, el); // 콘솔 로그 추가
                   }}
                   style={{ marginBottom: "12px" }}
                   key={`utterance-${index}`}
@@ -72,10 +130,19 @@ const TranscriptViewer = forwardRef<TranscriptViewerMethods, ComponentProps>(
                     }}
                   >
                     [ {utteranceObject.name} ] / {index} /
-                    {utteranceObject.sentenceObjects[0].time!}
+                    {utteranceObject.sentenceObjects[0].time!} /
+                    {(index === activeIndex.row ||
+                      index === activeIndex.col) && (
+                      <span style={{ color: "#400000", fontWeight: "bold" }}>
+                        {" "}
+                        {combinedKeywords.join(", ")}{" "}
+                      </span>
+                    )}
                   </div>
-                  <div>{utteranceObject.utterance}</div>
-                  {/* {getSentenceSpans(utteranceObject)} */}
+                  {/* highlightText 함수를 사용하여 하이라이트된 텍스트 렌더링 */}
+                  <div
+                    dangerouslySetInnerHTML={{ __html: highlightedUtterance }}
+                  />
                 </div>
               );
             }

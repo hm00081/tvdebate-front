@@ -67,25 +67,11 @@ function ConceptualRecurrencePlot() {
     height: window.innerHeight,
   });
   //@ts-ignore
-  const debateDataSet = useSelector((state) => state.debateData);
-  //@ts-ignore
-  const dataStructureSet = useSelector((state) => state.dataStructure);
-  //@ts-ignore
-  const termType = useSelector((state) => state.termType);
+  //const dataStructureSet = useSelector((state) => state.debateData);
 
   const svgGRef = useRef<SVGGElement>(null);
   // const transcriptViewerRef = useRef<TranscriptViewer>(null);
 
-  // const handleTitleClick = (index: number) => {
-  //   // 옵셔널 체이닝을 사용하여 null 체크
-  //   const targetRef = transcriptViewerRef.current?.utteranceRefs.current[index];
-  //   if (targetRef) {
-  //     targetRef.scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'start',
-  //     });
-  //   }
-  // };
   const transcriptViewerRef = useRef<TranscriptViewerMethods>(null);
 
   const handleTitleClick = (index: number) => {
@@ -93,29 +79,6 @@ function ConceptualRecurrencePlot() {
     console.log("transcriptViewerRef.current: ", transcriptViewerRef.current);
     transcriptViewerRef.current?.scrollToIndex(index);
   };
-
-  useEffect(() => {
-    // D3Drawer 인스턴스 생성 및 초기화
-    if (debateDataSet && dataStructureSet && termType) {
-      const drawer = new D3Drawer(debateDataSet, dataStructureSet, termType);
-      const centerValues = drawer.centerConceptualRecurrentPlot();
-
-      if (centerValues) {
-        const { adjustedWidth, adjustedHeight } = centerValues;
-        // console.log(
-        //   "adjustedWidth, adjustedHeight",
-        //   adjustedWidth,
-        //   adjustedHeight
-        // );
-        // 이제 adjustedWidth와 adjustedHeight를 사용할 수 있습니다.
-        // 예: transform 스타일 업데이트
-        setTransformValues({
-          x: adjustedWidth,
-          y: adjustedHeight,
-        });
-      }
-    }
-  }, [debateDataSet, dataStructureSet, termType]);
 
   useEffect(() => {
     function handleResize() {
@@ -195,7 +158,7 @@ function ConceptualRecurrencePlot() {
   } else if (window.screen.width === 4096 && window.screen.height === 2304) {
     transformStyle = `translate(-235, 205) scale(0.35156, -0.35156) rotate(-45)`;
   } else if (window.screen.width === 3840 && window.screen.height === 2160) {
-    transformStyle = `translate(-185, 155) scale(0.318, -0.318) rotate(-45)`;
+    transformStyle = `translate(-175, 145) scale(0.318, -0.318) rotate(-45)`;
   } else if (window.screen.width === 3360 && window.screen.height === 2100) {
     transformStyle = `translate(-235, 205) scale(0.42857, -0.42857) rotate(-45)`;
   } else if (window.screen.width === 3360 && window.screen.height === 1890) {
@@ -263,6 +226,19 @@ function ConceptualRecurrencePlot() {
     dataStructureManager,
     setDataStructureManager,
   ] = useState<DataStructureManager | null>(null);
+  const [dataStructureSet, setDataStructureSet] = useState<DataStructureSet>();
+
+  useEffect(() => {
+    if (dataStructureManager) {
+      // dataStructureManager에서 가져온 데이터가 undefined가 아닌지 확인
+      const dataSet = dataStructureManager.dataStructureSet;
+      if (dataSet) {
+        // undefined가 아닌 경우에만 상태 업데이트
+        setDataStructureSet(dataSet);
+      }
+    }
+  }, [dataStructureManager]);
+
   const [
     evaluationDataSet,
     setEvaluationDataSet,
@@ -272,6 +248,7 @@ function ConceptualRecurrencePlot() {
     setCombinedEGsMaker,
   ] = useState<CombinedEGsMaker | null>(null);
   const [d3Drawer, setD3Drawer] = useState<D3Drawer | null>(null);
+
   const conceptualMapModalRef = React.useRef<ConceptualMapModalRef>(null);
   const standardSimilarityScore = useSelector<
     CombinedState<{
@@ -361,6 +338,7 @@ function ConceptualRecurrencePlot() {
   useEffect(() => {
     if (dataStructureManager && debateDataset) {
       const dataStructureSet = dataStructureManager.dataStructureSet;
+      //console.log("dataStructureSet", dataStructureSet);
       const datasetOfManualEGs = dataStructureManager.datasetOfManualEGs;
       const manualBigEGs = datasetOfManualEGs.manualBigEGs;
       const manualBigEGTitles = datasetOfManualEGs.manualBigEGTitles;
@@ -397,7 +375,8 @@ function ConceptualRecurrencePlot() {
         setTooltipVisible(true);
       };
       d3Drawer.similarityBlocksDrawer.mouseoutLisener = () => {};
-
+      // 클릭 리스너 설정
+      d3Drawer.setupClickListener(transcriptViewerRef);
       // Engagement Group Drawer's Settings
       d3Drawer.topicGroupsDrawer.topicGroups = topicGroups;
       d3Drawer.topicGroupsDrawer.onTitleClicked = (
@@ -489,7 +468,12 @@ function ConceptualRecurrencePlot() {
 
       setD3Drawer(d3Drawer);
     }
-  }, [dataStructureManager, debateDataset, d3Container.current]);
+  }, [
+    dataStructureManager,
+    debateDataset,
+    d3Container.current,
+    transcriptViewerRef,
+  ]);
 
   return (
     <div className="root-div" style={{ overflow: "hidden" }}>
@@ -499,7 +483,13 @@ function ConceptualRecurrencePlot() {
       <div className="vis-area">
         <div className="bubble" style={{ borderBottom: "1px solid black" }}>
           {/* <BubbleEng /> */}
-          <BubbleEngg onTitleClick={handleTitleClick} />
+          {dataStructureSet && (
+            <BubbleEngg
+              onTitleClick={handleTitleClick}
+              dataStructureSet={dataStructureSet}
+              transcriptViewerRef={transcriptViewerRef}
+            />
+          )}
         </div>
         <div
           className="concept-recurrence-plot"
