@@ -46,6 +46,7 @@ import * as d3 from "d3";
 import Outline from "./Outline";
 import SubChart from "./SubChart";
 import SubChartKor from "./SubChartKor";
+import { SimilarityBlocksDrawer } from "./Drawers/SimilarityBlocksDrawer";
 
 // props 타입 정의
 interface ConceptualRecurrencePlotProps {
@@ -481,7 +482,7 @@ function ConceptualRecurrencePlot() {
       {/* <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} /> */}
       <HeaderTwoKor isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="vis-area">
-        <div className="bubble" style={{ borderBottom: "1px solid black" }}>
+        <div className="bubble" style={{}}>
           {/* <BubbleEng /> */}
           {dataStructureSet && (
             <BubbleEngg
@@ -525,11 +526,18 @@ function ConceptualRecurrencePlot() {
                   // transform={`translate(${-265}, ${220}) scale(1.32 -1.32) rotate(-45)`}
                   transform={transformStyle}
                 >
-                  <SubChartKor
-                    // width={windowSize.width - 330}
-                    width={windowSize.width - 330}
-                    height={windowSize.height}
-                  />
+                  {dataStructureSet && (
+                    <SubChartKor
+                      width={windowSize.width - 330}
+                      height={windowSize.height}
+                      onBarClick={handleTitleClick}
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                      //@ts-ignore, 1222 일단 작동은 잘됨.
+                      d3Drawer={d3Drawer}
+                      //similarityBlocksDrawer={SimilarityBlocksDrawer}
+                    />
+                  )}
                   <rect
                     style={{
                       fill: "#ffffff",

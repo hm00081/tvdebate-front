@@ -9,13 +9,6 @@ import { SentenceObject } from "../../../interfaces/DebateDataInterface";
 import { TranscriptViewerMethods } from "../TranscriptViewer/TranscriptViewer";
 import Pie from "./Pie";
 
-interface TooltipState {
-  display: boolean;
-  x: number;
-  y: number;
-  content: JSX.Element | null;
-}
-
 interface CP2KProps extends React.SVGProps<SVGSVGElement> {
   onTitleClick: (index: number) => void;
   dataStructureSet: DataStructureSet;
@@ -53,7 +46,20 @@ const CP2K = ({
 
   const [selectedId, setSelectedId] = useState(null);
 
-  const handleClick = (index: number) => {
+  const handleSvgClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
+    // 클릭된 요소가 path 요소가 아니면 하이라이팅 제거
+    if (!(event.target instanceof SVGPathElement)) {
+      document.querySelectorAll(".highlighted").forEach((el) => {
+        (el as SVGPathElement).style.stroke = "none";
+        (el as SVGPathElement).style.strokeWidth = "0";
+        el.classList.remove("highlighted");
+      });
+    }
+  };
+
+  const handleClickText = (index: number) => {
     if (!dataStructureSet) {
       console.error("dataStructureSet is not provided to CP2K component");
       return;
@@ -76,8 +82,42 @@ const CP2K = ({
     }
   };
 
-  const handleDeselect = () => {
-    setSelectedId(null);
+  const handleClick = (
+    index: number,
+    event: React.MouseEvent<SVGPathElement, MouseEvent>
+  ) => {
+    if (!dataStructureSet) {
+      console.error("dataStructureSet is not provided to CP2K component");
+      return;
+    }
+    // transcriptViewerRef의 current 속성의 존재 여부 확인
+    if (!transcriptViewerRef.current) {
+      console.error("transcriptViewerRef is not set");
+      return;
+    }
+
+    document.querySelectorAll(".highlighted").forEach((el) => {
+      (el as SVGPathElement).style.stroke = "none"; // 기존 스트로크 색상으로 변경
+      (el as SVGPathElement).style.strokeWidth = "0"; // 기존 스트로크 너비로 변경
+      el.classList.remove("highlighted");
+    });
+
+    // 클릭된 요소의 스타일 변경
+    const clickedElement = event.currentTarget;
+    clickedElement.style.stroke = "#fc2c34"; // 하이라이팅 색상 지정
+    clickedElement.style.strokeWidth = "1.5"; // 하이라이팅 너비 지정
+    clickedElement.classList.add("highlighted");
+
+    const utterance =
+      dataStructureSet.utteranceObjectsForDrawingManager
+        .utteranceObjectsForDrawing[index];
+    const compoundTerms = countCompoundTerms(utterance.sentenceObjects);
+    const topTerms = getTopCompoundTerms(compoundTerms, 30);
+
+    if (transcriptViewerRef.current) {
+      transcriptViewerRef.current.scrollToIndex(index);
+      transcriptViewerRef.current.highlightKeywords(topTerms, [], index, -1);
+    }
   };
 
   return (
@@ -94,6 +134,7 @@ const CP2K = ({
         // }}
         xmlSpace="preserve"
         {...props}
+        onClick={handleSvgClick}
       >
         {/* 다른 것도 수정해주기 */}
         <style type="text/css">
@@ -117,33 +158,35 @@ const CP2K = ({
         </style>
         <g className="CP2">
           <g className="T2">
-            <title>인구절벽, 징병제에 미치는 영향</title>
-
+            <title>
+              {`Topic: 인구절벽, 징병제에 미치는 영향\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+            </title>
             <text
               transform="matrix(1 0 0 1 315.9469 43.3986)"
               className="st0 st1 st13"
-              onClick={() => handleClick(17)}
+              onClick={(e) => handleClickText(17)}
             >
               {"인구절벽, 징병제에 "}
             </text>
             <text
               transform="matrix(1 0 0 1 340.4654 60.5979)"
               className="st0 st1 st13"
-              onClick={() => handleClick(17)}
+              onClick={() => handleClickText(17)}
             >
               {" 미치는 영향"}
             </text>
           </g>
           <g className="T2-1">
             <circle className="st15" cx={327.8} cy={173.8} r={47.8} />
-
-            <title>인구절벽, 모병제가 답인가?</title>
+            <title>
+              {`Topic: 인구절벽, 모병제가 답인가?\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+            </title>
             <text transform="matrix(1 0 0 1 316.4375 105.6326)">
               <tspan
                 x={0}
                 y={7}
                 className="st0 st1 st14"
-                onClick={() => handleClick(17)}
+                onClick={() => handleClickText(17)}
               >
                 {"인구절벽,"}
               </tspan>
@@ -151,7 +194,7 @@ const CP2K = ({
                 x={-9}
                 y={16.9}
                 className="st0 st1 st14"
-                onClick={() => handleClick(21)}
+                onClick={() => handleClickText(21)}
               >
                 {"모병제가 답인가?"}
               </tspan>
@@ -161,41 +204,27 @@ const CP2K = ({
             <path
               className={`PHR ${selectedId === 18 ? "selected" : ""}`}
               onClick={(e) => {
-                e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(18);
+                e.stopPropagation();
+                handleClick(18, e);
               }}
               d="M346.1,142.7l1.8-1.8c1.9-1.9,1.9-5.1,0-7l-4.1-4.1c-1.9-1.9-5.1-1.9-7,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.1-1.9-7,0l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7l4.1,4.1c1.9,1.9,5.1,1.9,7,0l1.8-1.8 l1.8,1.8c1.9,1.9,5.1,1.9,7,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7L346.1,142.7z"
             />
-
-            <title>키워드: 대책없는 총선용 모병제</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 대책없는 총선용 모병제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px", pointerEvents: "none" }}
               textAnchor="middle"
               transform="matrix(1 0 0 1 325.1153 136.3636)"
               className="st7 noselect"
             >
-              <tspan
-                x={11}
-                y={1}
-                className="st24 st1"
-                //onClick={() => handleClick(20)}
-              >
+              <tspan x={11} y={1} className="st24 st1">
                 {"대책없는"}
               </tspan>
-              <tspan
-                x={11}
-                y={8}
-                className="st24 st1"
-                // onClick={() => handleClick(20)}
-              >
+              <tspan x={11} y={8} className="st24 st1">
                 {"총선용"}
               </tspan>
-              <tspan
-                x={11}
-                y={15}
-                className="st24 st1"
-                // onClick={() => handleClick(20)}
-              >
+              <tspan x={11} y={15} className="st24 st1">
                 {"모병제"}
               </tspan>
             </text>
@@ -206,7 +235,7 @@ const CP2K = ({
               className={`KJD ${selectedId === 24 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(24);
+                handleClick(24, e);
               }}
               cx={306.3}
               cy={148.5}
@@ -214,7 +243,9 @@ const CP2K = ({
               ry={14.3}
             />
 
-            <title>키워드: 전쟁양상 무인화</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].name}\nKeyword: 전쟁양상 무인화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].utterance}`}
+            </title>
             <text
               style={{ fontSize: "7.3px" }}
               textAnchor="middle"
@@ -234,12 +265,13 @@ const CP2K = ({
               className={`LJS ${selectedId === 28 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(12);
+                handleClick(28, e);
               }}
               d="M366,190.1l1.8-1.8c1.9-1.9,1.9-5.2,0-7.2l-4.2-4.2c-1.9-1.9-5.2-1.9-7.2,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.2-1.9-7.2,0l-4.2,4.2c-1.9,1.9-1.9,5.2,0,7.2l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.2,0,7.2l4.2,4.2c1.9,1.9,5.2,1.9,7.2,0 l1.8-1.8l1.8,1.8c1.9,1.9,5.2,1.9,7.2,0l4.2-4.2c1.9-1.9,1.9-5.2,0-7.2L366,190.1z"
             />
-
-            <title>키워드: 자주국방 어려움</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].name}\nKeyword: 자주국방 어려움\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6.2px" }}
               textAnchor="middle"
@@ -260,14 +292,15 @@ const CP2K = ({
               className={`KJD ${selectedId === 37 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(37);
+                handleClick(37, e);
               }}
               cx={294.1}
               cy={173.5}
               r={13.5}
             />
-
-            <title>키워드: 미래전쟁 예측불가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[37].name}\nKeyword: 미래전쟁 예측불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[37].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6.2px" }}
               textAnchor="middle"
@@ -284,10 +317,16 @@ const CP2K = ({
           </g>
           <g className="T2-1-P2">
             <path
-              className="PHR"
+              className={`PHR ${selectedId === 18 ? "selected" : ""}`}
               d="M368.3,161.8l1.6-1.7c1.7-1.8,1.7-4.7-0.1-6.4l-3.8-3.7c-1.8-1.7-4.7-1.7-6.4,0.1l-1.6,1.7l-1.7-1.6 c-1.8-1.7-4.7-1.7-6.4,0.1l-3.7,3.8c-1.7,1.8-1.7,4.7,0.1,6.4l1.7,1.6l-1.6,1.7c-1.7,1.8-1.7,4.7,0.1,6.4l3.8,3.7 c1.8,1.7,4.7,1.7,6.4-0.1l1.6-1.7l1.7,1.6c1.8,1.7,4.7,1.7,6.4-0.1l3.7-3.8c1.7-1.8,1.7-4.7-0.1-6.4L368.3,161.8z"
+              onClick={(e) => {
+                e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
+                handleClick(18, e);
+              }}
             />
-            <title>군인 수 유지필요</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 군인 수 유지필요\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px" }}
               textAnchor="middle"
@@ -305,14 +344,19 @@ const CP2K = ({
           <g className="T2-1-K3">
             <ellipse
               transform="matrix(0.1655 -0.9862 0.9862 0.1655 109.9615 465.6726)"
-              className="KJD"
+              className={`KJD ${selectedId === 15 ? "selected" : ""}`}
               cx={330.1}
               cy={167.9}
               rx={10.9}
               ry={10.9}
+              onClick={(e) => {
+                e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
+                handleClick(15, e);
+              }}
             />
-
-            <title>키워드: 감군체제</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 감군체제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px" }}
               textAnchor="middle"
@@ -333,15 +377,16 @@ const CP2K = ({
               className={`KJD ${selectedId === 24 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(24);
+                handleClick(24, e);
               }}
               cx={318.9}
               cy={198.7}
               rx={21.7}
               ry={21.7}
             />
-
-            <title>키워드: 50만군 유지불가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].utterance}`}
+            </title>
             <text
               style={{ fontSize: "10px" }}
               textAnchor="middle"
@@ -358,14 +403,15 @@ const CP2K = ({
           </g>
           <g className="T2-2">
             <circle className="st15" cx={425.4} cy={176.6} r={48.6} />
-
-            <title>키워드: 인력확충 문제, 해결법은?</title>
+            <title>
+              {`Topic: 인력확충 문제, 해결법은?\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+            </title>
             <text transform="matrix(1 0 0 1 389.0738 116.8055)">
               <tspan
                 x={10}
                 y={-2}
                 className="st0 st1 st14"
-                onClick={() => handleClick(32)}
+                onClick={() => handleClickText(32)}
               >
                 {"인력확충 문제,"}
               </tspan>
@@ -373,7 +419,7 @@ const CP2K = ({
                 x={17}
                 y={7}
                 className="st0 st1 st14"
-                onClick={() => handleClick(36)}
+                onClick={() => handleClickText(36)}
               >
                 {"해결법은?"}
               </tspan>
@@ -384,12 +430,13 @@ const CP2K = ({
               className={`PHR ${selectedId === 35 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(35);
+                handleClick(35, e);
               }}
               d="M461.1,160l2.5-2.5c2.8-2.8,2.8-7.5,0-10.3l-6.1-6.1c-2.8-2.8-7.5-2.8-10.3,0l-2.5,2.5l-2.5-2.5 c-2.8-2.8-7.5-2.8-10.3,0l-6.1,6.1c-2.8,2.8-2.8,7.5,0,10.3l2.5,2.5l-2.5,2.5c-2.8,2.8-2.8,7.5,0,10.3l6.1,6.1 c2.8,2.8,7.5,2.8,10.3,0l2.5-2.5l2.5,2.5c2.8,2.8,7.5,2.8,10.3,0l6.1-6.1c2.8-2.8,2.8-7.5,0-10.3L461.1,160z"
             />
-
-            <title>키워드: 질적향상과 현대화 후 모병제 도입</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[35].name}\nKeyword: 질적향상과 현대화 후 모병제도입\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[35].utterance}`}
+            </title>
             <text
               style={{ fontSize: "7px" }}
               textAnchor="middle"
@@ -412,13 +459,15 @@ const CP2K = ({
               className={`JKT ${selectedId === 31 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(31);
+                handleClick(31, e);
               }}
               cx={415.9}
               cy={140.7}
               r={11.2}
             />
-            <title>키워드: 소수 정예화군</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 소수 정예화군\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+            </title>
             <text
               style={{ fontSize: "5.5px" }}
               textAnchor="middle"
@@ -438,11 +487,16 @@ const CP2K = ({
           </g>
           <g className="T2-2-L1">
             <path
-              className="LJS"
+              className={`LJS ${selectedId === 28 ? "selected" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
+                handleClick(28, e);
+              }}
               d="M459.3,197.9l2-2c2.3-2.3,2.3-6,0-8.3l-4.9-4.9c-2.3-2.3-6-2.3-8.3,0l-2,2l-2-2c-2.3-2.3-6-2.3-8.3,0 l-4.9,4.9c-2.3,2.3-2.3,6,0,8.3l2,2l-2,2c-2.3,2.3-2.3,6,0,8.3l4.9,4.9c2.3,2.3,6,2.3,8.3,0l2-2l2,2c2.3,2.3,6,2.3,8.3,0l4.9-4.9 c2.3-2.3,2.3-6,0-8.3L459.3,197.9z"
             />
-
-            <title>키워드: 스마트군대 체제</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].name}\nKeyword: 스마트군대 체제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].utterance}`}
+            </title>
             <text
               style={{ fontSize: "7.5px" }}
               textAnchor="middle"
@@ -465,14 +519,15 @@ const CP2K = ({
               className={`JKT ${selectedId === 34 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(34);
+                handleClick(34, e);
               }}
               cx={397.1}
               cy={160.4}
               r={15.4}
             />
-
-            <title>키워드: 감축을 통한 군 정예화</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[34].name}\nKeyword: 감축을 통한 군 정예화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[34].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px" }}
               textAnchor="middle"
@@ -495,14 +550,15 @@ const CP2K = ({
               className={`JKT ${selectedId === 31 ? "selected" : ""}`}
               onClick={(e) => {
                 e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
-                handleClick(31);
+                handleClick(31, e);
               }}
               cx={388.6}
               cy={184.5}
               r={10.1}
             />
-
-            <title>키워드: 군대 기계화</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 군대 기계화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+            </title>
             <text
               style={{ fontSize: "5.3px" }}
               textAnchor="middle"
@@ -518,9 +574,20 @@ const CP2K = ({
             </text>
           </g>
           <g className="T2-2-J4">
-            <circle className="JKT" cx={410.6} cy={202.8} r={18} />
+            <circle
+              className={`JKT ${selectedId === 31 ? "selected" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation(); // 상위 요소로 이벤트 전파 방지
+                handleClick(31, e);
+              }}
+              cx={410.6}
+              cy={202.8}
+              r={18}
+            />
 
-            <title>키워드: 직업군인위주 편제개편</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 직업군인 위주 편제개편\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6.6px" }}
               textAnchor="middle"
@@ -542,14 +609,6 @@ const CP2K = ({
           </g>
         </g>
       </svg>
-      {/* {tooltip.display && (
-        <div
-          className="tooltip"
-          style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
-        >
-          {tooltip.content}
-        </div>
-      )} */}
     </>
   );
 };

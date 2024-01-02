@@ -94,6 +94,7 @@ export class SimilarityBlockManager {
           refutation: false, // 반박 default 값
           engagementPoint: false,
           visible: true,
+          //id: 1,
         };
         // console.log(conceptSimilarityBlock.refutation);
         // Because cosine similairity between [0, 0, ...] and [0, 0, ...]

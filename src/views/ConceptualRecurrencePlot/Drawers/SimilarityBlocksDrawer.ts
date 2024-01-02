@@ -23,10 +23,19 @@ export class SimilarityBlocksDrawer {
 
   private _coloringSelfSimilarities: ColoringSelfSimilarities = "none";
   private _showEngagementPoint: boolean = false;
-  private _coloringRebuttal: boolean = true; // 토론의 주장과 반박 연쇄 일어나는 구간 색상 부여
+  private _coloringRebuttal: boolean = true; // 논쟁이 나타나는 곳 색상 부여
   private _standardHighPointOfSimilarityScore!: number;
   private _findDisagreeScaleScore!: number;
+  //private _selectedBlockIndices: [number, number] | null = null;
+  private _selectedBlockIndices: Array<[number, number]> = [];
 
+  // argumentScore
+  private calculateArgumentScore(d: SimilarityBlock) {
+    return (
+      (d.similarity * d.weight) /
+      Math.sqrt(Math.abs(d.columnUtteranceIndex - d.rowUtteranceIndex))
+    );
+  }
   private _clickListener:
     | ((e: MouseEvent, d: SimilarityBlock) => void)
     | null = null;
@@ -68,10 +77,17 @@ export class SimilarityBlocksDrawer {
       mostHighSimilarityBlock.weight * mostHighSimilarityBlock.similarity;
   }
 
+  public setClickListener(
+    listener: (e: MouseEvent, d: SimilarityBlock) => void
+  ) {
+    this._clickListener = listener;
+  }
+
   public update() {
     const similarityRectGSelectionDataBound = this.conceptSimilarityRectGSelection
-      .selectAll<SVGRectElement, unknown>("rect")
+      .selectAll<SVGRectElement, SimilarityBlock>("rect")
       .data(this.similarityBlocks);
+    //console.log("Binding data to rects:", this.similarityBlocks); // 잘나옴
 
     const enter = similarityRectGSelectionDataBound.enter().append("rect");
 
@@ -101,75 +117,41 @@ export class SimilarityBlocksDrawer {
           ? "rgb(97, 64, 65)"
           : null
       )
-      .on("click", (e, d) => {
-        const mouseEvent = (e as unknown) as MouseEvent;
-        //console.log("similarity block clicked");
+      .on("click", (d: SimilarityBlock, i: number) => {
+        // console.log(
+        //   "Clicked Block Indices:", // 지금 undefined로 나옴
+        //   d.rowUtteranceIndex,
+        //   d.columnUtteranceIndex
+        // );
+
+        // console.log("Clicked Block Data Index:", i);
+        const mouseEvent = (d as unknown) as MouseEvent;
+        this._selectedBlockIndices.push([
+          d.rowUtteranceIndex,
+          d.columnUtteranceIndex,
+        ]);
+
+        // 하이라이팅 업데이트
+        this.updateSelectedBlock();
+
+        //const mouseEvents = d3.event;
+        //this.updateSelectedBlock();
         mouseEvent.stopPropagation();
-        const similarityBlock = (d as unknown) as SimilarityBlock;
+        const similarityBlock = (i as unknown) as SimilarityBlock;
         if (this._clickListener) {
           this._clickListener(mouseEvent, similarityBlock);
         }
       })
-      //1212 클릭이벤트
-      // .on("click", (e, d) => {
-      //   //d3.event.stopPropagation();
-      //   const mouseEvent = (e as unknown) as MouseEvent;
-      //   const similarityBlock = (d as unknown) as SimilarityBlock;
-      //   mouseEvent.stopPropagation();
-      //   // 모든 블록의 테두리 스타일을 초기화합니다.
-      //   this.conceptSimilarityRectGSelection
-      //     .selectAll<SVGRectElement, SimilarityBlock>("rect")
-      //     .style("stroke", null)
-      //     .style("stroke-width", null);
-
-      //   // 클릭된 블록에 빨간색 테두리를 적용합니다.
-      //   //@ts-ignore
-      //   d3.select(mouseEvent.currentTarget) // 현재 클릭된 rect 요소 선택
-      //     .style("stroke", "red")
-      //     .style("stroke-width", "2px");
-
-      //   if (this._clickListener) {
-      //     this._clickListener(mouseEvent, similarityBlock);
-      //   }
-      // })
-
       .append("title")
-      .text(
-        (d, i) =>
-          `findArgument: ${
-            d.refutation ? d.refutation : "none"
-          },\nLeading Speaker Index: ${
-            d.columnUtteranceIndex
-          },\nLeading Speaker Nname: ${
-            d.colUtteranceName
-          }\nTrailing Speaker Index: ${
-            d.rowUtteranceIndex
-          },\nTrailing Speaker Name: ${d.rowUtteranceName},\nargumentScore: ${
-            ((d.similarity * d.weight) /
-              // Math.abs(d.columnUtteranceIndex - d.rowUtteranceIndex)) *
-              Math.sqrt(
-                Math.abs(d.columnUtteranceIndex - d.rowUtteranceIndex)
-              )) *
-            1
-            // d.similarity * d.weight
-          }
-          )}`
-      )
-      .on("mouseover", (e, u) => {
-        const mouseEvent = (e as unknown) as MouseEvent;
-        mouseEvent.stopPropagation();
-        const similarityBlock = (u as unknown) as SimilarityBlock;
-
-        //TODO adjust insist, refutation-view
-        if (this._mouseoverListener) {
-          this._mouseoverListener(mouseEvent, similarityBlock);
-        }
-      })
-      .on("mouseout", (e, u) => {
-        const mouseEvent = (e as unknown) as MouseEvent;
-        if (this._mouseoutListener) {
-          this._mouseoutListener();
-        }
+      .text((d, i) => {
+        const argumentScore = this.calculateArgumentScore(d); // argumentScore 계산
+        //console.log(argumentScore);
+        return `findArgument: ${d.refutation ? d.refutation : "none"},
+                Leading Speaker Index: ${d.columnUtteranceIndex},
+                Leading Speaker Name: ${d.colUtteranceName}
+                Trailing Speaker Index: ${d.rowUtteranceIndex},
+                Trailing Speaker Name: ${d.rowUtteranceName},
+                argumentScore: ${argumentScore}`;
       });
 
     similarityRectGSelectionDataBound.exit().remove();
@@ -186,7 +168,7 @@ export class SimilarityBlocksDrawer {
       let opacity: number = 0;
       const indexDiff = Math.abs(
         similarityBlock.columnUtteranceIndex - similarityBlock.rowUtteranceIndex
-      );
+      ); // 발화자 간 거리.
       const realWeightValue =
         similarityBlock.weight * similarityBlock.similarity;
       // const weightedSimilarity =
@@ -707,6 +689,71 @@ export class SimilarityBlocksDrawer {
     clickListener: (e: MouseEvent, d: SimilarityBlock) => void
   ) {
     this._clickListener = clickListener;
+  }
+
+  // setSelectedBlockIndices(rowIndex: number, colIndex: number) {
+  //   this._selectedBlockIndices = [rowIndex, colIndex];
+  // }
+
+  // updateSelectedBlock() {
+  //   this.conceptSimilarityRectGSelection
+  //     .selectAll<SVGRectElement, SimilarityBlock>("rect")
+  //     .style("stroke", (d) =>
+  //       this._selectedBlockIndices &&
+  //       this._selectedBlockIndices[0] === d.rowUtteranceIndex &&
+  //       this._selectedBlockIndices[1] === d.columnUtteranceIndex
+  //         ? "red"
+  //         : null
+  //     )
+  //     .style("stroke-width", (d) =>
+  //       this._selectedBlockIndices &&
+  //       this._selectedBlockIndices[0] === d.rowUtteranceIndex &&
+  //       this._selectedBlockIndices[1] === d.columnUtteranceIndex
+  //         ? 1
+  //         : 0
+  //     );
+  // }
+  // setSelectedBlockIndices(indices: [number, number][]) {
+  //   this._selectedBlockIndices = [...this._selectedBlockIndices, ...indices];
+  // }
+
+  setSingleBlockIndices(rowIndex: number, colIndex: number) {
+    this._selectedBlockIndices = [[rowIndex, colIndex]];
+    this.updateSelectedBlock();
+  }
+
+  // 다중 블록 선택
+  setMultipleBlockIndices(indices: [number, number][]) {
+    this._selectedBlockIndices = [...this._selectedBlockIndices, ...indices];
+    this.updateSelectedBlock();
+  }
+
+  clearSelectedBlocks() {
+    this._selectedBlockIndices = [];
+    this.updateSelectedBlock();
+  }
+
+  updateSelectedBlock() {
+    this.conceptSimilarityRectGSelection
+      .selectAll<SVGRectElement, SimilarityBlock>("rect")
+      .style("stroke", (d) => {
+        return this._selectedBlockIndices.some(
+          (indices) =>
+            indices[0] === d.rowUtteranceIndex &&
+            indices[1] === d.columnUtteranceIndex
+        )
+          ? "#fc2c34"
+          : null;
+      })
+      .style("stroke-width", (d) => {
+        return this._selectedBlockIndices.some(
+          (indices) =>
+            indices[0] === d.rowUtteranceIndex &&
+            indices[1] === d.columnUtteranceIndex
+        )
+          ? 1.45
+          : 0;
+      });
   }
 
   public set mouseoverListener(

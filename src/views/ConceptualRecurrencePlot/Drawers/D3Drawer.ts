@@ -123,6 +123,14 @@ export class D3Drawer {
           colIndex
         );
       }
+      const indexPair = [d.rowUtteranceIndex, d.columnUtteranceIndex];
+      //@ts-ignore
+      // this.similarityBlocksDrawer.setSelectedBlockIndices([indexPair]);
+      this.similarityBlocksDrawer.setSingleBlockIndices(
+        d.rowUtteranceIndex,
+        d.columnUtteranceIndex
+      );
+      this.similarityBlocksDrawer.updateSelectedBlock();
     };
   }
 
@@ -206,44 +214,7 @@ export class D3Drawer {
     this.similarityBlocksDrawer.clickListener = (
       e: MouseEvent,
       d: SimilarityBlock
-    ) => {
-      // this.insistenceMarkersDrawer.visible = false;
-      // this.refutationIconDrawer.similarityBlock = null;
-      // this.refutationIconDrawerTwo.similarityBlock = null;
-      // this.insistenceIconDrawer.similarityBlock = null;
-      // this.insistenceIconDrawerTwo.similarityBlock = null; // 7
-      // this.uncertainIconDrawer.similarityBlock = null;
-      //const index = /* 인덱스 결정 로직 */;
-      //   // transcriptViewerRef는 TranscriptViewer 컴포넌트에 대한 참조입니다.
-      //   //transcriptViewerRef.current.scrollToIndex(index);
-      //   // if (d.colUtteranceName === "이준석" || d.colUtteranceName === "박휘락") {
-      //   //   this.insistenceIconDrawerTwo.similarityBlock = d;
-      //   //   this.refutationIconDrawer.similarityBlock = d;
-      //   // } else if (
-      //   //   d.colUtteranceName === "김종대" ||
-      //   //   d.colUtteranceName === "장경태"
-      //   // ) {
-      //   //   this.insistenceIconDrawer.similarityBlock = d;
-      //   //   this.refutationIconDrawerTwo.similarityBlock = d;
-      //   // } else if (
-      //   //   d.rowUtteranceName === "이준석" ||
-      //   //   d.rowUtteranceName === "박휘락"
-      //   // ) {
-      //   //   this.refutationIconDrawerTwo.similarityBlock = d;
-      //   //   this.insistenceIconDrawer.similarityBlock = d;
-      //   // } else if (
-      //   //   d.rowUtteranceName === "김종대" ||
-      //   //   d.rowUtteranceName === "장경태"
-      //   // ) {
-      //   //   this.refutationIconDrawer.similarityBlock = d;
-      //   //   this.insistenceIconDrawerTwo.similarityBlock = d;
-      //   // } else null;
-      //   // this.refutationIconDrawer.update();
-      //   // this.refutationIconDrawerTwo.update();
-      //   // this.insistenceIconDrawer.update();
-      //   // this.insistenceIconDrawerTwo.update();
-      //   // this.uncertainIconDrawer.update();
-    };
+    ) => {};
 
     this.similarityBlocksDrawer.mouseoverListener = (
       e: MouseEvent,

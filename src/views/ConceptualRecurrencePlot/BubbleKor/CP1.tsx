@@ -1,64 +1,120 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState, useEffect, ReactNode } from "react";
-
-interface TooltipState {
-  display: boolean;
-  x: number;
-  y: number;
-}
+import * as React from "react";
+import { useState } from "react";
+import { DataStructureSet } from "../DataStructureMaker/DataStructureManager";
+import { DataStructureManager } from "../DataStructureMaker/DataStructureManager";
+import { SentenceObject } from "../../../interfaces/DebateDataInterface";
+import { TranscriptViewerMethods } from "../TranscriptViewer/TranscriptViewer";
 
 interface CP1KProps extends React.SVGProps<SVGSVGElement> {
   onTitleClick: (index: number) => void;
+  dataStructureSet: DataStructureSet;
+  transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
 }
 
-const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
-  const [tooltip, setTooltip] = useState<TooltipState>({
-    display: false,
-    x: 0,
-    y: 0,
-  });
+//@ts-ignore
+const CP1K = ({
+  onTitleClick,
+  dataStructureSet,
+  transcriptViewerRef,
+  ...props
+}: CP1KProps) => {
+  const countCompoundTerms = (
+    data: SentenceObject[]
+  ): { [key: string]: number } => {
+    const result: { [key: string]: number } = {};
+    data.forEach(({ compoundTermCountDict }) => {
+      Object.keys(compoundTermCountDict).forEach((key) => {
+        result[key] = (result[key] || 0) + compoundTermCountDict[key];
+      });
+    });
+    return result;
+  };
 
-  useEffect(() => {
-    // console.log("Tooltip state changed:", tooltip);
-  }, [tooltip]);
+  const getTopCompoundTerms = (
+    compoundTerms: { [key: string]: number },
+    topN: number
+  ) => {
+    return Object.entries(compoundTerms)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, topN)
+      .map(([term]) => term);
+  };
 
-  const handleMouseOver = (e: React.MouseEvent<SVGGElement, MouseEvent>) => {
-    //console.log("Mouse Over!");
-    if (e.currentTarget && e.currentTarget.classList.contains("CP1")) {
-      setTooltip({
-        display: true,
-        x: e.pageX,
-        y: e.pageY,
+  const [selectedId, setSelectedId] = useState(null);
+
+  const handleSvgClick = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
+    // 클릭된 요소가 path 요소가 아니면 하이라이팅 제거
+    if (!(event.target instanceof SVGPathElement)) {
+      document.querySelectorAll(".highlighted").forEach((el) => {
+        (el as SVGPathElement).style.stroke = "none";
+        (el as SVGPathElement).style.strokeWidth = "0";
+        el.classList.remove("highlighted");
       });
     }
   };
-  const handleMouseOut = () => {
-    //console.log("Mouse Out!");
-    setTooltip({ display: false, x: 0, y: 0 });
+
+  const handleClickText = (index: number) => {
+    if (!dataStructureSet) {
+      console.error("dataStructureSet is not provided to CP2K component");
+      return;
+    }
+    // transcriptViewerRef의 current 속성의 존재 여부 확인
+    if (!transcriptViewerRef.current) {
+      console.error("transcriptViewerRef is not set");
+      return;
+    }
+
+    const utterance =
+      dataStructureSet.utteranceObjectsForDrawingManager
+        .utteranceObjectsForDrawing[index];
+    const compoundTerms = countCompoundTerms(utterance.sentenceObjects);
+    const topTerms = getTopCompoundTerms(compoundTerms, 30);
+
+    if (transcriptViewerRef.current) {
+      transcriptViewerRef.current.scrollToIndex(index);
+      transcriptViewerRef.current.highlightKeywords(topTerms, [], index, -1);
+    }
   };
 
-  // 각 path 요소에 대한 참조 생성
-  const pathRef1 = useRef(null);
-  const pathRef2 = useRef(null);
-
-  useEffect(() => {
-    if (pathRef1.current && pathRef2.current) {
-      //@ts-ignore
-      const bbox1 = pathRef1.current.getBBox();
-      //@ts-ignore
-      const bbox2 = pathRef2.current.getBBox();
-
-      // 바운딩 박스의 너비와 높이 로깅
-      console.log("Path 1 bounding box:", bbox1);
-      console.log("Path 2 bounding box:", bbox2);
+  const handleClick = (
+    index: number,
+    event: React.MouseEvent<SVGPathElement, MouseEvent>
+  ) => {
+    if (!dataStructureSet) {
+      console.error("dataStructureSet is not provided to CP2K component");
+      return;
     }
-  }, []);
+    // transcriptViewerRef의 current 속성의 존재 여부 확인
+    if (!transcriptViewerRef.current) {
+      console.error("transcriptViewerRef is not set");
+      return;
+    }
 
-  const titleClickHandler = (index: number) => {
-    if (typeof onTitleClick === "function") {
-      onTitleClick(index);
-    } else {
-      console.error("onTitleClick is not a function");
+    document.querySelectorAll(".highlighted").forEach((el) => {
+      (el as SVGPathElement).style.stroke = "none"; // 기존 스트로크 색상으로 변경
+      (el as SVGPathElement).style.strokeWidth = "0"; // 기존 스트로크 너비로 변경
+      el.classList.remove("highlighted");
+    });
+
+    // 클릭된 요소의 스타일 변경
+    const clickedElement = event.currentTarget;
+    clickedElement.style.stroke = "#fc2c34"; // 하이라이팅 색상 지정
+    clickedElement.style.strokeWidth = "1.5"; // 하이라이팅 너비 지정
+    clickedElement.classList.add("highlighted");
+
+    const utterance =
+      dataStructureSet.utteranceObjectsForDrawingManager
+        .utteranceObjectsForDrawing[index];
+    const compoundTerms = countCompoundTerms(utterance.sentenceObjects);
+    const topTerms = getTopCompoundTerms(compoundTerms, 30);
+
+    if (transcriptViewerRef.current) {
+      transcriptViewerRef.current.scrollToIndex(index);
+      transcriptViewerRef.current.highlightKeywords(topTerms, [], index, -1);
     }
   };
 
@@ -73,6 +129,7 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
         viewBox="0 0 1753 318"
         xmlSpace="preserve"
         {...props}
+        onClick={handleSvgClick}
       >
         {/* 다른 것도 수정해주기 */}
         <style type="text/css">
@@ -80,17 +137,33 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
             "\n\t.PHR{fill: #bf6020;}.KJD{fill: #1da36b;}.LJS{fill: #ac1d3b;}.JKT{fill: #1e96d1;}.st0{fill:#040000;}\n\t.st1{font-family:'NanumGothicExtraBold';}\n\t.st4{font-size:6.336px;}\n\t.st5{font-size:5.1276px;}\n\t.st6{font-size:8.4392px;}\n\t.st7{enable-background:new    ;}\n\t.st8{font-size:7.4863px;}\n\t.st9{font-size:6.8885px;}\n\t.st10{font-size:6.4688px;}\n\t.st11{font-size:8.1073px;}\n\t.st12{font-size:8.3036px;}\n\t.st13{font-size:14.3527px;}\n\t.st14{font-size:8.2107px;}\n\t.st15{fill:none;stroke:#7F8080;stroke-miterlimit:10;}\n\t.st16{fill:#BF6020;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st17{fill:#808080;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st18{fill:#AC1D3B;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st19{fill:#1da36b;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st20{fill:#0EA0E2;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st21{fill:#ac1d3b;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st22{fill:#bf6020;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}\n\t.st23{fill:#bf6020;}\n\t.st24{fill:#FFFFFF;}\n\t.st25{font-size:3.1999px;}\n\t.st26{fill:#1da36b;}\n\t.st27{font-size:4.8348px;}\n\t.st28{fill:#ac1d3b;}\n\t.st29{font-size:4.6437px;}\n\t.st30{fill:#1e96d1;}\n\t.st31{font-size:4.0673px;}\n\t.st32{font-size:4.364px;}\n\t.st33{font-size:4.3567px;}\n\t.st34{font-size:7.5035px;}\n\t.st35{font-size:3.1978px;}\n\t.st36{font-size:3.3785px;}\n\t.st37{font-size:4.0259px;}\n\t.st38{font-size:3.0489px;}\n\t.st39{font-size:6.8847px;}\n\t.st40{font-size:4.8705px;}\n\t.st41{font-size:7.0167px;}\n\t.st42{font-size:4.0832px;}\n\t.st43{font-size:4.7467px;}\n\t.st44{font-size:4.1583px;}\n\t.st45{font-size:5.5797px;}\n\t.st46{font-size:4.5574px;}\n\t.st47{font-size:3.9033px;}\n\t.st48{font-size:5.03px;}\n\t.st49{font-size:5.0613px;}\n\t.st50{font-size:3.2238px;}\n\t.st51{font-size:6.551px;}\n\t.st52{font-size:6.2746px;}\n\t.st53{font-size:4.8224px;}\n\t.st54{font-size:5.0769px;}\n\t.st55{font-size:7.6649px;}\n\t.st56{font-size:5.2097px;}\n\t.st57{font-size:5.7785px;}\n\t.st58{font-size:4.168px;}\n\t.st59{font-size:7.3889px;}\n\t.st60{font-size:4.7606px;}\n\t.st61{font-size:2.6512px;}\n\t.st62{font-size:4.9984px;}\n\t.st63{font-size:4.319px;}\n\t.st64{font-size:4.5174px;}\n\t.st65{font-size:6.7674px;}\n\t.st66{font-size:3.9446px;}\n\t.st67{font-size:6.3288px;}\n\t.st68{font-size:4.8715px;}\n\t.st69{font-size:3.6476px;}\n\t.st70{font-size:6.1604px;}\n\t.st71{font-size:5.3491px;}\n\t.st72{font-size:5.846px;}\n\t.st73{font-size:8px;}\n\t.st74{font-size:57.0758px;}\n\t.st75{font-size:3.9339px;}\n\t.st76{font-size:2.7333px;}\n\t.st77{font-size:1.8411px;}\n\t.st78{font-size:4.5882px;}\n\t.st79{fill:#1e96d1;}\n\t.st80{font-size:3.3048px;}\n\t.st81{font-size:4.0122px;}\n\t.st82{font-size:3.7104px;}\n\t.st83{font-size:3.237px;}\n\t.st84{font-size:3.6621px;}\n\t.st85{font-size:2.4555px;}\n\t.st86{font-size:6.122px;}\n\t.st87{font-size:4.0856px;}\n\t.st88{font-size:4.3994px;}\n\t.st89{font-size:4.5279px;}\n\t.st90{font-size:4.121px;}\n\t.st91{font-size:2.9352px;}\n\t.st92{font-size:7.7877px;}\n\t.st93{font-size:5.3551px;}\n\t.st94{font-size:6.073px;}\n\t.st95{font-size:3.4659px;}\n\t.st96{font-size:5.5366px;}\n\t.st97{font-size:4.9445px;}\n\t.st98{font-size:5.2054px;}\n\t.st99{font-size:4.701px;}\n\t.st100{font-size:2.7254px;}\n\t.st101{font-size:6.284px;}\n\t.st102{font-size:3.6779px;}\n\t.st103{font-size:2.4364px;}\n\t.st104{font-size:4.4063px;}\n\t.st105{fill:none;stroke:#C4C4C4;stroke-miterlimit:10;}\n\t.st106{font-size:3.8789px;}\n\t.st107{font-size:4.1619px;}\n\t.st108{font-size:4.1549px;}\n\t.st109{font-size:3.4925px;}\n\t.st110{font-size:2.3417px;}\n\t.st111{font-size:5.8384px;}\n"
           }
         </style>
+        <style>
+          {`
+      .noselect {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard syntax */
+      }
+      .selected {
+        stroke: red;
+        stroke-width: 10px;
+      }
+    `}
+        </style>
         <g className="CP1">
           <g className="T1">
-            <g onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-              <title>토론 시작 및 모병제 도입</title>
+            <g>
+              <title>
+                {`Topic: 토론 시작 및 모병제 도입\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].utterance}`}
+              </title>
               <text
                 style={{ fontSize: "6px" }}
                 transform="matrix(1 0 0 1 59.5201 47.5178)"
                 className="st7"
               >
                 <tspan
-                  onClick={() => titleClickHandler(0)}
+                  onClick={() => handleClickText(0)}
                   x={0}
                   y={0}
                   className="st0 st1 st13"
@@ -183,9 +256,16 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-1">
             <circle className="st15" cx={81.5} cy={172.2} r={51.7} />
-            <title>현 사회상황</title>
+            <title>
+              {`Topic: 현 사회상황\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].utterance}`}
+            </title>
             <text transform="matrix(1 0 0 1 50 104.3537)" className="st7">
-              <tspan x={5} y={9.9} className="st0 st1 st14">
+              <tspan
+                x={5}
+                y={9.9}
+                className="st0 st1 st14"
+                onClick={() => handleClickText(0)}
+              >
                 {"현 사회상황"}
               </tspan>
             </text>
@@ -193,14 +273,19 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           <g className="T1-1-J1">
             <ellipse
               transform="matrix(0.7071 -0.7071 0.7071 0.7071 -89.5315 81.101)"
-              className="JKT"
+              className={`JKT ${selectedId === 5 ? "selected" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClick(5, e);
+              }}
               cx={53.1}
               cy={148.6}
               rx={14.6}
               ry={14.6}
             />
-
-            <title>키워드: 인구 절벽위협</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 인구절벽위협\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6.4px" }}
               textAnchor="middle"
@@ -216,12 +301,15 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
             </text>
           </g>
           <g className="T1-1-P1">
-            <title>안보위협 과소평가</title>
             <path
               //ref={pathRef1}
-              className="PHR"
               d="M75.7,169.7l1.3-1.3c1.3-1.3,1.3-3.6,0-4.9l-2.9-2.9c-1.3-1.3-3.6-1.3-4.9,0l-1.3,1.3l-1.3-1.3 c-1.3-1.3-3.6-1.3-4.9,0l-2.9,2.9c-1.3,1.3-1.3,3.6,0,4.9l1.3,1.3l-1.3,1.3c-1.3,1.3-1.3,3.6,0,4.9l2.9,2.9c1.3,1.3,3.6,1.3,4.9,0 l1.3-1.3l1.3,1.3c1.3,1.3,3.6,1.3,4.9,0l2.9-2.9c1.3-1.3,1.3-3.6,0-4.9L75.7,169.7z"
+              className={`PHR ${selectedId === 3 ? "selected" : ""}`}
+              onClick={(e) => handleClick(3, e)}
             />
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].utterance}`}
+            </title>
             <text
               style={{ fontSize: "4.5px" }}
               textAnchor="middle"
@@ -238,11 +326,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-1-L1">
             <path
-              className="LJS"
+              className={`LJS ${selectedId === 7 ? "selected" : ""}`}
+              onClick={(e) => handleClick(7, e)}
               d="M102.6,143.5l2.5-2.5c2.6-2.6,2.6-6.9,0-9.5l-5.6-5.6c-2.6-2.6-6.9-2.6-9.5,0l-2.5,2.5l-2.5-2.5 c-2.6-2.6-6.9-2.6-9.5,0l-5.6,5.6c-2.6,2.6-2.6,6.9,0,9.5l2.5,2.5l-2.5,2.5c-2.6,2.6-2.6,6.9,0,9.5l5.6,5.6c2.6,2.6,6.9,2.6,9.5,0 l2.5-2.5l2.5,2.5c2.6,2.6,6.9,2.6,9.5,0l5.6-5.6c2.6-2.6,2.6-6.9,0-9.5L102.6,143.5z"
             />
-
-            <title>키워드: 안보위협 과소평가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[7].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[7].utterance}`}
+            </title>
             <text
               style={{ fontSize: "8px" }}
               textAnchor="middle"
@@ -259,11 +349,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-1-P2">
             <path
-              className="PHR"
+              className={`PHR ${selectedId === 3 ? "selected" : ""}`}
+              onClick={(e) => handleClick(3, e)}
               d="M117.6,190l3-3c3.2-3.2,3.2-8.5,0-11.7l-6.9-6.9c-3.2-3.2-8.5-3.2-11.7,0l-3,3l-3-3c-3.2-3.2-8.5-3.2-11.7,0 l-6.9,6.9c-3.2,3.2-3.2,8.5,0,11.7l3,3l-3,3c-3.2,3.2-3.2,8.5,0,11.7l6.9,6.9c3.2,3.2,8.5,3.2,11.7,0l3-3l3,3 c3.2,3.2,8.5,3.2,11.7,0l6.9-6.9c3.2-3.2,3.2-8.5,0-11.7L117.6,190z"
             />
-
-            <title>키워드: 북 핵위협</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].name}\nKeyword: 북 핵위협\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].utterance}`}
+            </title>
             <text
               style={{ fontSize: "12px" }}
               transform="matrix(1 0 0 1 89.9458 179.4644)"
@@ -280,14 +372,16 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           <g className="T1-1-J2">
             <ellipse
               transform="matrix(0.6641 -0.7477 0.7477 0.6641 -114.6271 89.0518)"
-              className="JKT"
+              className={`JKT ${selectedId === 5 ? "selected" : ""}`}
+              onClick={(e) => handleClick(5, e)}
               cx={41.8}
               cy={172.1}
               rx={11.2}
               ry={11.2}
             />
-
-            <title>키워드: 청년실업률 증가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 청년실업률 증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+            </title>
             <text
               style={{ fontSize: "5px" }}
               textAnchor="middle"
@@ -308,14 +402,16 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           <g className="T1-1-J3">
             <ellipse
               transform="matrix(0.3847 -0.923 0.923 0.3847 -145.8439 173.9329)"
-              className="JKT"
+              className={`JKT ${selectedId === 5 ? "selected" : ""}`}
+              onClick={(e) => handleClick(5, e)}
               cx={57.5}
               cy={196.4}
               rx={17.2}
               ry={17.2}
             />
-
-            <title>키워드: 50만군 유지불가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+            </title>
             <text
               style={{ fontSize: "8px" }}
               textAnchor="middle"
@@ -332,9 +428,14 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-2">
             <circle className="st15" cx={188.8} cy={171.7} r={55.2} />
-
-            <title>키워드: 현 군상황</title>
-            <text transform="matrix(1 0 0 1 185 98.9778)" className="st7">
+            <title>
+              {`Topic: 현 군상황\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+            </title>
+            <text
+              transform="matrix(1 0 0 1 185 98.9778)"
+              className="st7"
+              onClick={() => handleClickText(17)}
+            >
               {/* <tspan x={0} y={0} className="st0 st1 st14">
                 {"Current "}
               </tspan> */}
@@ -346,14 +447,16 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           <g className="T1-2-K1">
             <ellipse
               transform="matrix(0.2318 -0.9728 0.9728 0.2318 -27.5608 273.884)"
-              className="KJD"
+              className={`KJD ${selectedId === 15 ? "selected" : ""}`}
+              onClick={(e) => handleClick(15, e)}
               cx={159.6}
               cy={154.4}
               rx={19.4}
               ry={19.4}
             />
-
-            <title>키워드: 청년인구 감소</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 청년인구 감소\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+            </title>
             <text
               style={{ fontSize: "8.2px" }}
               textAnchor="middle"
@@ -370,11 +473,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-2-P1">
             <path
-              className="PHR"
+              className={`PHR ${selectedId === 18 ? "selected" : ""}`}
+              onClick={(e) => handleClick(18, e)}
               d="M219.2,206.8l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L219.2,206.8z"
             />
-
-            <title>키워드: 미비한 군정책검토</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 미비한 군정책검토\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+            </title>
             <text
               style={{ fontSize: "5.3px" }}
               textAnchor="middle"
@@ -391,11 +496,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-2-L1">
             <path
-              className="LJS"
+              className={`LJS ${selectedId === 16 ? "selected" : ""}`}
+              onClick={(e) => handleClick(16, e)}
               d="M223.4,149l3.1-3.1c3.3-3.3,3.3-8.9,0-12.2l-7.2-7.2c-3.3-3.3-8.9-3.3-12.2,0l-3.1,3.1l-3.1-3.1 c-3.3-3.3-8.9-3.3-12.2,0l-7.2,7.2c-3.3,3.3-3.3,8.9,0,12.2l3.1,3.1l-3.1,3.1c-3.3,3.3-3.3,8.9,0,12.2l7.2,7.2 c3.3,3.3,8.9,3.3,12.2,0l3.1-3.1l3.1,3.1c3.3,3.3,8.9,3.3,12.2,0l7.2-7.2c3.3-3.3,3.3-8.9,0-12.2L223.4,149z"
             />
-
-            <title>키워드: 감군대비 무대책</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[16].name}\nKeyword: 감군대비 무대책\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[16].utterance}`}
+            </title>
             <text
               style={{ fontSize: "9.3px" }}
               textAnchor="middle"
@@ -413,14 +520,16 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           <g className="T1-2-J1">
             <ellipse
               transform="matrix(0.7071 -0.7071 0.7071 0.7071 -76.6033 186.8325)"
-              className="JKT"
+              className={`JKT ${selectedId === 12 ? "selected" : ""}`}
+              onClick={(e) => handleClick(12, e)}
               cx={187.2}
               cy={185.9}
               rx={12.9}
               ry={12.9}
             />
-
-            <title>키워드: 스마트군대 전환</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[12].name}\nKeyword: 복무단축공약\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[12].utterance}`}
+            </title>
             <text
               style={{ fontSize: "5px" }}
               textAnchor="middle"
@@ -428,27 +537,29 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
               className="st7"
             >
               <tspan x={11} y={-3} className="st24 st1">
-                {"스마트"}
+                {"복무"}
               </tspan>
               <tspan x={11} y={3} className="st24 st1">
-                {"군대"}
+                {"단축"}
               </tspan>
               <tspan x={11} y={9} className="st24 st1">
-                {"전환"}
+                {"공약"}
               </tspan>
             </text>
           </g>
           <g className="T1-2-K2">
             <ellipse
               transform="matrix(0.5227 -0.8525 0.8525 0.5227 -88.026 224.9724)"
-              className="KJD"
+              className={`KJD ${selectedId === 15 ? "selected" : ""}`}
+              onClick={(e) => handleClick(15, e)}
               cx={156.9}
               cy={191.1}
               rx={17.6}
               ry={17.6}
             />
-
-            <title>키워드: 군 부적응자 매년증가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 군 부적응자 매년증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+            </title>
             <text
               style={{ fontSize: "7px" }}
               textAnchor="middle"
@@ -468,11 +579,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-2-L2">
             <path
-              className="LJS"
+              className={`LJS ${selectedId === 13 ? "selected" : ""}`}
+              onClick={(e) => handleClick(13, e)}
               d="M236.9,184.1l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L236.9,184.1z"
             />
-
-            <title>키워드: 군인 수 25만 적정</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[13].name}\nKeyword: 군인수 25만 적정\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[13].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px" }}
               textAnchor="middle"
@@ -480,7 +593,7 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
               className="st7"
             >
               <tspan x={10} y={1} className="st24 st1">
-                {"군인 수"}
+                {"군인수"}
               </tspan>
               <tspan x={10} y={7.5} className="st24 st1">
                 {"25만"}
@@ -492,11 +605,13 @@ const CP1K = ({ onTitleClick, ...props }: CP1KProps) => {
           </g>
           <g className="T1-2-K3">
             <path
-              className="KJD"
+              className={`KJD ${selectedId === 15 ? "selected" : ""}`}
+              onClick={(e) => handleClick(15, e)}
               d="M181.4,197.8c7.7,0,14,6.3,14,14c0,7.7-6.3,14-14,14c-7.7,0-14-6.3-14-14 C167.4,204.1,173.6,197.8,181.4,197.8z"
             />
-
-            <title>키워드: 관심병사 증가</title>
+            <title>
+              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 관심병사 증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+            </title>
             <text
               style={{ fontSize: "6px" }}
               textAnchor="middle"

@@ -85,17 +85,41 @@ const BubbleEngg = ({
           }
         </style>
         <Pie />
-        <CP1K onTitleClick={onTitleClick} />
+        <CP1K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
         <CP2K
           onTitleClick={onTitleClick}
           dataStructureSet={dataStructureSet}
           transcriptViewerRef={transcriptViewerRef}
         />
-        <CP3K onTitleClick={onTitleClick} />
-        <CP4K onTitleClick={onTitleClick} />
-        <CP5K onTitleClick={onTitleClick} />
-        <CP6K onTitleClick={onTitleClick} />
-        <CP7K onTitleClick={onTitleClick} />
+        <CP3K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
+        <CP4K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
+        <CP5K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
+        <CP6K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
+        <CP7K
+          onTitleClick={onTitleClick}
+          dataStructureSet={dataStructureSet}
+          transcriptViewerRef={transcriptViewerRef}
+        />
         {/* <CP1 />
         <CP2 />
         <CP3 />

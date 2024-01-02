@@ -3,44 +3,69 @@
 import * as React from "react";
 //import "./Tooltip.css"; // 툴팁 스타일을 정의하는 CSS 파일
 import { useState } from "react";
+import { DataStructureSet } from "../DataStructureMaker/DataStructureManager";
+import { DataStructureManager } from "../DataStructureMaker/DataStructureManager";
+import { SentenceObject } from "../../../interfaces/DebateDataInterface";
+import { TranscriptViewerMethods } from "../TranscriptViewer/TranscriptViewer";
 import Pie from "./Pie";
-
-interface TooltipState {
-  display: boolean;
-  x: number;
-  y: number;
-  content: JSX.Element | null;
-}
 
 interface CP4KProps extends React.SVGProps<SVGSVGElement> {
   onTitleClick: (index: number) => void;
+  dataStructureSet: DataStructureSet;
+  transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
 }
+
 //@ts-ignore
-const CP4K = ({ onTitleClick, ...props }: CP3KProps) => {
-  const [tooltip, setTooltip] = useState({
-    display: false,
-    x: 0,
-    y: 0,
-    content: null,
-  });
-  //@ts-ignore
-  const handleMouseOver = (e, content) => {
-    setTooltip({
-      display: true,
-      x: e.clientX,
-      y: e.clientY,
-      content: content,
+const CP4K = ({
+  onTitleClick,
+  dataStructureSet,
+  transcriptViewerRef,
+  ...props
+}: CP4KProps) => {
+  const countCompoundTerms = (
+    data: SentenceObject[]
+  ): { [key: string]: number } => {
+    const result: { [key: string]: number } = {};
+    data.forEach(({ compoundTermCountDict }) => {
+      Object.keys(compoundTermCountDict).forEach((key) => {
+        result[key] = (result[key] || 0) + compoundTermCountDict[key];
+      });
     });
+    return result;
   };
 
-  const handleMouseOut = () => {
-    setTooltip({ display: false, x: 0, y: 0, content: null });
+  const getTopCompoundTerms = (
+    compoundTerms: { [key: string]: number },
+    topN: number
+  ) => {
+    return Object.entries(compoundTerms)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, topN)
+      .map(([term]) => term);
   };
-  const titleClickHandler = (index: number) => {
-    if (typeof onTitleClick === "function") {
-      onTitleClick(index);
-    } else {
-      console.error("onTitleClick is not a function");
+
+  const [selectedId, setSelectedId] = useState(null);
+
+  const handleClick = (index: number) => {
+    if (!dataStructureSet) {
+      console.error("dataStructureSet is not provided to CP2K component");
+      return;
+    }
+    // transcriptViewerRef의 current 속성의 존재 여부 확인
+    if (!transcriptViewerRef.current) {
+      console.error("transcriptViewerRef is not set");
+      return;
+    }
+
+    const utterance =
+      dataStructureSet.utteranceObjectsForDrawingManager
+        .utteranceObjectsForDrawing[index];
+    const compoundTerms = countCompoundTerms(utterance.sentenceObjects);
+    const topTerms = getTopCompoundTerms(compoundTerms, 30);
+
+    if (transcriptViewerRef.current) {
+      transcriptViewerRef.current.scrollToIndex(index);
+      transcriptViewerRef.current.highlightKeywords(topTerms, [], index, -1);
     }
   };
 
@@ -53,9 +78,6 @@ const CP4K = ({ onTitleClick, ...props }: CP3KProps) => {
         x="0px"
         y="0px"
         viewBox="0 0 1753 318"
-        style={{
-          enableBackground: "new 0 0 1753 318",
-        }}
         xmlSpace="preserve"
         {...props}
       >
@@ -71,14 +93,14 @@ const CP4K = ({ onTitleClick, ...props }: CP3KProps) => {
             <text
               transform="matrix(1 0 0 1 806.4214 56.5149)"
               className="st0 st1 st13"
-              onClick={() => titleClickHandler(55)}
+              onClick={() => handleClick(55)}
             >
               {"모병제, 일자리 문제"}
             </text>
             <text
               transform="matrix(1 0 0 1 842.4214 73.5149)"
               className="st0 st1 st13"
-              onClick={() => titleClickHandler(55)}
+              onClick={() => handleClick(55)}
             >
               {"해결책?"}
             </text>
@@ -329,14 +351,6 @@ const CP4K = ({ onTitleClick, ...props }: CP3KProps) => {
           </g>
         </g>
       </svg>
-      {tooltip.display && (
-        <div
-          className="tooltip"
-          style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
-        >
-          {tooltip.content}
-        </div>
-      )}
     </>
   );
 };

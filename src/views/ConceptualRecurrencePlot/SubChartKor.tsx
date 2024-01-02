@@ -1,35 +1,650 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable no-unused-vars */
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./SubChart.scss";
+import { DataStructureSet } from "./DataStructureMaker/DataStructureManager";
+import { SentenceObject } from "../../interfaces/DebateDataInterface";
+import { SimilarityBlock } from "./interfaces";
+import { DebateDataSet } from "../../interfaces/DebateDataInterface";
+import { ParticipantBlocksDrawer } from "./Drawers/ParticipantBlocksDrawer";
+import { SimilarityBlocksDrawer } from "./Drawers/SimilarityBlocksDrawer";
+import { D3Drawer } from "./Drawers/D3Drawer";
+import { TranscriptViewerMethods } from "./TranscriptViewer/TranscriptViewer";
+
+interface SubChartKorProps extends React.SVGProps<SVGSVGElement> {
+  onBarClick: (index: number) => void;
+  dataStructureSet: DataStructureSet;
+  transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
+  d3Drawer: D3Drawer;
+}
 
 //@ts-ignore
-const SubChartKor = (props) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
-  const [tooltipText, setTooltipText] = useState("");
-  const [tooltipWidth, setTooltipWidth] = useState(0);
-  const [tooltipHeight, setTooltipHeight] = useState(0);
+const SubChartKor = ({
+  onBarClick,
+  dataStructureSet,
+  transcriptViewerRef,
+  d3Drawer,
+  ...props
+}: SubChartKorProps) => {
+  // 각 논쟁구간 지금 필터링 잘해서 보여지고 잇음. useEffect 내 콘솔 자체는 잘 나오고 있음
+  useEffect(() => {
+    if (dataStructureSet && dataStructureSet.similarityBlockManager) {
+      const similarityBlocks =
+        dataStructureSet.similarityBlockManager.similarityBlocks;
 
-  const handleMouseOver = (
-    e: React.MouseEvent<SVGRectElement, MouseEvent>,
-    text: string,
-    width: number,
-    height: number
-  ) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setTooltipPos({
-      x: rect.left + window.scrollX + rect.width / 2,
-      y: rect.top + window.scrollY,
+      // 특정 argumentScore 이상인 SimilarityBlock 식별
+      const highScoreBlocks = similarityBlocks.filter((block) => {
+        const argumentScore =
+          (block.similarity * block.weight) /
+          Math.sqrt(
+            Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+          );
+        return argumentScore >= 0.25; // 0.25 이상인 SimilarityBlock 필터링
+      });
+
+      // 필터링된 SimilarityBlocks 콘솔에 출력
+      // console.log("High Score SimilarityBlocks:", highScoreBlocks);
+    }
+  }, [dataStructureSet]);
+
+  const handleBarClickOne = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 0 &&
+            block.rowUtteranceIndex <= 18 &&
+            block.columnUtteranceIndex >= 0 &&
+            block.columnUtteranceIndex <= 18;
+          if (
+            block.columnUtteranceIndex === 12 &&
+            block.rowUtteranceIndex === 13
+          ) {
+            return true;
+          }
+          break;
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 0 &&
+            block.rowUtteranceIndex <= 18 &&
+            block.columnUtteranceIndex >= 0 &&
+            block.columnUtteranceIndex <= 18;
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 0 &&
+            block.rowUtteranceIndex <= 18 &&
+            block.columnUtteranceIndex >= 0 &&
+            block.columnUtteranceIndex <= 18;
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 0 &&
+            block.rowUtteranceIndex <= 18 &&
+            block.columnUtteranceIndex >= 0 &&
+            block.columnUtteranceIndex <= 18;
+          break;
+      }
+
+      return isHighScore && condition;
     });
-    setTooltipText(text);
-    setTooltipWidth(width);
-    setTooltipHeight(height);
-    setShowTooltip(true);
+    // console.log(
+    //   `Filtered SimilarityBlocks for barIndex ${barIndex}:`,
+    //   filteredBlocks
+    // );
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
   };
 
-  const handleMouseOut = () => {
-    setShowTooltip(false);
+  const handleBarClickTwo = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 15 &&
+            block.rowUtteranceIndex <= 37 &&
+            block.columnUtteranceIndex >= 15 &&
+            block.columnUtteranceIndex <= 37;
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 15 &&
+            block.rowUtteranceIndex <= 37 &&
+            block.columnUtteranceIndex >= 15 &&
+            block.columnUtteranceIndex <= 37;
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 15 &&
+            block.rowUtteranceIndex <= 37 &&
+            block.columnUtteranceIndex >= 15 &&
+            block.columnUtteranceIndex <= 37;
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 15 &&
+            block.rowUtteranceIndex <= 37 &&
+            block.columnUtteranceIndex >= 15 &&
+            block.columnUtteranceIndex <= 37;
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
+  };
+
+  const handleBarClickThree = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 24 &&
+            block.rowUtteranceIndex <= 58 &&
+            block.columnUtteranceIndex >= 24 &&
+            block.columnUtteranceIndex <= 58 &&
+            !(
+              (block.columnUtteranceIndex === 28 &&
+                block.rowUtteranceIndex === 56) ||
+              (block.columnUtteranceIndex === 28 &&
+                block.rowUtteranceIndex === 58)
+            );
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 24 &&
+            block.rowUtteranceIndex <= 58 &&
+            block.columnUtteranceIndex >= 24 &&
+            block.columnUtteranceIndex <= 58;
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 24 &&
+            block.rowUtteranceIndex <= 58 &&
+            block.columnUtteranceIndex >= 24 &&
+            block.columnUtteranceIndex <= 58;
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 24 &&
+            block.rowUtteranceIndex <= 58 &&
+            block.columnUtteranceIndex >= 24 &&
+            block.columnUtteranceIndex <= 58;
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
+  };
+
+  const handleBarClickFour = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 43 &&
+            block.rowUtteranceIndex <= 79 &&
+            block.columnUtteranceIndex >= 43 &&
+            block.columnUtteranceIndex <= 79;
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 43 &&
+            block.rowUtteranceIndex <= 79 &&
+            block.columnUtteranceIndex >= 43 &&
+            block.columnUtteranceIndex <= 79 &&
+            !(
+              (block.columnUtteranceIndex === 43 &&
+                block.rowUtteranceIndex === 48) ||
+              (block.columnUtteranceIndex === 43 &&
+                block.rowUtteranceIndex === 51) ||
+              (block.columnUtteranceIndex === 43 &&
+                block.rowUtteranceIndex === 76)
+            );
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 43 &&
+            block.rowUtteranceIndex <= 79 &&
+            block.columnUtteranceIndex >= 43 &&
+            block.columnUtteranceIndex <= 79;
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 43 &&
+            block.rowUtteranceIndex <= 79 &&
+            block.columnUtteranceIndex >= 43 &&
+            block.columnUtteranceIndex <= 79;
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
+  };
+
+  const handleBarClickFive = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 73 &&
+            block.rowUtteranceIndex <= 106 &&
+            block.columnUtteranceIndex >= 73 &&
+            block.columnUtteranceIndex <= 106;
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 73 &&
+            block.rowUtteranceIndex <= 106 &&
+            block.columnUtteranceIndex >= 73 &&
+            block.columnUtteranceIndex <= 106;
+          if (
+            (block.columnUtteranceIndex === 80 &&
+              block.rowUtteranceIndex === 85) ||
+            (block.columnUtteranceIndex === 84 &&
+              block.rowUtteranceIndex === 85)
+          ) {
+            return true;
+          }
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 73 &&
+            block.rowUtteranceIndex <= 106 &&
+            block.columnUtteranceIndex >= 73 &&
+            block.columnUtteranceIndex <= 106;
+          if (
+            block.columnUtteranceIndex === 94 &&
+            block.rowUtteranceIndex === 104
+          ) {
+            return true;
+          }
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 73 &&
+            block.rowUtteranceIndex <= 106 &&
+            block.columnUtteranceIndex >= 73 &&
+            block.columnUtteranceIndex <= 106;
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
+  };
+
+  const handleBarClickSix = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 94 &&
+            block.rowUtteranceIndex <= 126 &&
+            block.columnUtteranceIndex >= 94 &&
+            block.columnUtteranceIndex <= 126;
+          if (
+            (block.columnUtteranceIndex === 109 &&
+              block.rowUtteranceIndex === 111) ||
+            (block.columnUtteranceIndex === 111 &&
+              block.rowUtteranceIndex === 115)
+          ) {
+            return true;
+          }
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 94 &&
+            block.rowUtteranceIndex <= 126 &&
+            block.columnUtteranceIndex >= 94 &&
+            block.columnUtteranceIndex <= 126;
+          if (
+            (block.columnUtteranceIndex === 121 &&
+              block.rowUtteranceIndex === 126) ||
+            (block.columnUtteranceIndex === 123 &&
+              block.rowUtteranceIndex === 126)
+          ) {
+            return true;
+          }
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 94 &&
+            block.rowUtteranceIndex <= 126 &&
+            block.columnUtteranceIndex >= 94 &&
+            block.columnUtteranceIndex <= 126;
+          break;
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 94 &&
+            block.rowUtteranceIndex <= 126 &&
+            block.columnUtteranceIndex >= 94 &&
+            block.columnUtteranceIndex <= 126;
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
+  };
+
+  const handleBarClickSeven = (barIndex: number) => {
+    // dataStructureSet에서 SimilarityBlocks 정보 가져오기
+    const similarityBlocks =
+      dataStructureSet.similarityBlockManager.similarityBlocks;
+    d3Drawer.similarityBlocksDrawer.clearSelectedBlocks();
+
+    // 특정 조건에 따른 필터링
+    const filteredBlocks = similarityBlocks.filter((block) => {
+      const argumentScore =
+        (block.similarity * block.weight) /
+        Math.sqrt(
+          Math.abs(block.columnUtteranceIndex - block.rowUtteranceIndex)
+        );
+      const isHighScore = argumentScore >= 0.25;
+
+      // 특정 조건에 따른 필터링 로직
+      let condition = false;
+      switch (barIndex) {
+        case 0: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 146 &&
+            block.rowUtteranceIndex <= 183 &&
+            block.columnUtteranceIndex >= 146 &&
+            block.columnUtteranceIndex <= 183;
+          if (
+            block.columnUtteranceIndex === 176 &&
+            block.rowUtteranceIndex === 178
+          ) {
+            return true;
+          }
+          break;
+
+        case 1: // 이준석, 장경태
+          condition =
+            ((block.colUtteranceName === "이준석" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "이준석")) &&
+            block.rowUtteranceIndex >= 146 &&
+            block.rowUtteranceIndex <= 183 &&
+            block.columnUtteranceIndex >= 146 &&
+            block.columnUtteranceIndex <= 183;
+          break;
+        case 2: // 박휘락, 장경태
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "장경태") ||
+              (block.colUtteranceName === "장경태" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 146 &&
+            block.rowUtteranceIndex <= 183 &&
+            block.columnUtteranceIndex >= 146 &&
+            block.columnUtteranceIndex <= 183;
+          if (
+            (block.columnUtteranceIndex === 172 &&
+              block.rowUtteranceIndex === 173) ||
+            (block.columnUtteranceIndex === 178 &&
+              block.rowUtteranceIndex === 180)
+          ) {
+            return true;
+          }
+          break;
+
+        case 3: // 박휘락, 김종대
+          condition =
+            ((block.colUtteranceName === "박휘락" &&
+              block.rowUtteranceName === "김종대") ||
+              (block.colUtteranceName === "김종대" &&
+                block.rowUtteranceName === "박휘락")) &&
+            block.rowUtteranceIndex >= 146 &&
+            block.rowUtteranceIndex <= 183 &&
+            block.columnUtteranceIndex >= 146 &&
+            block.columnUtteranceIndex <= 183;
+          if (
+            block.columnUtteranceIndex === 161 &&
+            block.rowUtteranceIndex === 163
+          ) {
+            return true;
+          }
+          break;
+      }
+      return isHighScore && condition;
+    });
+
+    const indexPairs = filteredBlocks.map((block) => [
+      block.rowUtteranceIndex,
+      block.columnUtteranceIndex,
+    ]);
+    //@ts-ignore
+    d3Drawer.similarityBlocksDrawer.setMultipleBlockIndices(indexPairs);
   };
 
   return (
@@ -40,9 +655,9 @@ const SubChartKor = (props) => {
       x="0px"
       y="0px"
       viewBox="0 0 1594 223"
-      style={{
-        enableBackground: "new 0 0 1594 223",
-      }}
+      // style={{
+      //   enableBackground: "new 0 0 1594 223",
+      // }}
       xmlSpace="preserve"
       {...props}
     >
@@ -98,7 +713,6 @@ const SubChartKor = (props) => {
       </g>
       <rect x={18.6} y={10.6} className="stt2" width={1575} height={102} />
       <g className="plot">
-        <title>Demographic Cliff</title>
         <rect x={33.3} y={20} className="stt3" width={1542.1} height={5.2} />
         <rect x={33.3} y={43.1} className="stt4" width={1542.1} height={5.2} />
         <rect x={33.5} y={66.5} className="stt5" width={1542.1} height={5.2} />
@@ -622,66 +1236,255 @@ const SubChartKor = (props) => {
       <rect x={88.9} y={152} className="stt38" width={100} height={12.5} />
       <rect x={88.9} y={174.5} className="stt38" width={100} height={12.5} />
       <rect x={88.9} y={196.9} className="stt38" width={100} height={12.5} />
-      <rect x={88.7} y={129.6} className="stt39" width={52.2} height={12.5} />
-      <rect x={88.7} y={152} className="stt39" width={42.3} height={12.5} />
-      <rect x={88.7} y={174.5} className="stt39" width={31.3} height={12.5} />
-      <rect x={88.7} y={196.9} className="stt39" width={42.3} height={12.5} />
+      <rect
+        x={88.7}
+        y={129.6}
+        className="stt39"
+        onClick={() => handleBarClickOne(0)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={88.7}
+        y={152}
+        className="stt39"
+        onClick={() => handleBarClickOne(1)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={88.7}
+        y={174.5}
+        className="stt39"
+        onClick={() => handleBarClickOne(2)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={88.7}
+        y={196.9}
+        className="stt39"
+        onClick={() => handleBarClickOne(3)}
+        width={40}
+        height={12.5}
+      />
       <rect x={268.3} y={129.1} className="stt38" width={100} height={12.5} />
       <rect x={268.3} y={151.5} className="stt38" width={100} height={12.5} />
       <rect x={268.3} y={173.9} className="stt38" width={100} height={12.5} />
       <rect x={268.3} y={196.4} className="stt38" width={100} height={12.5} />
-      <rect x={267.9} y={129.1} className="stt39" width={40} height={12.5} />
-      <rect x={268.4} y={151.5} className="stt39" width={80} height={12.5} />
-      <rect x={268.4} y={173.9} className="stt39" width={20} height={12.5} />
-      <rect x={268.6} y={196.4} className="stt39" width={50} height={12.5} />
+      <rect
+        x={267.9}
+        y={129.1}
+        className="stt39"
+        onClick={() => handleBarClickTwo(0)}
+        width={30}
+        height={12.5}
+      />
+      <rect
+        x={268.4}
+        y={151.5}
+        className="stt39"
+        onClick={() => handleBarClickTwo(1)}
+        width={70}
+        height={12.5}
+      />
+      <rect
+        x={268.4}
+        y={173.9}
+        className="stt39"
+        onClick={() => handleBarClickTwo(2)}
+        width={20}
+        height={12.5}
+      />
+      <rect
+        x={268.6}
+        y={196.4}
+        className="stt39"
+        onClick={() => handleBarClickTwo(3)}
+        width={50}
+        height={12.5}
+      />
       <rect x={410} y={128.5} className="stt38" width={100} height={12.5} />
       <rect x={410} y={151} className="stt38" width={100} height={12.5} />
       <rect x={410} y={173.4} className="stt38" width={100} height={12.5} />
       <rect x={410} y={195.9} className="stt38" width={100} height={12.5} />
-      <rect x={410.2} y={128.5} className="stt39" width={70} height={12.5} />
-      <rect x={410.1} y={151} className="stt39" width={90} height={12.5} />
-      <rect x={410} y={173.4} className="stt39" width={40} height={12.5} />
-      <rect x={409.9} y={195.9} className="stt39" width={70} height={12.5} />
+      <rect
+        x={410.2}
+        y={128.5}
+        className="stt39"
+        onClick={() => handleBarClickThree(0)}
+        width={70}
+        height={12.5}
+      />
+      <rect
+        x={410.1}
+        y={151}
+        className="stt39"
+        onClick={() => handleBarClickThree(1)}
+        width={80}
+        height={12.5}
+      />
+      <rect
+        x={410}
+        y={173.4}
+        className="stt39"
+        onClick={() => handleBarClickThree(2)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={409.9}
+        y={195.9}
+        className="stt39"
+        onClick={() => handleBarClickThree(3)}
+        width={50}
+        height={12.5}
+      />
       <rect x={618.4} y={128.5} className="stt38" width={100} height={12.5} />
       <rect x={618.4} y={151} className="stt38" width={100} height={12.5} />
       <rect x={618.4} y={173.4} className="stt38" width={100} height={12.5} />
       <rect x={618.4} y={195.9} className="stt38" width={100} height={12.5} />
-      <rect x={618} y={128.5} className="stt39" width={60} height={12.5} />
-      <rect x={617.7} y={195.9} className="stt39" width={20} height={12.5} />
+      <rect
+        x={618}
+        y={128.5}
+        className="stt39"
+        onClick={() => handleBarClickFour(0)}
+        width={70}
+        height={12.5}
+      />
+      <rect
+        x={617.8}
+        y={150.8}
+        className="stt39"
+        onClick={() => handleBarClickFour(1)}
+        width={10}
+        height={12.5}
+      />
+      <rect
+        x={618.1}
+        y={173.5}
+        className="stt39"
+        onClick={() => handleBarClickFour(2)}
+        width={50}
+        height={12.5}
+      />
+      <rect
+        x={617.7}
+        y={195.9}
+        className="stt39"
+        onClick={() => handleBarClickFour(3)}
+        width={20}
+        height={12.5}
+      />
       <rect x={782} y={129.1} className="stt38" width={100} height={12.5} />
       <rect x={782} y={151.5} className="stt38" width={100} height={12.5} />
       <rect x={782} y={173.9} className="stt38" width={100} height={12.5} />
       <rect x={782} y={196.4} className="stt38" width={100} height={12.5} />
-      <rect x={782.1} y={129.1} className="stt39" width={20} height={12.5} />
-      <rect x={782.1} y={151.5} className="stt39" width={60} height={12.5} />
-      <rect x={782.1} y={173.9} className="stt39" width={60} height={12.5} />
-      <rect x={782.1} y={196.4} className="stt39" width={50} height={12.5} />
+      <rect
+        x={782.1}
+        y={129.1}
+        className="stt39"
+        onClick={() => handleBarClickFive(0)}
+        width={20}
+        height={12.5}
+      />
+      <rect
+        x={782.1}
+        y={151.5}
+        className="stt39"
+        onClick={() => handleBarClickFive(1)}
+        width={50}
+        height={12.5}
+      />
+      <rect
+        x={782.1}
+        y={173.9}
+        className="stt39"
+        onClick={() => handleBarClickFive(2)}
+        width={50}
+        height={12.5}
+      />
+      <rect
+        x={782.1}
+        y={196.4}
+        className="stt39"
+        onClick={() => handleBarClickFive(3)}
+        width={50}
+        height={12.5}
+      />
       <rect x={966.5} y={129.1} className="stt38" width={100} height={12.6} />
       <rect x={966.5} y={151.6} className="stt38" width={100} height={12.6} />
       <rect x={966.5} y={174.2} className="stt38" width={100} height={12.6} />
       <rect x={966.5} y={196.7} className="stt38" width={100} height={12.6} />
-      <rect x={966.3} y={129.1} className="stt39" width={30} height={12.5} />
-      <rect x={966.3} y={151.5} className="stt39" width={30} height={12.5} />
-      <rect x={966.3} y={173.9} className="stt39" width={80} height={12.5} />
+      <rect
+        x={966.3}
+        y={129.1}
+        className="stt39"
+        onClick={() => handleBarClickSix(0)}
+        width={20}
+        height={12.5}
+      />
+      <rect
+        x={966.3}
+        y={151.5}
+        className="stt39"
+        onClick={() => handleBarClickSix(1)}
+        width={20}
+        height={12.5}
+      />
+      <rect
+        x={966.3}
+        y={173.9}
+        className="stt39"
+        onClick={() => handleBarClickSix(2)}
+        width={40}
+        height={12.5}
+      />
       <rect x={1366.3} y={128.5} className="stt38" width={100} height={12.5} />
       <rect x={1366.3} y={151} className="stt38" width={100} height={12.5} />
       <rect x={1366.3} y={173.4} className="stt38" width={100} height={12.5} />
       <rect x={1366.3} y={195.9} className="stt38" width={100} height={12.5} />
-      <rect x={1366.1} y={128.5} className="stt39" width={50} height={12.5} />
-      <rect x={1366.1} y={151} className="stt39" width={30} height={12.5} />
-      <rect x={1366.1} y={173.4} className="stt39" width={50} height={12.5} />
-      <rect x={1366.1} y={195.9} className="stt39" width={60} height={12.5} />
-      <rect x={617.8} y={150.8} className="stt39" width={10} height={12.5} />
-      <rect x={618.1} y={173.5} className="stt39" width={69.6} height={12.5} />
+      <rect
+        x={1366.1}
+        y={128.5}
+        className="stt39"
+        onClick={() => handleBarClickSeven(0)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={1366.1}
+        y={151}
+        className="stt39"
+        onClick={() => handleBarClickSeven(1)}
+        width={30}
+        height={12.5}
+      />
+      <rect
+        x={1366.1}
+        y={173.4}
+        className="stt39"
+        onClick={() => handleBarClickSeven(2)}
+        width={40}
+        height={12.5}
+      />
+      <rect
+        x={1366.1}
+        y={195.9}
+        className="stt39"
+        onClick={() => handleBarClickSeven(3)}
+        width={60}
+        height={12.5}
+      />
       <text transform="matrix(1 0 0 1 197.3914 139.4609)">
         <tspan x={0} y={0} className="stt0 stt1">
-          {"5 회"}
+          {"4 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
           {"4 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
-          {"3 회"}
+          {"4 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
           {"4 회"}
@@ -689,10 +1492,10 @@ const SubChartKor = (props) => {
       </text>
       <text transform="matrix(1 0 0 1 376.8728 138.9385)">
         <tspan x={0} y={0} className="stt0 stt1">
-          {"4 회"}
+          {"3 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
-          {"8 회"}
+          {"7 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
           {"2 회"}
@@ -706,24 +1509,24 @@ const SubChartKor = (props) => {
           {"7 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
-          {"9 회"}
+          {"8 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
           {"4 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
-          {"7 회"}
+          {"5 회"}
         </tspan>
       </text>
       <text transform="matrix(1 0 0 1 726.9255 138.416)">
         <tspan x={0} y={0} className="stt0 stt1">
-          {"6 회"}
+          {"7 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
           {"1 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
-          {"7 회"}
+          {"5 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
           {"2 회"}
@@ -734,10 +1537,10 @@ const SubChartKor = (props) => {
           {"2 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
-          {"6 회"}
+          {"5 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
-          {"6 회"}
+          {"5 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
           {"5 회"}
@@ -745,13 +1548,13 @@ const SubChartKor = (props) => {
       </text>
       <text transform="matrix(1 0 0 1 1074.9792 138.9385)">
         <tspan x={0} y={0} className="stt0 stt1">
-          {"3 회"}
+          {"2 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
-          {"3 회"}
+          {"2 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
-          {"8 회"}
+          {"4 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
           {"0 회"}
@@ -759,19 +1562,19 @@ const SubChartKor = (props) => {
       </text>
       <text transform="matrix(1 0 0 1 1474.8171 138.416)">
         <tspan x={0} y={0} className="stt0 stt1">
-          {"5 회"}
+          {"4 회"}
         </tspan>
         <tspan x={0} y={22} className="stt0 stt1">
           {"3 회"}
         </tspan>
         <tspan x={0} y={44} className="stt0 stt1">
-          {"5 회"}
+          {"4 회"}
         </tspan>
         <tspan x={0} y={66} className="stt0 stt1">
           {"6 회"}
         </tspan>
       </text>
-      {showTooltip && (
+      {/* {showTooltip && (
         <foreignObject
           x={tooltipPos.x - tooltipWidth / 2}
           y={tooltipPos.y - tooltipHeight}
@@ -784,7 +1587,7 @@ const SubChartKor = (props) => {
             children: tooltipText,
           })}
         </foreignObject>
-      )}
+      )} */}
     </svg>
   );
 };

@@ -30,6 +30,7 @@ export interface SimilarityBlock {
   engagementPoint: boolean; // is engagement group base point?
   visible: boolean;
   mainKeytermObjects: KeytermObject[];
+  //id: number;
 }
 
 export interface UtteranceIndexSentenceIndexTotalSentenceIndexDict {
