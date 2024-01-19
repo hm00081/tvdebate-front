@@ -13,6 +13,7 @@ interface CP2KProps extends React.SVGProps<SVGSVGElement> {
   onTitleClick: (index: number) => void;
   dataStructureSet: DataStructureSet;
   transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
+  cpPositions: { [key: string]: { x: number; y: number } };
 }
 
 //@ts-ignore
@@ -20,6 +21,7 @@ const CP2K = ({
   onTitleClick,
   dataStructureSet,
   transcriptViewerRef,
+  //cpPositions,
   ...props
 }: CP2KProps) => {
   const countCompoundTerms = (
@@ -33,7 +35,7 @@ const CP2K = ({
     });
     return result;
   };
-
+  //const position = cpPositions["인구절벽, 징병제에 미치는 영향"];
   const getTopCompoundTerms = (
     compoundTerms: { [key: string]: number },
     topN: number
@@ -158,28 +160,122 @@ const CP2K = ({
         </style>
         <g className="CP2">
           <g className="T2">
+            <g className="P2">
+              <path
+                className="st19"
+                d="M377,77.7L377,77.7v-8.1c-22,0-41.9,6.2-60,18.9l4.5,6.4C338.3,83.4,356.6,77.7,377,77.7z"
+              />
+              <path
+                className="st21"
+                d="M321.1,95.3c0.1-0.1,0.2-0.1,0.3-0.2l-4.5-6.4c-8.8,6.1-15.9,12.9-22.5,21.3l6.1,4.7 C306.7,106.9,313.2,100.8,321.1,95.3z"
+              />
+              <path
+                className="st16"
+                d="M300.3,115c0.1-0.1,0.2-0.3,0.3-0.5l-6.1-4.7c-11.9,15.2-18.4,30.8-21.2,49.8l7.4,1 C283.4,143.2,289.5,128.9,300.3,115z"
+              />
+              <path
+                className="st20"
+                d="M280.7,161.3c0-0.2,0.1-0.5,0.1-0.7l-7.4-1c-1,7.4-1.3,12.7-0.9,20l7.3-0.3 C279.6,172.8,279.8,167.9,280.7,161.3z"
+              />
+              <path
+                className="st21"
+                d="M279.9,179.9c0-0.2,0-0.5,0-0.7l-7.3,0.3c0.5,9.3,2.1,18,5,26.8l6.8-2.2C281.7,196.3,280.4,188.4,279.9,179.9 z"
+              />
+              <path
+                className="st17"
+                d="M284.5,204.9c-0.1-0.2-0.1-0.5-0.2-0.7l-6.8,2.2c1.3,3.7,2.3,6.7,3.9,10.3l6.4-2.9 C286.6,210.8,285.5,208.2,284.5,204.9z"
+              />
+              <path
+                className="st20"
+                d="M288.1,214.4c-0.1-0.2-0.1-0.3-0.2-0.6l-6.4,2.9c7.7,17.4,18.7,30.9,34.1,42l3.9-5.4 C305.4,242.9,295.2,230.4,288.1,214.4z"
+              />
+              <path
+                className="st17"
+                d="M319.8,253.5c-0.1-0.1-0.2-0.1-0.3-0.2l-3.9,5.4c2.4,1.7,3.5,2.5,6.1,4l3.6-5.6 C323,255.7,321.9,255,319.8,253.5z"
+              />
+              <path
+                className="st19"
+                d="M325.4,257.3c-0.1-0.1-0.2-0.1-0.3-0.2l-3.6,5.6c2.4,1.5,5.4,3.2,7.9,4.5l3-6 C330.2,260.1,327.6,258.7,325.4,257.3z"
+              />
+              <path
+                className="st21"
+                d="M383.7,271.9c-18.7,1.3-34.3-1.8-50.9-10.4c-0.1,0-0.2-0.1-0.2-0.1l-3,6c17.9,9.1,34.7,12.6,54.7,11.2 L383.7,271.9C383.8,271.9,383.8,271.9,383.7,271.9z"
+              />
+              <path
+                className="st17"
+                d="M400.5,269.2c-5.3,1.3-11.2,2.3-16.7,2.6l0.5,6.6c5.9-0.5,12.3-1.4,18-2.9l-1.6-6.4 C400.6,269.2,400.5,269.2,400.5,269.2z"
+              />
+              <path
+                className="st19"
+                d="M405.3,267.8c-2.2,0.7-2.6,0.8-4.7,1.3l1.6,6.4c2.4-0.6,2.9-0.7,5.3-1.5l-2-6.3 C405.6,267.8,405.4,267.8,405.3,267.8z"
+              />
+              <path
+                className="st17"
+                d="M416.5,263.7c-3.2,1.4-7.5,3-10.9,4.1l2,6.3c3.7-1.2,8.4-2.9,12-4.5l-2.8-6.1 C416.6,263.6,416.6,263.7,416.5,263.7z"
+              />
+              <path
+                className="st19"
+                d="M452.5,236c-10.3,12.8-20.8,20.8-35.7,27.5l2.8,6.1c16.2-7.3,27.5-15.9,38.7-29.7l-5.3-4.4 C452.8,235.8,452.7,235.9,452.5,236z"
+              />
+              <path
+                className="st17"
+                d="M456.6,230.6c-1.2,1.6-2.4,3.5-3.7,5l5.3,4.4c1.5-1.8,3.1-3.9,4.4-5.9l-5.6-3.9 C456.8,230.3,456.7,230.5,456.6,230.6z"
+              />
+              <path
+                className="st19"
+                d="M459.3,226.4c-1,1.6-1.5,2.3-2.4,3.8l5.6,3.9c1.3-1.8,1.8-2.6,3-4.6l-5.9-3.7 C459.6,226,459.5,226.2,459.3,226.4z"
+              />
+              <path
+                className="st17"
+                d="M469.9,203.3c-2.5,8.2-5.8,15.3-10.3,22.6l5.9,3.7c5-7.9,8.5-15.8,11.3-24.9l-6.8-2.1 C470.1,202.9,469.9,203.1,469.9,203.3z"
+              />
+              <path
+                className="st19"
+                d="M472.9,190.1c-0.7,4.3-1.6,8.4-2.9,12.6l6.8,2.1c1.4-4.7,2.5-9.3,3.2-14.2l-7.1-1.2 C473,189.6,473,189.9,472.9,190.1z"
+              />
+              <path
+                className="st17"
+                d="M473.6,185c-0.2,1.7-0.3,2.8-0.6,4.4l7.1,1.2c0.3-2.1,0.5-3.3,0.7-5.4l-7.3-0.8 C473.6,184.6,473.6,184.8,473.6,185z"
+              />
+              <path
+                className="st16"
+                d="M467.5,121.9l-6.7,3.8c0.1,0.2,0.2,0.3,0.3,0.6c10.6,18.3,14.6,37.1,12.6,58l7.3,0.8 C483.3,162.2,479,141.8,467.5,121.9z"
+              />
+              <path
+                className="st17"
+                d="M449.2,109.8c4.4,5,8.3,10.3,11.6,15.9l6.7-3.8c-3.7-6.3-7.9-12.2-12.9-17.7l-5.8,5.2 C449,109.6,449.1,109.7,449.2,109.8z"
+              />
+              <path
+                className="st21"
+                d="M428.5,92.4c8.3,5.2,13.9,9.9,20.4,17l5.8-5.2c-7.1-7.9-13.2-13-22.3-18.7l-4.3,6.7 C428.2,92.3,428.4,92.4,428.5,92.4z"
+              />
+              <path
+                className="st19"
+                d="M428.1,92.3l4.3-6.7c-17.5-10.9-34.8-15.9-55.4-15.9v8.1C396,77.7,412,82.2,428.1,92.3z"
+              />
+            </g>
             <title>
-              {`Topic: 인구절벽, 징병제에 미치는 영향\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+              {`Topic: 인구절벽, 징병제에 미치는 영향\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.utterance}`}
             </title>
             <text
               transform="matrix(1 0 0 1 315.9469 43.3986)"
               className="st0 st1 st13"
               onClick={(e) => handleClickText(17)}
             >
-              {"인구절벽, 징병제에 "}
+              {/* {"인구절벽, 징병제에 "} */}
             </text>
             <text
               transform="matrix(1 0 0 1 340.4654 60.5979)"
               className="st0 st1 st13"
               onClick={() => handleClickText(17)}
             >
-              {" 미치는 영향"}
+              {/* {" 미치는 영향"} */}
             </text>
           </g>
           <g className="T2-1">
             <circle className="st15" cx={327.8} cy={173.8} r={47.8} />
             <title>
-              {`Topic: 인구절벽, 모병제가 답인가?\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+              {`Topic: 인구절벽, 모병제가 답인가?\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.utterance}`}
             </title>
             <text transform="matrix(1 0 0 1 316.4375 105.6326)">
               <tspan
@@ -210,7 +306,7 @@ const CP2K = ({
               d="M346.1,142.7l1.8-1.8c1.9-1.9,1.9-5.1,0-7l-4.1-4.1c-1.9-1.9-5.1-1.9-7,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.1-1.9-7,0l-4.1,4.1c-1.9,1.9-1.9,5.1,0,7l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.1,0,7l4.1,4.1c1.9,1.9,5.1,1.9,7,0l1.8-1.8 l1.8,1.8c1.9,1.9,5.1,1.9,7,0l4.1-4.1c1.9-1.9,1.9-5.1,0-7L346.1,142.7z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 대책없는 총선용 모병제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18]?.name}\nKeyword: 대책없는 총선용 모병제\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px", pointerEvents: "none" }}
@@ -244,7 +340,7 @@ const CP2K = ({
             />
 
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].name}\nKeyword: 전쟁양상 무인화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[24]?.name}\nKeyword: 전쟁양상 무인화\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[24]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "7.3px" }}
@@ -270,7 +366,7 @@ const CP2K = ({
               d="M366,190.1l1.8-1.8c1.9-1.9,1.9-5.2,0-7.2l-4.2-4.2c-1.9-1.9-5.2-1.9-7.2,0l-1.8,1.8l-1.8-1.8 c-1.9-1.9-5.2-1.9-7.2,0l-4.2,4.2c-1.9,1.9-1.9,5.2,0,7.2l1.8,1.8l-1.8,1.8c-1.9,1.9-1.9,5.2,0,7.2l4.2,4.2c1.9,1.9,5.2,1.9,7.2,0 l1.8-1.8l1.8,1.8c1.9,1.9,5.2,1.9,7.2,0l4.2-4.2c1.9-1.9,1.9-5.2,0-7.2L366,190.1z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].name}\nKeyword: 자주국방 어려움\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[28]?.name}\nKeyword: 자주국방 어려움\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[28]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6.2px" }}
@@ -299,7 +395,7 @@ const CP2K = ({
               r={13.5}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[37].name}\nKeyword: 미래전쟁 예측불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[37].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[37]?.name}\nKeyword: 미래전쟁 예측불가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[37]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6.2px" }}
@@ -325,7 +421,7 @@ const CP2K = ({
               }}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 군인 수 유지필요\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18]?.name}\nKeyword: 군인 수 유지필요\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px" }}
@@ -355,7 +451,7 @@ const CP2K = ({
               }}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 감군체제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15]?.name}\nKeyword: 감군체제\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px" }}
@@ -385,7 +481,7 @@ const CP2K = ({
               ry={21.7}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[24].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[24]?.name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[24]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "10px" }}
@@ -404,7 +500,7 @@ const CP2K = ({
           <g className="T2-2">
             <circle className="st15" cx={425.4} cy={176.6} r={48.6} />
             <title>
-              {`Topic: 인력확충 문제, 해결법은?\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+              {`Topic: 인력확충 문제, 해결법은?\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.utterance}`}
             </title>
             <text transform="matrix(1 0 0 1 389.0738 116.8055)">
               <tspan
@@ -435,7 +531,7 @@ const CP2K = ({
               d="M461.1,160l2.5-2.5c2.8-2.8,2.8-7.5,0-10.3l-6.1-6.1c-2.8-2.8-7.5-2.8-10.3,0l-2.5,2.5l-2.5-2.5 c-2.8-2.8-7.5-2.8-10.3,0l-6.1,6.1c-2.8,2.8-2.8,7.5,0,10.3l2.5,2.5l-2.5,2.5c-2.8,2.8-2.8,7.5,0,10.3l6.1,6.1 c2.8,2.8,7.5,2.8,10.3,0l2.5-2.5l2.5,2.5c2.8,2.8,7.5,2.8,10.3,0l6.1-6.1c2.8-2.8,2.8-7.5,0-10.3L461.1,160z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[35].name}\nKeyword: 질적향상과 현대화 후 모병제도입\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[35].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[35]?.name}\nKeyword: 질적향상과 현대화 후 모병제도입\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[35]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "7px" }}
@@ -466,7 +562,7 @@ const CP2K = ({
               r={11.2}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 소수 정예화군\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.name}\nKeyword: 소수 정예화군\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "5.5px" }}
@@ -495,7 +591,7 @@ const CP2K = ({
               d="M459.3,197.9l2-2c2.3-2.3,2.3-6,0-8.3l-4.9-4.9c-2.3-2.3-6-2.3-8.3,0l-2,2l-2-2c-2.3-2.3-6-2.3-8.3,0 l-4.9,4.9c-2.3,2.3-2.3,6,0,8.3l2,2l-2,2c-2.3,2.3-2.3,6,0,8.3l4.9,4.9c2.3,2.3,6,2.3,8.3,0l2-2l2,2c2.3,2.3,6,2.3,8.3,0l4.9-4.9 c2.3-2.3,2.3-6,0-8.3L459.3,197.9z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].name}\nKeyword: 스마트군대 체제\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[28].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[28]?.name}\nKeyword: 스마트군대 체제\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[28]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "7.5px" }}
@@ -526,7 +622,7 @@ const CP2K = ({
               r={15.4}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[34].name}\nKeyword: 감축을 통한 군 정예화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[34].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[34]?.name}\nKeyword: 감축을 통한 군 정예화\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[34]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px" }}
@@ -557,7 +653,7 @@ const CP2K = ({
               r={10.1}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 군대 기계화\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.name}\nKeyword: 군대 기계화\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "5.3px" }}
@@ -586,7 +682,7 @@ const CP2K = ({
             />
 
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].name}\nKeyword: 직업군인 위주 편제개편\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[31].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.name}\nKeyword: 직업군인 위주 편제개편\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[31]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6.6px" }}

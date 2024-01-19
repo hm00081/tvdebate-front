@@ -208,13 +208,13 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
             ></path>
           </svg>
           <div style={{ marginLeft: "-315px", marginTop: "28px" }}>
-            Circle Packing for Comparing Argumentation
+            {/* Circle Packing for Comparing Argumentation */}
           </div>
         </div>
         <button
           onClick={() => setIsOpen((prev) => !prev)}
           style={{
-            marginLeft: "120px",
+            marginLeft: "380px",
             marginBottom: "20px",
             background: "#9c27b0",
             color: "white",

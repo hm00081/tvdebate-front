@@ -53,6 +53,7 @@ export class TopicGroupsDrawer {
   public set topicGroups(topicGroups: SimilarityBlock[][][]) {
     this._topicGroups = topicGroups;
   }
+
   public get topicGroups() {
     return this._topicGroups;
   }
@@ -81,13 +82,10 @@ export class TopicGroupsDrawer {
     const secFilteredData = this._topicGroups.filter(
       (group, index) => !excludedIndexTwo.includes(index)
     );
-    //console.log(filteredData);
-    //console.log(this._guideColor);
+    //console.log("this._topicGroups", this._topicGroups); // 이도 잘ㅏ옴
     const topicGuideRectGSelection = this.topicGuideRectGSelection
       .selectAll<SVGRectElement, unknown>("rect")
-      //.data(this._topicGroups)
-      // 색상 조금만 변경해서 이런식으로 조건주면 될듯함.
-      .data(this._guideColor === "#ff0000" ? filteredData : secFilteredData)
+      .data(this._guideColor === "#000000" ? filteredData : secFilteredData)
       .join("rect")
       //.style("visibility", (eg) => ( ? "visible" : "none"))
       .style("opacity", 0.45);
@@ -176,10 +174,10 @@ export class TopicGroupsDrawer {
             mostLeftTopBlock.beginningPointOfY;
           return height;
         })
-        .style("fill", this._guideColor === "#ff0000" ? "none" : "none")
+        .style("fill", this._guideColor === "#000000" ? "none" : "none")
         .style("clip-path", "polygon(0% 0%, 0% 0%, 100% 100%, 0% 100%)")
         .style("stroke-width", 1)
-        .style("stroke", () => (showEngagementGroup ? guideColor : "none"));
+        .style("stroke", () => (showEngagementGroup ? "#ff0000" : "none"));
       // .style("stroke", () => (showEngagementGroup ? "none" : "none"));
     }
 
@@ -216,13 +214,14 @@ export class TopicGroupsDrawer {
             const xPoints = [];
             for (let i = 0; i < this._topicGroupTitles.length; i++) {
               if (this._topicGroupTitles[i]) {
-                if (this._guideColor === "#ff0000") {
+                if (this._guideColor === "#000000") {
                   switch (i) {
                     case 0:
                       xPoint =
                         mostLeftTopBlock.beginningPointOfY +
                         mostRightBottomBlock.beginningPointOfY / 2 +
                         25;
+                      //console.log(`Case 0 xPoint: ${xPoint}`);
                       break;
                     case 1:
                       xPoint =
@@ -234,7 +233,8 @@ export class TopicGroupsDrawer {
                       xPoint =
                         mostLeftTopBlock.beginningPointOfY +
                         mostRightBottomBlock.beginningPointOfY / 2 +
-                        15; // 그냥 멀리 버려버리기.
+                        25; // 그냥 멀리 버려버리기.
+                      //console.log(`Case 2 xPoint: ${xPoint}`);
                       break;
                     case 3:
                       xPoint =
@@ -288,7 +288,7 @@ export class TopicGroupsDrawer {
                       xPoint =
                         mostLeftTopBlock.beginningPointOfY +
                         mostRightBottomBlock.beginningPointOfY / 2 +
-                        15;
+                        0;
                       break;
                     case 1:
                       xPoint =
@@ -300,7 +300,7 @@ export class TopicGroupsDrawer {
                       xPoint =
                         mostLeftTopBlock.beginningPointOfY +
                         mostRightBottomBlock.beginningPointOfY / 2 -
-                        3;
+                        4;
                       break;
                     case 3:
                       xPoint =
@@ -325,7 +325,6 @@ export class TopicGroupsDrawer {
                 }
               }
             }
-            //console.log(xPoints[i]);
             return xPoints[i];
           } else return null;
         })
@@ -335,45 +334,22 @@ export class TopicGroupsDrawer {
           // console.log(arg.topicGroupTitles ? arg.topicGroupTitles : null);
           // const yPoint = mostLeftTopBlock.beginningPointOfY - 5;
           // const yPoint = 30;
-          if (this._guideColor !== "#ff0000") {
-            const yPoint = -150; // Middle Engagement Group
+          if (this._guideColor !== "#000000") {
+            const yPoint = -130; // Middle Engagement Group
             return yPoint;
           } else {
             const yPoint = -130; // Small Engagement Group
             return yPoint;
           }
-          // return yPoint;
         }) // draw topic text
-        // .text((eg, i) => {
-        //   //@ts-ignore
-        //   //const parent = d3.select(this);
-        //   //parent.selectAll("tspan").remove;
-
-        //   if (arg.showTopicGroupTitle) {
-        //     if (arg.topicGroupTitles) {
-        //       const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
-
-        //       return arg.topicGroupTitles[i];
-        //     } else {
-        //       const highFrequencyTerms = extractFrequencyTermsFromEG(
-        //         eg,
-        //         this.debateDataSet.utteranceObjects,
-        //         this.dataStructureSet.participantDict,
-        //         this.termType
-        //       );
-        //       return `${highFrequencyTerms}`;
-        //     }
-        //   } else {
-        //     return "";
-        //   }
-        // })
         .text((eg, i) => {
           if (arg.showTopicGroupTitle) {
             if (arg.topicGroupTitles) {
               const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
 
               // 첫 번째 줄만 반환합니다.
-              return textLines[0] || "";
+              //return textLines[0] || "";
+              return "" || "";
             } else {
               const highFrequencyTerms = extractFrequencyTermsFromEG(
                 eg,
@@ -387,6 +363,7 @@ export class TopicGroupsDrawer {
             return "";
           }
         })
+        .attr("class", "topicGroupText")
         .each(function (eg, i) {
           const textElem = d3.select(this);
           textElem.selectAll("tspan").remove();
@@ -401,9 +378,19 @@ export class TopicGroupsDrawer {
                 .text(textLines[j]);
             }
           }
+          const textElement = d3.select(this);
+          const x = textElement.attr("x");
+          const y = textElement.attr("y");
+          const textContent = textElement.text();
+
+          // 커스텀 이벤트 생성 및 발생
+          const event = new CustomEvent("topicTextUpdated", {
+            detail: { x, y, textContent, index: i },
+          });
+          window.dispatchEvent(event);
         })
         .attr("text-anchor", "middle")
-        .style("font-size", this._guideColor === "#ff0000" ? "6.8" : "7.5")
+        .style("font-size", this._guideColor === "#000000" ? "7.1" : "7.1")
         .style("font-weight", "bold")
         // .style("fill", () => (arg.showTopicGroup ? "none" : "none"))
         .style("fill", () => (arg.showTopicGroup ? arg.guideColor : "none"))
@@ -437,5 +424,147 @@ export class TopicGroupsDrawer {
           return ``; // terms: ~.
         });
     }
+  }
+  public getTopicGroupTitlesPositions(): { x: number; y: number }[] {
+    const positions: { x: number; y: number }[] = [];
+    // 초기화 상태 확인 및 기본값 설정
+    if (!this._topicGroups) {
+      this._topicGroups = [];
+    }
+    if (!this._topicGroupTitles) {
+      this._topicGroupTitles = [];
+    }
+
+    console.log("Topic Groups:", this._topicGroups);
+    console.log("Topic Group Titles:", this._topicGroupTitles);
+    console.log("Calculating positions for Topic Groups");
+    this._topicGroups.forEach((group, index) => {
+      if (this._topicGroupTitles[index]) {
+        const mostLeftTopBlock = group[0][0];
+        const lastHorizontalLine = group[group.length - 1];
+        const mostRightBottomBlock =
+          lastHorizontalLine[lastHorizontalLine.length - 1];
+
+        let xPoint = 0;
+        if (this._guideColor === "#000000") {
+          // 여기에 Small 타입에 대한 x 좌표 계산 로직
+          switch (index) {
+            case 0:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                25;
+              break;
+            case 1:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                20000;
+              break;
+            case 2:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                15; // 그냥 멀리 버려버리기.
+              break;
+            case 3:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                20000;
+              break;
+            case 4:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                3;
+              break;
+            case 5:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                20000;
+              break;
+            case 6:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                25;
+              break;
+            case 7:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                0;
+              break;
+            case 8:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                55;
+              break;
+            default:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                0;
+          }
+        } else {
+          // 여기에 Middle 타입에 대한 x 좌표 계산 로직
+          switch (index) {
+            case 0:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                15;
+              break;
+            case 1:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 +
+                20000;
+              break;
+            case 2:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                3;
+              break;
+            case 3:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                20000;
+              break;
+            case 4:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                15;
+              break;
+            case 5:
+              xPoint =
+                mostLeftTopBlock.beginningPointOfY +
+                mostRightBottomBlock.beginningPointOfY / 2 -
+                20000;
+              break;
+          }
+        }
+        let yPoint;
+        if (this._guideColor !== "#000000") {
+          // 예를 들어 Middle 타입일 경우
+          yPoint = -150;
+        } else {
+          // Small 타입일 경우
+          yPoint = -130;
+        }
+
+        console.log(`Group ${index} Position: x=${xPoint}, y=${yPoint}`);
+
+        positions.push({ x: xPoint, y: yPoint });
+      }
+    });
+    console.log("Calculated positions:", positions);
+    return positions;
   }
 }

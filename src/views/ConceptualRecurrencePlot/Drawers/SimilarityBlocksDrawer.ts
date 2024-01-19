@@ -145,7 +145,7 @@ export class SimilarityBlocksDrawer {
       .append("title")
       .text((d, i) => {
         const argumentScore = this.calculateArgumentScore(d); // argumentScore 계산
-        //console.log(argumentScore);
+        //console.log(d);
         return `findArgument: ${d.refutation ? d.refutation : "none"},
                 Leading Speaker Index: ${d.columnUtteranceIndex},
                 Leading Speaker Name: ${d.colUtteranceName}
@@ -171,10 +171,7 @@ export class SimilarityBlocksDrawer {
       ); // 발화자 간 거리.
       const realWeightValue =
         similarityBlock.weight * similarityBlock.similarity;
-      // const weightedSimilarity =
-      //   ((similarityBlock.weight * similarityBlock.similarity) /
-      //     (indexDiff * indexDiff)) *
-      //   50;
+
       const weightedSimilaritySample =
         ((realWeightValue / indexDiff) * 10) / 16.3560974414804;
       // weightedSimilaritySample > 0.4: red, 0.04 : oragne, else: yellow

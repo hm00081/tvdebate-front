@@ -284,8 +284,9 @@ export class D3Drawer {
       dataStructureSet,
       termType
     );
+    //console.log("this.manualSmallTGsDrawer", this.manualSmallTGsDrawer);
     // this.manualSmallTGsDrawer.color = "#0000ff";
-    this.manualSmallTGsDrawer.color = "#ff0000"; // blue
+    this.manualSmallTGsDrawer.color = "#000000"; // blue
     this.manualMiddleTGsDrawer = new TopicGroupsDrawer(
       this.svgGSelection,
       debateDataSet,
@@ -293,14 +294,14 @@ export class D3Drawer {
       termType
     );
     //this.manualMiddleTGsDrawer.color = "#ff0001";
-    this.manualMiddleTGsDrawer.color = "#ff0001";
+    this.manualMiddleTGsDrawer.color = "#000001";
     this.manualBigTGsDrawer = new TopicGroupsDrawer(
       this.svgGSelection,
       debateDataSet,
       dataStructureSet,
       termType
     );
-    // this.manualBigTGsDrawer.color = "#ff0000";
+    // this.manualBigTGsDrawer.color = "#000000";
     this.manualBigTGsDrawer.color = "#026b02";
     this.manualPeopleTGsDrawer = new TopicGroupsDrawer(
       this.svgGSelection,
@@ -356,11 +357,11 @@ export class D3Drawer {
       const minusWidth =
         lastUtteranceObjectForDrawing.beginningPointOfXY +
         lastUtteranceObjectForDrawing.width;
-      console.log("minusWidth", minusWidth);
+      //console.log("minusWidth", minusWidth);
       const adjustedWidth = (this.svgWidth - minusWidth) / 2;
 
       const adjustedHeight = (this.svgHeight - minusWidth) / 2;
-      console.log(adjustedWidth, adjustedHeight);
+      //console.log(adjustedWidth, adjustedHeight);
       this.svgGSelection.attr(
         "transform",
         `translate(${adjustedWidth}, ${adjustedHeight})`

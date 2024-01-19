@@ -231,10 +231,7 @@ export class SimilarityBlockManager {
                 ];
               const team1 = p.participantDict[utteranceOjbect1.name].team;
               const team2 = p.participantDict[utteranceOjbect2.name].team;
-              // console.log("team1", team1);
-              // console.log("team2", team2);
 
-              // team1과 team2가 다르고 둘 다 양수, team이 음수면 Host
               if (team1 !== team2 && team1 > 0 && team2 > 0) {
                 const utteranceObjectOfRebuttalTarget =
                   p.utteranceObjectsForDrawing[

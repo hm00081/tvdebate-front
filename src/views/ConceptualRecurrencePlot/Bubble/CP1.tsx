@@ -109,7 +109,7 @@ const CP1 = (props: React.SVGProps<SVGSVGElement>) => {
                 </tspan>
               </text>
             </g>
-            <g className="P1">
+            {/* <g className="P1">
               <path
                 className="st16"
                 d="M137.4,64.3v-8.1c-28.2,0-52.8,9-74.4,27l5.2,6.2C88.3,72.7,111.3,64.3,137.4,64.3z"
@@ -186,7 +186,7 @@ const CP1 = (props: React.SVGProps<SVGSVGElement>) => {
                 className="st17"
                 d="M186.3,76.1L186.3,76.1l3.7-7.2c-17.3-8.8-33.1-12.6-52.5-12.6v8.1C155.6,64.3,170.1,67.9,186.3,76.1z"
               />
-            </g>
+            </g> */}
           </g>
           <g className="T1-1">
             <circle className="st15" cx={81.5} cy={172.2} r={51.7} />

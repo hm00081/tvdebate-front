@@ -47,12 +47,24 @@ import Outline from "./Outline";
 import SubChart from "./SubChart";
 import SubChartKor from "./SubChartKor";
 import { SimilarityBlocksDrawer } from "./Drawers/SimilarityBlocksDrawer";
-
+import CP1K from "./BubbleKor/CP1";
+import CP2K from "./BubbleKor/CP2";
+import CP3K from "./BubbleKor/CP3";
+import CP4K from "./BubbleKor/CP4";
+import CP5K from "./BubbleKor/CP5";
+import CP6K from "./BubbleKor/CP6";
+import CP7K from "./BubbleKor/CP7";
 // props 타입 정의
 interface ConceptualRecurrencePlotProps {
   debateDataSet: DebateDataSet;
   dataStructureSet: DataStructureSet;
   termType: TermType;
+}
+
+interface CPPosition {
+  x: number;
+  y: number;
+  visible: boolean;
 }
 
 function ConceptualRecurrencePlot() {
@@ -139,7 +151,7 @@ function ConceptualRecurrencePlot() {
     const scaleX = baseWidth / width;
     const scaleY = baseHeight / height;
 
-    console.log("scaleX, scaleY", scaleX, scaleY);
+    //console.log("scaleX, scaleY", scaleX, scaleY);
     return { scaleX: scaleX, scaleY: -scaleY }; // Y축은 항상 반전
   }
 
@@ -336,6 +348,40 @@ function ConceptualRecurrencePlot() {
     }
   }, []);
 
+  const [cpPositions, setCpPositions] = useState<{ [key: string]: CPPosition }>(
+    {}
+  );
+
+  useEffect(() => {
+    //@ts-ignore
+    const handleTopicTextUpdate = (event) => {
+      const { x, y, textContent, index } = event.detail;
+      //console.log("Text updated:", event.detail);
+      // "쓰레기값" 필터링
+      if (textContent === "쓰레기값") return;
+      const gSelector = `#CP${index + 1}G`;
+      console.log(`Updating ${gSelector} with x: ${x}, y: ${y}`);
+      d3.select(gSelector).attr(
+        "transform",
+        `scale(1,-1) rotate(-45) translate(${x}px, ${y}px)`
+      );
+      console.log(gSelector);
+      setCpPositions((prevPositions) => ({
+        ...prevPositions,
+        [textContent]: { x, y, visible: true },
+      }));
+      // 텍스트에 맞는 CPK 요소 선택 및 위치 업데이트
+      const cpkSelector = `.CP${index + 1}K`; // index는 0부터 시작하므로 1을 더함
+      d3.select(cpkSelector).attr("transform", `translate(${x}, ${y})`);
+    };
+
+    window.addEventListener("topicTextUpdated", handleTopicTextUpdate);
+
+    return () => {
+      window.removeEventListener("topicTextUpdated", handleTopicTextUpdate);
+    };
+  }, []);
+
   useEffect(() => {
     if (dataStructureManager && debateDataset) {
       const dataStructureSet = dataStructureManager.dataStructureSet;
@@ -484,13 +530,13 @@ function ConceptualRecurrencePlot() {
       <div className="vis-area">
         <div className="bubble" style={{}}>
           {/* <BubbleEng /> */}
-          {dataStructureSet && (
-            <BubbleEngg
-              onTitleClick={handleTitleClick}
-              dataStructureSet={dataStructureSet}
-              transcriptViewerRef={transcriptViewerRef}
-            />
-          )}
+          {/* {dataStructureSet && (
+            // <BubbleEngg
+            //   onTitleClick={handleTitleClick}
+            //   dataStructureSet={dataStructureSet}
+            //   transcriptViewerRef={transcriptViewerRef}
+            // />
+          )} */}
         </div>
         <div
           className="concept-recurrence-plot"
@@ -510,7 +556,7 @@ function ConceptualRecurrencePlot() {
               marginLeft: "15px",
             }}
           >
-            Co-Occurrenece Matrix for Exploration Argumentation
+            {/* Visualization for Analysis of Argumentation */}
           </div>
           <svg
             className="fullSvg"
@@ -545,6 +591,82 @@ function ConceptualRecurrencePlot() {
                     width={subChartWidth}
                   />
                 </g>
+                {/* <g
+                  transform={`scale(1,-1) rotate(-45) translate(${
+                    cpPositions["토론 시작 및 모병제 도입"]?.x || 0
+                  }px, ${cpPositions["토론 시작 및 모병제 도입"]?.y || 0}px)`}
+                > */}
+                <g transform={`scale(0.9,-0.9) rotate(-45)`}>
+                  <g style={{ transform: "translate(0px, -770px)" }}>
+                    <CP1K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(75px, -860px)" }}>
+                    <CP2K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(55px, -860px)" }}>
+                    <CP3K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(70px, -860px)" }}>
+                    <CP4K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(140px, -860px)" }}>
+                    <CP5K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(155px, -860px)" }}>
+                    <CP6K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
+                  <g style={{ transform: "translate(-330px, -770px)" }}>
+                    <CP7K
+                      onTitleClick={handleTitleClick}
+                      //@ts-ignore
+                      dataStructureSet={dataStructureSet}
+                      transcriptViewerRef={transcriptViewerRef}
+                    />
+                  </g>
+                </g>
+                <g transform={`scale(1,-1) rotate(-45) `}></g>
               </g>
             </g>
           </svg>

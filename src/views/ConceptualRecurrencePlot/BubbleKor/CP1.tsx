@@ -11,6 +11,7 @@ interface CP1KProps extends React.SVGProps<SVGSVGElement> {
   onTitleClick: (index: number) => void;
   dataStructureSet: DataStructureSet;
   transcriptViewerRef: React.RefObject<TranscriptViewerMethods>;
+  //cpPositions: { [key: string]: { x: number; y: number } };
 }
 
 //@ts-ignore
@@ -18,6 +19,7 @@ const CP1K = ({
   onTitleClick,
   dataStructureSet,
   transcriptViewerRef,
+  //cpPositions,
   ...props
 }: CP1KProps) => {
   const countCompoundTerms = (
@@ -31,6 +33,10 @@ const CP1K = ({
     });
     return result;
   };
+  //const position = cpPositions["토론 시작 및 모병제 도입"];
+  // const transformStyle = position
+  //   ? `translate(${position.x}px, ${position.y}px)`
+  //   : "";
 
   const getTopCompoundTerms = (
     compoundTerms: { [key: string]: number },
@@ -129,6 +135,7 @@ const CP1K = ({
         viewBox="0 0 1753 318"
         xmlSpace="preserve"
         {...props}
+        //style={{ transform: transformStyle }}
         onClick={handleSvgClick}
       >
         {/* 다른 것도 수정해주기 */}
@@ -154,25 +161,27 @@ const CP1K = ({
         <g className="CP1">
           <g className="T1">
             <g>
+              {/* <title>
+                {`Topic: 토론 시작 및 모병제 도입\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0]?.utterance}`}
+              </title> */}
               <title>
-                {`Topic: 토론 시작 및 모병제 도입\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].utterance}`}
+                {`Topic: 토론 시작 및 모병제 도입\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0]?.utterance}`}
               </title>
               <text
-                style={{ fontSize: "6px" }}
-                transform="matrix(1 0 0 1 59.5201 47.5178)"
-                className="st7"
+                style={{}}
+                transform="matrix(1 0 0 1 81.5201 362.5178)"
+                className="st0 st1 st13"
+                onClick={() => handleClickText(0)}
               >
-                <tspan
-                  onClick={() => handleClickText(0)}
-                  x={0}
-                  y={0}
-                  className="st0 st1 st13"
-                >
-                  {"토론 시작 및 모병제 도입"}
-                </tspan>
-                {/* <tspan x={-3} y={17.2} className="st0 st1 st13">
-                  {"all volunteer military system(AVMS)"}
-                </tspan> */}
+                {"토론 시작 및"}
+              </text>
+              <text
+                style={{}}
+                transform="matrix(1 0 0 1 82.5201 379.5178)"
+                className="st0 st1 st13"
+                onClick={() => handleClickText(0)}
+              >
+                {" 모병제 도입"}
               </text>
             </g>
             <g className="P1">
@@ -257,7 +266,7 @@ const CP1K = ({
           <g className="T1-1">
             <circle className="st15" cx={81.5} cy={172.2} r={51.7} />
             <title>
-              {`Topic: 현 사회상황\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[0].utterance}`}
+              {`Topic: 현 사회상황\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0].name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[0]?.utterance}`}
             </title>
             <text transform="matrix(1 0 0 1 50 104.3537)" className="st7">
               <tspan
@@ -284,7 +293,7 @@ const CP1K = ({
               ry={14.6}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 인구절벽위협\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5].name}\nKeyword: 인구절벽위협\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6.4px" }}
@@ -308,7 +317,7 @@ const CP1K = ({
               onClick={(e) => handleClick(3, e)}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[3].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[3]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "4.5px" }}
@@ -331,7 +340,7 @@ const CP1K = ({
               d="M102.6,143.5l2.5-2.5c2.6-2.6,2.6-6.9,0-9.5l-5.6-5.6c-2.6-2.6-6.9-2.6-9.5,0l-2.5,2.5l-2.5-2.5 c-2.6-2.6-6.9-2.6-9.5,0l-5.6,5.6c-2.6,2.6-2.6,6.9,0,9.5l2.5,2.5l-2.5,2.5c-2.6,2.6-2.6,6.9,0,9.5l5.6,5.6c2.6,2.6,6.9,2.6,9.5,0 l2.5-2.5l2.5,2.5c2.6,2.6,6.9,2.6,9.5,0l5.6-5.6c2.6-2.6,2.6-6.9,0-9.5L102.6,143.5z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[7].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[7].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[7].name}\nKeyword: 안보위협 과소평가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[7]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "8px" }}
@@ -354,7 +363,7 @@ const CP1K = ({
               d="M117.6,190l3-3c3.2-3.2,3.2-8.5,0-11.7l-6.9-6.9c-3.2-3.2-8.5-3.2-11.7,0l-3,3l-3-3c-3.2-3.2-8.5-3.2-11.7,0 l-6.9,6.9c-3.2,3.2-3.2,8.5,0,11.7l3,3l-3,3c-3.2,3.2-3.2,8.5,0,11.7l6.9,6.9c3.2,3.2,8.5,3.2,11.7,0l3-3l3,3 c3.2,3.2,8.5,3.2,11.7,0l6.9-6.9c3.2-3.2,3.2-8.5,0-11.7L117.6,190z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].name}\nKeyword: 북 핵위협\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[3].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[3].name}\nKeyword: 북 핵위협\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[3]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "12px" }}
@@ -380,7 +389,7 @@ const CP1K = ({
               ry={11.2}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 청년실업률 증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5].name}\nKeyword: 청년실업률 증가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "5px" }}
@@ -410,7 +419,7 @@ const CP1K = ({
               ry={17.2}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[5].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5].name}\nKeyword: 50만군 유지불가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[5]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "8px" }}
@@ -429,7 +438,7 @@ const CP1K = ({
           <g className="T1-2">
             <circle className="st15" cx={188.8} cy={171.7} r={55.2} />
             <title>
-              {`Topic: 현 군상황\nName: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[17].utterance}`}
+              {`Topic: 현 군상황\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17].name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.utterance}`}
             </title>
             <text
               transform="matrix(1 0 0 1 185 98.9778)"
@@ -455,7 +464,7 @@ const CP1K = ({
               ry={19.4}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 청년인구 감소\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15].name}\nKeyword: 청년인구 감소\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "8.2px" }}
@@ -478,7 +487,7 @@ const CP1K = ({
               d="M219.2,206.8l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L219.2,206.8z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].name}\nKeyword: 미비한 군정책검토\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[18].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18].name}\nKeyword: 미비한 군정책검토\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[18]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "5.3px" }}
@@ -501,7 +510,7 @@ const CP1K = ({
               d="M223.4,149l3.1-3.1c3.3-3.3,3.3-8.9,0-12.2l-7.2-7.2c-3.3-3.3-8.9-3.3-12.2,0l-3.1,3.1l-3.1-3.1 c-3.3-3.3-8.9-3.3-12.2,0l-7.2,7.2c-3.3,3.3-3.3,8.9,0,12.2l3.1,3.1l-3.1,3.1c-3.3,3.3-3.3,8.9,0,12.2l7.2,7.2 c3.3,3.3,8.9,3.3,12.2,0l3.1-3.1l3.1,3.1c3.3,3.3,8.9,3.3,12.2,0l7.2-7.2c3.3-3.3,3.3-8.9,0-12.2L223.4,149z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[16].name}\nKeyword: 감군대비 무대책\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[16].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[16].name}\nKeyword: 감군대비 무대책\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[16]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "9.3px" }}
@@ -528,7 +537,7 @@ const CP1K = ({
               ry={12.9}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[12].name}\nKeyword: 복무단축공약\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[12].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[12].name}\nKeyword: 복무단축공약\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[12]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "5px" }}
@@ -558,7 +567,7 @@ const CP1K = ({
               ry={17.6}
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 군 부적응자 매년증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15].name}\nKeyword: 군 부적응자 매년증가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "7px" }}
@@ -584,7 +593,7 @@ const CP1K = ({
               d="M236.9,184.1l1.7-1.7c1.8-1.8,1.8-4.7,0-6.5l-3.8-3.8c-1.8-1.8-4.7-1.8-6.5,0l-1.7,1.7l-1.7-1.7 c-1.8-1.8-4.7-1.8-6.5,0l-3.8,3.8c-1.8,1.8-1.8,4.7,0,6.5l1.7,1.7l-1.7,1.7c-1.8,1.8-1.8,4.7,0,6.5l3.8,3.8c1.8,1.8,4.7,1.8,6.5,0 l1.7-1.7l1.7,1.7c1.8,1.8,4.7,1.8,6.5,0l3.8-3.8c1.8-1.8,1.8-4.7,0-6.5L236.9,184.1z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[13].name}\nKeyword: 군인수 25만 적정\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[13].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[13].name}\nKeyword: 군인수 25만 적정\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[13]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px" }}
@@ -610,7 +619,7 @@ const CP1K = ({
               d="M181.4,197.8c7.7,0,14,6.3,14,14c0,7.7-6.3,14-14,14c-7.7,0-14-6.3-14-14 C167.4,204.1,173.6,197.8,181.4,197.8z"
             />
             <title>
-              {`Name: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].name}\nKeyword: 관심병사 증가\nUtterance: ${dataStructureSet.utteranceObjectsForDrawingManager.utteranceObjectsForDrawing[15].utterance}`}
+              {`Name: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15].name}\nKeyword: 관심병사 증가\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[15]?.utterance}`}
             </title>
             <text
               style={{ fontSize: "6px" }}
@@ -628,25 +637,6 @@ const CP1K = ({
           </g>
         </g>
       </svg>
-      {/* {tooltip.display && (
-        <div
-          style={{
-            position: "fixed",
-            top: tooltip.y,
-            left: tooltip.x,
-            backgroundColor: "white",
-            border: "1px solid black",
-            zIndex: 1000,
-            transform: "translate(-50%, 20px)",
-          }}
-        >
-          <svg viewBox="0 0 1753 318" width="400" height="200">
-            <g transform="scale(1.5)">
-              <MySvgComponent />
-            </g>
-          </svg>
-        </div>
-      )} */}
     </>
   );
 };
