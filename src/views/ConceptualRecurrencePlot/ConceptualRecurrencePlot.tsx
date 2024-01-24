@@ -360,7 +360,7 @@ function ConceptualRecurrencePlot() {
       // "쓰레기값" 필터링
       if (textContent === "쓰레기값") return;
       const gSelector = `#CP${index + 1}G`;
-      console.log(`Updating ${gSelector} with x: ${x}, y: ${y}`);
+      //console.log(`Updating ${gSelector} with x: ${x}, y: ${y}`);
       d3.select(gSelector).attr(
         "transform",
         `scale(1,-1) rotate(-45) translate(${x}px, ${y}px)`
@@ -596,8 +596,8 @@ function ConceptualRecurrencePlot() {
                     cpPositions["토론 시작 및 모병제 도입"]?.x || 0
                   }px, ${cpPositions["토론 시작 및 모병제 도입"]?.y || 0}px)`}
                 > */}
-                <g transform={`scale(0.9,-0.9) rotate(-45)`}>
-                  <g style={{ transform: "translate(0px, -770px)" }}>
+                <g transform={`scale(0.83,-0.83) rotate(-45)`}>
+                  <g style={{ transform: "translate(-10px, -808px)" }}>
                     <CP1K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -606,8 +606,8 @@ function ConceptualRecurrencePlot() {
                     />
                   </g>
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(75px, -860px)" }}>
+                <g transform={`scale(1.015,-1.015) rotate(-45)`}>
+                  <g style={{ transform: "translate(-94px, -944px)" }}>
                     <CP2K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -615,9 +615,10 @@ function ConceptualRecurrencePlot() {
                       transcriptViewerRef={transcriptViewerRef}
                     />
                   </g>
+                  {/* CP2 높이 내리기 */}
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(55px, -860px)" }}>
+                <g transform={`scale(1.055,-1.055) rotate(-45)`}>
+                  <g style={{ transform: "translate(-228px, -767px)" }}>
                     <CP3K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -626,8 +627,8 @@ function ConceptualRecurrencePlot() {
                     />
                   </g>
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(70px, -860px)" }}>
+                <g transform={`scale(1.245,-1.245) rotate(-45)`}>
+                  <g style={{ transform: "translate(-356px, -847px)" }}>
                     <CP4K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -636,8 +637,8 @@ function ConceptualRecurrencePlot() {
                     />
                   </g>
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(140px, -860px)" }}>
+                <g transform={`scale(1.058,-1.058) rotate(-45)`}>
+                  <g style={{ transform: "translate(-360px, -765px)" }}>
                     <CP5K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -646,8 +647,8 @@ function ConceptualRecurrencePlot() {
                     />
                   </g>
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(155px, -860px)" }}>
+                <g transform={`scale(1.05,-1.05) rotate(-45)`}>
+                  <g style={{ transform: "translate(-440px, -902px)" }}>
                     <CP6K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore
@@ -656,8 +657,8 @@ function ConceptualRecurrencePlot() {
                     />
                   </g>
                 </g>
-                <g transform={`scale(0.5,-0.5) rotate(-45)`}>
-                  <g style={{ transform: "translate(-330px, -770px)" }}>
+                <g transform={`scale(1.04,-1.04) rotate(-45)`}>
+                  <g style={{ transform: "translate(-379px, -770px)" }}>
                     <CP7K
                       onTitleClick={handleTitleClick}
                       //@ts-ignore

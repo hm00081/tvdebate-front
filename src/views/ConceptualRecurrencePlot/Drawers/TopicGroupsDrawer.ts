@@ -152,7 +152,7 @@ export class TopicGroupsDrawer {
         .attr("x", (eg) => eg[0][0].beginningPointOfX)
         .attr("y", (eg) => eg[0][0].beginningPointOfY)
         .style("visibility", (eg) => (showEngagementGroup ? "visible" : "none"))
-        .attr("width", (eg) => {
+        .attr("width", (eg, i) => {
           const mostLeftTopBlock = eg[0][0];
           const lastHorizontalLine = eg[eg.length - 1];
           const mostRightBottomBlock =
@@ -161,9 +161,11 @@ export class TopicGroupsDrawer {
             mostRightBottomBlock.beginningPointOfX +
             mostRightBottomBlock.width -
             mostLeftTopBlock.beginningPointOfX;
+          // 콘솔에 폭 출력
+          console.log(`Width of rectangle ${i}: ${width}`);
           return width;
         })
-        .attr("height", (eg) => {
+        .attr("height", (eg, i) => {
           const mostLeftTopBlock = eg[0][0];
           const lastHorizontalLine = eg[eg.length - 1];
           const mostRightBottomBlock =
@@ -172,6 +174,8 @@ export class TopicGroupsDrawer {
             mostRightBottomBlock.beginningPointOfY +
             mostRightBottomBlock.height -
             mostLeftTopBlock.beginningPointOfY;
+          // 콘솔에 폭 출력
+          console.log(`Height of rectangle ${i}: ${height}`);
           return height;
         })
         .style("fill", this._guideColor === "#000000" ? "none" : "none")

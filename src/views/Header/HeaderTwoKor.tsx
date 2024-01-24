@@ -23,11 +23,6 @@ const participantColors = [
   { color: "#808080", label: "진행자" },
 ];
 
-// const topicColors = [
-//   { color: "#400000", label: "논쟁" },
-//   { color: "#ff0000", label: "논쟁구간" },
-// ];
-
 const topicColors = [
   { color: "#400000", label: "논쟁" },
   { color: "#ff0000", label: "논쟁구간" },
@@ -84,18 +79,20 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
     <a className={style.mainLink}>
       <div
         className={style.naviTwo}
-        style={{ display: "flex", alignItems: "center" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          //justifyContent: "space-between",
+        }}
       >
-        {/* <h3 style={{ marginLeft: "5px", marginTop: "-18px" }}>Data: 모병제</h3> */}
-        <h3
-          style={{ marginLeft: "5px", marginTop: "-18px", fontWeight: "550" }}
-        >
-          Legends:
-        </h3>
-
         <div
           style={{ display: "flex", alignItems: "center", flexWrap: "wrap" }}
         >
+          <h3
+            style={{ marginLeft: "5px", marginTop: "-18px", fontWeight: "550" }}
+          >
+            Legends:
+          </h3>
           {participantColors.map((item, i) => (
             <LegendItem
               key={i}
