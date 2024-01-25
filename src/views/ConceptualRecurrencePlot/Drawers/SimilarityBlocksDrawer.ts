@@ -98,8 +98,9 @@ export class SimilarityBlocksDrawer {
       .attr("width", (d) => d.width)
       .attr("height", (d) => d.height)
       .style("fill", (d) => {
-        //console.log("similarityBlock:", d.refutation);
-        return d.visible
+        const isWithinRange =
+          Math.abs(d.beginningPointOfX - d.beginningPointOfY) < 200;
+        return isWithinRange
           ? fillColorOfSimilarityBlock(
               d,
               this.utteranceObjectsForDrawing,
@@ -118,13 +119,6 @@ export class SimilarityBlocksDrawer {
           : null
       )
       .on("click", (d: SimilarityBlock, i: number) => {
-        // console.log(
-        //   "Clicked Block Indices:", // 지금 undefined로 나옴
-        //   d.rowUtteranceIndex,
-        //   d.columnUtteranceIndex
-        // );
-
-        // console.log("Clicked Block Data Index:", i);
         const mouseEvent = (d as unknown) as MouseEvent;
         this._selectedBlockIndices.push([
           d.rowUtteranceIndex,
@@ -134,9 +128,10 @@ export class SimilarityBlocksDrawer {
         // 하이라이팅 업데이트
         this.updateSelectedBlock();
 
-        //const mouseEvents = d3.event;
-        //this.updateSelectedBlock();
+        // 이벤트 전파 중단
         mouseEvent.stopPropagation();
+
+        // 클릭 리스너 호출
         const similarityBlock = (i as unknown) as SimilarityBlock;
         if (this._clickListener) {
           this._clickListener(mouseEvent, similarityBlock);
@@ -151,7 +146,8 @@ export class SimilarityBlocksDrawer {
                 Leading Speaker Name: ${d.colUtteranceName}
                 Trailing Speaker Index: ${d.rowUtteranceIndex},
                 Trailing Speaker Name: ${d.rowUtteranceName},
-                argumentScore: ${argumentScore}`;
+                argumentScore: ${argumentScore}
+                `;
       });
 
     similarityRectGSelectionDataBound.exit().remove();
@@ -687,32 +683,6 @@ export class SimilarityBlocksDrawer {
   ) {
     this._clickListener = clickListener;
   }
-
-  // setSelectedBlockIndices(rowIndex: number, colIndex: number) {
-  //   this._selectedBlockIndices = [rowIndex, colIndex];
-  // }
-
-  // updateSelectedBlock() {
-  //   this.conceptSimilarityRectGSelection
-  //     .selectAll<SVGRectElement, SimilarityBlock>("rect")
-  //     .style("stroke", (d) =>
-  //       this._selectedBlockIndices &&
-  //       this._selectedBlockIndices[0] === d.rowUtteranceIndex &&
-  //       this._selectedBlockIndices[1] === d.columnUtteranceIndex
-  //         ? "red"
-  //         : null
-  //     )
-  //     .style("stroke-width", (d) =>
-  //       this._selectedBlockIndices &&
-  //       this._selectedBlockIndices[0] === d.rowUtteranceIndex &&
-  //       this._selectedBlockIndices[1] === d.columnUtteranceIndex
-  //         ? 1
-  //         : 0
-  //     );
-  // }
-  // setSelectedBlockIndices(indices: [number, number][]) {
-  //   this._selectedBlockIndices = [...this._selectedBlockIndices, ...indices];
-  // }
 
   setSingleBlockIndices(rowIndex: number, colIndex: number) {
     this._selectedBlockIndices = [[rowIndex, colIndex]];

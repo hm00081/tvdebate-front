@@ -257,22 +257,31 @@ const CP2K = ({
             <title>
               {`Topic: 인구절벽, 징병제에 미치는 영향\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[17]?.utterance}`}
             </title>
-            <text
-              transform="matrix(1 0 0 1 313 534)"
-              className="st0 st1 st13"
-              onClick={(e) => handleClickText(17)}
-              style={{ fontSize: "14px" }}
-            >
-              {"인구절벽, 징병제에 "}
-            </text>
-            <text
-              transform="matrix(1 0 0 1 338 554.5)"
-              className="st0 st1 st13"
-              onClick={() => handleClickText(17)}
-              style={{ fontSize: "14px" }}
-            >
-              {" 미치는 영향"}
-            </text>
+            <g>
+              {/* <rect
+                x={313} // 텍스트의 x 좌표와 동일하게 설정
+                y={534} // 텍스트의 y 좌표보다 약간 작은 값으로 설정
+                width={50} // 적절한 너비 설정
+                height={40} // 적절한 높이 설정
+                fill="red"
+              /> */}
+              <text
+                transform="matrix(1 0 0 1 313 534)"
+                className="st0 st1 st13"
+                onClick={(e) => handleClickText(17)}
+                style={{ fontSize: "14px" }}
+              >
+                {"인구절벽, 징병제에 "}
+              </text>
+              <text
+                transform="matrix(1 0 0 1 338 554.5)"
+                className="st0 st1 st13"
+                onClick={() => handleClickText(17)}
+                style={{ fontSize: "14px" }}
+              >
+                {" 미치는 영향"}
+              </text>
+            </g>
             <line
               x1={377}
               y1={280}

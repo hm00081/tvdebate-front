@@ -70,6 +70,28 @@ export class TopicGroupsDrawer {
     this._guideColor = guideColor;
   }
 
+  // TopicGroupsDrawer 클래스 내
+  public getTopicGroupRectangles() {
+    return this._topicGroups.map((group) => {
+      const mostLeftTopBlock = group[0][0];
+      const lastHorizontalLine = group[group.length - 1];
+      const mostRightBottomBlock =
+        lastHorizontalLine[lastHorizontalLine.length - 1];
+      return {
+        x: mostLeftTopBlock.beginningPointOfX,
+        y: mostLeftTopBlock.beginningPointOfY,
+        width:
+          mostRightBottomBlock.beginningPointOfX +
+          mostRightBottomBlock.width -
+          mostLeftTopBlock.beginningPointOfX,
+        height:
+          mostRightBottomBlock.beginningPointOfY +
+          mostRightBottomBlock.height -
+          mostLeftTopBlock.beginningPointOfY,
+      };
+    });
+  }
+
   public update() {
     const excludedIndex = [1, 3, 5];
     const excludedIndexTwo = [1, 3, 5];
@@ -161,8 +183,8 @@ export class TopicGroupsDrawer {
             mostRightBottomBlock.beginningPointOfX +
             mostRightBottomBlock.width -
             mostLeftTopBlock.beginningPointOfX;
-          // 콘솔에 폭 출력
-          console.log(`Width of rectangle ${i}: ${width}`);
+
+          //console.log(`Width of rectangle ${i}: ${width}`);
           return width;
         })
         .attr("height", (eg, i) => {
@@ -175,7 +197,7 @@ export class TopicGroupsDrawer {
             mostRightBottomBlock.height -
             mostLeftTopBlock.beginningPointOfY;
           // 콘솔에 폭 출력
-          console.log(`Height of rectangle ${i}: ${height}`);
+          //console.log(`Height of rectangle ${i}: ${height}`);
           return height;
         })
         .style("fill", this._guideColor === "#000000" ? "none" : "none")
@@ -439,9 +461,9 @@ export class TopicGroupsDrawer {
       this._topicGroupTitles = [];
     }
 
-    console.log("Topic Groups:", this._topicGroups);
-    console.log("Topic Group Titles:", this._topicGroupTitles);
-    console.log("Calculating positions for Topic Groups");
+    //console.log("Topic Groups:", this._topicGroups);
+    //console.log("Topic Group Titles:", this._topicGroupTitles);
+    //console.log("Calculating positions for Topic Groups");
     this._topicGroups.forEach((group, index) => {
       if (this._topicGroupTitles[index]) {
         const mostLeftTopBlock = group[0][0];

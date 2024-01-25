@@ -111,9 +111,6 @@ export class D3Drawer {
       const rowTopTerms = getTopCompoundTerms(rowCompoundTerms, 30);
       const colTopTerms = getTopCompoundTerms(colCompoundTerms, 30);
 
-      // console.log(`Row Top Terms:`, rowTopTerms);
-      // console.log(`Column Top Terms:`, colTopTerms);
-
       if (transcriptViewerRef.current) {
         transcriptViewerRef.current.scrollToIndex(colIndex);
         transcriptViewerRef.current.highlightKeywords(
@@ -123,9 +120,6 @@ export class D3Drawer {
           colIndex
         );
       }
-      const indexPair = [d.rowUtteranceIndex, d.columnUtteranceIndex];
-      //@ts-ignore
-      // this.similarityBlocksDrawer.setSelectedBlockIndices([indexPair]);
       this.similarityBlocksDrawer.setSingleBlockIndices(
         d.rowUtteranceIndex,
         d.columnUtteranceIndex

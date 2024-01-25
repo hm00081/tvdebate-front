@@ -567,11 +567,12 @@ function ConceptualRecurrencePlot() {
               className="zoomable"
               transform={transform ? transform.toString() : undefined}
             >
-              <g className="svgG" ref={svgGRef}>
-                <g
-                  // transform={`translate(${-265}, ${220}) scale(1.32 -1.32) rotate(-45)`}
-                  transform={transformStyle}
-                >
+              <g
+                className="svgG"
+                ref={svgGRef}
+                //style={{ pointerEvents: "none" }}
+              >
+                <g transform={transformStyle}>
                   {dataStructureSet && (
                     <SubChartKor
                       width={windowSize.width - 330}
@@ -591,83 +592,79 @@ function ConceptualRecurrencePlot() {
                     width={subChartWidth}
                   />
                 </g>
-                {/* <g
-                  transform={`scale(1,-1) rotate(-45) translate(${
-                    cpPositions["토론 시작 및 모병제 도입"]?.x || 0
-                  }px, ${cpPositions["토론 시작 및 모병제 도입"]?.y || 0}px)`}
-                > */}
-                <g transform={`scale(0.83,-0.83) rotate(-45)`}>
-                  <g style={{ transform: "translate(-10px, -808px)" }}>
-                    <CP1K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
+                <g className="CPGroup">
+                  <g transform={`scale(0.83,-0.83) rotate(-45)`}>
+                    <g style={{ transform: "translate(-10px, -808px)" }}>
+                      <CP1K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                  </g>
+                  <g transform={`scale(1.015,-1.015) rotate(-45)`}>
+                    <g style={{ transform: "translate(-94px, -944px)" }}>
+                      <CP2K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                    {/* CP2 높이 내리기 */}
+                  </g>
+                  <g transform={`scale(1.055,-1.055) rotate(-45)`}>
+                    <g style={{ transform: "translate(-228px, -767px)" }}>
+                      <CP3K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                  </g>
+                  <g transform={`scale(1.245,-1.245) rotate(-45)`}>
+                    <g style={{ transform: "translate(-356px, -847px)" }}>
+                      <CP4K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                  </g>
+                  <g transform={`scale(1.058,-1.058) rotate(-45)`}>
+                    <g style={{ transform: "translate(-360px, -765px)" }}>
+                      <CP5K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                  </g>
+                  <g transform={`scale(1.05,-1.05) rotate(-45)`}>
+                    <g style={{ transform: "translate(-440px, -902px)" }}>
+                      <CP6K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
+                  </g>
+                  <g transform={`scale(1.04,-1.04) rotate(-45)`}>
+                    <g style={{ transform: "translate(-379px, -770px)" }}>
+                      <CP7K
+                        onTitleClick={handleTitleClick}
+                        //@ts-ignore
+                        dataStructureSet={dataStructureSet}
+                        transcriptViewerRef={transcriptViewerRef}
+                      />
+                    </g>
                   </g>
                 </g>
-                <g transform={`scale(1.015,-1.015) rotate(-45)`}>
-                  <g style={{ transform: "translate(-94px, -944px)" }}>
-                    <CP2K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                  {/* CP2 높이 내리기 */}
-                </g>
-                <g transform={`scale(1.055,-1.055) rotate(-45)`}>
-                  <g style={{ transform: "translate(-228px, -767px)" }}>
-                    <CP3K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                </g>
-                <g transform={`scale(1.245,-1.245) rotate(-45)`}>
-                  <g style={{ transform: "translate(-356px, -847px)" }}>
-                    <CP4K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                </g>
-                <g transform={`scale(1.058,-1.058) rotate(-45)`}>
-                  <g style={{ transform: "translate(-360px, -765px)" }}>
-                    <CP5K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                </g>
-                <g transform={`scale(1.05,-1.05) rotate(-45)`}>
-                  <g style={{ transform: "translate(-440px, -902px)" }}>
-                    <CP6K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                </g>
-                <g transform={`scale(1.04,-1.04) rotate(-45)`}>
-                  <g style={{ transform: "translate(-379px, -770px)" }}>
-                    <CP7K
-                      onTitleClick={handleTitleClick}
-                      //@ts-ignore
-                      dataStructureSet={dataStructureSet}
-                      transcriptViewerRef={transcriptViewerRef}
-                    />
-                  </g>
-                </g>
-                <g transform={`scale(1,-1) rotate(-45) `}></g>
               </g>
             </g>
           </svg>
