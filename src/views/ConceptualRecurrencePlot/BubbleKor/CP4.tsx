@@ -91,103 +91,348 @@ const CP4K = ({
         </style>
         <g className="CP4">
           <g className="T4">
-            <g className="P4">
-              <path
-                className="st21"
-                d="M817.2,102.8c14.9-9.7,30.3-14.3,48-14.3v-6.6c-19.1,0-35.7,5-51.7,15.3L817.2,102.8 C817.2,102.9,817.2,102.8,817.2,102.8z"
-              />
-              <path
-                className="st17"
-                d="M788.1,134c7.1-12.9,16.7-23.1,29-31.2l-3.6-5.5c-13.2,8.6-23.6,19.7-31.3,33.6L788.1,134 C788.1,134.1,788.1,134.1,788.1,134z"
-              />
-              <path
-                className="st22"
-                d="M786.7,136.8c0.7-1.3,0.8-1.5,1.4-2.6l-5.9-3.2c-0.7,1.4-0.9,1.6-1.6,2.9L786.7,136.8 C786.6,136.8,786.7,136.8,786.7,136.8z"
-              />
-              <path
-                className="st19"
-                d="M779.7,198.1c-5.3-21.1-2.9-41.9,7-61.4l-6-3c-10.6,20.8-13.2,43.3-7.5,66L779.7,198.1L779.7,198.1z"
-              />
-              <path
-                className="st17"
-                d="M781.9,205.5c-0.9-2.5-1.5-4.7-2.2-7.4l-6.4,1.6c0.7,2.9,1.4,5.2,2.3,7.9L781.9,205.5L781.9,205.5z"
-              />
-              <path
-                className="st22"
-                d="M781.9,205.5l-6.3,2.2c7.5,21.7,20,37.4,39.4,49.5l3.6-5.6C800.5,240.4,788.8,225.7,781.9,205.5z"
-              />
-              <path
-                className="st20"
-                d="M818.5,251.7L818.5,251.7l-3.6,5.6c7.3,4.6,14.3,7.7,22.6,10.3l2-6.3C831.9,258.8,825.3,255.8,818.5,251.7z"
-              />
-              <path
-                className="st22"
-                d="M839.5,261.3L839.5,261.3l-2,6.3c4,1.3,7.1,2,11.3,2.6l1.2-6.6C846.1,263,843.1,262.3,839.5,261.3z"
-              />
-              <path
-                className="st20"
-                d="M849.9,263.7L849.9,263.7l-1.2,6.6c3.8,0.7,7.6,1.2,11.5,1.3l0.3-6.7C857.1,264.7,853.5,264.4,849.9,263.7z"
-              />
-              <path
-                className="st22"
-                d="M860.7,264.9L860.7,264.9l-0.3,6.7c6.7,0.3,11.6,0.1,18.2-0.8l-0.9-6.6C871.4,265.1,866.9,265.3,860.7,264.9z "
-              />
-              <path
-                className="st21"
-                d="M877.6,264.3L877.6,264.3l0.9,6.6c2.1-0.3,4.5-0.7,6.6-1.2l-1.4-6.6C881.7,263.6,879.4,263.9,877.6,264.3z"
-              />
-              <path
-                className="st20"
-                d="M883.7,263.1C883.6,263.1,883.6,263.1,883.7,263.1l1.4,6.6c1.5-0.3,1.7-0.3,3.2-0.7l-1.6-6.4 C885.3,262.8,885,262.9,883.7,263.1z"
-              />
-              <path
-                className="st22"
-                d="M886.7,262.4C886.6,262.4,886.6,262.4,886.7,262.4l1.5,6.4c3.7-0.9,7.5-2.2,11.1-3.5l-2.4-6.2 C893.6,260.5,890,261.6,886.7,262.4z"
-              />
-              <path
-                className="st21"
-                d="M896.9,259.2C896.9,259.2,896.8,259.2,896.9,259.2l2.3,6.2c2.3-0.9,3.9-1.6,6.1-2.5l-2.8-6 C900.5,257.8,899,258.4,896.9,259.2z"
-              />
-              <path
-                className="st20"
-                d="M902.6,256.8L902.6,256.8l2.8,6c2.2-1,3.8-1.8,5.9-3L908,254C906,255.2,904.5,255.8,902.6,256.8z"
-              />
-              <path
-                className="st21"
-                d="M908.1,254C908.1,254,908,254,908.1,254l3.2,5.9c1.5-0.8,2.9-1.6,4.3-2.5l-3.6-5.6 C910.6,252.5,909.4,253.3,908.1,254z"
-              />
-              <path
-                className="st20"
-                d="M912,251.7L912,251.7l3.5,5.6c3.9-2.4,7.1-4.8,10.7-7.8l-4.3-5.1C918.7,247.2,915.7,249.4,912,251.7z"
-              />
-              <path
-                className="st21"
-                d="M922,244.4C922,244.4,921.9,244.4,922,244.4l4.3,5.1c7.4-6.2,13.4-12.9,18.5-21l-5.5-3.6 C934.4,232.5,929,238.7,922,244.4z"
-              />
-              <path
-                className="st20"
-                d="M939.3,224.9L939.3,224.9l5.5,3.7c5.6-8.6,9.4-17.2,12.1-27.1l-6.3-1.7C948.1,209,944.5,216.8,939.3,224.9z"
-              />
-              <path
-                className="st21"
-                d="M950.5,199.6L950.5,199.6l6.3,1.7c2.1-7.7,3.1-14.9,3.2-22.9l-6.6-0.1C953.4,185.8,952.4,192.5,950.5,199.6z"
-              />
-              <path
-                className="st17"
-                d="M958.3,158.8l-6.4,1.3c1.3,6.4,1.7,11.9,1.6,18.3l0,0l6.6,0.1C960.3,171.5,959.7,165.7,958.3,158.8z"
-              />
-              <path
-                className="st20"
-                d="M940.1,130.1c6,9.7,9.6,18.8,11.7,29.9l0,0l6.4-1.3c-2.3-12.1-6.2-21.8-12.7-32.1L940.1,130.1L940.1,130.1z"
-              />
-              <path
-                className="st17"
-                d="M919.6,107.3c8.8,6.8,14.6,13.4,20.5,22.8l5.5-3.5c-6.3-10.1-12.7-17.2-22-24.5L919.6,107.3L919.6,107.3z"
-              />
-              <path
-                className="st20"
-                d="M865.3,88.6c20.6,0,38,6,54.4,18.7l4-5.2c-17.5-13.7-36.2-20.2-58.4-20.2V88.6L865.3,88.6z"
-              />
+            <g className="P4" transform="translate(-111,13) scale(1.094)">
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l-38.3-78.6c12.5-6.1,24.5-8.9,38.3-8.9V148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 79\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[79]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[79]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l-65-58.5c7.7-8.5,16.3-15,26.7-20.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 78\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[78]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[78]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9l-67-56.2c0.7-0.9,1.3-1.5,2-2.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 77\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[77]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[77]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st19"
+                  d="M891.9,148.9l-86.6-12.2c2.4-16.8,8.7-31,19.6-44L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 76\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[76]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[76]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l-87.2-6.1c0.1-2.1,0.3-4,0.6-6.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 75\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[75]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[75]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9L814,188.6c-7.5-14.8-10.5-29.2-9.3-45.8L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 74\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[74]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[74]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9L823,202.7c-3.9-4.9-6.2-8.5-9-14.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 73\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[73]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[73]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9L829,209.6c-2.1-2.2-4.1-4.5-6-6.9L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 72\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[72]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[72]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l-57.4,66c-2.1-1.8-3.6-3.2-5.5-5.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 71\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[71]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[71]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9L845.5,223c-4.1-2.6-7.4-5-11-8.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 70\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[70]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[70]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l-42.4,76.5c-1.3-0.7-2.7-1.5-3.9-2.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 69\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[69]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[69]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l-39.7,77.9c-1-0.5-1.7-0.9-2.7-1.4L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 68\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[68]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[68]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9l-31.3,81.6c-2.5-1-6-2.5-8.4-3.7L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 67\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[67]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[67]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l-27,83.2c-1.7-0.5-2.7-0.9-4.3-1.5L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 66\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[66]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[66]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l-22.6,84.5c-1.7-0.5-2.7-0.8-4.4-1.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 65\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[65]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[65]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l-19.7,85.2c-1.2-0.3-1.8-0.4-3-0.7L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 64\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[64]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[64]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l-9.1,87c-3.4-0.4-7.2-1-10.5-1.8L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 63\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[63]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[63]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l10.7,86.8c-7,0.9-12.8,0.9-19.8,0.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 62\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[62]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[62]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l31.3,81.6c-7,2.7-13.3,4.2-20.7,5.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 61\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[61]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[61]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l46.3,74.2c-5,3.1-9.5,5.4-15,7.5L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 60\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[60]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[60]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l57.4,66c-3.8,3.3-6.7,5.5-11,8.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 59\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[59]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[59]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l74.2,46.3c-4.7,7.5-10.1,13.8-16.8,19.7L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 58\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[58]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[58]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9L976,173c-2.4,8.4-5.3,14.9-9.9,22.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 57\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[57]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[57]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st20"
+                  d="M891.9,148.9l84.9-21.2c3.9,15.7,3.7,29.8-0.8,45.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 56\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[56]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[56]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l83.2-27c0.7,2,1.2,3.8,1.7,5.9L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 55\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[55]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[55]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st19"
+                  d="M891.9,148.9l80.5-34.2c1,2.3,1.9,4.8,2.7,7.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 54\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[54]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[54]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l78.6-38.3c0.7,1.3,1.3,2.8,1.9,4.2L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 53\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[53]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[53]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st16"
+                  d="M891.9,148.9l76.5-42.4c0.8,1.4,1.4,2.6,2.1,4.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 52\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[52]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[52]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st19"
+                  d="M891.9,148.9l74.2-46.3c1,1.6,1.4,2.3,2.3,3.9L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 51\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[51]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[51]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9L960.8,95c1.8,2.3,3.7,5,5.3,7.5L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 50\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[50]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[50]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l64-59.6c1.8,1.9,3.3,3.7,5,5.8L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 49\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[49]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[49]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st19"
+                  d="M891.9,148.9L952.6,86c1.1,1,2.2,2.2,3.2,3.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 48\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[48]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[48]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l56.2-67c1.6,1.3,3.1,2.7,4.5,4.1L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 47\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[47]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[47]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st19"
+                  d="M891.9,148.9l53.8-68.9c0.9,0.7,1.5,1.2,2.4,1.9L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 46\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[46]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[46]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9l46.3-74.2c2.7,1.7,5,3.3,7.5,5.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 45\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[45]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[45]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st17"
+                  d="M891.9,148.9l42.4-76.5c1.7,0.9,2.3,1.3,3.9,2.3L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 44\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[44]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[44]?.utterance}`}
+                </title>
+              </g>
+              <g>
+                <path
+                  className="st21"
+                  d="M891.9,148.9V61.4c15.6,0,28.7,3.4,42.4,11L891.9,148.9z"
+                ></path>
+                <title>
+                  {`scriptIndex: 43\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[43]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[43]?.utterance}`}
+                </title>
+              </g>
+              <ellipse
+                className="st24"
+                cx="892"
+                cy="148.7"
+                rx="81.1"
+                ry="81.1"
+                transform="matrix(0.7071 -0.7071 0.7071 0.7071 156.1309 674.2637)"
+              ></ellipse>
             </g>
             <title>키워드: 모병제, 일자리 문제 해결책?</title>
             <text

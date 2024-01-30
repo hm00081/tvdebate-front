@@ -528,19 +528,9 @@ function ConceptualRecurrencePlot() {
       {/* <HeaderTwo isOpen={isOpen} setIsOpen={setIsOpen} /> */}
       <HeaderTwoKor isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="vis-area">
-        <div className="bubble" style={{}}>
-          {/* <BubbleEng /> */}
-          {/* {dataStructureSet && (
-            // <BubbleEngg
-            //   onTitleClick={handleTitleClick}
-            //   dataStructureSet={dataStructureSet}
-            //   transcriptViewerRef={transcriptViewerRef}
-            // />
-          )} */}
-        </div>
         <div
           className="concept-recurrence-plot"
-          style={{ marginTop: "15px", overflow: "hidden" }}
+          style={{ marginTop: "0px", overflow: "hidden" }}
         >
           <div
             style={{

@@ -111,7 +111,10 @@ export class ParticipantBlocksDrawer {
     selection // utterance_objects 데이터 적용
       // .transition()
       // .duration(750)
-      .attr("x", (d) => d.beginningPointOfXY)
+      .attr("x", (d, i) => {
+        console.log(`Rect at index ${i}, width: ${d.width}`);
+        return d.beginningPointOfXY;
+      })
       .attr("y", (d) => d.beginningPointOfXY)
       .attr("width", (d) => d.width) // 노드 두께
       .attr("height", (d) => d.width) // 노드 높이

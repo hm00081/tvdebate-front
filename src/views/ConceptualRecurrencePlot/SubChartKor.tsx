@@ -978,7 +978,7 @@ const SubChartKor = ({
         <g className="이준석-8">
           <title>국방예산 조정불가, 사병인건비 2조</title>
           <rect x={1300.5} y={17} className="stt9" width={98} height={12.8} />
-          <text transform="matrix(0.9048 0 0 1 1303.4598 22.1646)">
+          <text transform="matrix(0.9048 0 0 1 1303.4590 22.1646)">
             <tspan x={0} y={2.5} className="stt40 stt0 stt22">
               {"국방예산 조정불가, 사병인건비 2조"}
             </tspan>
@@ -1309,7 +1309,7 @@ const SubChartKor = ({
       <rect x={410} y={173.4} className="stt38" width={100} height={12.5} />
       <rect x={410} y={195.9} className="stt38" width={100} height={12.5} />
       <rect
-        x={410.2}
+        x={410}
         y={128.5}
         className="stt39"
         onClick={() => handleBarClickThree(0)}
@@ -1317,7 +1317,7 @@ const SubChartKor = ({
         height={12.5}
       />
       <rect
-        x={410.1}
+        x={410}
         y={151}
         className="stt39"
         onClick={() => handleBarClickThree(1)}
@@ -1333,19 +1333,19 @@ const SubChartKor = ({
         height={12.5}
       />
       <rect
-        x={409.9}
+        x={410}
         y={195.9}
         className="stt39"
         onClick={() => handleBarClickThree(3)}
         width={50}
         height={12.5}
       />
-      <rect x={618.4} y={128.5} className="stt38" width={100} height={12.5} />
-      <rect x={618.4} y={151} className="stt38" width={100} height={12.5} />
-      <rect x={618.4} y={173.4} className="stt38" width={100} height={12.5} />
-      <rect x={618.4} y={195.9} className="stt38" width={100} height={12.5} />
+      <rect x={590} y={128.5} className="stt38" width={100} height={12.5} />
+      <rect x={590} y={151} className="stt38" width={100} height={12.5} />
+      <rect x={590} y={173.4} className="stt38" width={100} height={12.5} />
+      <rect x={590} y={195.9} className="stt38" width={100} height={12.5} />
       <rect
-        x={618}
+        x={590}
         y={128.5}
         className="stt39"
         onClick={() => handleBarClickFour(0)}
@@ -1353,23 +1353,23 @@ const SubChartKor = ({
         height={12.5}
       />
       <rect
-        x={617.8}
-        y={150.8}
+        x={590}
+        y={151}
         className="stt39"
         onClick={() => handleBarClickFour(1)}
         width={10}
         height={12.5}
       />
       <rect
-        x={618.1}
-        y={173.5}
+        x={590}
+        y={173.4}
         className="stt39"
         onClick={() => handleBarClickFour(2)}
         width={50}
         height={12.5}
       />
       <rect
-        x={617.7}
+        x={590}
         y={195.9}
         className="stt39"
         onClick={() => handleBarClickFour(3)}
@@ -1519,16 +1519,16 @@ const SubChartKor = ({
         </tspan>
       </text>
       <text transform="matrix(1 0 0 1 726.9255 138.416)">
-        <tspan x={0} y={0} className="stt0 stt1">
+        <tspan x={-28} y={0} className="stt0 stt1">
           {"7 회"}
         </tspan>
-        <tspan x={0} y={22} className="stt0 stt1">
+        <tspan x={-28} y={22} className="stt0 stt1">
           {"1 회"}
         </tspan>
-        <tspan x={0} y={44} className="stt0 stt1">
+        <tspan x={-28} y={44} className="stt0 stt1">
           {"5 회"}
         </tspan>
-        <tspan x={0} y={66} className="stt0 stt1">
+        <tspan x={-28} y={66} className="stt0 stt1">
           {"2 회"}
         </tspan>
       </text>
