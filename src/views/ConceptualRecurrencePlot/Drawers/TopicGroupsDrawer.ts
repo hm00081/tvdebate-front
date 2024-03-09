@@ -361,10 +361,10 @@ export class TopicGroupsDrawer {
           // const yPoint = mostLeftTopBlock.beginningPointOfY - 5;
           // const yPoint = 30;
           if (this._guideColor !== "#000000") {
-            const yPoint = -130; // Middle Engagement Group
+            const yPoint = 170; // Middle Engagement Group
             return yPoint;
           } else {
-            const yPoint = -130; // Small Engagement Group
+            const yPoint = 170; // Small Engagement Group
             return yPoint;
           }
         }) // draw topic text
@@ -374,8 +374,8 @@ export class TopicGroupsDrawer {
               const textLines = splitTextToLines(arg.topicGroupTitles[i] || "");
 
               // 첫 번째 줄만 반환합니다.
-              //return textLines[0] || "";
-              return "" || "";
+              return `Show Topic Modal` || "";
+              //return "" || "";
             } else {
               const highFrequencyTerms = extractFrequencyTermsFromEG(
                 eg,

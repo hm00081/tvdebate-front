@@ -434,7 +434,7 @@ const CP4K = ({
                 transform="matrix(0.7071 -0.7071 0.7071 0.7071 156.1309 674.2637)"
               ></ellipse>
             </g>
-            <title>키워드: 모병제, 일자리 문제 해결책?</title>
+            {`Topic: 모병제, 일자리 문제 해결책?\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[55]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[55]?.utterance}`}
             <text
               transform="matrix(1 0 0 1 830 449.5)"
               className="st0 st1 st13"

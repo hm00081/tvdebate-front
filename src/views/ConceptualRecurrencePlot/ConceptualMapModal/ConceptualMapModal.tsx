@@ -72,7 +72,6 @@ function ConceptualMapModal(
   }, []);
 
   useEffect(() => {
-    // 그려지는 상황인가??
     if (conceptualMapDrawer) {
       conceptualMapDrawer.setParticipantDict(props.participantDict);
     }
@@ -121,7 +120,6 @@ function ConceptualMapModal(
           }
         );
 
-        // 내림차순 정렬
         const sortedNodeArray = nodeArray.sort((a, b) => b.count - a.count);
 
         return sortedNodeArray;
@@ -137,8 +135,6 @@ function ConceptualMapModal(
       termFreqKeywrods.forEach((eg, i) => {
         emptyArr.push(termFreqKeywrods[i].term);
       });
-      //console.log(emptyArr);
-      // console.log("nodeLinkDict", nodeLinkDict.nodes);
 
       conceptualMapDrawer!.setGraphData(nodeLinkDict);
       conceptualMapDrawer!.updateGraph();

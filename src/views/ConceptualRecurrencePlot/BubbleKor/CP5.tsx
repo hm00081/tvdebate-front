@@ -93,7 +93,7 @@ const CP5K = ({
           }
         </style>
         <g className="CP5">
-          <title>키워드: 모병제, 질적 향상 및 간부확보 문제는?</title>
+          {`Topic: 모병제, 질적 향상 및 간부확보 문제는?\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[78]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[78]?.utterance}`}
           <g className="T5">
             <g className="P5">
               <g>
@@ -407,7 +407,7 @@ const CP5K = ({
             <text
               transform="matrix(1 0 0 1 1046 322)"
               className="st0 st1 st13"
-              onClick={() => handleClick(75)}
+              onClick={() => handleClick(78)}
               style={{ fontSize: "13.76px" }}
             >
               {"모병제, 질적 향상 및 "}
@@ -415,7 +415,7 @@ const CP5K = ({
             <text
               transform="matrix(1 0 0 1 1056 341.1)"
               className="st0 st1 st13"
-              onClick={() => handleClick(75)}
+              onClick={() => handleClick(78)}
               style={{ fontSize: "13.76px" }}
             >
               {"간부확보 문제는?"}

@@ -91,19 +91,19 @@ const CP7K = ({
           }
         </style>
         <g className="CP7">
-          {/* <title>Keyword: 국방 예산 이슈 및 토론 마무리</title> */}
+          {`Topic: 국방 예산 이슈 및 토론 마무리\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[175]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[175]?.utterance}`}
           <g className="T7">
             <text
               transform="matrix(1 0 0 1 1565 325)"
               className="st0 st1 st13"
-              onClick={() => handleClick(148)}
+              onClick={() => handleClick(175)}
             >
               {"국방 예산 이슈 및"}
             </text>
             <text
               transform="matrix(1 0 0 1 1580 345)"
               className="st0 st1 st13"
-              onClick={() => handleClick(148)}
+              onClick={() => handleClick(175)}
             >
               {"토론 마무리"}
             </text>

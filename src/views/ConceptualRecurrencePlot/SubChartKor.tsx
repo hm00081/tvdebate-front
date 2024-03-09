@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable no-unused-vars */
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./SubChart.scss";
 import { DataStructureSet } from "./DataStructureMaker/DataStructureManager";
 import { SentenceObject } from "../../interfaces/DebateDataInterface";
@@ -41,9 +41,6 @@ const SubChartKor = ({
           );
         return argumentScore >= 0.25; // 0.25 이상인 SimilarityBlock 필터링
       });
-
-      // 필터링된 SimilarityBlocks 콘솔에 출력
-      // console.log("High Score SimilarityBlocks:", highScoreBlocks);
     }
   }, [dataStructureSet]);
 
@@ -119,10 +116,6 @@ const SubChartKor = ({
 
       return isHighScore && condition;
     });
-    // console.log(
-    //   `Filtered SimilarityBlocks for barIndex ${barIndex}:`,
-    //   filteredBlocks
-    // );
 
     const indexPairs = filteredBlocks.map((block) => [
       block.rowUtteranceIndex,

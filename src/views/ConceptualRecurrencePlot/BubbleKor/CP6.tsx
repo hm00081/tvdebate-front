@@ -93,12 +93,12 @@ const CP6K = ({
           }
         </style>
         <g className="CP6">
-          <title>키워드: 여성 징집과 보급체계</title>
+          {`Topic: 여성 징집과 봉급체계\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[108]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[108]?.utterance}`}
           <g className="T6">
             <text
               transform="matrix(1 0 0 1 1325 489.2)"
               className="st0 st1 st13"
-              onClick={() => handleClick(100)}
+              onClick={() => handleClick(108)}
               style={{ fontSize: "13.87px" }}
             >
               {"여성 징집과"}
@@ -106,7 +106,7 @@ const CP6K = ({
             <text
               transform="matrix(1 0 0 1 1335 509.4)"
               className="st0 st1 st13"
-              onClick={() => handleClick(100)}
+              onClick={() => handleClick(108)}
               style={{ fontSize: "13.87px" }}
             >
               {"봉급체계"}

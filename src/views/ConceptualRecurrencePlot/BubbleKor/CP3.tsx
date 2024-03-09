@@ -410,11 +410,11 @@ const CP3K = ({
                 </title>
               </g>
             </g>
-            <title>키워드: 모병제, 병력 충원에 문제없나?</title>
+            <title>{`Topic: 모병제, 병력 충원에 문제 없나?\nName: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[36]?.name}\nUtterance: ${dataStructureSet?.utteranceObjectsForDrawingManager?.utteranceObjectsForDrawing[36]?.utterance}`}</title>
             <text
               transform="matrix(1 0 0 1 592 323)"
               className="st0 st1 st13"
-              onClick={() => handleClick(28)}
+              onClick={() => handleClick(36)}
               style={{ fontSize: "13.50px" }}
             >
               {"모병제, 병력"}
@@ -422,7 +422,7 @@ const CP3K = ({
             <text
               transform="matrix(1 0 0 1 580 343.2)"
               className="st0 st1 st13"
-              onClick={() => handleClick(28)}
+              onClick={() => handleClick(36)}
               style={{ fontSize: "13.50px" }}
             >
               {"충원에 문제 없나?"}

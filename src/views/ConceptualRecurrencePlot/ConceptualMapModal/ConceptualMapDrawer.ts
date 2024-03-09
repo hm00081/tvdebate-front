@@ -184,7 +184,7 @@ export class ConceptualMapDrawer {
         .join("path")
         .attr("fill", (d) => that._participantDict[d.data.name].color)
         .attr("d", (d) => makeArcDAttribute(d, nodeDatum, nodeSizeMultiplier));
-      // each  = d3-selection 함수., d3 내장
+
       arcsSelection.each(function (arcDatum) {
         d3.select(this)
           .selectAll<HTMLTitleElement, d3.PieArcDatum<ParticipantCount>>(
@@ -204,11 +204,6 @@ export class ConceptualMapDrawer {
       .data(nodes)
       .join("g");
     this.circlesOfNodePiesGSelection.each(function (nodeDatum) {
-      // find the circle's position (x, y)
-      // supplies: total count, the current count, distance
-      // ratio = ((front_counts) + (1/2* current_count) / total_count)
-      // x_position = distance * cos(ratio * 2PI)
-      // y_position = distance * sin(ratio * 2PI)
       const ratios = _.map(
         nodeDatum.participantCounts,
         (participantCount, i) => {

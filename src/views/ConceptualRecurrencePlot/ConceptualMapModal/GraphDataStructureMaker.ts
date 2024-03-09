@@ -352,30 +352,6 @@ export class GraphDataStructureMaker {
       }
     });
 
-    // related to upper commented code.
-    // TODO If 1 node don't have any links, insert 1 link having most count
-    // _.forEach(termListOfEG, (term, termIndex) => {
-    //   const filteredLinks = _.filter(
-    //     filteredLinkDict,
-    //     (linkDatum, linkId) =>
-    //       linkDatum.source === term || linkDatum.target === term
-    //   );
-
-    //   if (filteredLinks.length === 0) {
-    //     const aliveLinkDatum = _.chain(linkCandidateDict)
-    //       .filter(
-    //         (linkDatum, linkId) =>
-    //           linkDatum.source === term || linkDatum.target === term
-    //       )
-    //       .maxBy((linkDatum) => linkDatum.count)
-    //       .value();
-
-    //     console.log("aliveLinkDatum", aliveLinkDatum);
-
-    //     filteredLinkDict[aliveLinkDatum.id] = aliveLinkDatum;
-    //   }
-    // });
-
     return _.values(filteredLinkDict);
   }
 }

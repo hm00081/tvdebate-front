@@ -36,17 +36,8 @@ import SimilarityTooltip from "../../components/SimilarityTooltip/SimilarityTool
 import Header from "./../Header/Header";
 import HeaderTwo from "./../Header/HeaderTwo";
 import HeaderTwoKor from "./../Header/HeaderTwoKor";
-import style from "./rootStyle.module.scss";
-import Bubble from "./Bubble";
-import BubbleKor from "./BubbleKor";
-import BubbleEng from "./BubbleEng";
-import BubbleEngg from "./BubbleEngg";
-import CircleCom from "./BubbleKor/CircleCom";
 import * as d3 from "d3";
-import Outline from "./Outline";
-import SubChart from "./SubChart";
 import SubChartKor from "./SubChartKor";
-import { SimilarityBlocksDrawer } from "./Drawers/SimilarityBlocksDrawer";
 import CP1K from "./BubbleKor/CP1";
 import CP2K from "./BubbleKor/CP2";
 import CP3K from "./BubbleKor/CP3";
